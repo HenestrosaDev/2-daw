@@ -1,0 +1,339 @@
+/*
+
+José Carlos López Henestrosa
+
+https://henestrosaconh.com
+
+*/
+
+/* ---------------------------------------------
+Tabla de contenidos
+------------------------------------------------
+01. reset css
+02. global styles
+03. sidenav
+04. navegacion
+05. enlaces
+06. main
+--------------------------------------------- */
+
+/* 
+---------------------------------------------
+01. reset css
+--------------------------------------------- 
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+}
+
+/* 
+---------------------------------------------
+02. global styles
+--------------------------------------------- 
+*/
+html {
+    color: black;
+    overflow-y: scroll;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 10px;
+}
+
+h2,
+h3 {
+    color: #DD6552;
+}
+
+body {
+    background-color: #F0F0F0;
+    padding: 25px;
+    font-family: "San Francisco", "Segoe UI", "Open Sans", sans-serif;
+    font-size: 1.12em;
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+li:last-child {
+    margin-bottom: 35px;
+}
+
+ul li ul {
+    list-style-type: circle;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+th {
+    text-transform: uppercase;
+    background-color: #4A4A91;
+}
+
+tr:nth-child(even) {
+    background-color: #4C4C5E;
+}
+
+abbr {
+    font-weight: bold;
+    cursor: help;
+}
+
+h1,
+nav,
+footer,
+nav+p {
+    text-align: center;
+}
+
+footer {
+    border-top: 1px solid black;
+    clear: both;
+    position: relative;
+    padding-top: 25px;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+a {
+    color: #3C78DE;
+}
+
+code {
+    font-family: 'Menlo', 'Fira Mono', monospace;
+    padding: .05em .1em;
+    background-color: gray;
+    border-radius: .2em;
+    white-space: pre-wrap;
+}
+
+img {
+    display: block;
+    margin: 15px auto 15px auto;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+figure {
+    margin-bottom: 67px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+/* 
+---------------------------------------------
+03. sidenav
+--------------------------------------------- 
+*/
+.sidenav {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 200px;
+    background-color: #F0F0F0;
+    float: left;
+    height: auto;
+    overflow: auto;
+}
+
+.sidenav a,
+.sidenav details {
+    display: block;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidenav details:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #999;
+}
+
+.sidenav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.sidenav a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.sidenav details a:hover:not(.active) {
+    background-color: rgb(46, 46, 46);
+}
+
+.sidenav a:first-child {
+    text-transform: uppercase;
+    background-color: rgb(221, 101, 82);
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidenav a {
+        float: left;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidenav a {
+        text-align: center;
+        float: none;
+    }
+}
+
+/* 
+---------------------------------------------
+04. navegacion
+--------------------------------------------- 
+*/
+.navegacion {
+    padding: 0;
+    width: 200px;
+    background-color: white;
+    float: left;
+    height: auto;
+    text-align: center;
+    overflow: auto;
+}
+
+/* 
+---------------------------------------------
+05. enlaces
+--------------------------------------------- 
+*/
+.enlaces {
+    padding: 0;
+    width: 200px;
+    background-color: white;
+    float: left;
+    margin: 25px 0 25px 0;
+    height: auto;
+    text-align: center;
+    overflow: auto;
+}
+
+/* 
+---------------------------------------------
+06. main
+--------------------------------------------- 
+*/
+.main {
+    float: right;
+    background-color: white;
+    width: 840px;
+    padding: 15px 30px 10px 30px;
+    margin-bottom: 30px;
+    line-height: 1.43;
+}
