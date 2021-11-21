@@ -1,0 +1,17 @@
+1° Todos los ejercicios propuestos de la sesión anterior.
+2° Estudiar y practicar programación estructurada en PHP:
+    · Ver material en https://milq.github.io/cursos/dwes/ud/1/
+        -> Mi recomendación es estudiar PHP Tutorial de W3Schools:
+            -> https://www.w3schools.com/php/ (desde HOME hasta RegEx).
+
+3° Estudiar y practicar cómo procesar formularios en PHP:
+    · Ver material en https://milq.github.io/cursos/dwes/ud/1/
+        -> También podéis estudiar en W3Schools:
+            -> https://www.w3schools.com/php/php_forms.asp (desde PHP Form Handling hasta PHP Form Complete).
+
+4º Conocer las diferencias entre GET y POST en los formularios (podéis rever la sesión de hoy).
+5º Procesar formularios y hacer muchos ejemplo de recoger de datos de formularios, procesarlos y mostrar la salida. Por ejemplo, podéis hacer una calculadora sencilla.
+6º Empezar a realizar la tarea online (ya se podría hasta la 4).
+
+
+Para conocer y estudiar algunos de los puntos podéis consultar el material complementario (milq.github.io/cursos/dwes/ud/1) así como vídeos y otros recursos que encontréis.
