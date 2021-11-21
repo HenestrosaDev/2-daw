@@ -1,7 +1,7 @@
 var popup;
 var interval;
 
-function displayPopup(width, height) {
+const displayPopup = (width, height) => {
 	// Coordenadas para centrar la ventana tras abrirse por primera vez
 	const x = (screen.width / 2) - (width / 2);
 	const y = (screen.height / 2) - (height / 2);
@@ -26,7 +26,7 @@ function displayPopup(width, height) {
 	interval = window.setInterval(movePopup, 3000);
 }
 
-function movePopup() {
+const movePopup = () => {
 	// Obtenemos posiciones aleatorias basándonos en el alto y ancho de la pantalla
 	const randomWidth = Math.round(Math.random() * screen.width);
 	const randomHeight = Math.round(Math.random() * screen.height);
@@ -36,9 +36,10 @@ function movePopup() {
 	popup.moveTo(randomWidth, randomHeight);
 }
 
-function stopPopup() {
+const stopPopup = () => {
 	// Paramos el intervalo que mueve la ventana aleatoriamente
 	clearInterval(interval);
 	// Mostramos en la ventana la línea de "Ventana parada"
 	popup.document.write('<h3>Ventana parada</h3>');
+	popup.focus()
 }
