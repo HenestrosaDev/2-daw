@@ -1,0 +1,13 @@
+Ejercicios a realizar:
+
+1° Hacer todos los ejercicios de la sesión 6, 7, 8 y 9.
+2° Estudiar sesiones en PHP:
+https://www.php.net/manual/en/book.session.php
+https://www.w3schools.com/php/php_sessions.asp
+https://www.tutorialspoint.com/php/php_sessions.htm
+https://diego.com.es/sesiones-en-php 
+
+3° Estudiar detenidamente la variable $_SESSION: https://www.php.net/manual/en/reserved.variables.session.php.
+4° Ejecutar ejemplo: https://www.php.net/manual/en/session.examples.basic.php.
+5° Recrear paso a paso la aplicación web de sesiones de esta clase online.
+6° Seguir con la Tarea Online 2.

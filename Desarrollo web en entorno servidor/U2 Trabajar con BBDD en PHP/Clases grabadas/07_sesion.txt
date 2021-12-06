@@ -1,0 +1,172 @@
+Ejercicios a realizar:
+
+
+1º Hacer los ejercicios 3, 4 y 5 exhaustivamente de la sesión 6.
+2º Crear usuario en PhpMyAdmin (ver Anexo abajo).
+3º Saber crear una BBDD en PhpMyAdmin tanto en SQL como por interfaz (ver Anexo abajo).
+4º Saber implementar un modelo de datos en SQL (ver ejemplo básico abajo).
+5º Ejecutar la implementación realizada en PhPMyAdmin, para ello:
+          Entrar en http://localhost/phpmyadmin/
+          Pulsar la pestaña SQL
+          Ejecutar el script SQL de implementación de un modelo de datos (el anterior punto) 
+6º Comprobar que está implementada:
+          Mirando primero en la pestaña Databases
+          Después seleccionando dicha BBDD
+          Comprobamos las tablas, etc.
+          Podemos ver finalmente las tablas y sus relaciones en la pestaña Designer.
+7º Creamos una aplicación web y nos conectamos a la BBDD mediante PHP. Ejemplo en https://github.com/milq/milq/tree/master/learn/php/2_crud.
+8º Leer las diferencias de estos dos cotejamientos más utilizados: https://espaciogt.wordpress.com/2018/10/08/cual-es-la-diferencia-entre-utf8_general_ci-y-utf8_unicode_ci/
+9º Empezar a pensar los modelos de datos de la Tarea 2.
+10º Si has avanzado hasta aquí, enhorabuena, vas bien.
+
+Para conocer y estudiar algunos de los puntos podéis consultar el material complementario (milq.github.io/cursos/dwes/ud/2) así como vídeos y otros recursos que encontréis.
+
+---
+
+Crear usuario en PhpMyAdmin:
+
+Iniciar XAMPP y después PhpMyAdmin (http://localhost/phpmyadmin/).
+
+Crear un usuario con todos los permisos:
+
+Pulsar pestaña User accounts.
+
+Pulsar enlace Add user account.
+
+Rellenar:
+
+Username: uno sin espacios (puede usarse _) ni caracteres raros.
+
+Host name (Local): localhost
+
+Password: el que queráis
+
+Re-type: el que queráis
+
+Activamos la casilla Global privileges (Check all).
+
+Pulsar botón Go.
+
+
+Recordad, que una vez creado el usuario, no hace falta crearlo más veces (excepto si lo borramos, claro).
+
+
+---
+
+
+Saber crear una BBDD en PhpMyAdmin tanto ejecutando SQL como por interfaz:
+
+
+Hay dos opciones:
+
+
+· Por interfaz se hace desde la pestaña Databases.
+
+· Por SQL (desde la pestaña SQL):
+
+        DROP DATABASE IF EXISTS nombre_bbdd;
+
+        CREATE DATABASE nombre_bbdd;
+
+        USE nombre_bbdd; -- Lo usaremos más adelante para usar dicha BBDD
+
+
+---
+
+Ejemplo básico de implementar un modelo de datos en SQL:
+
+    
+
+    -- Ejemplo de script de implementación de BBDD (por ejemplo, bbdd.sql)
+
+    -- Creamos y empezamos a usar la BBDD
+
+    
+
+    DROP DATABASE IF EXISTS ejemplo_clase_7;
+
+    CREATE DATABASE ejemplo_clase_7;
+
+    USE ejemplo_clase_7;
+
+
+    DROP TABLE IF EXISTS mensajes;
+
+    DROP TABLE IF EXISTS usuarios;
+
+
+    -- Implementación en SQL del modelo de base de datos
+
+    
+
+    CREATE TABLE usuarios (
+
+        id INT AUTO_INCREMENT,
+
+        username VARCHAR(50),
+
+        password VARCHAR(100),
+
+        CONSTRAINT PK_usuario PRIMARY KEY (id)
+
+    );
+
+
+CREATE TABLE mensajes (
+
+id INT NOT NULL AUTO_INCREMENT,
+
+asunto VARCHAR (100),
+
+cuerpo VARCHAR (100),
+
+fecha DATE,
+
+id_usuario INT,
+
+CONSTRAINT PK_mensaje PRIMARY KEY (id),
+
+CONSTRAINT FK_mensaje_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+
+);
+
+
+    -- Tenemos que saber también añadir ejemplos
+
+
+INSERT INTO usuarios VALUES
+
+('1', 'pepe', '1234'),
+
+('2', 'luis', '4321'),
+
+('3', 'juan', '1122'),
+
+('4', 'pedro', '2211'),
+
+('5', 'pablo', '3344');
+
+INSERT INTO mensajes(asunto, cuerpo, fecha, id_usuario) VALUES
+
+('a', 'Texto.', '2021-04-24', '1'),
+
+('b', 'Texto.', '2020-03-23', '2'),
+
+('c', 'Texto.', '2021-05-22', '1'),
+
+('d', 'Texto.', '2020-02-21', '4'),
+
+('e', 'Texto.', '2021-06-19', '3'),
+
+('f', 'Texto.', '2020-01-18', '1'),
+
+('g', 'Texto.', '2021-07-17', '1'),
+
+('h', 'Texto.', '2020-09-16', '5'),
+
+('i', 'Texto.', '2021-08-15', '3'),
+
+('j', 'Texto.', '2020-09-20', '3');
+
+
+

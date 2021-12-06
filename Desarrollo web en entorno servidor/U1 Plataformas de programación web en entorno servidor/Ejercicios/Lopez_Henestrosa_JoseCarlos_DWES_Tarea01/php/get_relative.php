@@ -1,7 +1,9 @@
 <?php
 function get_relative($path) {
 	// Si el nombre del archivo contiene una letra, es debido a que está contenido dentro de una carpeta con la letra correspondiente al apartado del ejercicio
-	if (preg_match('/[a-zA-Z]/', basename($path, '.php'))) {
+	if (preg_match('/inicio/', basename($path, '.php'))) {
+		return ".";
+	} else if (preg_match('/[a-zA-Z]/', basename($path, '.php'))) {
 		// Por ejemplo, en los casos 4/a/4a.php
 		return "../..";
 	} else {

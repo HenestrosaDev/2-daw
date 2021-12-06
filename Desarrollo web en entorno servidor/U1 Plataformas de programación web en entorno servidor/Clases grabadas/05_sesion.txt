@@ -1,0 +1,63 @@
+Ejercicios a realizar:
+
+
+1º Hacer todas los ejercicios de las sesiones 1, 2, 3 y 4.Ç
+2º Estudia exhuaustivamente qué es un sistema de control de versiones, qué es Git y qué es GitHub.
+3º Hazte una cuenta, si no la tienes, en GitHub con un nombre de usuario serio y profesional.
+4º Crea un repositorio en blanco (con los archivos de texto README.md y LICENSE).
+5º Trastea gráficamente con GitHub (mira y crea archivos, modifica, borra, etc.) el repositorio recién creado.
+6º Instala Git en Windows y/o GNU/Linux (puedo decir Linux solamente pero es que es el núcleo). Comprueba que funciona con 'git --version'.
+7º Aprender el proceso para recoger y actualizar proyecto (IR A PASOS)
+8º Hacer Último ejercicio tarea: - Crea un proyecto en GitHub de una aplicación web tuya y usa Git para subir el código.
+
+Para conocer y estudiar algunos de los puntos podéis consultar el material complementario (milq.github.io/cursos/dwes/ud/1) así como vídeos y otros recursos que encontréis.
+
+
+
+Consejos para instalar una distribución GNU/Linux
+===================================
+
+1º Desde Windows (u OS X) guardar en una carpeta todo aquellos documentos, fotos, vídeos, código, etc. que queráis almacenar.
+2º Almacenar en un disco duro externo y en un sistema de almacenamiento en la nube (por lo menos los archivos más importante) dicha carpeta.
+3º Proceder a reinstalar Windows 10/11.
+4º Instalar una distribución GNU/Linux
+-> Para empezar yo recomiendo Ubuntu.
+-> Si queréis más estabilidad y libertad yo recomiendo Debian.
+5º El procedimiento básicamente es descargar una ISO (primero de W10/W11 y después de Ubuntu/Debian), quemarlo en un USB con la herramienta Rufus (ponedlo en modo GPT) e instalad primero Windows y después Ubuntu/Debian.
+
+
+
+Instalación de XAMPP en una distribución GNU/Linux
+==================================================
+
+1º Descargar Xampp desde la web oficial
+2º chmod +x xampp-linux-x64-8.0.11-2-installer.run
+3º sudo ./xampp-linux-x64-8.0.11-2-installer.run
+4º Xampp en GNU/Linux se instala por defecto en /opt/lampp
+5º El directorio para guardar las aplicaciones web es /opt/lampp/htdocs
+6º Se inicia Xampp con sudo /opt/lampp/xampp start
+
+
+PASOS
+=====
+
+1º (solo la 1ª vez) git clone https://github.com/milq/ejemplo_clase_dawd.git  <--- ESTUDIAR QUÉ HACE git clone
+2º Hacemos cambios (añadimos, editamos archivos, etc.).
+3º git status <--- ESTUDIAR QUÉ HACE git status
+4º git add . <--- ESTUDIAR QUÉ HACE git add .
+5º git status
+6º git commit -m 'Cambiar inicio e imagen'   <--- ESTUDIAR QUÉ HACE git commit -m 'Mensaje de cambios realizados'
+7º git status --> Si todo va bien me dirá que: 'On branch main' Your branch is ahead of 'origin/main' by 1 commit.     (use "git push" to publish your local commits)
+
+Si no tenemos un token de verificación, lo creamos:
+
+Para ello nos vamos a Settings -> Developer settings -> Personal access tokens -> Generate new token -> Rellenar expiration, Seleccionar el scope (Select scopes) de repo (todo entero) -> Generate token -> ¡COPIAMOS el TOKEN! Por ejemplo el mío se ha generado así: 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
+
+8º git push https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
+
+Para nuestro ejemplo: git push https://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@github.com/milq/ejemplo_clase_dawd.git
+
+IMPORTANTE: cuando otras personas o uno mismo cambian/añaden/borran archivos del repositorio hay que hacer lo siguiente: git pull <-- IMPORTANTE ESTUDIARLO DETENIDAMENTE.
+
+Por tanto antes de empezar a trabajar, haced un git pull y después seguís por el PASO 2.
+

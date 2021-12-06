@@ -1,9 +1,0 @@
-Ejercicios a realizar:
-
-1° Hacer todos los ejercicios de la sesión 6, 7 y 8.
-2° Implementar un modelo de datos en SQL con datos de ejemplo y crear una aplicación web con HTML, Bootstrap (o similar) y PHP que interactúe con dicho modelo de datos (mostrando, insertando, borrando y editando datos).
-3° Practicar creando aplicaciones web persistentes (PHP/MariaDB) a partir de los ejercicios de la Tarea 1.
-4° Seguir con la Tarea Online 2 (mirad las recomendaciones indicadas en la sesión anterior).
-5° Empezad a estudiar sesiones en PHP:
-https://www.php.net/manual/en/book.session.php
-https://www.w3schools.com/php/php_sessions.asp

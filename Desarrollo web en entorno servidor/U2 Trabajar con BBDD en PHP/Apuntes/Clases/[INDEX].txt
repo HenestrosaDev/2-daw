@@ -1,9 +1,0 @@
-Sesión 07 (02/11/2021): Bases de datos y su uso en PHP (1 de 3)
-Link: https://drive.google.com/file/d/1AT7PVfuWeu8CpMD-ToAVvj8iSHLQKJXX/view?usp=sharing
-
-Sesión 08 (): Bases de datos y su uso en PHP (2 de 3)
-Link: https://drive.google.com/file/d/1FhYKkXmsACKa41nKJ9zI5uTkxK4QIHJz/view?usp=sharing
-
-Sesión 09 (): Bases de datos y su uso en PHP (3 de 3)
-Link: https://drive.google.com/file/d/1bEBaT1vd3gvfNdc_2FWv7zyRJ0t5uVWu/view?usp=sharing
-

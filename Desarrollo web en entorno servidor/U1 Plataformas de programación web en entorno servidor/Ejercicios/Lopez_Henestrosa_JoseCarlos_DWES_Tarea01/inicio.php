@@ -3,11 +3,15 @@
 
 <head>
     <title>Unidad 1 | Ejercicio 1: Índice</title>
-    <?php include $_SERVER["DOCUMENT_ROOT"] . "/common/head.html"; ?>
+    <?php
+    require_once("./php/get_relative.php");
+    $relative = get_relative(__FILE__);
+    include $relative . "/common/head.php";
+    ?>
 </head>
 
 <body>
-    <?php include $_SERVER["DOCUMENT_ROOT"] . "/common/sidenav.html"; ?>
+    <?php include $relative . "/common/sidenav.php"; ?>
 
     <div id="main" class="main">
         <div class="header">
@@ -18,8 +22,8 @@
             superior derecha.</p>
     </div>
 
-    <?php include $_SERVER["DOCUMENT_ROOT"] . "/common/footer.html"; ?>
-    <?php include $_SERVER["DOCUMENT_ROOT"] . "/common/floating-buttons.html"; ?>
+    <?php include $relative . "/common/footer.html"; ?>
+    <?php include $relative . "/common/floating-buttons.html"; ?>
 </body>
 
 </html>

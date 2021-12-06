@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='es'>
+
+<head>
+	<title>Unidad 3 | Ejercicio 1</title>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Diseño Interfaces Web" content="Unidad 3 | Ejercicio 1">
+	<link rel="stylesheet" href="./styles.css" />
+	<!-- Icon pack -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+	<nav class="navbar bg--red mb--4">
+		<div class="navbar__container container">
+			<div class="navbar__container">
+				<h1 class="navbar__brand d--flex text--white align-items--center">
+					<img src="./img/index/brand.png" height="46" class="me--3" alt="logo">
+					El Tini
+				</h1>
+				<figure>
+					<button class="btn btn--user" type="button">
+						<span class="bi-person fs--lg"></span>
+						<span class="d--block fs--sm">Acceso</span>
+					</button>
+				</figure>
+			</div>
+			<div class="navbar__content container">
+				<ul class="navbar__items">
+					<li class="navbar__item">
+						<a class="text--unstyled" href="./index.html#info">
+							<span class="bi-person me--2"></span>
+							<span class="partially-visible">Nosotros</span>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a class="text--unstyled" href="./index.html#dishes">
+							<span class="bi-book me--2"></span>
+							<span class="partially-visible">Platos</span>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a class="text--unstyled" href="./promociones.html">
+							<span class="bi-percent me--2"></span>
+							<span class="partially-visible">Promociones</span>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a class="text--unstyled" href="">
+							<span class="bi-telephone me--2"></span>
+							<span class="partially-visible">Reservas</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<main>
+			<section id="promotion">
+				<header>
+					<h1 class="text--center ls--md">Menú especial Samurai</h1>
+				</header>
+				<div class="promotion__container mt--4">
+					<figure class="promotion__fig">
+						<img class="promotion__img img--zoom-in" src="./img/index/promotion-1.jpg" alt="promoción">
+					</figure>
+					<div class="promotion__body">
+						<div class="promotion__dish">
+							<strong class="text--uppercase">Bebida</strong>
+							<p class="partially-visible">Recargable</p>
+							<p class="partially-visible">Coca-Cola / Fanta / Sprite / Nestea</p>
+							<strong class="partially-visible">3.25€</strong>
+							<a class="btn btn--promotion text--center mt--2" href="./promociones.html#more-info">Más detalles</a>
+						</div>
+						<hr>
+						<div class="promotion__dish">
+							<strong class="text--uppercase">Patatas deluxe</strong>
+							<p class="partially-visible">100% vegetal</p>
+							<p class="partially-visible">Salsa agria o salsa spicy</p>
+							<strong class="partially-visible">1.99€</strong>
+							<a class="btn btn--promotion text--center mt--2" href="./promociones.html#more-info">Más detalles</a>
+						</div>
+						<hr>
+						<div class="promotion__dish">
+							<strong class="text--uppercase">Samurai</strong>
+							<p class="partially-visible">Hamburguesa (pollo o ternera)</p>
+							<p class="partially-visible">Carne / Lechuga / Tomate / Salsa teriyaki</p>
+							<p class="partially-visible">Salsa agria o salsa spicy</p>
+							<strong class="partially-visible">6.99€</strong>
+							<a class="btn btn--promotion text--center mt--2" href="./promociones.html#more-info">Más detalles</a>
+						</div>
+						<hr>
+						<div class="promotion__dish fs--lg">
+							<p><del>12.23€</del> <span class="text--red">9.19€</span></p>
+						</div>
+						<p class="fs--sm">Promoción válida desde el 16/12/2021 al 31/12/2021</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="more-info">
+				<header>
+					<h1 class="text--center text--shadow mt--5">Más información</h1>
+				</header>
+				<div class="more-info--body mt--4">
+					<p>
+						100% carne fresca, como solo El Tini sabe hacerlo. Lechuga fresca recién traída de la huerta, tomates
+						cortados en el momento y una capa de mayonesa para sumarle aún más sabor dentro de pan crujiente. Repetirás seguro…
+					</p>
+					<div class="row row-cols--md-3 gutter mt--3">
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/promocion/drink.png" alt="Bebida">
+								<div class="card__container text--center">
+									<h4 class="card__title">Bebida</h4>
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/promocion/burguer.png" alt="Hamburguesa">
+								<div class="card__container text--center">
+									<h4 class="card__title">Hamburguesa</h4>
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/promocion/fries.png" alt="Patatas">
+								<div class="card__container text--center">
+									<h4 class="card__title">Patatas</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="mt--5 mb--4 text--muted text--center">
+			<hr>
+			<p class="mb--3 mt--3">&copy; José Carlos López Henestrosa</p>
+			<ul class="list--inline">
+				<li class="list--inline__item"><i class="bi bi-facebook"></i></li>
+				<li class="list--inline__item"><i class="bi bi-twitter"></i></li>
+				<li class="list--inline__item"><i class="bi bi-instagram"></i></li>
+			</ul>
+		</footer>
+	</div>
+
+</body>
+
+</html>
