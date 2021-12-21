@@ -9,3 +9,10 @@ Link: https://drive.google.com/file/d/1bEBaT1vd3gvfNdc_2FWv7zyRJ0t5uVWu/view?usp
 
 Sesión 10 (24/11/2021): Sesiones en PHP (1 de 2)
 Link: https://drive.google.com/file/d/12EXsXVJUykXri-z9gLS-wqICW0BNyLrY/view?usp=sharing
+
+Sesión 11 (30/11/2021): Sesiones en PHP (2 de 2)
+https://drive.google.com/file/d/1ZgWyJTPW2jPcgF21KT0qohL2r7bg-hQ9/view?usp=sharing
+
+Sesión 12 (29/11/2021): Heroku
+https://drive.google.com/file/d/1O6mt4HQ-CB0VlohT3DM0NSTGo14Z8SWk/view?usp=sharing
+

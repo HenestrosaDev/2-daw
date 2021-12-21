@@ -1,3 +1,5 @@
+"use strict";
+
 // Función que se encarga de obtener lo que pide el ejercicio
 const getYearsWhere6thDecIsMonday = () => {
 	/* Aquí uso un array para poder pasarlo al método 
@@ -6,7 +8,7 @@ const getYearsWhere6thDecIsMonday = () => {
 	básica que pide el ejercicio. */
 	let matchedYears = [];
 	for (let year = 2021; year <= 2100; year++) {
-		const d = new Date(`November 6, ${year} 00:00:00`);
+		const d = new Date(`December 6, ${year} 00:00:00`);
 		/* getDay() devuelve valores del 0 (domingo) al 
 		6 (sábado). Comprobamos si el día de la fecha 
 		indicada arriba cae en lunes (1)  */ 

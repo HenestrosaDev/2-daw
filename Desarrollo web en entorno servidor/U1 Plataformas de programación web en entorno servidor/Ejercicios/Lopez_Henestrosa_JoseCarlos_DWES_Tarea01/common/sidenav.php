@@ -1,5 +1,5 @@
 <div class="sidenav">
-    <a class="sidenav__header sidenav__link" href="<?= $relative ?>/inicio.php">Índice</a>
+    <a class="sidenav__header sidenav__link" href="<?= $relative ?>/index.php">Índice</a>
     <details open class="sidenav__dropdown">
         <summary>1</summary>
         <a class="sidenav__link" href="<?= $relative ?>/1/1.php">Front-end, back-end y full-stack</a>

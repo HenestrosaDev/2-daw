@@ -1,3 +1,5 @@
+"use strict";
+
 // Le pedimos al usuario que introduzca la medida de los catetos
 const inputLegs = () => {
 	const rawLegs = showPrompt();

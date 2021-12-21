@@ -1,3 +1,5 @@
+"use strict";
+
 /* Cargamos los enunciados y resultados cuando
 la ventana cargue el contenido. */
 window.onload = () => loadStatements();

@@ -1,0 +1,5 @@
+Ejercicios a realizar:
+
+1° Hacer todos los ejercicios de la sesión 6, 7, 8, 9 y 10.
+2° Recrear paso a paso la aplicación web de sesiones con BBDD de esta clase online.
+3° Dedicar trabajo y esfuerzo a la Tarea Online 2.

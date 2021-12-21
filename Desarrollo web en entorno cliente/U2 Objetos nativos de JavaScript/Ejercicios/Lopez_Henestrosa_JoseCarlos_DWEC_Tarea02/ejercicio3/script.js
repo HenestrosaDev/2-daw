@@ -1,3 +1,5 @@
+"use strict";
+
 // Pedimos al usuario introducir los datos requeridos
 const showPrompt = () => {
 	var sentence = prompt("Introduce la frase a encriptar. Ten en cuenta que tiene que tener más de 4 palabras.");
