@@ -1,0 +1,694 @@
+/*
+
+José Carlos López Henestrosa
+
+https://henestrosaconh.com
+
+Naming convention followed: http: //getbem.com/introduction/
+
+*/
+
+/* ---------------------------------------------
+Contents table
+------------------------------------------------
+01. reset css
+02. global styles
+03. sidenav
+04. header
+05. container
+06. subindexed lists
+07. form
+08. js buttons
+09. scrollbar
+10. light theme
+11. responsive
+--------------------------------------------- */
+
+/* 
+---------------------------------------------
+01. reset css
+--------------------------------------------- 
+*/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+p,
+pre,
+a,
+abbr,
+code,
+em,
+img,
+strong,
+sup,
+ol,
+ul,
+li,
+form,
+label,
+caption,
+aside,
+details,
+figure,
+figcaption,
+footer,
+header,
+section,
+summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav {
+	display: block;
+}
+
+/* 
+---------------------------------------------
+02. global styles
+--------------------------------------------- 
+*/
+html {
+	color: white;
+	overflow-y: scroll;
+}
+
+h1,
+h2,
+h3 {
+	color: #DD6552;
+	font-weight: bold;
+	display: block;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.17em;
+	margin: 15px 0 15px 0;
+	text-align: center;
+}
+
+body {
+	background-color: #202325;
+	padding: 25px;
+	font-family: "San Francisco", "Segoe UI", "Open Sans", sans-serif;
+	font-size: 1.12em;
+	margin: 0 auto;
+	max-width: 1140px;
+}
+
+li:last-child {
+	margin-bottom: 35px;
+}
+
+ul,
+ol {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	padding-inline-start: 40px;
+}
+
+ul li ul {
+	list-style-type: circle;
+}
+
+li {
+	margin-bottom: 15px;
+}
+
+h1,
+footer {
+	text-align: center;
+}
+
+footer {
+	border-top: 1px solid white;
+	clear: both;
+	position: relative;
+	margin-top: 2em;
+	padding: 1em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+p {
+	margin-bottom: 30px;
+}
+
+a {
+	color: #3C78DE;
+}
+
+code {
+	font-family: 'Menlo', 'Fira Mono', monospace;
+	padding: .05em .1em;
+	background-color: gray;
+	border-radius: .2em;
+	white-space: pre-wrap;
+}
+
+img {
+	display: block;
+	margin: 15px auto 40px auto;
+	max-width: 100%;
+	cursor: pointer;
+}
+
+figure>img {
+	margin: 15px auto 15px auto;
+}
+
+figure {
+	margin-bottom: 15px;
+}
+
+figcaption {
+	text-align: center;
+}
+
+abbr {
+	font-weight: bold;
+	cursor: help;
+}
+
+form {
+	margin: 0 0 15px 0;
+	padding: 20px;
+	border-radius: 6px;
+	background: #202325;
+}
+
+input,
+select,
+textarea {
+	line-height: 22px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+select {
+	margin-left: 10px;
+	font-size: 17px;
+}
+
+input:invalid,
+textarea:invalid {
+	border: 2px dashed red;
+}
+
+textarea {
+	margin: 10px 0 15px 0;
+	width: calc(100% - 12px);
+	padding: 5px;
+	font: inherit;
+	resize: vertical;
+	font-size: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	border-color: #545b5e;
+}
+
+td,
+th {
+	border: 1px solid rgb(58, 62, 65);
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: rgb(43, 47, 49);
+}
+
+/* 
+---------------------------------------------
+03. generic classes
+--------------------------------------------- 
+*/
+.w--100 {
+	width: 100%;
+}
+
+.mb--3 {
+	margin-bottom: 1.5em;
+}
+
+.header--margin {
+	margin-bottom: 10px;
+}
+
+.wide-margin-bottom {
+	margin-bottom: 67px;
+}
+
+.inline {
+	display: inline;
+}
+
+.center {
+	text-align: center;
+}
+
+.not-margin-bottom {
+	margin-bottom: 0;
+}
+
+/* 
+---------------------------------------------
+03. sidenav
+--------------------------------------------- 
+*/
+.sidenav {
+	margin: 0 0 30px 0;
+	padding: 0;
+	width: 200px;
+	background-color: #181A1B;
+	float: left;
+	height: auto;
+	overflow: auto;
+}
+
+.sidenav__dropdown,
+.sidenav__link {
+	display: block;
+	color: white;
+	border: none;
+	padding: 16px;
+	text-decoration: none;
+}
+
+.sidenav__link:not(:first-child) {
+	display: none;
+}
+
+.sidenav__link:hover {
+	background-color: #2e2e2e;
+}
+
+.sidenav__dropdown:hover .sidenav__link {
+	display: block;
+}
+
+.sidenav__dropdown:hover {
+	cursor: pointer;
+	background-color: #555;
+}
+
+.sidenav__header:first-child {
+	text-transform: uppercase;
+	background-color: rgb(221, 101, 82);
+}
+
+/* 
+---------------------------------------------
+04. header
+--------------------------------------------- 
+*/
+.header {
+	margin: 15px auto 30px auto;
+}
+
+/* 
+---------------------------------------------
+05. container
+--------------------------------------------- 
+*/
+.container {
+	float: right;
+	background-color: #181A1B;
+	width: 100%;
+	padding: 15px 30px 10px 30px;
+	margin-bottom: 30px;
+	line-height: 1.43;
+}
+
+/* 
+---------------------------------------------
+06. subindexed lists
+--------------------------------------------- 
+*/
+/*hide original list counter */
+.ol--subindexed li {
+	display: block;
+}
+
+.ol--subindexed>li:first-child {
+	counter-reset: item;
+}
+
+.ol--subindexed>li {
+	counter-increment: item;
+	position: relative;
+}
+
+.ol--subindexed>li:before {
+	content: counters(item, ".") ". ";
+	position: absolute;
+	margin-right: 100%;
+	right: 10px;
+}
+
+/* 
+---------------------------------------------
+07. form
+--------------------------------------------- 
+*/
+.form__columns {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.form__columns>.form__item,
+.form__column {
+	width: 47%;
+}
+
+/* Btn */
+.form__btn-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.form__btn {
+	border: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 16px;
+	color: white;
+	cursor: pointer;
+}
+
+.form__btn--submit {
+	width: 150px;
+	padding: 10px;
+	background: #EE6552;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+.form__btn--submit:hover {
+	background: #a3c2c2;
+}
+
+.form__btn--modifier {
+	padding: 0;
+	height: 27px;
+	width: 30%;
+	margin: 10px 0 10px 0;
+}
+
+.form__btn--modifier-add {
+	background-color: #04AA6D;
+}
+
+.form__btn--modifier-remove {
+	background-color: #EE6552;
+}
+
+/* Item */
+.form__item {
+	margin: 10px 0 10px 0;
+	width: 97%;
+	padding: 5px;
+}
+
+.form__item--generated:last-child {
+	margin-bottom: 20px;
+}
+
+/* Results */
+.form__results {
+	margin: 25px 0 15px 0;
+	padding: 20px;
+	text-align: center;
+	border-radius: 6px;
+	border: 1px solid #EE6552;
+}
+
+/* Radio */
+.form__radio-container {
+	margin: 10px 0 10px 0;
+}
+
+.form__radio-item {
+	margin: 10px;
+	position: relative;
+	padding-left: 35px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.form__radio-label {
+	margin: auto 10px auto auto;
+}
+
+.form__radio-item .form__radio-input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.form__radio-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #ccc;
+	border-radius: 50%;
+}
+
+.form__radio-item:hover .form__radio-input~.form__radio-box {
+	background-color: #aaa;
+}
+
+.form__radio-item .form__radio-input:checked~.form__radio-box {
+	background-color: #DD6552;
+}
+
+.form__radio-box:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.form__radio-item .form__radio-input:checked~.form__radio-box:after {
+	display: block;
+}
+
+.form__radio-item .form__radio-box:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/* 
+---------------------------------------------
+08. js buttons
+--------------------------------------------- 
+*/
+
+.floating-button {
+	position: fixed;
+	z-index: 1041;
+	width: 40px;
+	height: 40px;
+	background: #323232;
+	text-indent: 0;
+	color: #e8e8e8;
+	font-size: 32px;
+	line-height: 26px;
+	text-align: center;
+}
+
+#back-top {
+	right: 20px;
+	bottom: 0;
+	padding: 4px 0 0;
+	border-radius: 5px 5px 0 0;
+	display: inline;
+}
+
+#toggle-theme {
+	right: 20px;
+	top: 25px;
+	padding: 7px 0 0;
+	border-radius: 5px;
+}
+
+/* 
+---------------------------------------------
+09. scrollbar
+--------------------------------------------- 
+*/
+::-webkit-scrollbar {
+	background-color: #202324;
+	color: #aba499;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #454a4d;
+}
+
+/* 
+---------------------------------------------
+10. light theme
+--------------------------------------------- 
+*/
+.html--light-theme {
+	color: black;
+}
+
+.body--light-theme {
+	background-color: #F0F0F0;
+}
+
+.container--light-theme {
+	background-color: white;
+}
+
+.sidenav--light-theme .sidenav__link:not(:first-child),
+.sidenav--light-theme .sidenav__dropdown {
+	background-color: white;
+	color: black;
+}
+
+.sidenav--light-theme .sidenav__link:hover,
+.sidenav--light-theme .sidenav__dropdown:hover,
+.sidenav--light-theme .sidenav__header {
+	color: white;
+}
+
+.sidenav--light-theme .sidenav__link:hover {
+	background-color: #6E7173;
+}
+
+.sidenav--light-theme .sidenav__dropdown:hover {
+	background-color: #999;
+}
+
+.form--light-theme,
+.form__results--light-theme {
+	background: #F0F0F0;
+}
+
+.footer--light-theme {
+	border-top: 1px solid black;
+}
+
+.form__results--win {
+	background: #04AA6D;
+	border: none;
+}
+
+.form__results--lose {
+	background: #b43030;
+	border: none;
+}
+
+.form__results--draw {
+	background: #cebf38;
+	border: none;
+}
+
+/* 
+---------------------------------------------
+11. responsive
+--------------------------------------------- 
+*/
+@media screen and (max-width: 1149px) {
+	.container {
+		max-width: 90%;
+		float: none;
+		margin: 0 auto 30px;
+	}
+
+	.sidenav {
+		width: 100%;
+		float: none;
+		height: auto;
+		position: relative;
+	}
+
+	.sidenav__dropdown {
+		float: left;
+	}
+}
+
+@media screen and (max-width: 630px) {
+	.form__item {
+		width: 91%;
+	}
+
+	.form__columns>.form__item {
+		width: 97%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.sidenav__dropdown {
+		float: none;
+	}
+
+	.sidenav__link {
+		text-align: center;
+		float: none;
+	}
+
+	body {
+		padding: 0;
+	}
+
+	footer {
+		padding: 25px;
+	}
+
+	.container {
+		width: auto;
+	}
+}
