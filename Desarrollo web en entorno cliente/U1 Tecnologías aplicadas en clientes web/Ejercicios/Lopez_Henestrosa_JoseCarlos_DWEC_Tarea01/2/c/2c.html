@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='es'>
+
+<head>
+    <title>Unidad 1 | Ejercicio 1: 2c</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Apuntes" content="Unidad 1 | Ejercicios">
+    <link rel="icon" type="image/icon" href="../../img/favicon/favicon.ico">
+    <link rel="stylesheet" href="../../css/main.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script src="../../js/main.min.js"></script>
+    <script src="./2c.js"></script>
+</head>
+
+<body>
+    <aside id="sidenav"></aside>
+    
+    <div id="main" class="main">
+        <div class="header">
+            <h1>Introduce las medidas del triángulo</h1>
+        </div>
+
+        <form id="form" action="#" method="post">
+            <div class="form__columns header--margin">
+                <input class="form__item" type="number" id="hypotenuse" placeholder="Hipotenusa*" min="1" step="0.01"
+                    onkeyup="validateNumber(this)" required>
+                <input class="form__item" type="number" id="leg1" placeholder="Cateto 1*" min="1" step="0.01"
+                    onkeyup="validateNumber(this)" required>
+                <input class="form__item" type="number" id="leg2" placeholder="Cateto 2*" min="1" step="0.01" 
+                    onkeyup="validateNumber(this)" required>
+            </div>
+            <button class="form__btn form__btn--submit" type="reset" onclick="evaluateTriangle()">Calcular</button>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+    <div id="floating-buttons"></div>
+</body>
+
+</html>

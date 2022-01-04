@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='es'>
+
+<head>
+    <title>Unidad 1 | Ejercicio 1</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Apuntes" content="Unidad 1 | Ejercicios">
+    <link rel="icon" type="image/icon" href="../img/favicon/favicon.ico">
+    <link rel="stylesheet" href="../css/main.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.min.js"></script>
+</head>
+
+<body>
+    <aside id="sidenav"></aside>
+
+    <div id="main" class="main">
+        <div class="header">
+            <h1>Primera parte</h1>
+        </div>
+        <div id="a">
+            <h2 class="header--margin">a) Instalación de 3 navegadores web</h2>
+            <figure class="wide-margin-bottom">
+                <img src="./img/a/chrome.png" alt="Chrome" onclick="window.open(this.src)">
+                <figcaption>Chrome</figcaption>
+            </figure>
+            <figure class="wide-margin-bottom">
+                <img src="./img/a/firefox.png" alt="Firefox" onclick="window.open(this.src)">
+                <figcaption>Mozilla Firefox</figcaption>
+            </figure>
+            <figure class="wide-margin-bottom">
+                <img src="./img/a/safari.jpg" alt="Safari" onclick="window.open(this.src)">
+                <figcaption>Safari</figcaption>
+            </figure>
+        </div>
+
+        <div id="b">
+            <h2 class="header--margin">b) ¿Por qué es conveniente tener instalados al menos dos navegadores diferentes
+                en tu ordenador? Indica el nombre del motor HTML y JavaScript de los navegadores que has instalado.</h2>
+            <p>Es conveniente porque nos facilita la tarea de dividir nuestras tareas entre navegadores. Por ejemplo, se
+                podría usar Firefox para el trabajo y Chrome para uso personal. No obstante, hoy en día los navegadores
+                modernos incluyen opción de perfil que permiten dividir nuestro uso dentro del mismo navegador. A nivel
+                de
+                rendimiento y herramientas, casi todos ofrecen las mismas prestaciones.</p>
+
+            <p>Los motores HTML y JavaScript de los navegadores instalados son los siguientes:</p>
+            <ul>
+                <li><strong>Chrome</strong>: Actualmente Blink, pero empezó usando Webkit.</li>
+                <li><strong>Mozilla Firefox</strong>: Gecko (desarrollado por Mozilla)</li>
+                <li><strong>Safari</strong>: WebKit (desarrollado por Apple).</li>
+            </ul>
+        </div>
+
+        <div id="c">
+            <h2 class="header--margin">c) Entre en el hijo específico que se ha abierto en el foro y haz un comentario
+                sobre si ha hecho bien Microsoft con su Edge Chromium abandonando su motor y usando de Google.
+                Realiza una captura de tu intervención y añádela al documento.</h2>
+            <img src="./img/b/post.png" alt="Post" onclick="window.open(this.src)">
+        </div>
+
+        <div id="d">
+            <h2 class="header--margin">d) Entre en el hilo específico que se ha abierto en el foro y haz un comentario
+                sobre navegadores independientes. Realiza una captura de tu intervención y añádela al documento.</h2>
+            <img src="./img/d/post.png" alt="Post" onclick="window.open(this.src)">
+        </div>
+
+        <div id="e">
+            <h2 class="header--margin">e) Elige un editor para JavaScript e instálalo. En los materiales hay ejemplos de
+                editores JavaScript. No te olvides de realizar una comparación entre los que pienses instalar.</h2>
+            <p>He elegido Visual Studio Code puesto que la gran variedad de plugins disponibles ayudan bastante a la
+                hora de programar. Además, es un entorno de desarrollo con el que estoy bastante familiarizado y es el
+                que considero mejor tras mi experiencia programando. Otros que he usado son editores de texto como
+                Brackets, Sublime y Notepad++ que, pese a ser más livianos, no consiguen tener la versatilidad y
+                las prestaciones que Visual Studio Code.</p>
+        </div>
+
+        <div id="f">
+            <h2 class="header--margin">f) Para finalizar, usando la dirección de validación del W3C indicada en los
+                apuntes, realiza la validación de la página del Corte Inglés https://www.elcorteingles.es.
+                Indica la solución solamente a 3 problemas distintos.</h2>
+            <figure class="wide-margin-bottom">
+                <img src="./img/e/snippet1.png" alt="Snippet 1" onclick="window.open(this.src)">
+                <figcaption>En este caso, bastaría con añadir el atributo <code>alt</code> a la etiqueta
+                    <code>&lt;img&gt;</code>.
+                    Ejemplo: <code>&lt;img src="url" alt="Descripción de imagen" /&gt;</code></figcaption>
+            </figure>
+            <figure class="wide-margin-bottom">
+                <img src="./img/e/snippet2.png" alt="Snippet 2" onclick="window.open(this.src)">
+                <figcaption>Se solucionaría añadiendo espacio entre los atributos:
+                    <code>…type="radio" aria-label="Tod…</code></figcaption>
+            </figure>
+            <figure>
+                <img src="./img/e/snippet3.png" alt="Snippet 3" onclick="window.open(this.src)">
+                <figcaption>Se debería de usar un ID único por elemento, sin que se repita en todo el documento HTML.
+                    Por ejemplo,
+                    se podría usar <code>id="all_catalogue_shirts"</code></figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <div id="floating-buttons"></div>
+</body>
+
+</html>

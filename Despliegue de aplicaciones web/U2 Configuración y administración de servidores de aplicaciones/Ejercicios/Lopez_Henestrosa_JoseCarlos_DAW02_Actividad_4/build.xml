@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Calculadora" default="distribuir" basedir=".">
+	<property name="origen" location="origen"/>
+	<property name="compilado" location="compilado"/>
+	<property name="distribucion" location="distribucion"/>
+
+	<!-- 'depends' hace que, al ejecutar el comando 'run' se ejecute 'compile' primero -->
+	<target name="iniciar">
+		<!-- Capturamos la fecha -->
+		<tstamp/>
+		<mkdir dir="${compilado}"/>
+	</target>
+	
+	<!-- Transforma los .java en .class -->
+	<target name="compilar" depends="iniciar" description="compila los archivos de 'origen' a 'compilado'">
+		<javac srcdir="${origen}" destdir="${compilado}" />
+	</target>
+	
+	<target name="distribuir" depends="compilar" description="generamos la carpeta 'distribucion'">
+		<!-- Creamos el directorio de distribución -->
+		<mkdir dir="${dist}/lib"/>
+
+    		<!-- Comprimimos todo el contenido del directorio 'compilado' en un .jar y usamos la fecha capturada en el target 'init' -->
+		<jar jarfile="${dist}/lib/daw_josecarlos_lopezhenestrosa-${DSTAMP}.jar" basedir="${build}"/>
+	</target>
+	
+	<target name="limpiar" description="borra los directorios 'compilado' y 'distribucion'">
+		<delete dir="${compilado}"/>
+		<delete dir="${distribucion}"/>
+	</target>
+</project>
