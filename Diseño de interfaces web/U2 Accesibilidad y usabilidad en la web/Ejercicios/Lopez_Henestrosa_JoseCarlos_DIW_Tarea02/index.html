@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='es'>
+
+<head>
+	<title>DIW Unidad 2: Tarea</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Tarea de la unidad 02">
+	<meta name="author" content="José Carlos López Henestrosa">
+	<link rel="stylesheet" href="./css/styles.min.css" />
+	<link rel="icon" type="image/icon" href="./img/favicon/favicon.ico">
+	<!-- Icon pack -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<!-- jQuery -->
+	<script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar bg--red">
+		<div class="navbar__container container">
+			<div class="navbar__container">
+				<h1 class="navbar__brand d--flex text--white align-items--center">
+					<img src="./img/common/brand.png" height="46" class="me--3" alt="logo">
+					<a href="index.html" class="text--unstyled">El Tini</a>
+				</h1>
+			</div>
+			<div class="navbar__content container">
+					<ul class="navbar__items">
+						<li class="navbar__item" id="navbar__item--nosotros">
+							<a class="text--unstyled" target="_blank" rel="noopener noreferrer" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
+								<span class="bi-person me--2"></span>
+								<span class="partially-visible">Nosotros</span>
+							</a>
+						</li>
+						<li class="navbar__item" id="navbar__item--platos">
+							<a class="text--unstyled" target="_blank" rel="noopener noreferrer" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
+								<span class="bi-book me--2"></span>
+								<span class="partially-visible">Platos</span>						
+							</a>
+						</li>
+						<li class="navbar__item" id="navbar__item--promociones">
+							<a class="text--unstyled" target="_blank" rel="noopener noreferrer" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
+								<span class="bi-percent me--2"></span>
+								<span class="partially-visible">Promociones</span>
+							</a>
+						</li>
+						<li class="navbar__item dropdown" id="navbar__item--especial">
+							<a class="text--unstyled">
+								<span class="bi-snow me--2"></span>
+								<span class="partially-visible">Especial Navidad</span>
+							</a>
+							<div class="dropdown__content">
+								<a class="dropdown__item" id="dropdown__item--menus" href="menusNavidad.html">Menús</a>
+								<a class="dropdown__item" id="dropdown__item--horarios" target="_blank" rel="noopener noreferrer" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">Horarios</a>
+							</div>
+						</li>
+						<li class="navbar__item" id="navbar__item--reservas">
+							<a class="text--unstyled" target="_blank" rel="noopener noreferrer" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
+								<span class="bi-telephone me--2"></span>
+								<span class="partially-visible">Reservas</span>
+							</a>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<main>
+			<section id="promotions">
+				<header>
+					<h1 class="text--muted text--center">Nuestras <span class="text--red">promociones</span></h1>
+				</header>
+				<div class="row space-around mt--5">
+					<div class="card w--40">
+						<img class="card__img" src="./img/promotions/promotion-1.jpg" alt="promoción">
+						<div class="card__container text--center">
+							<h3 class="card__title">Menú especial Samurai</h3>
+							<p class="card__body text--muted" title="Promoción válida desde el 16/12/2021 al 31/12/2021">6.99€</p>
+							<a class="btn btn--promotion text--center mt--2" href="./promociones.html">Más detalles</a>
+						</div>
+					</div>
+
+					<div class="card w--40">
+						<img class="card__img" src="./img/promotions/promotion-2.jpg" alt="promoción">
+						<div class="card__container text--center">
+							<h3 class="card__title">Menú doble de pescado y extra queso</h3>
+							<p class="card__body text--muted" title="Desde el 01/12/2021 al 31/12/2021">9.99€</p>
+							<a class="btn btn--promotion text--center mt--2" href="./promociones.html">Más detalles</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="dishes">
+				<header>
+					<h1 class="text--muted mt--5">Nuestros platos</h1>
+				</header>
+				<div id="visible">
+					<div class="row row-cols--1 row-cols--md-4 gutter mt--3">
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/index/dishes/3-floors.png" alt="3 Floors">
+								<div class="card__container text--center">
+									<h4 class="card__title">3 Floors</h4>
+									<p class="card__body text--muted">9.99€</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/index/dishes/cheeseburguer.png"
+									alt="Cheeseburguer">
+								<div class="card__container text--center">
+									<h4 class="card__title">Cheeseburguer</h4>
+									<p class="card__body text--muted">6.99€</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/index/dishes/classic.png" alt="Classic">
+								<div class="card__container text--center">
+									<h4 class="card__title">Classic</h4>
+									<p class="card__body text--muted">4.99€</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card">
+								<img class="card__img card__img--dish" src="./img/index/dishes/cheese-bacon.png" alt="Cheese Bacon">
+								<div class="card__container text--center">
+									<h4 class="card__title">Cheese Bacon</h4>
+									<p class="card__body text--muted">5.99€</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="partially-visible">
+						<div class="row row-cols--1 row-cols--md-4 gutter mt--3">
+							<div class="col">
+								<div class="card">
+									<img class="card__img card__img--dish" src="./img/index/dishes/long-chicken.png"
+										alt="Long Chicken">
+									<div class="card__container text--center">
+										<h4 class="card__title">Long Chicken</h4>
+										<p class="card__body text--muted">3.99€</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="card">
+									<img class="card__img card__img--dish" src="./img/index/dishes/long-vegetal.png"
+										alt="Long Vegetal">
+									<div class="card__container text--center">
+										<h4 class="card__title">Long Vegetal</h4>
+										<p class="card__body text--muted">3.99€</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="card">
+									<img class="card__img card__img--dish" src="./img/index/dishes/steakhouse.png" alt="Steakhouse">
+									<div class="card__container text--center">
+										<h4 class="card__title">Steakhouse</h4>
+										<p class="card__body text--muted">5.99€</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="card">
+									<img class="card__img card__img--dish" src="./img/index/dishes/wrap.png" alt="Wrap">
+									<div class="card__container text--center">
+										<h4 class="card__title">Wrap</h4>
+										<p class="card__body text--muted">4.99€</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="info">
+				<header>
+					<h1 class="text--muted mt--5">Sobre nosotros</h1>
+				</header>
+				<div id="info--location">
+					<h3 class="fs--lg mt--4">¡Visítanos!</h3>
+					<div class="info__container mt--3">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3181.938788149021!2d-4.352193684420896!3d37.10657455809245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd727c49154867f1%3A0x49dc863303dd1d71!2sRestaurante%20Asador%20Las%20Vi%C3%B1as!5e0!3m2!1sen!2ses!4v1638552755534!5m2!1sen!2ses"
+							class="map info__img" allowfullscreen="" loading="lazy"></iframe>
+						<div class="info__body">
+							<h1 class="info__title fs--lg text--center text--uppercase">Horario</h1>
+							<ul class="list--unstyled" id="schedule">
+								<li><strong>Lunes</strong>: 09:00 - 23:00</li>
+								<li><strong>Martes</strong>: Cerrado</li>
+								<li><strong>Miércoles</strong>: 09:00 - 23:00</li>
+								<li><strong>Jueves</strong>: 09:00 - 23:00</li>
+								<li><strong>Viernes</strong>: 09:00 - 23:00</li>
+								<li><strong>Sábado</strong>: 09:00 - 23:00</li>
+								<li><strong>Domingo</strong>: 09:00 - 23:00</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="info--events">
+					<h3 class="fs--lg mt--5">Eventos</h3>
+					<div class="info__container mt--3">
+						<img class="info__img" src="img/index/info-events.jpg" alt="Escenario">
+						<div class="info__body text--center">
+							<h1 class="info__title fs--lg text--uppercase">Sábado 25 de diciembre a las 21:00</h1>
+							<p class="fs--lg">
+								Especial de Nochebuena con música en directo a manos de la banda local
+								<em>Desesperaos</em>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="mt--5 mb--4 text--muted text--center">
+			<hr>
+			<p class="mb--3 mt--3">&copy; José Carlos López Henestrosa</p>
+			<ul class="list--inline">
+				<li class="list--inline__item"><i class="bi bi-facebook"></i></li>
+				<li class="list--inline__item"><i class="bi bi-twitter"></i></li>
+				<li class="list--inline__item"><i class="bi bi-instagram"></i></li>
+			</ul>
+		</footer>
+	</div>
+
+	<script src="./js/script.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+Ejercicios a realizar:
+
+1° Disfrutar de la Navidad.
+
+
+Venga, Nacho, quiero hacer algo de chill estas navidades
+
+1° Haz el tutorial completo de OOP en PHP.
+2° Dominar Heroku.
+3° Aprender funciones hash y hacer el ejercicio 1 de Tarea 3.
+4° Aprender Composer.
+5° Dominar Bootstrap 5 u otro framework CSS.
+

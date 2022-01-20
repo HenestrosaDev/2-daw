@@ -6,16 +6,16 @@ export class Jugador extends Participante {
 	_isDateWithinRange = (from, to, date) => {
 		date = new Date(date);
 		/*
-		Creamos la variable c para evitar que un valor que esté en mitad del día 
-		final del rango sea excluido. Por ejemplo, si la fecha final es el 2 de 
-		enero, nos aseguramos de que el 2 de enero a las 17:49 sea  incluido ya
-		que JavaScript, por defecto, introduce la hora como las 00:00.
-		*/
+		 * Creamos la variable c para evitar que un valor que esté en mitad del día 
+		 * final del rango sea excluido. Por ejemplo, si la fecha final es el 2 de 
+		 * enero, nos aseguramos de que el 2 de enero a las 17:49 sea  incluido ya
+		 * que JavaScript, por defecto, introduce la hora como las 00:00.
+		 */
 		const c = new Date(to.getTime());
 		/* 
-		Añadimos un día al día final del rango (siguiendo con el ejemplo de 
-		arriba, el 2 de enero a las 00:00 pasa a ser el 3 de enero a las 00:00)
-		*/
+		 * Añadimos un día al día final del rango (siguiendo con el ejemplo de 
+		 * arriba, el 2 de enero a las 00:00 pasa a ser el 3 de enero a las 00:00)
+		 */
 		c.setDate(c.getDate() + 1);
 		return date >= from && date < c; 	// excluimos del rango al día final 
 	}

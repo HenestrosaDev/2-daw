@@ -108,7 +108,6 @@ export class Campeonato {
 		this._descripcion = descripcion;
 	}
 
-	// TODO: not sure if this works
 	anadirParticipantes(participante) {
 		let index = -1;
 		

@@ -1,0 +1,4 @@
+Calificación	10,00 / 10,00
+Calificado el domingo, 26 de diciembre de 2021, 18:18 por López Quintero, Manuel Ignacio
+Comentarios de retroalimentación: 
+Modelo: 2 Sesiones: 2 Usuario: 2 Admin: 2 Diseño: 2 Nota: 10 Comentario: La pizzería no está completa, pero las otras dos aplicaciones están perfectas y permite compensar para alcanzar el 10. Excelentísimo trabajo, por pedir sigue mejorando los principios de una aplicación web, en este caso diseño gráfico. Va las dos aplicaciones en Heroku. Con este esfuerzo tendrás éxito profesional, te lo aseguro. Por favor, sigue así.

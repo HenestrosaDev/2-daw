@@ -3,9 +3,9 @@
 import { Arbitro, Campeonato, Equipo, Jugador } from "./index.js";
 
 /*
-Dejo comentadas las invocaciones a los métodos toString() de los 
-jugadores para evitar grandes bloques de texto en el HTML.
-*/
+ * Dejo comentadas las invocaciones a los métodos toString() de los 
+ * jugadores para evitar grandes bloques de texto en el HTML.
+ */
 const fillTeam = (team, players) => {
 	players.forEach(player => {
 		//player.toString();
@@ -16,7 +16,7 @@ const fillTeam = (team, players) => {
 const emptyTeam = (team, players) => {
 	players.forEach(player => {
 		//player.toString();
-		team.eliminarJugador(player);
+		team.eliminarJugador(player.nombre);
 	});
 }
 

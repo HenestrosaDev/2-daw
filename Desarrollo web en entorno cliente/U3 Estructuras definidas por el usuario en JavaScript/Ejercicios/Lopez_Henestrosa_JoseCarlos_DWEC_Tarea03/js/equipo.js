@@ -109,11 +109,11 @@ export class Equipo {
 		return this._aJugadores;
 	}
 	/* 
-	No creamos setter para aJugadores con el fin de 
-	evitar mutaciones no controladas de la propiedad,
-	ya que solo introducimos jugadores mediante 
-	altaJugador()
-	*/
+	 * No creamos setter para aJugadores con el fin de 
+	 * evitar mutaciones no controladas de la propiedad,
+	 * ya que solo introducimos jugadores mediante 
+	 * altaJugador()
+	 */
 
 	get escudo() {
 		return this._escudo;
@@ -136,10 +136,10 @@ export class Equipo {
 		return true;
 	}
 
-	// TODO: Lo he preguntado por el foro
-	eliminarJugador(jugador) {
-		if (this._aJugadores.includes(jugador)) {
-			this._aJugadores = this._aJugadores.filter(item => item !== jugador);
+	eliminarJugador(nombreJugador) {
+		if (this._aJugadores.filter(jugador => jugador.nombre === nombreJugador).length > 0) {
+			console.log(nombreJugador);
+			this._aJugadores = this._aJugadores.filter(jugador => jugador.nombre !== nombreJugador);
 			return true;
 		}
 		return false;

@@ -1,0 +1,13 @@
+9,30 / 10,00
+Calificado el lunes, 27 de diciembre de 2021, 14:30 por	Cejudo Morillo, Rafael Roberto
+Comentarios de retroalimentación:
+
+Gran tarea José Carlos! 
+
+Tu tarea está casi perfecta, solo te han faltado algunos pequeños detalles que puedes ver en la rúbrica.
+
+Enhorabuena!
+
+--------------------------------------------
+COMENTARIO MÍO:
+Los errores no son ni siquiera errores, el profesor no se dio cuenta de cómo había implementado el periodo de duración de las promociones al hacer hover sobre el precio. 

@@ -1,0 +1,19 @@
+9,00 / 10,00
+Calificado el martes, 16 de noviembre de 2021, 16:33 por Muñoz Carmona, Francisco Javier
+Comentarios de retroalimentación:
+Buenas, buena práctica!!
+
+Saludos,
+
+Javier
+
+-------------------------
+Comentarios en la rúbrica: 
+
+Ejercicio 1:
+Enumera y explica cada una de las tecnologías asociadas a la parte servidor (0.25/0.5)
+Enumera y explica cada una de las tecnologías asociadas a la parte cliente (0.25/0.5)
+
+Ejercicio 6:
+Suficiente 0.5puntos / 1puntos
+Tienes que poner Ips y diferenciar claramente virtualhost de nombre y de IP
