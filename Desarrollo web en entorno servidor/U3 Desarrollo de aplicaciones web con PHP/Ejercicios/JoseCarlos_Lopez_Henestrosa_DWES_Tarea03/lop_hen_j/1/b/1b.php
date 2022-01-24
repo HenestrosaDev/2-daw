@@ -10,7 +10,7 @@ $text_to_show = auth_digest();
 <html lang="es">
 
 <head>
-	<title>Unidad 2 | Ejercicio 1: Inicio</title>
+	<title>Unidad 2 | Ejercicio 1b: HTTP Digest</title>
 	<?php include "{$relative}/common/head.php"; ?>
 </head>
 

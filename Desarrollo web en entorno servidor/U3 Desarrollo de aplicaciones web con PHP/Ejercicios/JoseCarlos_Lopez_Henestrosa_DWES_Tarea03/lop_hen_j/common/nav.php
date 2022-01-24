@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-2">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="<?= $relative . "/index.php" ?>">Unidad 2 | Ejercicios</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,76 +36,23 @@
 					</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav">
-
-				<?php if (!empty($showCart)) { ?>
+			<?php if (!empty($showCart)) { ?>
+				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
-						<button class="btn btn-secondary dropdown-toggle" id="cart" data-bs-toggle="dropdown" type="button" aria-expanded="false"> <span class="bi-cart"></span> 7 - Items</button>
-						<ul class="dropdown-menu dropdown-menu-end dropdown-cart" aria-labelledby="cart">
-							<li>
-								<span class="item">
-									<span class="item-left">
-										<img src="http://lorempixel.com/50/50/" alt="" />
-										<span class="item-info">
-											<span>Item name</span>
-											<span>23$</span>
-										</span>
-									</span>
-									<span class="item-right">
-										<button class="btn btn-sm btn-close float-right"></button>
-									</span>
-								</span>
-							</li>
-							<li>
-								<span class="item">
-									<span class="item-left">
-										<img src="http://lorempixel.com/50/50/" alt="" />
-										<span class="item-info">
-											<span>Item name</span>
-											<span>23$</span>
-										</span>
-									</span>
-									<span class="item-right">
-										<button class="btn btn-sm btn-close float-right"></button>
-									</span>
-								</span>
-							</li>
-							<li>
-								<span class="item">
-									<span class="item-left">
-										<img src="http://lorempixel.com/50/50/" alt="" />
-										<span class="item-info">
-											<span>Item name</span>
-											<span>23$</span>
-										</span>
-									</span>
-									<span class="item-right">
-										<button class="btn btn-sm btn-close float-right"></button>
-									</span>
-								</span>
-							</li>
-							<li>
-								<span class="item">
-									<span class="item-left">
-										<img src="http://lorempixel.com/50/50/" alt="" />
-										<span class="item-info">
-											<span>Item name</span>
-											<span>23$</span>
-										</span>
-									</span>
-									<span class="item-right">
-										<button class="btn btn-sm btn-close float-right"></button>
-									</span>
-								</span>
-							</li>
-							<li>
-								<hr class="dropdown-divider">
-							</li>
-							<li><a class="dropdown-item text-center" href="">Confirmar pedido</a></li>
+						<button class="btn btn-secondary dropdown-toggle me-2 position-relative" id="cart" data-bs-toggle="dropdown" type="button" aria-expanded="false">
+							<span class="bi-cart"></span>
+							<span id="cart__number" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+								7
+								<span class="visually-hidden">productos en el carro</span>
+							</span>
+						</button>
+						<ul id="cart__list" class="dropdown-menu dropdown-menu-end dropdown-cart" aria-labelledby="cart">
+							<li><a id="cart__confirm" class="dropdown-item text-center d-none" href="">Confirmar pedido</a></li>
+							<li><a id="cart__empty" class="dropdown-item text-center" href="">La cesta está vacía</a></li>
 						</ul>
 					</li>
-				<?php } ?>
-			</ul>
+				</ul>
+			<?php } ?>
 		</div>
 	</div>
 </nav>

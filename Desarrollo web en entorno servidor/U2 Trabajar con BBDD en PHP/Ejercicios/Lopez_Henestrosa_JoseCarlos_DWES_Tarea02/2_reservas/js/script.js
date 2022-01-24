@@ -4,20 +4,20 @@ var from = $("#booking__from");
 var to = $("#booking__to");
 var unavailableDates;
 
-$(function () {
-	// All the buttons' IDs for booking a car end with '__button'
-	$("[id*='__button']").on("click", e => {
-		fillHiddenInputs(e.currentTarget.id);
-		getAvailability();
-	});
-	from.on("change", () => checkDate(from.val(), to.val()));
-	to.on("change", () => checkDate(from.val(), to.val()));
-	$("#booking__submit").on("click", () => checkFields(from.val(), to.val())); 
+from.on("change", () => checkDate(from.val(), to.val()));
+to.on("change", () => checkDate(from.val(), to.val()));
+
+$("[id*='__button']").on("click", e => {
+	fillHiddenInputs(e.currentTarget.id);
+	getAvailability();
 });
 
+$("#booking__submit").on("click", () => checkFields(from.val(), to.val())); 
+
 const fillHiddenInputs = id => {
-	const carId = id.split("__");
-	$("#booking__car_id").val(carId[0]);
+	const carModel = id.split("__"); 
+	// cardId[0] is 'Audi' (for example) and cardId[1] is 'button' 
+	$("#booking__car_id").val(carModel[0]);
 }
 
 const getAvailability = () => {
@@ -33,7 +33,6 @@ const createDatepicker = (element, unavailableDates) => {
 	if (element.data("datepicker") != null) {
 		element.datepicker("destroy")
 	}
-	console.log(unavailableDates);
 	element.datepicker({
 		dateFormat: "yy-mm-dd",
 		changeMonth: true,
@@ -57,8 +56,8 @@ const createDatepicker = (element, unavailableDates) => {
 const getMinDate = () => {
 	const today = new Date();
 
-	const month = today.getMonth() + 1;
-	const day = today.getDate();
+	let month = today.getMonth() + 1;
+	let day = today.getDate();
 	const year = today.getFullYear();
 	if (month < 10)
 		month = '0' + month.toString();

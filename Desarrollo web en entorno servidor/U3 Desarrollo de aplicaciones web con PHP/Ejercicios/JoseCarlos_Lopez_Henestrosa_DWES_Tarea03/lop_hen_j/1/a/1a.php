@@ -44,7 +44,7 @@ function request_credentials() {
 <html lang="es">
 
 <head>
-	<title>Unidad 2 | Ejercicio 1: Inicio</title>
+	<title>Unidad 2 | Ejercicio 1a: HTTP Basic</title>
 	<?php include "{$relative}/common/head.php"; ?>
 </head>
 
@@ -61,7 +61,7 @@ function request_credentials() {
 		<main>
 			<p class="text-center text-danger"><?= $text_to_show ?></p>
 			<p>La autentificación básica no es segura puesto que las credenciales del usuario se envían sin encriptar, en codificación <strong>base64</strong>. Cualquiera que intercepte la request puede averiguar el usuario y la contraseña.</p>
-			<p>Aún no siendo recomendable, solo debería de usarse bajo el protocolo HTTPS.</p>
+			<p>Aún no siendo recomendable, solo debería de usarse bajo el protocolo HTTPS puesto que toda la transferencia de datos realizada bajo este protocolo es encriptada.</p>
 		</main>
 	</div>
 

@@ -1,0 +1,65 @@
+@media only screen and (max-width: 576px) {
+	.edible-image--sm {
+		width: 156px;
+		height: 156px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.flex--buttons {
+	flex: 1 1 0px;
+}
+
+/* 
+---------------------------------------------
+. Sidenav
+--------------------------------------------- 
+*/
+
+/*
+<div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+	<ul class="nav flex-column w-100">
+		<h3 class="nav-link my-2">Side Nav</h3>
+		<hr>
+		<li href="#" class="nav-link">
+			<span class="mx-2">Home</span>
+		</li>
+		<li href="#" class="nav-link">
+			<span class="mx-2">About</span>
+		</li>
+		<li href="#" class="nav-link">
+			<span class="mx-2">Contact</span>
+		</li>
+	</ul>
+</div>
+*/
+
+.side-navbar {
+	width: 180px;
+	height: 100%;
+	position: fixed;
+	z-index: 1;
+	margin-left: -300px;
+	transition: 0.5s;
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+	background-color: #ffffff26;
+}
+
+.my-container {
+	transition: 0.4s;
+}
+
+.active-nav {
+	margin-left: 0;
+}
+
+#menu-btn {
+	background-color: #100901;
+	color: #fff;
+	margin-left: -62px;
+}
