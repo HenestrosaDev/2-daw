@@ -1,0 +1,12 @@
+.between-lines {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #000;
+	line-height: 0.1em;
+	margin: 3rem 0 2rem;
+}
+
+.between-lines__text {
+	background: #F8F9FA;
+	padding: 0 10px;
+}

@@ -1,0 +1,40 @@
+<!-- Modal ingredientes -->
+<div class="modal fade" id="dought__modal" tabindex="-1" aria-labelledby="dought__title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="dought__title">¿De qué tamaño quieres la masa?</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form>
+				<div class="modal-body">
+					<div class="d-flex justify-content-around">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="dought" id="dought__medium" value="medium" checked>
+							<label class="form-check-label" for="dought__medium">Mediana</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="dought" id="dought__familiar" value="familiar">
+							<label class="form-check-label" for="dought__familiar">Familiar</label>
+						</div>
+					</div>
+					<div id="dought__hidden-inputs">
+						<input type="hidden" id="pizza__id">
+						<input type="hidden" id="pizza__name_for_client">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="fs-5 me-auto">
+						<span>Precio:</span>
+						<strong>
+							<span id="pizza__price"></span>
+							<span>€</span>
+						</strong>
+					</div>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					<button id="dought__submit" type="button" class="btn btn-success">Añadir al carro</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

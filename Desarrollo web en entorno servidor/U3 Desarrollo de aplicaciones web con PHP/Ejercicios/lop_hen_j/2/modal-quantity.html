@@ -1,0 +1,30 @@
+<div class="modal fade" id="buy__modal" tabindex="-1" aria-labelledby="buy__title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="buy__title">¿Cuántos kilos ponemos?</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="input-group justify-content-center">
+					<button type="button" class="btn btn-danger btn--number" disabled data-type="minus" data-field="quantity[1]">
+						<span class="bi-dash"></span>
+					</button>
+					<input id="edible__kg" type="text" step=".1" name="quantity[1]" aria-label="Cantidad de kilogramos"
+						class="form-control text-center" placeholder="Introduce kgs" min="0" max="99">
+					<button type="button" class="btn btn-success btn--number" data-type="plus" data-field="quantity[1]">
+						<span class="bi-plus"></span>
+					</button>
+					<input type="hidden" id="edible__name--client" name="edible_name--client">
+					<input type="hidden" id="edible__name--internal" name="edible_name--internal">
+					<input type="hidden" id="edible__price" name="edible_price">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary flex--buttons" data-bs-dismiss="modal">Cancelar</button>
+				<button id="edible__add" type="submit" name="edible_add" value="edible_add"
+					class="btn btn-primary flex--buttons">Añadir a la cesta</button>
+			</div>
+		</div>
+	</div>
+</div>

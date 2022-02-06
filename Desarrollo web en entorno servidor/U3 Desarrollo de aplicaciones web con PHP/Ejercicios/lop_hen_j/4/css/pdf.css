@@ -1,0 +1,41 @@
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #EEF7E3;
+}
+
+.header {
+	background-color: #38761D;
+	color: white;
+}
+
+.subheader {
+	background-color: #6AA84F;
+}
+
+.field {
+	background-color: #8BC34A;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-bold {
+	font-weight: bold;
+}
