@@ -1,0 +1,14 @@
+Antes de mencionar las decisiones, es importante destacar que el contenido de la web
+ha de ser perceptible, operable, comprensible y robusto para que sea accesible.
+Partiendo de estos puntos, voy a destacar las decisiones principales tomadas para
+dos de sus propiedades:
+
+PERCEPTIBLE
+- Todos los contenidos no textuales presentan alternativas textuales para que
+puedan ajustarse a las necesidades de las personas. Por ejemplo, las imágenes
+usadas presentan el atributo alt en el que se describe la imagen mostrada.
+
+COMPRENSIBLE
+- Todo el contenido textual está presentado con una fuente de letra clara y
+escalable, acorde a los ajustes del tamaño de letra del navegador, gracias al uso
+de las unidades rem.
