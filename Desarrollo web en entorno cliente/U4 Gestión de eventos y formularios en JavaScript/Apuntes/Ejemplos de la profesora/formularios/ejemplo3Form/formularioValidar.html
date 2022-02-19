@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estiloFormulario.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Validacion de formularios</h1>
+
+        <form class="formulario">
+            <div class="form-group row">
+                <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control validar minmax" id="nombre" name="nombre" placeholder="Introduzca el nombre" autofocus>
+                    <span id="errnombre" class="error"></span>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="edad" class="col-sm-2 col-form-label">Edad</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control validar minmax" id="edad" name="edad"  placeholder="Introduzca la edad">
+                    <span id="erredad" class="error"></span>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control validar" name="fecha" id="fecha" placeholder="Introduzca la fecha">
+                    <span id="errfecha" class="error"></span>
+                </div>
+
+            </div>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Género</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="genero" id="genMas" value="masculino">
+                            <label class="form-check-label" for="genMas">
+                                Masculino
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="genero" id="genFem" value="femenino">
+                            <label class="form-check-label" for="genFem">
+                                Femenino
+                            </label>
+                        </div>
+                        <span id="errGenero" class="error"></span>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <label for="provincia" class="col-sm-2 col-form-label">Provincia</label>
+                <div class="col-sm-10">
+                    <label class="mr-sm-2 sr-only" for="provincia">Provincias</label>
+                    <select class="custom-select mr-sm-2 validar" name="provincia" id="provincia" for="provincia">
+                        <option selected value="">Elige...</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Jaén">Jaén</option>
+                    </select>
+                    <span id="errprovincia" class="error"></span>
+                </div>
+                <input type="hidden" id ="g-recaptcha-response">
+            </div>
+            <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+            <button type="reset" class="btn btn-secondary">Cancelar</button>
+        </form>
+    </div>
+    <!-- establecer los script -->
+    <script src="https://www.google.com/recaptcha/api.js?render=pon tu clave de recaptcha"></script>
+       <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+/* 
+---------------------------------------------
+	Modal
+--------------------------------------------- 
+*/
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijado en un punto */
+  z-index: 1; /* Aparece por encima del resto de capas */
+  padding-top: 4rem;  /* 100px */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; /* Habilita el scroll si es necesario */
+  background-color: black; /* Opción alternativa */
+  background-color: rgba(0,0,0,0.4); /* Fondo exterior del modal */
+}
+
+.modal__content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop; /* @-webkit-keyframes */
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop; /* Declarado en @keyframes */
+	animation-duration: 0.4s
+}
+
+.modal__header {
+	padding: 1rem 2rem; /* 2px 16px*/
+	background-color: black;
+	color: white;
+}
+
+.modal__body {
+	padding: 1rem 2rem;
+}
+
+.modal__footer {
+	padding: 1rem 2rem;
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: flex-end !important;
+}
+
+/* The Close Button */
+.modal__close {
+	color: white;
+	float: right;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+	color: gray;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Animación */
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0
+	}
+
+	to {
+		top: 0;
+		opacity: 1
+	}
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0
+	}
+
+	to {
+		top: 0;
+		opacity: 1
+	}
+}
+
+/* 
+---------------------------------------------
+	Tooltip
+--------------------------------------------- 
+ */
+/* Tooltip container */
+.toolitip {
+  position: relative;
+}
+
+/* Tooltip text */
+.toolitip .tooltip__text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.toolitip:hover .tooltip__text {
+  visibility: visible;
+}

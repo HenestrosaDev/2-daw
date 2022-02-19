@@ -1,0 +1,11 @@
+#padre{
+    background-color: blueviolet;
+    width:200px;
+    height: 300px;
+}
+#hijo{
+    background-color: cadetblue;;
+    width:100px;
+    height: 150px;
+    margin-left: 40px;
+    }
