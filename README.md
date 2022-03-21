@@ -39,6 +39,5 @@ Dividido en:
 <ol>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U1%20Introduccion%20a%20la%20anal%C3%ADtica%20web">Introducción a la analítica web</a></li>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U2%20Monetizaci%C3%B3n">Monetización</a></li>
-  <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U3%20Estructuras%20definidas%20por%20el%20usuario%20en%20JavaScript">Estructuras definidas por el usuario en JavaScript</a></li>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U3%20SMO.%20Introduccion%20a%20la%20gesti%C3%B3n%20empresarial%20de%20RRSS">SMO. Introducción a la gestión empresarial de RRSS</a></li>
 </ol>
