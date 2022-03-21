@@ -1,0 +1,6 @@
+- Para borrar todas las tablas de la base de datos creadas a partir de migraciones,
+ejecutamos php artisan migrate:reset 
+- Para volver a crearlas, se ejecuta php artisan migrate
+- Para borrarlas y crearlas en un solo comando, se usa php artisan migrate:refresh.
+- Para saber si se han migrado o no los archivos migrations se ejecuta 
+php artisan migrate:status

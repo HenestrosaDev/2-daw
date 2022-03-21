@@ -1,0 +1,5 @@
+// Si usamos el servicio mailgun, hay que instalar lo siguiente:
+composer require symfony/mailgun-mailer symfony/http-client
+
+// Tras modificar el archivo .env, hay que ejecutar:
+php artisan config:cache 

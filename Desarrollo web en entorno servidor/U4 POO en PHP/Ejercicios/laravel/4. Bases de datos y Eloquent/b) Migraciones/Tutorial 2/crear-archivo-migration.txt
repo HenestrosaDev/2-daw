@@ -1,0 +1,8 @@
+Para crear un archivo migration, se tiene que introducir el siguiente comando: 
+php artisan make:migration create_articulos_table --create="articulos"
+"articulos" es el nombre de la tabla y create_articulos_table es el nombre del
+archivo.
+
+Para deshacer la creación de la última acción realizada con migration, hay que 
+ejecutar: php artisan migrate:rollback
+

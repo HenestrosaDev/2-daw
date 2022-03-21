@@ -1,0 +1,4 @@
+Calificación	10,00 / 10,00
+Calificado el jueves, 24 de febrero de 2022, 23:35 por López Quintero, Manuel Ignacio
+Comentarios de retroalimentación:
+Perfecto, me encanta, la mejor tarea que he recibido de largo, impresionante. Uso de Bootstrap, aplicación correcta de principios, funciona bien, Heroku, es increíble. (Por poner un pego pondría en HTML5 el tipo 'date' para facilitar al usuario). Insisto, enhorabuena, me encanta.

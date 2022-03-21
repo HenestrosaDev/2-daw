@@ -1,0 +1,2 @@
+php artisan make:controller Ejemplo2Controller
+php artisan make:controller --resource Ejemplo3Controller

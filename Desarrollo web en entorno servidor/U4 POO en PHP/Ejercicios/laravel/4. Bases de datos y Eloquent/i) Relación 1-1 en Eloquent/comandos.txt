@@ -1,0 +1,2 @@
+// Este comando creará el modelo junto a su archivo migration correspondiente
+php artisan make:model Cliente --migration

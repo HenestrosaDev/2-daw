@@ -1,0 +1,4 @@
+Son archivos que poblan de registros a una base de datos, sin necesidad de ejecutar código SQL.
+Es importante mencionar que desde Tinker podemos emular lo que hacen los seeders, ya que se
+crean objetos con unos parámetros determinados para hacer operaciones CRUD con ellos. Lo bueno
+es que, con Seeder, se pueden introducir multitud de registros con el comando php artisan db:seed.

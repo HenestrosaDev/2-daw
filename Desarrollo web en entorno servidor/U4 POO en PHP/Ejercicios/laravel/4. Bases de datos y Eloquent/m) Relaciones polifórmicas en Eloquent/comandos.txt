@@ -1,0 +1,5 @@
+php artisan make:model Calificacion -m
+/* Tenemos que editar el nombre de la migración generado por Laravel 
+ya que aparecerán calificacions en vez de calificaciones */
+
+php artisan migrate

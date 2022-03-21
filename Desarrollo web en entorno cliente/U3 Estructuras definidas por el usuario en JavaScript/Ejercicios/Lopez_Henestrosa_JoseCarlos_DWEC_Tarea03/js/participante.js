@@ -1,9 +1,9 @@
-"use strict"
+"use strict";
 
 import { printMessage } from "./index.js";
 
 export class Participante {
-	_filterNombre = nombre => {
+	_filterNombre = (nombre) => {
 		if (typeof nombre !== "string") {
 			const message = "El nombre tiene que ser de tipo 'string'.";
 			printMessage(message);
@@ -14,9 +14,9 @@ export class Participante {
 			throw RangeError(message);
 		}
 		return nombre.toLocaleUpperCase();
-	}
+	};
 
-	_filterProvincia = provincia => {
+	_filterProvincia = (provincia) => {
 		if (!provincia) {
 			const message = "La provincia no puede estar vacía.";
 			printMessage(message);
@@ -26,13 +26,13 @@ export class Participante {
 			printMessage(message);
 			throw TypeError(message);
 		} else if (provincia.length < 5) {
-			provincia += '…';
+			provincia += "…";
 		}
 		return provincia.toLocaleUpperCase();
-	}
+	};
 
 	constructor(nombre, provincia) {
-		this._nombre = this._filterNombre(nombre);;
+		this._nombre = this._filterNombre(nombre);
 		this._provincia = this._filterProvincia(provincia);
 	}
 
@@ -55,8 +55,8 @@ export class Participante {
 		const stringsToShow = [
 			`<p><strong>Nombre participante</strong>: ${this._nombre}</p>`,
 			`<p><strong>Provincia</strong>: ${this._provincia}</p>`,
-			`<hr>`
-		].join('');
+			`<hr>`,
+		].join("");
 		printMessage(stringsToShow, false);
 	}
 }

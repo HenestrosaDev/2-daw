@@ -1,167 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-	<title>Unidad 4 | Inscripción de participantes</title>
+	<head>
+		<title>Unidad 4 | Inscripción de participantes</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Tarea de la unidad 04">
-		<meta name="keywords" content="Forms, CSS, HTML, JavaScript, DWEC">
-		<meta name="author" content="José Carlos López Henestrosa">
-		<link rel="icon" type="image/icon" href="./img/favicon/favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Tarea de la unidad 04" />
+		<meta name="keywords" content="Forms, CSS, HTML, JavaScript, DWEC" />
+		<meta name="author" content="José Carlos López Henestrosa" />
+		<link rel="icon" type="image/icon" href="./img/favicon/favicon.ico" />
 		<link rel="stylesheet" href="./css/bootstrap-5.1.3.min.css" />
 		<link rel="stylesheet" href="./css/modal.css" />
-</head>
+	</head>
 
-<body class="bg-light">
-
-	<!-- Modal -->
-	<div id="confirm__modal" class="modal">
-		<div class="modal__content">
-			<div class="modal__header">
-				<span id="modal__close" class="modal__close">&times;</span>
-				<h2>Confirmación de envío</h2>
-			</div>
-			<div id="modal__body" class="modal__body"></div>
-			<div class="modal__footer">
-				<button id="modal__confirm" class="btn btn-success">Confirmar</button>
-			</div>
-		</div>
-	</div>
-
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="./index.html">Unidad 4 | Inscripciones</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav me-auto mb-2 mb-md-0">
-					<li class="nav-item">
-						<a class="nav-link active" href="./formularioI.html">Participante</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./formularioII.html">Ponencia</a>
-					</li>
-				</ul>
+	<body class="bg-light">
+		<!-- Modal -->
+		<div id="confirm__modal" class="modal">
+			<div class="modal__content">
+				<div class="modal__header">
+					<span id="modal__close" class="modal__close">&times;</span>
+					<h2>Confirmación de envío</h2>
+				</div>
+				<div id="modal__body" class="modal__body"></div>
+				<div class="modal__footer">
+					<button id="modal__confirm" class="btn btn-success">Confirmar</button>
+				</div>
 			</div>
 		</div>
-	</nav>
 
-	<div class="container py-3" style="max-width: 960px;">
-		<header>
-			<div class="p-3 pb-md-4 mx-auto text-center">
-				<h1 class="display-4 fw-normal">Inscripción del participante</h1>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="./index.html">Unidad 4 | Inscripciones</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link active" href="./formularioI.html"
+								>Participante</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./formularioII.html">Ponencia</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</header>
+		</nav>
 
-		<main>
-			<form id="participant__form">
-				<div class="mb-3 form-floating">
-					<input type="text" class="form-control" id="participant__full_name">
-					<label for="participant__full_name">Nombre y apellidos</label>
-					<div id="full_name__feedback" class="invalid-feedback">
-						El nombre y apellidos no pueden estar vacíos.
-					</div>
+		<div class="container py-3" style="max-width: 960px">
+			<header>
+				<div class="p-3 pb-md-4 mx-auto text-center">
+					<h1 class="display-4 fw-normal">Inscripción del participante</h1>
 				</div>
+			</header>
 
-				<div class="mb-3 form-floating">
-					<input type="number" class="form-control" id="participant__birth_year">
-					<label for="participant__birth_year">Año de nacimiento</label>
-					<div id="birth_year__feedback" class="invalid-feedback">
-						El año tiene que estar comprendido entre 1957 y 2003 (ambos incluidos).
-					</div>
-				</div>
-				
-				<div class="mb-3 form-floating">
-					<input type="text" class="form-control" id="participant__username">
-					<label for="participant__username">Nombre de usuario</label>
-					<div id="username__feedback" class="invalid-feedback">
-						<p>El nombre de usuario debe:</p>
-						<ul>
-							<li id="username__start">Empezar con una consonante mayúscula.</li>
-							<li id="username__lowercase">El resto de letras tienen que ser minúsculas, incluida la ñ, vocales acentuadas, números y la barra _</li>
-							<li id="username__length">Estar comprendido entre 5 y 15 caracteres (ambos incluidos).</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="mb-3 form-floating">
-					<input type="password" class="form-control" id="participant__password">
-					<label for="participant__password">Contraseña</label>
-					<div id="password__feedback" class="invalid-feedback">
-						<p>La contraseña debe contener, al menos:</p>
-						<ul>
-							<li id="password__even_number">Un número par.</li>
-							<li id="password__special_char">Un carácter $&@#</li>
-							<li id="password__uppercase">Un carácter en mayúsculas.</li>
-							<li id="password__length">Estar comprendida entre 8 y 20 caracteres (ambos incluidos).</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="mb-3 form-floating">
-					<input type="password" class="form-control" id="participant__rep_password">
-					<label for="participant__rep_password">Repita contraseña</label>
-					<div id="rep_password__feedback" class="invalid-feedback">
-						Las contraseñas no coinciden.
-					</div>
-				</div>
-
-				<div>
-					<h3 class="mb-3">Tipo de jornada</h3>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="participant__cibersecurity">
-						<label class="form-check-label" for="participant__cibersecurity">
-							Ciberseguridad
-						</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="participant__videogames">
-						<label class="form-check-label" for="participant__videogames">
-							Videojuegos
-						</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="participant__web">
-						<label class="form-check-label" for="participant__web">
-							Desarrollo web
-						</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="participant__big_data">
-						<label class="form-check-label" for="participant__big_data">
-							Big Data
-						</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="participant__multiplatform">
-						<label class="form-check-label" for="participant__multiplatform">
-							Desarrollo Multiplataforma
-						</label>
+			<main>
+				<form id="participant__form">
+					<div class="mb-3 form-floating">
+						<input
+							type="text"
+							class="form-control"
+							id="participant__full_name"
+						/>
+						<label for="participant__full_name">Nombre y apellidos</label>
+						<div id="full_name__feedback" class="invalid-feedback">
+							El nombre y apellidos no pueden estar vacíos.
+						</div>
 					</div>
 
-					<div id="checkbox__feedback" class="is-invalid text-danger mt-2">
-						Solo puedes seleccionar entre 1 o 3 opciones (ambos incluidos).
+					<div class="mb-3 form-floating">
+						<input
+							type="number"
+							class="form-control"
+							id="participant__birth_year"
+						/>
+						<label for="participant__birth_year">Año de nacimiento</label>
+						<div id="birth_year__feedback" class="invalid-feedback">
+							El año tiene que estar comprendido entre 1957 y 2003 (ambos
+							incluidos).
+						</div>
 					</div>
-				</div>
 
-				<hr class="my-4">
+					<div class="mb-3 form-floating">
+						<input
+							type="text"
+							class="form-control"
+							id="participant__username"
+						/>
+						<label for="participant__username">Nombre de usuario</label>
+						<div id="username__feedback" class="invalid-feedback">
+							<p>El nombre de usuario debe:</p>
+							<ul>
+								<li id="username__start">
+									Empezar con una consonante mayúscula.
+								</li>
+								<li id="username__lowercase">
+									El resto de letras tienen que ser minúsculas, incluida la ñ,
+									vocales acentuadas, números y la barra _
+								</li>
+								<li id="username__length">
+									Estar comprendido entre 5 y 15 caracteres (ambos incluidos).
+								</li>
+							</ul>
+						</div>
+					</div>
 
-				<div class="mt-4 text-center">
-					<button id="participant__reset" class="btn btn-secondary" type="reset">Restablecer</button>
-					<button id="participant__submit" class="btn btn-primary" type="submit">Enviar</button>
-				</div>
-				<div id="form__feedback" class="mt-2 d-none text-danger text-center">
-					<p>Hay campos incorrectos, por lo que el formulario no puede ser enviado.</p>
-				</div>
-			</form>
-		</main>
-	</div>
+					<div class="mb-3 form-floating">
+						<input
+							type="password"
+							class="form-control"
+							id="participant__password"
+						/>
+						<label for="participant__password">Contraseña</label>
+						<div id="password__feedback" class="invalid-feedback">
+							<p>La contraseña debe contener, al menos:</p>
+							<ul>
+								<li id="password__even_number">Un número par.</li>
+								<li id="password__special_char">Un carácter $&@#</li>
+								<li id="password__uppercase">Un carácter en mayúsculas.</li>
+								<li id="password__length">
+									Estar comprendida entre 8 y 20 caracteres (ambos incluidos).
+								</li>
+							</ul>
+						</div>
+					</div>
 
-	<script src="./js/formularioI.js"></script>
+					<div class="mb-3 form-floating">
+						<input
+							type="password"
+							class="form-control"
+							id="participant__rep_password"
+						/>
+						<label for="participant__rep_password">Repita contraseña</label>
+						<div id="rep_password__feedback" class="invalid-feedback">
+							Las contraseñas no coinciden.
+						</div>
+					</div>
 
-</body>
+					<div>
+						<h3 class="mb-3">Tipo de jornada</h3>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="participant__cibersecurity"
+							/>
+							<label class="form-check-label" for="participant__cibersecurity">
+								Ciberseguridad
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="participant__videogames"
+							/>
+							<label class="form-check-label" for="participant__videogames">
+								Videojuegos
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="participant__web"
+							/>
+							<label class="form-check-label" for="participant__web">
+								Desarrollo web
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="participant__big_data"
+							/>
+							<label class="form-check-label" for="participant__big_data">
+								Big Data
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="participant__multiplatform"
+							/>
+							<label class="form-check-label" for="participant__multiplatform">
+								Desarrollo Multiplataforma
+							</label>
+						</div>
 
+						<div id="checkbox__feedback" class="is-invalid text-danger mt-2">
+							Solo puedes seleccionar entre 1 o 3 opciones (ambos incluidos).
+						</div>
+					</div>
+
+					<hr class="my-4" />
+
+					<div class="mt-4 text-center">
+						<button
+							id="participant__reset"
+							class="btn btn-secondary"
+							type="reset"
+						>
+							Restablecer
+						</button>
+						<button
+							id="participant__submit"
+							class="btn btn-primary"
+							type="submit"
+						>
+							Enviar
+						</button>
+					</div>
+					<div id="form__feedback" class="mt-2 d-none text-danger text-center">
+						<p>
+							Hay campos incorrectos, por lo que el formulario no puede ser
+							enviado.
+						</p>
+					</div>
+				</form>
+			</main>
+		</div>
+
+		<script src="./js/formularioI.js"></script>
+	</body>
 </html>

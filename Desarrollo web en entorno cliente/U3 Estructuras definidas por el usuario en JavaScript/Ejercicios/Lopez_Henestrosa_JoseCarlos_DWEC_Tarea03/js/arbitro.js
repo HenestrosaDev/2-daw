@@ -1,11 +1,12 @@
-"use strict"
+"use strict";
 
 import { printMessage, Participante } from "./index.js";
 
 export class Arbitro extends Participante {
-	_checkAnioFederado = function(anioFederado) {
+	_checkAnioFederado = function (anioFederado) {
 		if (!anioFederado || typeof anioFederado !== "number") {
-			const message = "El año de federación tiene que ser de tipo 'number'. No puede estar vacío.";
+			const message =
+				"El año de federación tiene que ser de tipo 'number'. No puede estar vacío.";
 			printMessage(message);
 			throw TypeError(message);
 		} else if (anioFederado > 2021) {
@@ -13,7 +14,7 @@ export class Arbitro extends Participante {
 			printMessage(message);
 			throw RangeError(message);
 		}
-	}
+	};
 
 	constructor(nombre, provincia, anioFederado) {
 		super(nombre, provincia);
@@ -34,8 +35,8 @@ export class Arbitro extends Participante {
 			`<p><strong>Nombre árbitro</strong>: ${this._nombre}</p>`,
 			`<p><strong>Provincia</strong>: ${this._provincia}</p>`,
 			`<p><strong>Federado desde el año</strong>: ${this._anioFederado}</p>`,
-			`<hr>`
+			`<hr>`,
 		];
-		printMessage(stringsToShow.join(''), false);
+		printMessage(stringsToShow.join(""), false);
 	}
 }
