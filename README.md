@@ -30,7 +30,6 @@ Dividido en:
 <ol>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Dise%C3%B1o%20de%20interfaces%20web/U1%20Planificaci%C3%B3n%20interfaces%20gr%C3%A1ficas">Planificación, interfaces gráficas</a></li>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Dise%C3%B1o%20de%20interfaces%20web/U2%20Accesibilidad%20y%20usabilidad%20en%20la%20web">Accesibilidad y usabilidad en la web</a></li>
-  <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U3%20Estructuras%20definidas%20por%20el%20usuario%20en%20JavaScript">Estructuras definidas por el usuario en JavaScript</a></li>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Dise%C3%B1o%20de%20interfaces%20web/U3%20Hojas%20de%20estilos">Hojas de estilos</a></li>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Dise%C3%B1o%20de%20interfaces%20web/U4%20Contenidos%20multimedia%20en%20la%20web%20im%C3%A1genes%2C%20audio%20y%20v%C3%ADdeo">Contenidos multimedia en la web, imágenes, audio y vídeo</a></li>
 </ol>
