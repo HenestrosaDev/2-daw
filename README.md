@@ -3,7 +3,7 @@ Repositorio con todos los ejercicios, apuntes y materiales que voy recopilando y
 
 Dividido en:
 
-Desarrollo aplicaciones web en entorno cliente
+- Desarrollo aplicaciones web en entorno cliente
 <ol>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U1%20Tecnolog%C3%ADas%20aplicadas%20en%20clientes%20web">Tecnologías aplicadas en clientes web</a></li>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U2%20Objetos%20nativos%20de%20JavaScript">Objetos nativos de JavaScript</a></li>
