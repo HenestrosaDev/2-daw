@@ -2,6 +2,7 @@
 Repositorio con todos los ejercicios, apuntes y materiales que voy recopilando y haciendo durante el curso 2021/22. Grado superior realizado en el IES Trassierra (Córdoba).
 
 Dividido en:
+
 Desarrollo aplicaciones web en entorno cliente
 <ol>
   <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U1%20Tecnolog%C3%ADas%20aplicadas%20en%20clientes%20web">Tecnologías aplicadas en clientes web</a></li>
