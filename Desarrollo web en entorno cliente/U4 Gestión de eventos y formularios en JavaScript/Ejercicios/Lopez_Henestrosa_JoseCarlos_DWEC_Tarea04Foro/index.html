@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.item {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.button {
+				max-width: 40%
+			}
+		</style>
+	</head>
+	<body>
+		<main class="container">
+			<div class="item">
+				<input type="radio" name="color" id="normal" value="#FFF" required />
+				<label for="normal">Página normal</label>
+			</div>
+			<div class="item">
+				<input type="radio" name="color" id="chillona" value="#F00" required />
+				<label for="chillona">Página chillona</label>
+			</div>
+			<div class="item">
+				<input type="radio" name="color" id="hacker" value="#0F0" required />
+				<label for="hacker">Página hacker</label>
+			</div>
+			<div class="item">
+				<input type="radio" name="color" id="delicada" value="#999" />
+				<label for="delicada">Página delicada</label>
+			</div>
+			<button class="button" id="button" type="button">Fijar color</button>
+		</main>
+		<script src="./script.js" async defer></script>
+	</body>
+</html>
