@@ -1,2 +1,2 @@
-composer require laravel/ui "^3.0"
+composer require laravel/ui 
 php artisan ui vue --auth
