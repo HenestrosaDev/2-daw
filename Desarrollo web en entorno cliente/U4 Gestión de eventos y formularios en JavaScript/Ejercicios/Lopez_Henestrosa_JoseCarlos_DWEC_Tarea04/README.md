@@ -1,82 +1,91 @@
-øQuÈ te pedimos que hagas?
+# UNIDAD 4: Gesti√≥n de eventos y formularios en JavaScript
+## <p align="center">¬øQu√© te pedimos que hagas?</p>
 
-Jornadas TrassInform·tica  2022.
-Vamos a realizar dos p·ginas web, colgadas desde una p·gina Ìndice que contendr· los siguientes enlaces. 
+## Jornadas TrassInform√°tica  2022.
+Vamos a realizar dos p√°ginas web, colgadas desde un √≠ndice que contendr√° los siguientes enlaces:
 
-1. SecciÛn de inscripciÛn del participante.
-2. SecciÛn de inscripciÛn de ponencias.
+- Secci√≥n de inscripci√≥n del participante.
+- Secci√≥n de inscripci√≥n de ponencias.
 
+Cada una de las secciones tendr√° una sola p√°gina y un archivo JavaScript, siguiendo las siguientes instrucciones:
 
-Cada una de las secciones tendr· una sola p·gina y un archivo JavaScript.  Las veremos a continuaciÛn en detalle:
+**1. Secci√≥n de inscripci√≥n del participante. (7 puntos)**
 
-	1. SecciÛn de inscripciÛn del participante. (7 puntos)
+En este ejercicio, la validaci√≥n de formularios se har√° mediante JavaScript y no mediante HTML5. Esta secci√≥n debe disponer de los siguientes campos obligatorios:
 
-	Este ejercicio la validaciÛn de formularios se har· mediante javascript y no mediante HTML5. Esta secciÛn debe disponer de los siguientes campos obligatorios:
+- **Nombre y apellidos**. Cuando pierda el foco, los caracteres se convertir√°n en may√∫sculas. 
+- **A√±o de nacimiento**: Estar√° comprendido entre  1957 y 2003. Validar mediante expresi√≥n regular.
+- **Usuario**: Validar mediante expresi√≥n regular:
+	+ M√≠nimo 5 y m√°ximo 15 caracteres.
+	+ letras, incluida la *√±*, vocales acentuadas, n√∫meros y la barra _
+	+ El primer car√°cter ser√° una consonante en may√∫scula. El resto de caracteres en min√∫sculas.
 
-	∑ Nombre y apellidos. El nombre del participante. Cuando pierda el foco, los caracteres se convertir·n en may˙sculas. 
-	∑ AÒo Nacimiento: AÒo de nacimiento del participante. El aÒo estar· comprendido entre  1957 y 2003. Validar mediante expresiÛn regular.
-	∑ Usuario:  nombre de usuario. Validar mediante expresiÛn regular:
-		∑ MÌnimo 5 y m·ximo 15 caracteres 
-		∑ letras, incluida la Ò, vocales acentuadas, n˙meros y la barra _
-		∑ El primer car·cter ser· una consonante en may˙scula. El resto de caracteres en min˙sculas.
+- **Password**.
+	+ Debe tener al menos un n√∫mero par.
+	+ Debe tener al menos un car√°cter $&@#
+	+ Debe tener al menos un car√°cter alfab√©tico en may√∫scula.
+	+ No puede contener la palabra *pass*.
+	+ Al menos 8 caracteres y 20 m√°ximo.
 
-	∑ Password.
-		∑ Debe tener al menos 1 n˙mero par.
-		∑ Debe tener al menos un car·cter $&@#
-		∑ Debe tener al menos un car·cter alfabÈtico en may˙scula.
-		∑ No puede contener la palabra pass
-		∑ Al menos 8 caracteres y 20 m·ximo
+- **Repita password**. Debe coincidir con la password escrita. Seg√∫n vaya escribiendo la password, el contenido estar√° en color rojo y cuando sean iguales el texto estar√° en verde.
 
-	∑ Repita Password. Debe coincidir con la password escrita. Seg˙n vaya escribiendo la password, el contenido estar· en color rojo y cuando sean iguales el texto estar· en verde.
+- **Tipo de jornada**: checkbox. Como m√≠nimo, elegir√° una opci√≥n y, como m√°ximo, tres. Tendr√° las siguientes opciones:
+	+ Ciberseguridad
+	+ Videojuegos
+	+ Desarrollo Web
+	+ Big Data.
+	+ Desarrollo Multiplataforma
 
-	∑ Tipo de Jornada: checkbox. Como mÌnimo elegir· 1 opciÛn y como m·ximo 3.  Tendr· las siguientes opciones:
-		∑ Ciberseguridad
-		∑ Videojuegos
-		∑ Desarrollo Web
-		∑ Big Data.
-		∑ Desarrollo Multiplataforma
+- Una etiqueta antes de cada campo a rellenar. 
 
-	∑ Una etiqueta antes de cada campo a rellenar. 
+- Un span despu√©s de cada campo a rellenar o seleccionar para mostrar el posible error.
 
-	∑ Un span despuÈs de cada campo a rellenar o seleccionar para mostrar el posible error.
+- Bot√≥n **Reestablecer**. Borra todos los contenidos.
 
-	∑ BotÛn Reestablecer. Borra todos los contenidos.
+- Bot√≥n **Enviar**.
+	+ Al pulsar este bot√≥n se comprobar√° que todos los datos son requeridos y que los datos son correctos seg√∫n lo establecido en las expresiones regulares y en las especificaciones del ejercicio.
+	+ El aviso de datos incorrectos se realizar√°n en el span correspondiente al dato y se cambiar√° el fondo de la caja de texto al color amarillo. 
+	+ Si todos los datos son correctos, mostrarlos en una ventana modal y pedir confirmaci√≥n de env√≠o. 
 
-	∑ BotÛn Enviar.
-		∑ Al pulsar este botÛn se comprobar· que todos los datos son requeridos y que los datos son correctos seg˙n lo establecido en las expresiones regulares y en las especificaciones del ejercicio.
-		∑ El aviso de datos incorrectos se realizar·n en el span correspondiente al dato y se cambiar· el fondo de la caja de texto al color amarillo. 
-		∑ Si todos los datos son correctos, mostrarlos en una ventana modal y pedir confirmaciÛn de envÌo. 
+**2. Secci√≥n de inscripci√≥n de ponencias (3 puntos)**
 
-	
-	2. SecciÛn de inscripciÛn de ponencias (3 puntos)
+La validaci√≥n de formularios se har√° seg√∫n las especificaciones de HTML5. Se van a crear los tipos de ponencias en las cuales pueden participar los participantes
 
-	La validaciÛn de formularios se har· seg˙n las especificaciones de HTML5. Se van a crear los tipos de ponencias en las cuales pueden participar los participantes
+- **T√≠tulo**. Son caracteres alfab√©ticos, num√©ricos, espacios y signos de puntuaci√≥n.  La longitud ser√° de 5 a 50. Obligatorio. Cuando la p√°gina se cargue, tendr√° el foco.
+- **Descripci√≥n**. Permitir√° varias l√≠neas. M√°ximo 500 caracteres. No obligatorio.
+- **Ponente**.  Son caracteres alfab√©ticos may√∫sculas y min√∫sculas, vocales acentuadas, *√±* y espacios. La longitud va de 10 a 45. Obligatorio.
+- **Categor√≠a**. Un Select que indicar la categor√≠a. Obligatorio.
+	+ Ciberseguridad.
+	+ Videojuegos.
+	+ Desarrollo Web.
+	+ Big Data
+	+ Desarrollo Multiplataforma
+- **Aforo**. M√≠nimo 50 plazas y m√°ximo 200. 
+- Bot√≥n **Enviar**. Este bot√≥n lo que hace es mostrar los datos del formulario abajo en una capa `div`. 
+- Bot√≥n **Borrar**. Borra todos los contenidos.
 
-	∑ TÌtulo. Son caracteres alfabÈticos, numÈricos, espacios y signos de puntuaciÛn.  La longitud ser· de 5 a 50. Obligatorio. Cuando la p·gina se cargue tendr· el foco.
-	∑ DescripciÛn. Permitir· varias lÌneas. M·ximo 500 caracteres. No obligatorio
-	∑ Ponente.  Son caracteres alfabÈticos may˙sculas y min˙sculas, vocales acentuadas, Ò y espacios. La longitud va de 10 a 45. Obligatorio.
-	∑ CategorÌa. Un Select que indicar la categorÌa. . Obligatorio.
-		∑ Ciberseguridad.
-		∑ Videojuegos.
-		∑ Desarrollo Web.
-		∑ Big Data
-		∑ Desarrollo Multiplataforma
-	∑ Aforo. MÌnimo 50 plazas y m·ximo 200. 
-	∑ BotÛn Enviar. Este botÛn lo que hace es mostrar los datos del formulario abajo, en una capa div. 
-	∑ BotÛn Borrar. Borra todos los contenidos.
+## Notas
 
-Notas:
+- Se comentar√°n las partes de las expresiones regulares utilizadas mediante comentarios.
+- Se proh√≠be el uso de eventos BOM (tipo `onclick="hazalgo()"`). Se utilizar√°n solo los sistemas aprobados por W3C (Modelo de registro avanzado de eventos seg√∫n **W3C**). O sea, con `addEventListener()`. 
+- Se proh√≠be el uso de **jQuery** para la realizaci√≥n de la tarea.
+- Va a hacerte falta el uso `event.preventDefault()` para evitar que se env√≠e la p√°gina y se pueda utilizar lo siguiente.
+	+ Para poder actualizar el contenido de un contenedor o `div` la propiedad que tenemos que modificar para ese objeto es `innerHTML`.
 
-∑ Se comentar·n las partes de las expresiones regulares utilizadas mediante comentarios.
-∑ Se prohÌbe el uso de eventos BOM (tipo onclick="hazalgo()"). Se utilizar·n solo los sistemas aprobados por w3c (Modelo de registro avanzado de eventos seg˙n W3C). O sea, con AddEventListener. 
-∑ Se prohÌbe el uso de jQuery para la realizaciÛn de la tarea.
-∑ Va a hacerte falta el uso event.preventDefault() para evitar que se envÌe la p·gina y se pueda utilizar lo siguiente.
-	- Para poder actualizar el contenido de un contenedor o div la propiedad que tenemos que modificar para ese objeto es ìinnerHTMLî.
-	
-	<div id="resultado>
-      		Al actualizar este contenido se borra.
-	</div>
+```	
+<div id="resultado>
+	Al actualizar este contenido se borra.
+</div>
 
-	<script>
-		document.getElementById("resultado").innerHTML="AquÌ pones el cÛdigo que quieres que aparezca en la capa resultado";
-	</script>
+<script>
+	document.getElementById("resultado").innerHTML="Aqu√≠ pones el c√≥digo que quieres que aparezca en la capa resultado";
+</script>
+```
+
+## Resultado
+
+**Nota**: Resultado con m√°s detalle [aqu√≠](https://drive.google.com/file/d/1hoPBTd27oS0VEX-_ytKgL0o1HiSIvG5z/view?usp=sharing)
+
+**Calificaci√≥n**: 9,50 / 10,00
+
+Calificado el jueves, 6 de marzo de 2022, 11:37 por S√°nchez Rubio, M¬™ Luz

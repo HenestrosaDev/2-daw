@@ -1,1 +1,4 @@
-Realizar un script que permita personalizar los colores de una p·gina web. Dicha configuraciÛn estar· grabada en la parte del cliente. Al pulsar el botÛn, Fijar color, la p·gina se actualizar· autom·ticamente el color y en las prÛximas cargas de p·gina aparecer· con el color guardado en la cookie. TambiÈn los radio se actualizar·n con el color establecido en la configuraciÛn.
+# UNIDAD 4: Gesti√≥n de eventos y formularios en JavaScript
+## <p align="center">Ejercicio del foro</p>
+
+Realizar un script que permita personalizar los colores de una p√°gina web. Dicha configuraci√≥n estar√° grabada en la parte del cliente. Al pulsar el bot√≥n, Fijar color, la p√°gina se actualizar√° autom√°ticamente el color y en las pr√≥ximas cargas de p√°gina aparecer√° con el color guardado en la cookie. Tambi√©n los radio se actualizar√°n con el color establecido en la configuraci√≥n.
