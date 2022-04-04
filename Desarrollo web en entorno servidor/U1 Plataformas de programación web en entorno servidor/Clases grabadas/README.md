@@ -102,7 +102,9 @@ No disponible para descarga
   - Hacer Último ejercicio tarea: - Crea un proyecto en GitHub de una aplicación web tuya y usa Git para subir el código.
 
   Para conocer y estudiar algunos de los puntos podéis consultar el [material complementario](milq.github.io/cursos/dwes/ud/1) así como vídeos y otros recursos que encontréis.
-  <br><br>
+  
+  ---
+
   Consejos para instalar una distribución GNU/Linux:
 
   1. Desde Windows (u OS X) guardar en una carpeta todo aquellos documentos, fotos, vídeos, código, etc. que queráis almacenar.
@@ -112,7 +114,9 @@ No disponible para descarga
     - Para empezar yo recomiendo Ubuntu.
     - Si queréis más estabilidad y libertad yo recomiendo Debian.
   5. El procedimiento básicamente es descargar una ISO (primero de W10/W11 y después de Ubuntu/Debian), quemarlo en un USB con la herramienta Rufus (ponedlo en modo GPT) e instalad primero Windows y después Ubuntu/Debian.
-  <br><br>
+  
+  ---
+
   <p>Instalación de XAMPP en una distribución GNU/Linux</p>
 
   1. Descargar XAMPP desde la web oficial
@@ -121,7 +125,9 @@ No disponible para descarga
   4. XAMPP en GNU/Linux se instala por defecto en /opt/lampp
   5. El directorio para guardar las aplicaciones web es /opt/lampp/htdocs
   6. Se inicia XAMPP con sudo /opt/lampp/xampp start
-  <br><br>
+  
+  ---
+
   <p>Pasos</p>
 
   1. (solo la 1ª vez) `git clone https://github.com/milq/ejemplo_clase_dawd.git`  <--- ESTUDIAR QUÉ HACE git clone
