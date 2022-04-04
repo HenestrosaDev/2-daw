@@ -21,19 +21,19 @@
 
 4. Crea las siguientes aplicaciones web con XHTML, CSS (o Bootstrap) y PHP 8: 
 
-<ol type="a">
-  <li><u>Piedra, papel, tijeras, lagarto o Spock</u>: el usuario elegirá una de esas cinco opciones, recibirá una respuesta al azar y comprobará (<a href="https://milq.github.io/cursos/dwes/ud/1/piedra_papel_tijeras_lagarto_spock.png">reglas</a>) si ha ganado, perdido o empatado contra la máquina.</li>
-	<li><u>Informe de salud personal</u>: el usuario introducirá su sexo, edad, altura y peso y al pulsar en <strong>Calcular</strong> se validarán los datos y se generará un informe de salud con el <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal">IMC</a> y el metabolismo basal según la <a href="https://es.wikipedia.org/wiki/Metabolismo_basal#C%C3%A1lculo_de_calor%C3%ADas_necesarias">fórmula de la OMS</a>.</li>
-</ol>
+	<ol type="a">
+		<li><u>Piedra, papel, tijeras, lagarto o Spock</u>: el usuario elegirá una de esas cinco opciones, recibirá una respuesta al azar y comprobará (<a href="https://milq.github.io/cursos/dwes/ud/1/piedra_papel_tijeras_lagarto_spock.png">reglas</a>) si ha ganado, perdido o empatado contra la máquina.</li>
+		<li><u>Informe de salud personal</u>: el usuario introducirá su sexo, edad, altura y peso y al pulsar en <strong>Calcular</strong> se validarán los datos y se generará un informe de salud con el <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_masa_corporal">IMC</a> y el metabolismo basal según la <a href="https://es.wikipedia.org/wiki/Metabolismo_basal#C%C3%A1lculo_de_calor%C3%ADas_necesarias">fórmula de la OMS</a>.</li>
+	</ol>
 
 5. Realiza los siguientes ejercicios en un documento XHTML y CSS (o Bootstrap): 
 
-<ol type="a">
-  <li>¿Qué es un <a href="https://en.wikipedia.org/wiki/Version_control">control de versiones</a>? ¿Qué diferencias hay entre uno centralizado y otro <a href="https://en.wikipedia.org/wiki/Distributed_version_control">distribuido</a>?</li>
-	<li>¿Qué es <a href="https://en.wikipedia.org/wiki/Git">Git</a>? ¿Y <a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>? ¿En qué se diferencian y cómo se relacionan entre sí?</li>
-	<li>Hazte una cuenta, si no la tienes, en <a href="https://github.com/">GitHub</a> con un nombre de usuario serio y profesional. </li>
-	<li>Crea un proyecto en GitHub de una aplicación web tuya y usa Git para subir el código.</li>
-</ol>
+	<ol type="a">
+		<li>¿Qué es un <a href="https://en.wikipedia.org/wiki/Version_control">control de versiones</a>? ¿Qué diferencias hay entre uno centralizado y otro <a href="https://en.wikipedia.org/wiki/Distributed_version_control">distribuido</a>?</li>
+		<li>¿Qué es <a href="https://en.wikipedia.org/wiki/Git">Git</a>? ¿Y <a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>? ¿En qué se diferencian y cómo se relacionan entre sí?</li>
+		<li>Hazte una cuenta, si no la tienes, en <a href="https://github.com/">GitHub</a> con un nombre de usuario serio y profesional. </li>
+		<li>Crea un proyecto en GitHub de una aplicación web tuya y usa Git para subir el código.</li>
+	</ol>
 
 ## Material complementario 
 El material complementario se puede encontrar en la [Unidad 1](https://milq.github.io/cursos/dwes/ud/1/) de DWES de la web de Manuel Ignacio López Quintero. 

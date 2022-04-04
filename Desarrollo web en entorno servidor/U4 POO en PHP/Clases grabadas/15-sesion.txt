@@ -1,8 +1,0 @@
-Ejercicios a realizar:
-
-1° Hacer todos los ejercicios de la sesión 13 y 14.
-2° Hacer la Tarea Online 3.
-3° Estudiar de memoria algoritmia, BBDD y sesiones en PHP para el examen a papel y boli.
-4° Repasar la POO y detallar sus conceptos y características principales. Registrar lo realizado para la Tarea 4.
-5° Hacer este tutorial desde aquí hasta aquí de POO; para ello, ejecuta todos sus ejemplos y explícalos. Registra lo realizado para la Tarea 4.
-6° Resolver estos diez ejercicios sobre clases usando POO en PHP. Registra lo realizado para la Tarea 4.
