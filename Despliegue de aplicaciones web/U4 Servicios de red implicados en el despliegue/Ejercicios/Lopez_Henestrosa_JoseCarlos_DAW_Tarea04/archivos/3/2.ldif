@@ -1,0 +1,5 @@
+dn: uid=antonioortiz,ou=empleados,dc=ejemplo,dc=com
+objectClass: inetOrgPerson
+uid: antonioortiz
+cn: Antonio
+sn: Ortiz

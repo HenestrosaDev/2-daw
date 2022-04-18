@@ -1,0 +1,15 @@
+$TTL    604800
+@       IN      SOA     josecarlos.ptec.es. root.ptec.es. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+
+        IN      NS      josecarlos.ptec.es.
+
+121     IN      PTR     josecarlos.ptec.es. 
+122     IN      PTR     ftpexterno.ptec.es.
+123     IN      PTR     uwcorreoweb.ptec.es.
+124     IN      PTR     uw000455.josecarlos.ptec.es.

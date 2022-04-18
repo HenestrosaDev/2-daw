@@ -1,0 +1,9 @@
+options {
+    forwarders {
+        192.168.64.121; // josecarlos
+	192.168.64.122; // ftpexterno
+    };
+    dnssec-validation auto;
+
+    listen-on-v6 { any; };
+};

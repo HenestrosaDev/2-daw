@@ -1,0 +1,11 @@
+$TTL    604800
+@       IN      SOA     josecarlos.ptec.es. root.ptec.es. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+
+        IN      NS     josecarlos.ptec.es.        ; PTR (PoinTeR) Traduce direcciones IP en nombres de dominio. También conocido como 'registro inverso', ya que funciona a la inversa del registro "A".
+121     IN      PTR     josecarlos.ptec.es.

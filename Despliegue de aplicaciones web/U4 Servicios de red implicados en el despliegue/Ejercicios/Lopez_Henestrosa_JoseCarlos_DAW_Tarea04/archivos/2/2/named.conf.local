@@ -1,0 +1,9 @@
+zone "ptec.es" IN {
+  type master;
+  file "/etc/bind/zones/ptec.db";
+}
+
+zone "64.168.192.in-addr.arpa" IN {
+  type master;
+  file "/etc/bind/zones/ptec.rev";
+}

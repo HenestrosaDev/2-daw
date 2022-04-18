@@ -1,0 +1,8 @@
+options {
+    forwarders {
+        192.168.64.121;
+    };
+    dnssec-validation auto;
+
+    listen-on-v6 { any; };
+};

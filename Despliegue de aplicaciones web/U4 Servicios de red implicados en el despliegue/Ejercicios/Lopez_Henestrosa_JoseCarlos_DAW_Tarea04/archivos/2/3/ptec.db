@@ -1,0 +1,17 @@
+$TTL    604800
+@               IN      SOA     josecarlos.ptec.es. root.ptec.es. (
+                                      2         ; Serial
+                                 604800         ; Refresh
+                                  86400         ; Retry
+                                2419200         ; Expire
+                                 604800 )       ; Negative Cache TTL
+
+                IN      NS      josecarlos.ptec.es.  
+                IN      NS      ftpexterno.ptec.es.  
+
+                IN      MX      10 uwcorreoweb.ptec.es.         ; MX asocia un nombre de dominio a una lista de servidores de intercambio de correo para ese dominio. 10 indica la preferencia, en caso de existir varios servidores de correo. A menor número, mayor preferencia.
+
+                IN      A       192.168.64.121
+ftpexterno      IN      A       192.168.64.122
+uwcorreoweb     IN      A       192.168.64.123
+uw000455        IN      A       192.168.64.124

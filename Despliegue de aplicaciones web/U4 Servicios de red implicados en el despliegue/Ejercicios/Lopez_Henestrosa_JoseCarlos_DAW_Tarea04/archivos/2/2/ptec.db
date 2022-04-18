@@ -1,0 +1,15 @@
+$TTL    604800
+; josecarlos.ptec.es. es el nombre del servidor de nombres primario de la zona. Los servidores secundarios que mantienen duplicados los registros DNS de la zona reciben las actualizaciones de la zona desde este servidor primario (MNAME).
+; root.josecarlos.ptec.es. es la dirección de correo electrónico del administrador, que puede ser confusa, porque le falta el signo "@". En un registro SOA, admin.example.com es el equivalente a admin@example.com (RNAME).
+@       IN      SOA     josecarlos.ptec.es. root.ptec.es. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+; NS, A, CNAME, AAAA… son tipos de registros de DNS
+; En la primera columna, se hace referencia al comienzo del dominio.
+; @ es igual al root del dominio (por ejemplo, ptec.es) sin ningún subdominio
+                IN      NS      josecarlos.ptec.es.    ; NS indica a Internet a dónde ir para buscar la dirección IP de un dominio
+                IN      A       192.164.64.121         ; A enlaza una IP con un nombre de dominio.

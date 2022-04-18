@@ -1,0 +1,3 @@
+dn: ou=empleados, dc=ejemplo, dc=com 
+objectClass: organizationalUnit 
+ou: empleados
