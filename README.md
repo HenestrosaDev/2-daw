@@ -42,3 +42,7 @@ Dividido en:
     <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U3%20SMO.%20Introduccion%20a%20la%20gesti%C3%B3n%20empresarial%20de%20RRSS">SMO. Introducción a la gestión empresarial de RRSS</a></li>
     <li><a href="https://github.com/HenestrosaConH/2DAW/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U4%20Introducci%C3%B3n%20al%20SEO%20org%C3%A1nico">Introducción al SEO orgánico</a></li>
   </ol>
+
+---
+
+[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
