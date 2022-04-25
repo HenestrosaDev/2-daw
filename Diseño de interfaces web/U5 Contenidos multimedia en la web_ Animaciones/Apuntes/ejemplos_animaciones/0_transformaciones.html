@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Transformaciones</title>
+  <meta charset="UTF-8">
+    <style type="text/css">
+        /* Objeto normal sin ninguna trasformación */
+        
+        #normal {
+            background: white;
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+            margin: 50px;
+        }
+        /* Objeto al cual se le aplica una traslación en el eje X e Y de 100px*/
+        
+        #traslacion {
+            background: aquamarine;
+            width: 100px;
+            height: 100px;
+            transform: translate(100px, 20px);
+            border: solid 2px black;
+            margin: 50px;
+        }
+        /* Objeto al cual se le aplica una rotación de 45% */
+        
+        #rotado {
+            background: aquamarine;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+            border: solid 2px black;
+            margin: 50px;
+        }
+        /* Objeto al cual se le aplica un escalado de 1,5 en el eje y 3 en el eje x */
+        
+        #escalado {
+            background: aquamarine;
+            width: 100px;
+            height: 100px;
+            margin-left: 300px;
+            transform: scale(3, 1.5);
+            border: solid 2px black;
+        }
+        /* Objeto al cual se le aplica una deformación de 45º en el eje X y 10 grados en el eje Y */
+        
+        #deformacion {
+            background: aquamarine;
+            width: 100px;
+            height: 100px;
+            transform: skew(45deg, 10deg);
+            border: solid 2px black;
+            margin: 50px;
+        }
+        
+        #varios {
+            background: purple;
+            width: 100px;
+            height: 100px;
+            transform: rotate(30deg) scale(2, 0.8) translate(100px, -150px);
+            border: solid 2px black;
+            margin: 50px;
+        }
+
+        *{margin:0px;}
+     
+       body{
+        height:100vh;   
+        display:flex;
+       } 
+
+        #T3D {
+            margin:auto ;
+            /* Definimos la distancia que existe entre el observador y elemento que vamos a transformar*/
+            perspective:590px;
+
+/*            position:fixed;
+            left:400px;
+            top:400px;
+            width:400px;
+            height:400px;*/
+            
+            border:4px solid yellow;
+            /* La transformación del contenedor padre se mantiene en los hijos */
+         /*   transform-style: preserve-3d;
+            
+            /* Definimos el origen del observado, lo dejamos con valores por defecto (50& 50%) en el centro del objeto y desde donde comenzara la transformación*/
+            perspective-origin: center center;
+            
+
+            
+        }
+
+        #T3D1 {
+            transition: all 2s;
+            transform: rotateX(40deg);
+            background-color:linear-gradient(black, red);
+        }
+
+        /*#T3D2 {
+            background: goldenrod;
+            width:100%;
+            height:100%;
+        }*/
+    </style>
+</head>
+
+<body>
+    <!--<div id="normal">
+        <h3>Normal</h3>
+    </div>
+    <div id="traslacion">
+        <h3>Traslacion</h3>
+    </div>
+    <div id="rotado">
+        <h3>Rotado 45º</h3>
+    </div>
+
+    <div id="escalado">
+        <h3>Escalado 3 x1.5</h3>
+    </div>
+
+    <div id="deformacion">
+        <h3>Deformacion 45º,10º</h3>
+    </div>
+
+    <div id="varios">
+        <h3>T. varias</h3>
+    </div>
+     -->
+
+    <div id="T3D">
+        <div id="T3D1">
+            <h3>T. 3D 1</h3>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DIW | Unidad 4</title>
+    <meta name="author" content="José Carlos López Henestrosa" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="grid--container">
+      <nav class="grid--header navbar w--100 text--center">
+        <div class="d--inline align-items--center">
+          <img
+            src="./img/1.jpg"
+            class="me--3"
+            height="75"
+            alt="Foto de José Carlos López Henestrosa"
+          />
+          <h1 class="text--bold">José Carlos López Henestrosa</h1>
+        </div>
+      </nav>
+
+      <main class="grid--main">
+        <section id="ejercicio--2" class="stack mt--2 mb--3 text--center">
+          <header>
+            <h2 class="mb--5 text--bold">Ejercicio 2</h2>
+          </header>
+
+					<div class="stack__container">
+						<label for="stack__img--1">
+							<input type="checkbox" id="stack__img--1" />
+							<img
+								class="stack__img polaroid translated"
+								src="./img/2.jpg"
+								alt="pic"
+							/>
+						</label>
+						<label for="stack__img--2">
+							<input type="checkbox" id="stack__img--2" />
+							<img
+								class="stack__img polaroid rotated--left"
+								src="./img/3.jpg"
+								alt="pic"
+							/>
+						</label>
+						<label for="stack__img--3">
+							<input type="checkbox" id="stack__img--3" />
+							<img
+								class="stack__img polaroid downscaled"
+								src="./img/4.jpg"
+								alt="pic"
+							/>
+						</label>
+						<label for="stack__img--4">
+							<input type="checkbox" id="stack__img--4" />
+							<img
+								class="stack__img polaroid rotated--right"
+								src="./img/1.jpg"
+								alt="pic"
+							/>
+						</label>
+						<label for="stack__img--5">
+							<input type="checkbox" id="stack__img--5" />
+							<img
+								class="stack__img polaroid upscaled"
+								src="./img/5.jpg"
+								alt="pic"
+							/>
+						</label>
+					</div>
+        </section>
+
+        <section id="ejercicio--3" class="mb--4">
+          <header class="text--center">
+            <h2 class="mb--5 text--bold">Ejercicio 3</h2>
+          </header>
+
+          <div class="logo__container">
+            <img class="logo__img" src="./img/6.png" alt="logo" />
+            <h2 class="logo__text text--center">Business</h2>
+          </div>
+        </section>
+
+        <section id="ejercicio--4" class="mt--6 mb--4">
+          <header class="text--center">
+            <h2 class="mb--5 text--bold">Ejercicio 4</h2>
+          </header>
+
+          <div class="potato__container">
+            <img class="potato__img" src="./img/6.png" alt="logo" />
+          </div>
+        </section>
+
+        <section id="ejercicio--5" class="mt--6 mb--4">
+          <header class="text--center">
+            <h2 class="mb--5 text--bold">Ejercicio 5</h2>
+          </header>
+
+          <canvas id="canvas--1" class="canvas" width="400" height="400">
+            Tu navegador no soporta el elemento <strong>canvas</strong>
+          </canvas>
+          <canvas
+            id="canvas--2"
+            class="canvas bg--red mt--3"
+            width="400"
+            height="20"
+          >
+            Tu navegador no soporta el elemento <strong>canvas</strong>
+          </canvas>
+        </section>
+
+        <section id="ejercicio--6" class="mt--6 mb--4">
+          <header class="text--center">
+            <h2 class="mb--5 text--bold">Ejercicio 6</h2>
+          </header>
+
+          <div class="text--center">
+            <svg
+              class="bordered bg--white"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="500"
+              height="800"
+            >
+              <!-- Iconos -->
+              <rect
+                id="car"
+                x="40"
+                y="20"
+                width="20"
+                height="20"
+                fill="chartreuse"
+                stroke="black"
+                stroke-width="4"
+              >
+                <animateMotion
+                  id="animationCar"
+                  begin="animationPerson.end"
+                  path="M0 80 h110 v365 h100 v260 h60"
+                  fill="freeze"
+                  dur="4s"
+                >
+                  <!-- <mpath xlink:href="#path--person" /> -->
+                </animateMotion>
+              </rect>
+
+              <circle
+                id="person"
+                cx="50"
+                cy="65"
+                r="10"
+                fill="Red"
+                stroke="black"
+                stroke-width="4"
+              >
+                <animateMotion
+                  id="animationPerson"
+                  begin="person.click"
+                  repeatCount="0"
+                  path="M265 45 v170 h-280 v180 h245 v250 h40"
+                  dur="8s"
+                >
+                  <!-- <mpath xlink:href="#path--person" /> -->
+                </animateMotion>
+              </circle>
+
+              <!-- Primera fila -->
+              <rect x="70" y="150" width="60" height="75" fill="Blue" />
+              <rect x="190" y="140" width="90" height="100" fill="Blue" />
+              <polygon points="350,140 350,230 480,140 480,230" fill="Blue" />
+              <!-- Segunda fila -->
+              <rect x="70" y="350" width="60" height="75" fill="Blue" />
+              <circle cx="233" cy="365" r="55" fill="Blue" />
+              <rect x="350" y="380" width="70" height="120" fill="Blue" />
+              <!-- Cuadrado izquierdo -->
+              <rect x="85" y="500" width="140" height="140" fill="Blue" />
+              <!-- Cuadrado derecho -->
+              <rect x="320" y="650" width="110" height="110" fill="Blue" />
+
+              <!-- Trayectoria coche -->
+              <path
+                id="path--person"
+                d="M315 110 v170 h-280 v180 h245 v250 h40"
+                style="stroke: red; stroke-width: 5; fill: none"
+                stroke-dasharray="10,2"
+              ></path>
+
+              <!-- Trayectoria automóvil -->
+              <path
+                id="path--car"
+                d="M50 110 h110 v365 h100 v260 h60"
+                style="stroke: chartreuse; stroke-width: 5; fill: none"
+                stroke-dasharray="10,2"
+              ></path>
+
+              <!-- Texto -->
+              <path id="text--path">
+                <animate
+                  attributeName="d"
+                  from="m96,725 h0"
+                  to="m96,725 h500"
+                  dur="3s"
+                  begin="0s"
+                  repeatCount="indefinite"
+                />
+              </path>
+              <text font-size="26" font-family="Montserrat">
+                <textPath xlink:href="#text--path">Málaga</textPath>
+              </text>
+            </svg>
+          </div>
+        </section>
+      </main>
+
+      <footer class="grid--footer">
+        <p class="text--center">
+          Ejercicios realizados por
+          <strong>José Carlos López Henestrosa</strong>. Todos los derechos
+          reservados.
+        </p>
+      </footer>
+    </div>
+    <script src="./script.js" async defer></script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<html><!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Animaciones</title>
+  <meta charset="UTF-8">
+    <style type="text/css">
+        @keyframes ejemplo_simple {
+            from {
+                background: gray;
+                width: 100px;
+                height: 100px;
+                border: solid 2px black;
+                margin: 100px;
+            }
+            to {
+                background-color: olivedrab;
+                width: 200px;
+                height: 200px;
+                transform: rotate(90deg);
+                opacity: 0.5;
+            }
+        }
+        /*Al objeto animacion se le aplicará la animación con nombre ejemplo simple, durará 10 segundos, con un ritmo ease-in-out, habrá 3 iteracciones, */
+        /*comenzando normalmente valor normal, podemos aplicar también el valor reverse y con un retardo de 2 segundos */
+        
+        #animacion {
+            animation-name: ejemplo_simple;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 3;
+            animation-direction: normal;
+            animation-delay: 2s;
+        }
+        
+        @keyframes ejemplo_2_fotogramas {
+            0% {
+                background: gray;
+                width: 100px;
+                height: 100px;
+                border: solid 2px black;
+                margin: 100px;
+            }
+            100% {
+                background-color: olivedrab;
+                width: 200px;
+                height: 200px;
+                transform: rotate(90deg);
+                opacity: 0.5;
+            }
+        }
+        /*Igual que la anterior animación pero he cambiado la propiedad direction a reverse*/
+        
+        #animacion2 {
+            animation-name: ejemplo_2_fotogramas;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 3;
+            animation-direction: reverse;
+            animation-delay: 2s;
+        }
+        /* Animación con diferentes fotogramas clave */
+        
+        @keyframes tamano {
+            55% {
+                transform: scale(2, 2);
+                transform: rotate(90deg);
+            }
+            80% {
+                transform: scale(0.5, 0.5);
+            }
+            100% {
+                transform: scale(1, 1);
+                transform: rotate(-90deg);
+            }
+        }
+        /* Animación con diferentes fotogramas clave, para cada porcentaje de la duraicón de la animación definimos como se comportará nuestro elemento. */
+        
+        @keyframes simulaciona {
+            0% {
+                top: 0px;
+                right: 0px;
+                background-color: white;
+            }
+            15% {
+                top: 100px;
+                right: 50;
+                opacity: 0.6;
+            }
+            55% {
+                top: 200px;
+                right: 175;
+                opacity: 0.1;
+            }
+            75% {
+                top: 250px;
+                right: 125;
+                opacity: 0.6;
+                background: blue;
+            }
+            100% {
+                top: 350px;
+                right: 0;
+                opacity: 0.8;
+                background: red;
+            }
+        }
+        
+        @keyframes simulacionb {
+            0% {
+                top: 0px;
+                right: 0px;
+                opacity: 0;
+            }
+            15% {
+                top: 100px;
+                right: 50;
+                opacity: 0.3;
+                background: aqua;
+            }
+            45% {
+                top: 150px;
+                right: 125;
+                opacity: 0.6;
+                background: aquamarine;
+            }
+            55% {
+                top: 200px;
+                right: 175;
+                opacity: 1;
+                background: green;
+            }
+            75% {
+                top: 250px;
+                right: 125;
+                opacity: 0.6;
+            }
+            100% {
+                top: 350px;
+                right: 0;
+                opacity: 0;
+            }
+        }
+        /* Para este objeto definimos dos animaciones a la vez */
+        
+        .animacion {
+            position: absolute;
+            text-align: center;
+            background: pink;
+            width: 50px;
+            height: 50px;
+            border: solid 2px black;
+            border-radius: 50px;
+        }
+        
+        #animaciona {
+            animation-name: simulaciona, tamano;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        
+        #animacionb {
+            animation-name: simulacionb, tamano;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> Ejemplo de animación con from - to </h2>
+    <div id="animacion">
+        <h3>Animacion</h3>
+    </div>
+
+    <h2> Ejemplo de animación definiendo dos fotogramas clave 0% y 100%</h2>
+    <div id="animacion2">
+        <h3>Animacion</h3>
+    </div>
+
+    <div class="animacion" id="animacionA">
+        <h3>A</h3>
+    </div>
+    <div class="animacion" id="animacionB">
+        <h3>B</h3>
+    </div>
+
+
+
+</body>
+
+</html>

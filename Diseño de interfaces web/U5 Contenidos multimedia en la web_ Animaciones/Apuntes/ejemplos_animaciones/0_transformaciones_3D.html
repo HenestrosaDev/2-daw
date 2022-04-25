@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Transformaciones</title>
+  <meta charset="UTF-8">
+    <style type="text/css">
+        /* Objeto normal sin ninguna trasformación */
+        
+       * {margin:0px;}
+     
+       body{
+            min-height:100vh;   
+            display:flex;
+       } 
+
+          #T3D {
+            margin:auto ;
+            
+            /* Definimos la distancia que existe entre el observador y elemento que vamos a transformar*/
+            perspective:500px;
+            border:4px solid yellow;
+            /* La transformación del contenedor padre se mantiene en los hijos */
+         /*   transform-style: preserve-3d;
+            
+            /* Definimos el origen del observado, lo dejamos con valores por defecto (50& 50%) en el centro del objeto y desde donde comenzara la transformación*/
+            perspective-origin: bottom center;
+            /*transform: rotatex(30deg);*/
+            /* Preesevamos los cambios dentro del objeto contenedor*/
+            transform-style:preserve-3d;
+
+          }
+
+        #T3D1 {      
+            height: 200px;
+            width: 200px;
+            /*transition: all 2s;*/
+
+            border: 3px red solid;
+            /*Ponemos diferentes elementos de transformación*/
+            /*transform: rotatex(25deg);*/
+            /*transform: rotatex(50deg);*/
+            /*transform: rotatex(75deg);*/
+            /*transform: rotatex(30deg);*/
+            /*transform: rotatey(50deg);*/
+            /*transform: rotatez(50deg);*/
+            /*Indicamos que rote 40 grados en el eje x y z */
+            /*transform: rotate3d(1,0,1,50deg);*/
+
+            /* Con translate como sabemos se translada el objeto*/
+            /* Si realizamos una translación  en el eje x, con valores positivos se acerca y con valores negativos se aleja */
+            /* Las translaciones se pueden realizar en los tres ejes */
+
+            /*transform: translatez(400px);*/
+            /*transform: translatez(-100px);*/
+            /*transform: translate3d(-100px,100px,-100px);*/
+
+            /* También se pueden realizar escalados */
+            /*transform: scalex(-3);*/
+            /*transform: scalez(2) rotatex(30deg);*/
+            /*transform: scalez(10) rotatex(30deg);*/
+            /*transform: scalez(-10) rotatex(30deg);*/
+            
+            /*transform: scalez(-10) rotatex(30deg) rotatey(10deg);*/
+            /*transform: scalez(-2) rotatex(-30deg);*/
+
+        }
+
+       
+    /*    @keyframes ejemplo_simple1 {
+            from {
+                background:red;
+                
+            }
+            to {
+                background-color:blue;
+                transform: rotate3d(0,1,0,360deg);
+           
+            }
+        }
+
+
+        @keyframes ejemplo_simple2 {
+            from {
+                background:green;
+                
+            }
+            to {
+                background-color:orange;
+                transform: rotate3d(0,0,1,360deg);
+           
+            }
+        }
+
+
+        
+        @keyframes ejemplo_simple3 {
+            from {
+                background:red;
+                
+            }
+            to {
+                background-color:blue;
+                transform: rotate3d(0,1,0,360deg);
+           
+            }
+        }
+
+*/
+
+      @keyframes ejemplo_simple1 {
+            10% {
+                background:red;
+            }
+            20% {
+                background-color:blue;
+                transform: rotate3d(1,0,0,360deg);
+            }
+            41%{
+                  transform: rotate3d(0,0,0,360deg);
+            }
+            60% {
+                background-color:orange;
+                transform: rotate3d(0,1,0,180deg) translate3d(100px,100px,0px);
+            }
+            70% {
+                background-color:black;
+                transform:translate3d(0px,0px,0px) rotate3d(0,0,0);
+            }
+            75% {
+                background-color:green;
+                transform: rotate3d(0,0,1,360deg);
+            }
+        }
+
+        #T3D1  {
+            animation-name: ejemplo_simple1;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            
+        }
+
+/*        #T3D1  {
+            animation-name: ejemplo_simple2;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-delay: 6s;
+            
+        }
+        #T3D1  {
+            animation-name: ejemplo_simple3;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-delay: 12s;
+            
+        }
+  */    
+
+    </style>
+</head>
+
+<body>
+    <!--<div id="normal">
+        <h3>Normal</h3>
+    </div>
+    <div id="traslacion">
+        <h3>Traslacion</h3>
+    </div>
+    <div id="rotado">
+        <h3>Rotado 45º</h3>
+    </div>
+
+    <div id="escalado">
+        <h3>Escalado 3 x1.5</h3>
+    </div>
+
+    <div id="deformacion">
+        <h3>Deformacion 45º,10º</h3>
+    </div>
+
+    <div id="varios">
+        <h3>T. varias</h3>
+    </div>
+     -->
+
+    <div id="T3D">
+        <div id="T3D1">
+            <h3>T. 3D 1</h3>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

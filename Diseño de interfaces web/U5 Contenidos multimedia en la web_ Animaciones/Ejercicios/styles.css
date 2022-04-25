@@ -1,0 +1,726 @@
+/*
+
+José Carlos López Henestrosa
+
+https://henestrosaconh.com
+
+Convenio de denominación seguido: http://getbem.com/introduction/
+
+*/
+
+/* ---------------------------------------------
+Tabla de contenidos
+------------------------------------------------
+01. variables
+02. reset css
+03. elementos html
+04. clases generales
+05. grid (ejercicio 1)
+06. stack de imágenes (ejercicio 2)
+07. animación logo (ejercicio 3)
+08. animación guía de estilos (ejercicio 4)
+09. canvas (ejercicio 5)
+--------------------------------------------- */
+
+/* 
+---------------------------------------------
+01. variables
+--------------------------------------------- 
+*/
+:root {
+  --primary-color: #2196f3;
+  --secondary-color: rgba(255, 255, 255, 0.8);
+  --muted-color: #6c757d;
+  --danger-color: #e2001a;
+  --border-color: #bfbfbf;
+}
+
+/* 
+---------------------------------------------
+02. reset css
+--------------------------------------------- 
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* 
+---------------------------------------------
+03. elementos html
+--------------------------------------------- 
+*/
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: var(--primary-color);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem !important;
+}
+
+h2 {
+  font-size: 1.75rem !important;
+}
+
+img {
+  vertical-align: middle;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #6c757d;
+  height: 1px;
+}
+
+/* 
+---------------------------------------------
+04. clases generales
+--------------------------------------------- 
+*/
+/* background */
+.bg--red {
+  background-color: var(--danger-color) !important;
+}
+
+.bg--white {
+  background-color: white !important;
+}
+
+/* border */
+.bordered {
+  border: 1px solid var(--border-color);
+}
+
+/* text */
+.text--unstyled {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.text--muted {
+  color: var(--muted-color) !important;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+/* margin */
+.ms--3 {
+  margin-left: 1rem !important;
+}
+
+.me--2 {
+  margin-right: 0.75rem !important;
+}
+
+.me--3 {
+  margin-right: 1rem !important;
+}
+
+.mb--3 {
+  margin-bottom: 1rem !important;
+}
+
+.mb--4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb--5 {
+  margin-bottom: 3rem !important;
+}
+
+.mt--2 {
+  margin-top: 0.75rem !important;
+}
+
+.mt--3 {
+  margin-top: 1rem !important;
+}
+
+.mt--4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt--5 {
+  margin-top: 3rem !important;
+}
+
+.mt--6 {
+  margin-top: 6rem !important;
+}
+
+/* float */
+.float--start {
+  float: left;
+}
+
+.float--end {
+  float: right;
+}
+
+/* display */
+.d--flex {
+  display: flex;
+}
+
+.d--inline {
+  display: inline-flex;
+}
+
+/* position */
+.space-around {
+  justify-content: space-around;
+}
+
+.align-items--center {
+  align-items: center !important;
+}
+
+/* img */
+.img--fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img--zoom-in {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.img--blur {
+  filter: blur(5px);
+}
+
+.img--brightness {
+  filter: brightness(0.4);
+}
+
+.img--zoom-in:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* figure */
+.figure {
+  display: inline-block;
+}
+
+.figure--img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.figure--caption {
+  font-size: 0.875em;
+  color: var(--muted-color);
+}
+
+/* font size */
+.fs--sm {
+  font-size: 0.8rem;
+}
+
+.fs--md {
+  font-size: 1.3rem;
+}
+
+.fs--lg {
+  font-size: 1.75rem;
+}
+
+.fs--xl {
+  font-size: 2.5rem;
+}
+
+/* letter spacing */
+.ls--md {
+  letter-spacing: 8px;
+}
+
+/* width */
+.w--40 {
+  width: 40% !important;
+}
+
+.h--100 {
+  width: 100% !important;
+}
+
+/* list */
+.list--unstyled {
+  list-style-type: none;
+}
+
+.list--inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list--inline__item {
+  display: inline-block;
+}
+
+.list--inline__item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* 
+---------------------------------------------
+05. grid (ejercicio 1)
+--------------------------------------------- 
+*/
+.grid--header {
+  grid-area: header;
+}
+
+.grid--main {
+  grid-area: main;
+}
+
+.grid--footer {
+  grid-area: footer;
+}
+
+.grid--container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+  gap: 0.625rem; /* = 10px */
+  padding: 0.625rem; /* = 10px */
+}
+
+.grid--container > * {
+  background-color: var(--secondary-color);
+  padding: 1.25rem 0; /* = 20px */
+}
+
+/* 
+---------------------------------------------
+06. stack de imágenes (ejercicio 2)
+--------------------------------------------- 
+*/
+.stack__container {
+  position: relative;
+  height: 200px;
+}
+
+.stack__img {
+  cursor: pointer;
+  height: 150px;
+  position: absolute;
+  width: 150px;
+  margin-left: -50px;
+  box-sizing: border-box;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--1"]
+  ~ .stack__img {
+  left: 25%;
+}
+
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--2"]
+  ~ .stack__img {
+  left: 38%;
+}
+
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--3"]
+  ~ .stack__img {
+  left: 47%;
+}
+
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--4"]
+  ~ .stack__img {
+  left: 56%;
+}
+
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--5"]
+  ~ .stack__img {
+  left: 70%;
+}
+
+label[for^="stack__img--"] > input[type="checkbox"][id^="stack__img--"] {
+  display: none;
+}
+
+.polaroid {
+  background-color: white;
+  padding: 10px 10px 50px 10px;
+  border: 1px solid var(--border-color);
+}
+
+.rotated--right {
+  transform: rotate(0.125turn);
+}
+
+.rotated--left {
+  transform: rotate(-0.125turn);
+}
+
+.downscaled {
+  transform: scale(0.5, 0.5);
+}
+
+.upscaled {
+  transform: scale(1.25, 1.25);
+}
+
+.translated {
+  transform: translate(30%, 30%);
+}
+
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--1"]:checked
+  ~ .stack__img,
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--2"]:checked
+  ~ .stack__img,
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--3"]:checked
+  ~ .stack__img,
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--4"]:checked
+  ~ .stack__img,
+label[for^="stack__img--"]
+  > input[type="checkbox"][id^="stack__img--5"]:checked
+  ~ .stack__img {
+  left: calc(50%);
+	transform: scale(1, 1);
+	transform: rotate(0);
+	filter: sepia(60%);
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+
+/* 
+---------------------------------------------
+07. animación logo (ejercicio 3)
+--------------------------------------------- 
+*/
+.logo__container {
+  position: relative;
+  height: 200px;
+  background: url(https://uploads-ssl.webflow.com/5b52d09b45c6a3ac1149f128/5b6e6d93681f893983b4d8d2_Cloud-Border2.png)
+    repeat-x 0; /* hacemos que la imagen se repita cuando acabe para dar la sensación de que el fondo es infinito */
+  background-size: auto 100%;
+  animation-iteration-count: infinite;
+  animation-name: anim--background;
+  animation-duration: 7.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes anim--background {
+  /* la imagen se desplaza de derecha a izquierda por cada iteración de la
+	animación, sin variar su posicionamiento vertical */
+  to {
+    background-position: -100vw 0;
+  }
+}
+
+.logo__img {
+  position: absolute;
+  top: calc(50% - 50px); /* centramos la imagen */
+  left: 0;
+  height: 100px;
+  width: 100px;
+  animation-iteration-count: infinite;
+  animation-name: anim--img;
+  animation-duration: 7.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes anim--img {
+  /* momento en el que se encuentra en el centro */
+  0% {
+    left: 0;
+    /* comienza la animación con un tamaño reducido */
+    transform: scale(0.5, 0.5);
+  }
+
+  /* momento en el que se encuentra en el centro */
+  25% {
+    transform: scale(2, 2); /* momento de tamaño máximo */
+  }
+
+  /* momento en el que se encuentra a la derecha */
+  50% {
+    left: calc(100% - 100px);
+    transform: scale(1, 1); /* de vuelta al tamaño real */
+  }
+
+  /* momento en el que vuelve a la izquierda (al comienzo) */
+  100% {
+    left: 0;
+    transform: scale(0.5, 0.5); /* para dar sensación de bucle infinito */
+  }
+}
+
+.logo__text {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-iteration-count: infinite;
+  animation-name: anim--text;
+  animation-duration: 7.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes anim--text {
+  /* inicio de la animación. Invisible y colocado abajo */
+  0% {
+    bottom: 0;
+  }
+
+  /* momento en el que el logo se encuentra en el centro */
+  25% {
+    opacity: 0;
+    bottom: 50%; /* lo posicionamos en el centro */
+  }
+
+  /* momento en el que el logo está a punto de llegar a la derecha */
+  37% {
+    opacity: 1; /* mostramos el icono */
+    bottom: 100%; /* hacemos que se desplace a la parte superior del contenedor */
+  }
+
+  /* momento en el que el logo llega a la derecha */
+  50% {
+    bottom: 50%; /* volvemos a posicionarlo en el centro */
+    color: chocolate; /* cambiamos el color del texto */
+  }
+
+  /* momento en el que el logo pasa por el centro por segunda vez */
+  75% {
+    bottom: 0; /* lo posicionamos al fondo */
+  }
+
+  /* momento en el logo vuelve a la izquierda (al comienzo) */
+  100% {
+    opacity: 1; /* evitamos que se desvanezca */
+    bottom: 50%; /* hacemos que vaya al centro cuando el usuario */
+  }
+}
+
+/* 
+---------------------------------------------
+08. animación guía de estilos (ejercicio 4)
+--------------------------------------------- 
+*/
+.potato__container {
+  height: 120px;
+  position: relative;
+}
+
+.potato__img {
+  top: calc(50% - 50px); /* centramos la imagen */
+  left: 0;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  animation: correr 7.5s linear infinite;
+}
+
+@keyframes correr {
+  0% {
+    left: 0;
+  }
+  48% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    left: calc(100% - 100px);
+    transform: rotateY(180deg);
+  }
+  98% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    left: 0;
+    transform: rotateY(0deg);
+  }
+}
+
+/* 
+---------------------------------------------
+09. canvas (ejercicio 5)
+--------------------------------------------- 
+*/
+.canvas {
+  border: solid 3px var(--border-color);
+  display: block;
+  margin: 0 auto;
+}

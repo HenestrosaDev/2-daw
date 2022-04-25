@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Transiciones</title>
+  <meta charset="UTF-8">
+    <style type="text/css">
+        #transformacion {
+            background: gray;
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+            margin: 100px;
+        }
+        /* La transición se activa con pseudo-clase :active, es decir al hacer click en el objeto */
+        
+        #transformacion:active {
+            background-color: olivedrab;
+            opacity: 0.5;
+            width: 200px;
+            height: 200px;
+            word-break: break-word;
+            transform: rotate(90deg);
+            /* La transición se aplica sobre todas las propiedades y dura 5 segundos */
+            transition: all, 5s;
+        }
+        
+        .timing {
+            background: gray;
+            margin: 10 px;
+            width: 150px;
+            height: 50px;
+            border: solid 2px black;
+            margin: 10px;
+        }
+        /* En las siguientes transiciones cambiarmos el ritmo o timing */
+        
+        #ease:hover {
+            margin-left: 400px;
+            /* La transición se aplica sobre una propiedad en concreto margin-left, durará 5 segundos con un timing ease.*/
+            transition: margin-left 5s ease;
+            background-color: hotpink;
+        }
+        
+        #ease-in:hover {
+            margin-left: 400px;
+            transition: margin-left 5s ease-in;
+            background-color: hotpink;
+        }
+        
+        #ease-out:hover {
+            margin-left: 400px;
+            transition: margin-left 5s ease-out;
+            background-color: hotpink;
+        }
+        
+        #ease-in-out:hover {
+            margin-left: 400px;
+            transition: margin-left 5s ease-in-out;
+            background-color: hotpink;
+        }
+        
+        #linear:hover {
+            margin-left: 400px;
+            opacity: 0;
+            transition: all 5s linear;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> La transformación se realizará al hacer clic sobre el objeto, pseudo-clase :active </h2>
+    <div id="transformacion">
+        <h4>Transformación - haz click</h4>
+    </div>
+    <h2> La transformaciones se realizarán al posicionar el cursor sobre el objeto, pseudo-clase :hover</h2>
+
+    <div class="timing" id="ease">
+        <h3>ease</h3>
+    </div>
+    <div class="timing" id="ease-in">
+        <h3>ease-in</h3>
+    </div>
+    <div class="timing" id="ease-out">
+        <h3>ease-out</h3>
+    </div>
+    <div class="timing" id="ease-in-out">
+        <h3>linear-in-out</h3>
+    </div>
+    <div class="timing" id="linear">
+        <h3>linear</h3>
+    </div>
+
+
+</body>
+
+</html>
