@@ -1,8 +1,0 @@
-// -m crea el archivo migration del modelo
-php artisan make:model Perfil -m
-
-// Tabla pivot
-php artisan make:migration create_clientes_perfils_table --create=cliente_perfil
-
-// Tras añadir las columnas a los archivos migrate, ejecutamos:
-php artisan migrate

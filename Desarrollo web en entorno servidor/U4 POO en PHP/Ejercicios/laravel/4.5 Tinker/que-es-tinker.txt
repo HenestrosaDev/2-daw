@@ -1,8 +1,0 @@
-Es una consola de pruebas que permite multitud de operaciones. Entre 
-ellas, interactuar con las BBDDs uttilizando Eloquent, hacer operaciones
-CRUD, crear objetos nuevos, comprobar relaciones…
-
-Para su ejecución, hay que introducir el comando php artisan tinker
-
-Para salir de tinker, hay que ejecutar el comando exit;
-

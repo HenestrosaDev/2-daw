@@ -1,1 +1,0 @@
-Las carpetas 'factories' y 'seeders' van dentro del directorio 'database'

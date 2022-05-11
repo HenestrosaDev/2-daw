@@ -19,10 +19,6 @@ class AdminController extends Controller
     {
         $users = User::all();
         return view('admin.users.index', compact('users'));
-        // It can also be made like this:
-        // return View::make('admin.users.index')->with('users'. $users);
-        // return View::make('admin.users.index')->with(compact('users'));
-        // return view('admin.users.index', ['users'=>$users]);;
     }
 
     /**

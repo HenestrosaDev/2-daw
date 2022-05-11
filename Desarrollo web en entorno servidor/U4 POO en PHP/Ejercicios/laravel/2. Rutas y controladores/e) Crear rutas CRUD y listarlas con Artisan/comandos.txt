@@ -1,2 +1,0 @@
-// Muestra la estructura de las páginas de nuestro sitio web (definido, principalmente en el fichero web.php)
-php artisan route:list

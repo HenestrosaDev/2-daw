@@ -1,6 +1,0 @@
-Los archivos presentes en la raíz de este directorio tienen el fin de ser reemplazados
-o añadidos a las rutas indicadas en las carpetas de un proyecto nuevo. 
-
-Dependiendo del software que uses para alojar tu proyecto de Laravel, tendrás que seguir
-una serie de pasos. En mi caso, estoy usando Laragon y bastaría con ir a 
-'Menú > Creación rápida de sitio web' y seleccionar 'Laravel'.

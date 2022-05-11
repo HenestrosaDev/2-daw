@@ -55,7 +55,7 @@ include "./php/get_pizza_types.php";
 		</header>
 
 		<main>
-			<div id="your-choice" class="mb-5">
+			<section id="your-choice" class="mb-5">
 				<h1 class="text-muted">A tu gusto</h1>
 				<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
 					<div class="col">
@@ -69,9 +69,9 @@ include "./php/get_pizza_types.php";
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 
-			<div id="specialities" class="pt-3">
+			<section id="specialities" class="pt-3">
 				<h1 class="text-muted">Especialidades</h1>
 				<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
 
@@ -91,7 +91,7 @@ include "./php/get_pizza_types.php";
 					<?php } ?>
 
 				</div>
-			</div>
+			</section>
 		</main>
 	</div>
 

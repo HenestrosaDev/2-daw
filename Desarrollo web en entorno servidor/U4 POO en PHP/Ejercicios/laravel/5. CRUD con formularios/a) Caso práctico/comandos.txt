@@ -1,9 +1,0 @@
-// Video 34
-php artisan make:migration create_productos_table --create="productos"
-php artisan migrate
-
-// Video 35
-php artisan make:controller --resource ProductosController
-
-// Video 36
-php artisan make:model Producto

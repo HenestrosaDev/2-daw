@@ -1,2 +1,0 @@
-php artisan make:migration add_deleted_to_articulos --table=articulos
-php artisan migrate
