@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Renderizado condicional</title>
+		<meta name="author" content="José Carlos López Henestrosa">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<main class="container">
+			<h1><a href="https://reactjs.org/docs/conditional-rendering.html" target="_blank" rel="noopener">Renderizado condicional</a></h1>
+			<p class="text-muted">Dependiendo del estado de nuestra aplicación, podemos cargar componentes condicionalmente.</p>
+			<p>Vamos a partir de estos dos componentes:</p>
+			<pre>
+				<code>
+function UserGreeting(props) {
+  return &lt;h1&gt;Welcome back!&lt;/h1&gt;;
+}
+
+function GuestGreeting(props) {
+  return &lt;h1&gt;Please sign up.&lt;/h1&gt;;
+}					
+				</code>
+			</pre>
+			<p>Vamos a crear el componente <var>Greeting</var> que, dependiendo de si el usuario está loggeado o no, cargará un componente u otro.</p>
+			<pre>
+				<code>
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return &lt;UserGreeting /&gt;;
+  }
+  return &lt;GuestGreeting /&gt;;
+}					
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(&lt;Greeting isLoggedIn={false} /&gt;);
+				</code>
+			</pre>
+			<p>Establecemos el valor de la prop <var>isLoggedIn</var> como condición.</p>
+			<section id="variables-de-elementos">
+				<h2>Variables de elementos</h2>
+				<p>Los elementos se pueden almacenar en variables, lo cual es útil a la hora de almacenar un elemento que se vaya a renderizar condicionalmente.</p>
+				<p>Vamos a partir de estos dos componentes para ejemplificar lo comentado anteriormente:</p>
+				<pre>
+					<code>
+function LoginButton(props) {
+  return (
+    &lt;button onClick={props.onClick}&gt;
+      Login
+    &lt;/button&gt;
+  );
+}
+
+function LogoutButton(props) {
+  return (
+    &lt;button onClick={props.onClick}&gt;
+      Logout
+    &lt;/button&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>El siguiente componente que creemos tendrá estado y renderizará <var>LoginButton</var> or <var>LogoutButton</var>. También usaremos el componente <var>Greeting</var> del anterior ejemplo.</p>
+				<pre>
+					<code>
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+    if (isLoggedIn) {
+      button = &lt;LogoutButton onClick={this.handleLogoutClick} /&gt;;
+    } else {
+      button = &lt;LoginButton onClick={this.handleLoginClick} /&gt;;
+    }
+
+    return (
+      &lt;div&gt;
+        &lt;Greeting isLoggedIn={isLoggedIn} /&gt;
+        {button}
+      &lt;/div&gt;
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<LoginControl />);
+					</code>
+				</pre>
+				<p>Esta es una de las formas en las que podemos renderizar condicionalmente un componente, pero hay formas más cortas usando la sintaxis de JSX que veremos a continuación.</p>
+			</section>
+			<section id="if-en-una-línea-con-operador-logico%26%26">
+				<h2>If en una línea con operador lógico &&</h2>
+				<p>Las expresiones en JSX van contenidas en llaves. Esto junto al operador lógico <var>&&</var> de JavaScript, nos permite incluir condiciones como estas:</p>
+				<pre>
+					<code>
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello!&lt;/h1&gt;
+      {unreadMessages.length &gt; 0 &&
+        &lt;h2&gt;
+          You have {unreadMessages.length} unread messages.
+        &lt;/h2&gt;
+      }
+    &lt;/div&gt;
+  );
+}
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(&lt;Mailbox unreadMessages={messages} /&gt;);
+					</code>
+				</pre>
+				<p>Aunque pueda parecer un poco extraño, tiene su lógica. En JavaScript, <var>true && [expresión]</var> siempre evalúa a <var>[expresión]</var> mientras que <var>false && [expresión]</var> evalúa a <var>false</var>.</p>
+				<p>En caso de que la evaluación dé <var>false</var> como resultado, se devolverá la expresión <em>falsy</em> devuelta. En este ejemplo, se mostrará <var>0</var> tras evaluar la expresión.</p>
+				<pre>
+					<code>
+render() {
+  const count = 0;
+  return (
+    &lt;div&gt;
+      {count && &lt;h1&gt;Messages: {count}&lt;/h1&gt;}
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+			</section>
+			<section id="if-else-en-una-linea-con-operador-condicional">
+				<h2>If-Else en una línea con operador condicional</h2>
+				<p>Podemos usar el operador ternario de JavaScript para ello. En este ejemplo se usa para renderizar condicionalmente un bloque de texto:</p>
+				<pre>
+					<code>
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    &lt;div&gt;
+      The user is &lt;b&gt;{isLoggedIn ? 'currently' : 'not'}&lt;/b&gt; logged in.
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>También puede usarse para expresiones más grandes, como esta:</p>
+				<pre>
+					<code>
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    &lt;div&gt;
+      {isLoggedIn
+        ? &lt;LogoutButton onClick={this.handleLogoutClick} /&gt;
+        : &lt;LoginButton onClick={this.handleLoginClick} /&gt;
+      }
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Es importante recordar que si las condiciones se vuelven demasiado complejas, quizás sea mejor idea extraer un componente.</p>
+			</section>
+			<section id="evitar-que-un-componente-se-renderice">
+				<h2>Evitar que un componente se renderice</h2>
+				<p>Para ocultar a un componente aún habiendo sido renderizado por otro componente, es necesario que el método <var>render()</var> devuelva <var>null</var>.</p>
+				<p>En este ejemplo, <var>WarningBanner</var> se renderiza dependiendo del valor de la prop <var>warn</var>:</p>
+				<pre>
+					<code>
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+  return (
+    &lt;div className="warning"&gt;
+      Warning!
+    &lt;/div&gt;
+  );
+}
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {showWarning: true};
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+  handleToggleClick() {
+    this.setState(state =&gt; ({
+      showWarning: !state.showWarning
+    }));
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;WarningBanner warn={this.state.showWarning} /&gt;
+        &lt;button onClick={this.handleToggleClick}&gt;
+          {this.state.showWarning ? 'Hide' : 'Show'}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;Page /&gt;,
+  document.getElementById('root')
+);
+					</code>
+				</pre>
+				<p>Es importante tener en cuenta que el devolver <var>null</var> desde el método render de un componente no influye en la activación de los métodos del ciclo de vida del componente.</p>
+			</section>
+		</main>
+		<script>hljs.highlightAll();</script>
+	</body>
+</html>

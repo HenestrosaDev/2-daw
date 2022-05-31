@@ -1,0 +1,2254 @@
+<header>
+	<h1>React</h1>
+</header>
+<main>
+	<h3>Entra en la página oficial de <a href="https://reactjs.org/">React</a> y visualiza <a href="https://www.youtube.com/watch?v=1-2eyS0k-IA" target="_blank" rel="noopener">este vídeo</a>.</h3>
+	<h3>Practica los principales <a href="https://reactjs.org/docs/hello-world.html" target="_blank" rel="noopener">conceptos</a> de React:</h3>
+	<ol>
+
+
+		<li>
+			<h1><a href="https://reactjs.org/docs/hello-world.html" target="_blank" rel="noopener">Hello World</a> <a href="https://es.reactjs.org/docs/hello-world.html" target="_blank" rel="noopener">(español)</a>.</h1>
+			<section>
+				<h2>Introducción</h2>
+				<p>Este es el ejemplo más sencillo que se puede realizar en React, en el cual se crea un nodo (<var>root</var>) al que se le añade otro elemento con el texto <samp>Hello, world!</samp>.</p>
+				<pre>
+					<code>
+	const root = ReactDOM.createRoot(document.getElementById('root'));
+	root.render(&lt;h1&gt;Hello, world!&lt;/h1&gt;);
+					</code>
+				</pre>
+				<p>A lo largo de esta guía, se aprenderán los <strong>conceptos principales</strong> de React. Esta es una introducción que hace ver lo sencillo que es crear elementos y componentes con este framework JavaScript.</p>
+			</section>
+		</li>
+
+
+
+
+		<li>
+			<h1><a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">Presentando JSX</a> <a href="https://es.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">(español)</a></h1>
+			<section id="que-es-jsx">
+				<h2>¿Qué es JSX? ¿Por qué se usa?</h2>
+				<p><abbr title="JavaScript Syntax eXtension">JSX</abbr> se usa en React para definir la estructura de la interfaz gráfica ya que permite renderizar la vista junto con los datos que va a mostrar. El conjunto de ambos conceptos forman un <strong>componente</strong>.</p>
+				<p>Esto es un ejemplo simple de sintaxis JSX:</p>
+				<pre><code>const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</code></pre>
+			</section>
+			<section id="embebiendo-expresiones-en-jsx">
+				<h2>Embebiendo expresiones en JSX</h2>
+				<p>Para cargar datos en un elemento, se introduce una expresión JavaScript entre <code>{}</code>:</p>
+				<pre>
+					<code>
+	const name = 'Josh Perez';
+	const element = &lt;h1&gt;Hello, {name}&lt;/h1&gt;;
+					</code>
+				</pre>
+			</section>
+			<section id="jsx-es-interpretado-como-javascript">
+				<h2>JSX es interpretado como JavaScript</h2>
+				<p>Hay que tener en cuenta que las expresiones JSX, tras ser compiladas por herramientas como <em>Babel</em>, se convierten en funciones JavaScript que se evalúan a objetos JavaScript (la información que le pasamos al elemento entre <code>{}</code>). Es por ello por lo que podemos usar las expresiones JSX como valores de retorno de una función o dentro de estructuras condicionales, como esta:</p>
+				<pre>
+					<code>
+	function getGreeting(user) {
+		if (user) {
+			return &lt;h1&gt;Hello, {formatName(user)}!&lt;/h1&gt;;
+		}
+		return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;
+	}
+					</code>
+				</pre>
+			</section>
+			<section id="especificando-atributos-con-jsx">
+				<h2>Especificando atributos con JSX</h2>
+				<p>De la misma forma que incluimos datos dentro del elemento, podemos embeber expresiones JavaScript en atributos con JSX, como en el siguiente ejemplo:</p>
+				<pre>
+					<code>
+const element = &lt;img src={user.avatarUrl}&gt;;
+					</code>
+				</pre>
+				<p>Como podemos ver, no ponemos comillas entre el valor del atributo cuando embebemos una expresión JavaScript. Si queremos usar un valor de tipo string en lugar de una expresión JavaScript, lo podemos hacer de la misma forma en la que se realiza con HTML:</p>
+				<pre>
+					<code>
+const element = &lt;a href="https://www.reactjs.org"&gt; link &lt;/a&gt;;
+					</code>
+				</pre>
+			</section>
+			<section id="creando-elementos-hijos-en-jsx">
+				<h2>Creando elementos hijos en JSX</h2>
+				<p>Las etiquetas JSX pueden contener hijos tal y como vemos en documentos XML o HTML:</p>
+				<pre>
+					<code>
+const element = (
+  &lt;div&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;h2&gt;Good to see you here.&lt;/h2&gt;
+  &lt;/div&gt;
+);
+					</code>
+					<p>Es importante tener en cuenta que los elementos están comprendidos por paréntesis para evitar inserciones automáticas de <code>;</code> indeseadas.</p>
+				</pre>
+			</section>
+			<section id="evitar-ataques-de-inyeccion">
+				<h2>Evitar ataques de inyección</h2>
+				<p>Para embeber información introducida por un usuario, se hace de la siguiente forma:</p>
+				<pre>
+					<code>
+const title = response.potentiallyMaliciousInput;
+// This is safe:
+const element = &lt;h1&gt;{title}&lt;/h1&gt;;
+					</code>
+				</pre>
+				<p>React DOM escapa cualquier expresión embebida en JSX antes de renderizar el elemento. Esto implica que los valores son convertidos a string antes de ser renderizados y, por tanto, evita los ataques <abbr title="Cross-Site Scripting">XSS</abbr>.</p>
+			</section>
+			<section id="jsx-representa-objetos">
+				<h2>JSX representa objetos</h2>
+				<p>Babel compila el código JSX en llamadas al método <var>createElement()</var> de la clase <var>React</var>. Los dos bloques de código mostrados debajo son interpretados por Babel <strong>de la misma forma</strong>.</p>
+				<pre>
+					<code>
+const element = (
+  &lt;h1 className="greeting"&gt;
+    Hello, world!
+  &lt;/h1&gt;
+);
+					</code>
+				</pre>
+				<pre>
+					<code>
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+					</code>
+				</pre>
+				<p>A su vez, la llamada de <code>React.createElement()</code> genera un objeto como este:</p>
+				<pre>
+					<code>
+// Note: this structure is simplified
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world!'
+  }
+};						
+					</code>
+				</pre>
+				<p>Podríamos interpretar las propiedades del objeto <var>element</var> como descriptores de lo que queremos ver en la pantalla al renderizar al elemento.</p>
+			</section>
+		</li>
+
+
+
+		<li>
+			<h1><a href="https://reactjs.org/docs/rendering-elements.html" target="_blank" rel="noopener">Renderizando elementos</a> <a href="https://es.reactjs.org/docs/rendering-elements.html" target="_blank" rel="noopener">(español)</a></h1>
+			<p>Los <strong>elementos</strong> son los bloques de construcción más pequeños de una aplicación en React. Describen lo que se quiere ver en la pantalla.</p>
+			<pre><code>const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;</code></pre>
+			<p>Es importante destacar que estos elementos <strong>NO</strong> son elementos del DOM, sino objetos JavaScript. React DOM se encarga de actualizar el DOM para que se corresponda con los elementos de React que se quieran renderizar, actualizar o eliminar.</p>	
+			<section id="renderizar-un-elemento-en-el-dom">
+				<h2>Renderizar un elemento en el DOM</h2>
+				<p>Para poder renderizar un elemento, es esencial tener un "punto de referencia" al que vincularle elementos y componentes. En React, esto recibe el nombre de <strong>nodo raíz</strong>.</p>
+				<p>Las aplicaciones realizadas íntegramente en React suelen tener un solo nodo raíz en el DOM, mientras que aplicaciones existentes suelen tener varios nodos raíz.</p>
+				<p>Para indicarle a React DOM cuál va a ser el nodo raíz, hacemos lo siguiente:</p>
+				<pre>
+					<code>
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;
+root.render(element);
+					</code>
+				</pre>
+				<p>En el método <code>ReactDOM.createRoot()</code> pasamos el <var>id</var> del elemento que va a actuar de nodo raíz. Tras ello, creamos un elemento y lo vinculamos al nodo raíz con el método <var>render()</var>, al que le pasamos como parámetro el elemento que queremos mostrar por pantalla.</p>
+			</section>
+			<section>
+				<h2>Actualizando el elemento renderizado</h2>
+				<p>Los elementos en React son <strong>inmutables</strong>, por lo que sus atributos y sus contenidos no pueden ser modificados. Con lo que hemos visto hasta ahora, podemos hacer el siguiente <em>workaround</em>:</p>
+				<pre>
+					<code>
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+
+function tick() {
+  const element = (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, world!&lt;/h1&gt;
+      &lt;h2&gt;It is {new Date().toLocaleTimeString()}.&lt;/h2&gt;
+    &lt;/div&gt;
+  );
+  root.render(element);
+}
+
+setInterval(tick, 1000);
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/gwoJZk?editors=1010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+			</section>
+			<section id="react-solo-actualiza-lo-necesario">
+				<h2>React solo actualiza lo necesario</h2>
+				<p>Si tomamos como referencia el ejemplo del punto anterior, podríamos interpretar que, por cada segundo, se añade un elemento nuevo al nodo raíz. Esto no es así, ya que React DOM se encarga de comparar el <strong>DOM virtual</strong> (el que toma React DOM como referencia) y el DOM de la página renderizada por el navegador. Por ello, cuando se cambia el contenido del texto del elemento <var>h2</var>, ReactDOM detecta que el único cambio del DOM virtual respecto al DOM cargado es el texto y es lo único que actualiza en el DOM cargado, ya que el elemento sigue siendo el mismo.</p>
+			</section>
+		</li>
+
+
+
+		
+
+		<li>
+			<h1>Componentes y propiedades</h1>
+			<p>Los componentes permiten dividir parte de la interfaz gráfica en pieces independientes y reusables.</p>
+			<p>Conceptualmente, los componentes son como funciones: aceptan entradas (propiedades) y React devuelve elementos que describen lo que debe aparecer en pantalla.</p>
+			<section>
+				<h2>Componentes funcionales y de clase</h2>
+				The simplest way to define a component is to write a JavaScript function:
+				<p>Esta es una de las formas más fáciles de definir un componente:</p>
+				<pre>
+					<code>
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+					</code>
+				</pre>
+				<p>Al llamar a la función (la cual es un <strong>componente funcional</strong>) <var>Welcome</var>, pasándole propiedades como parámetros, React devuelve un elemento con las propiedades cargadas.</p>
+				<p>También se pueden crear componentes usando las clases introducidas en ES6:</p>
+				<pre>
+					<code>
+class Welcome extends React.Component {
+  render() {
+    return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+  }
+}
+					</code>
+				</pre>
+				<p>React renderiza ambos componentes de la misma forma, pese a que su sintaxis sea distinta.</p>
+			</section>
+			<section id="renderizando-un-componente">
+				<h2>Renderizando un componente</h2>
+				<p>Se pueden embeber componentes en el interior de un elemento</p>
+				<pre>
+					<code>const element = &lt;Welcome name="Sara" /&gt;;</code>
+				</pre>
+				<p>Para pasar <var>props</var> a un componente React, tendremos que definirlos como si se tratasen atributos de un archivo XML o HTML:</p>
+				<pre>
+					<code>
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = &lt;Welcome name="Sara" /&gt;;
+root.render(element);
+					</code>
+				</pre>
+				<p>El código de arriba mostrará por pantalla el texto <samp>Hello, Sara</samp> pero, para llegar hasta tal punto, se realizan estos pasos previos:</p>
+				<ol>
+					<li>Renderizamos el elemento &lt;Welcome name="Sara"&gt; llamando a <code>root.render()</code></li>
+					<li>React llama al componente <var>Welcome</var> pasándole <code>{name: 'Sara'}</code> como <var>props</var>.</li>
+					<li>El componente <var>Welcome</var>, al procesar el elemento, devuelve <code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code></li>
+					<li>React DOM comprueba el DOM y actualiza el contenido del DOM con el elemento. Hay que tener en cuenta que, si React DOM identifica que el elemento ya existe en el DOM, el DOM no cambiará ya que en él ya existe el elemento.</li>
+				</ol>
+			</section>
+			<section id="composicion-de-componentes">
+				<h2>Composición de componentes</h2>
+				<p>Un componente puede ser usado varias veces. Ejemplos de componentes aplicados a aplicaciones de uso real son botones, diálogos o formularios.</p>
+				<pre>
+					<code>
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Welcome name="Sara" /&gt;
+      &lt;Welcome name="Cahal" /&gt;
+      &lt;Welcome name="Edite" /&gt;
+    &lt;/div/&gt;
+  );
+					</code>
+				</pre>
+				Typically, new React apps have a single App component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like Button and gradually work your way to the top of the view hierarchy.
+				<p>Usualmente, aplicaciones hechas con React tienen un solo componente <var>App</var> que actúa como nodo raíz del DOM al que se le vinculan el resto de elementos. En una aplicación ya existente, lo óptimo es empezar por componentes más pequeños, como un <var>Form</var> e ir refactorizando el código hasta llegar al componente <var>App</var>.</p>
+			</section>
+			<section id="extraccion-de-componentes">
+				<h2>Extracción de componentes</h2>
+				<p>No tengas miedo de dividir componentes en componentes más pequeños.</p>
+				<pre>
+					<code>
+function Comment(props) {
+  return (
+    &lt;div className="Comment"&gt;
+      &lt;div className="UserInfo"&gt;
+        &lt;img className="Avatar"
+          src={props.author.avatarUrl}
+          alt={props.author.name}
+        /&gt;
+        &lt;div className="UserInfo-name"&gt;
+          {props.author.name}
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className="Comment-text"&gt;
+        {props.text}
+      &lt;/div&gt;
+      &lt;div className="Comment-date"&gt;
+        {formatDate(props.date)}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>En el componente <var>Comments</var> de arriba, vemos que las <var>props</var> que se toman son:</p>
+				<ul>
+					<li><var>author</var> - objeto</li>
+					<li><var>text</var> - string</li>
+					<li><var>date</var> - date</li>
+				</ul>
+				<p>Para extraerlo, podemos crear, por un lado, el componente <var>Avatar</var> de la siguiente forma:</p>
+				<pre>
+					<code>
+function Avatar(props) {
+  return (
+    &lt;img className="Avatar"
+      src={props.user.avatarUrl}
+      alt={props.user.name}
+    /&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Como podemos ver, ahora el objeto no es <var>author</var>, sino <var>user</var>. Esto se debe a que queremos que este componente se pueda reutilizar en diferentes escenarios, más allá de ser el avatar de un <var>Comment</var>. Es por ello por lo que se recomienda nombrar a las <var>props</var> teniendo en cuenta al componente en sí, no al contexto en el que se va a usar el componente.</p>
+				<p>Ahora, nuestro componente <var>Comment</var> quedaría tal que así:</p>
+				<pre>
+					<code>
+function Comment(props) {
+  return (
+    &lt;div className="Comment"&gt;
+      &lt;div className="UserInfo"&gt;
+        &lt;Avatar user={props.author} /&gt;
+        &lt;div className="UserInfo-name"&gt;
+          {props.author.name}
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className="Comment-text"&gt;
+        {props.text}
+      &lt;/div&gt;
+      &lt;div className="Comment-date"&gt;
+        {formatDate(props.date)}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Como próximo componente, crearemos <var>UserInfo</var>. Dentro del contexto del componente <var>Comment</var>, éste se cargará al lado del componente <var>Avatar</var>.</p>
+				<pre>
+					<code>
+function UserInfo(props) {
+  return (
+    &lt;div className="UserInfo"&gt;
+      &lt;Avatar user={props.user} /&gt;
+      &lt;div className="UserInfo-name"&gt;
+        {props.user.name}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Hecha esta refactorización, el componente <var>Comment</var> queda aún más reducido:</p>
+				<pre>
+					<code>
+function Comment(props) {
+  return (
+    &lt;div className="Comment"&gt;
+      &lt;UserInfo user={props.author} /&gt;
+      &lt;div className="Comment-text"&gt;
+        {props.text}
+      &lt;/div&gt;
+      &lt;div className="Comment-date"&gt;
+        {formatDate(props.date)}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Como conclusión, es importante tener claro que nuestra aplicación se tiene que dividir en componentes simples (botón, formulario, avatar…) para poder formar componentes más complejos (comentario, post, perfil…).</p>
+			</section>
+			<section id="las-props-son-de-solo-lectura">
+				<h2>Las props son de solo lectura</h3>
+				<p>Da igual si creas un componente como función o clase: el componente <strong>nunca</strong> debe modificar sus <var>props</var>. React, por lo general, es bastante flexible pero este principio <strong>siempre</strong> se tiene que respetar:</p>
+				<blockquote>
+					Todos los componentes de React deben actuar como funciones puras con respecto a sus <var>props</var>.
+				</blockquote>
+				<p>Las <strong>funciones puras</strong> son aquellas que no cambian los valores de entrada, como por ejemplo est función <var>suma()</var>:</p>
+				<pre>
+					<code>
+function sum(a, b) {
+  return a + b;
+}
+					</code>
+				</pre>
+				<p>Sin embargo, esta función es <strong>impura</strong> ya que cambia el valor de su entrada:</p>
+				<pre>
+					<code>
+function withdraw(account, amount) {
+  account.total -= amount;
+}
+					</code>
+				</pre>
+			</section>
+		</li>
+
+
+
+
+
+		<li>
+			<h1>Estado y ciclo de vida</h1>
+			<p>En este apartado, vamos a tomar como referencia el elemento del reloj visto en el <a href="">punto 3</a>. En este punto, vamos a convertirlo en un componente y actualizar el tiempo a través del ciclo de vida del componente.</p>
+			<p>Vamos a partir desde esta estructura del componente <var>Clock</var>:</p>
+			<pre>
+				<code>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function Clock(props) {
+  return (
+    &lt;div&gt;
+			&lt;h1&gt;Hello, world!&lt;/h1&gt;
+      &lt;h2&gt;It is {props.date.toLocaleTimeString()}.&lt;/h2&gt;
+    &lt;/div&gt;
+  );
+}
+
+function tick() {
+  root.render(&lt;Clock date={new Date()} /&gt;);
+}
+
+setInterval(tick, 1000);
+				</code>
+			</pre>
+			<p>Este código puede ser mejorado gracias al <strong>estado</strong> del elemento. No es óptimo el hecho de que código que afecta a <var>Clock</var> esté fuera del mismo componente, por lo que tenemos que refactorizar la función <var>tick()</var> y <var>setInterval()</var>.</p>
+			<section id="convertir-un-componente-declarado-como-funcion-en-clase">
+				<h2>Convertir un componente declarado como función en clase</h2>
+				<p>Para realizar esta conversión, se requieren <strong>4 pasos</strong>:</p>
+				<ol>
+					<li>Crear una clase ES6, con el mismo nombre de la función, que extienda de la clase <var>React.Component</var>.</li>
+					<li>Añadir un método vacío a la clase llamado <var>render()</var>.</li>
+					<li>Mueve el cuerpo de la función al método <var>render()</var>.</li>
+					<li>Sustituye <var>props</var> por <var>this.props</var> dentro del método <var>render()</var>.</li>
+				</ol>
+				<p>El método <var>render()</var> dentro de la clase del componente será llamado cada vez que los datos del componente se actualicen. Por ello, durante el ciclo de vida de un componente, en este caso <var>Clock</var>, se creará tan solo <strong>una instancia</strong> del componente. Esto nos permite usar funcionalidades como el <strong>uso local</strong> o controlar el <strong>ciclo de vida</strong> del componente.</p>
+			</section>
+			<section id="agregar-estado-local-a-una-clase">
+				<h2>Agregar estado local a una clase</h2>
+				<p>Es importante antes saber qué es el estado (<var>this.state</var>) y cuáles son sus diferencias respecto a las <em>props</em> (<var>this.props</var>).</p>
+				<ul>
+					<li>El estado es <strong>interno y controlado</strong> por el componente, mientras que las <var>props</var> son <strong>externas y controladas</strong> por aquello que se encargue de renderizar al componente.</li>
+					<li>El estado se puede modificar dentro del componente con <var>this.setState()</var>, al que le tendremos que pasar como parámetro información del estado. Por su parte, las props no se pueden modificar.</li>
+					<li>Los cambios al estado de un componente pueden ser <strong>asíncronos</strong>, mientras que las <var>props</var> son <strong>solo de lectura</strong>.</li>
+				</ul>
+				<p>Vamos a mover <var>date</var> de las <var>props</var> en tres pasos:</p>
+				<ul>
+					<li>
+						<p>Reemplazar <var>this.props.date</var> por <var>this.state.date</var> en el método <var>render()</var>:</p>
+						<pre>
+							<code>
+class Clock extends React.Component {
+	render() {
+		return (
+			&lt;div&gt;
+				&lt;h1&gt;Hello, world!&lt;/h1&gt;
+				&lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+			&lt;/div&gt;
+		);
+	}
+}
+							</code>
+						</pre>
+					</li>
+					<li>
+						<p>Añadir un constructor a la clase que asigne el valor inicial de <var>this.state</var>:</p>
+						<pre>
+							<code>
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+							</code>
+						</pre>
+						<p>Es importante destacar que los componentes declarados como clase tienen que pasarle <var>props</var> al constructor como parámetro. <strong>Siempre</strong>.</p>
+						<pre>
+							<code>
+	constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }					
+							</code>
+						</pre>
+					</li>
+					<li>
+						<p>Eliminar la prop <var>date</var> del elemento <var>Clock</var>:</p>
+						<pre>
+							<code>
+root.render(&lt;Clock /&gt;);
+							</code>
+						</pre>
+						<p>Ya solo queda incluir el método <code>setInterval()</code> a la clase, lo cual se hará en el siguiente apartado con los <strong>ciclos de vida</strong>. De momento, debería de quedar esto:</p>
+						<pre>
+							<code>
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Clock /&gt;);
+							</code>
+						</pre>
+					</li>
+				</ul>
+			</section>
+			<section id="agregar-metodos-de-ciclo-de-vida-a-una-clase">
+				<h2>Agregar métodos de ciclo de vida a una clase</h3>
+				<p>Cuando un componente se carga por primera vez en el DOM, decimos que se está <strong>montando</strong>. Para definir el comportamiento del componente al cargarse por primera vez, se usa el método <var>componentDidMount()</var>.</p>
+				<p>Por otra parte, si el componente se elimina del DOM, estaría siendo <strong>desmontado</strong>. Con el fin de controlar este evento, se utiliza el método <var>componentWillUnmount()</var>.</p>
+				<p>Estos dos métodos forman parte del <strong>ciclo de vida</strong> de un componente. Al introducirlos en la clase, quedaría así;</p>
+				<pre>
+					<code>
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillUnmount() {
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p>Para introducir la funcionalidad de que el reloj se actualice por cada segundo que pase, se tiene que iniciar el intervalo dentro del método <var>componentDidMount()</var>:</p>
+				<pre>
+					<code>
+  componentDidMount() {
+    this.timerID = setInterval(
+      () =&gt; this.tick(),
+      1000
+    );
+  }
+					</code>
+				</pre>
+				<p>Un cambio notable respecto a cómo se establecía antes el intervalo es la introducción de <var>this.timerID</var>. Primero, se tiene que entender que se pueden añadir propiedades a la clase mediante el uso de <var>this.[nombre de la propiedad que queramos]</var>. Hay que tener en cuenta que React cuenta con propiedades predefinidas, como <var>this.state</var> o <var>this.props</var>. Lo segundo a tener en cuenta es que se almacena la referencia del intervalo en una propiedad para poder acceder a él desde otro método de la clase. En este caso, se eliminará el intervalo cuando el componente se desmonte:</p>
+				<pre>
+					<code>
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+					</code>
+				</pre>
+				<p>Finalmente, implementamos el método <var>tick()</var> a la clase, el cual ya hemos usado en el método <var>componentDidMount()</var> para que los segundos se actualicen. Se hace uso de <var>this.setState()</var> para actualizar el estado según los valores de las propiedades del objeto que se pasan como parámetro.</p>
+				<pre>
+					<code>
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+					</code>
+				</pre>
+				<p>Con la adición de este método, la clase debería quedar así:</p>
+				<pre>
+					<code>
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () =&gt; this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Clock /&gt;);
+					</code>
+				</pre>
+				<p>Para finalizar este punto, este es un breve resumen de lo que pasaría durante el ciclo de vida completo del componente <var>Clock</var>:</p>
+				<ul>
+					<li>Cuando <var>Clock</var> es pasado como parámetro al método <code>root.render()</code>, React llama al constructor del componente <var>Clock</var>. Como <var>Clock</var> muestra la hora actual, se inicializa el estado (<var>this.state</var>) con un objeto que contiene la hora actual.</li>
+					<li>Tras ejecutar el constructor, React llama al método <var>render()</var>, en el cual se describe la vista que va a ser renderizada en la ventana del navegador. Al ser ejecutado, React DOM comprueba que, efectivamente, el componente no existe en el DOM y lo actualiza con la vista a renderizar.</li>
+					<li>Al haberse introducido <var>Clock</var> en el DOM, React llama a <var>componentDidMount()</var>. Al ejecutarse, el componente le pide al navegador establecer un intervalo de un segundo que ejecutará el método <var>tick()</var>.</li>
+					<li>Dentro del método <var>tick()</var> el componente <var>Clock</var> planifica una actualización de la interfaz del usuario cambiando el estado del componente con <var>setState()</var>. Se le pasa como parámetro un objeto que contiene la hora actual. Gracias al uso de <var>setState()</var>, React detecta que ha habido un cambio en el componente y vuelve a ejecutar el método <var>render</var> para consultar los cambios. Al comprobar que el valor de <var>this.state.date</var> es distinto, ReactDOM actualizará el DOM con aquella información que haya sido cambiada.</li>
+					<li>Si el componente <var>Clock</var> es eliminado del DOM, React llama al método <var>componentWillUnmount()</var>. En este caso, hemos definido que el intervalo se elimine.</li>
+				</ul>				
+			</section>
+			<section>
+				<h2>Usar el estado correctamente</h2>
+				<p>Hay tres aspectos fundamentales sobre <var>setState()</var>:</p>
+				<ol>
+					<li>
+						<h3>No modifiques el estado directamente</h3>
+						<p>Esto <strong>NO</strong> volverá a renderizar un componente:</p>
+						<pre>
+							<code>
+// Incorrecto
+this.state.comment = 'Hello';
+							</code>
+						</pre>
+						<p>Para que se notifique el cambio de estado, hay que usar <var>setState()</var>.</p>
+						<pre>
+							<code>
+// Correcto
+this.setState({comment: 'Hello'});
+							</code>
+						</pre>
+						<p>El <strong>único</strong> sitio en el que se puede asignar <var>this.state</var> es <strong>constructor</strong>.</p>
+					</li>
+					<li>
+						<h3>Las actualizaciones del estado pueden ser asíncronas</h3>
+						<p>Para mejorar el rendimiento, React puede agrupar varias llamadas al método <var>setState()</var> en una sola. A consecuencia de esto, si queremos modificar el estado basado en un estado anterior, estaríamos corriendo el riesgo de no obtener los valores que esperamos debido a la asincronía.</p>
+						<pre>
+							<code>
+// Incorrecto
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+							</code>
+						</pre>
+						<p>Para evitar esto, podemos usar <var>setState()</var> pasando como parámetros el estado previo y las <var>props</var> en el momento en que se aplica la actualización.</p>
+						<pre>
+							<code>
+// Correcto (sintaxis ES6)
+this.setState((state, props) =&gt; ({
+  counter: state.counter + props.increment
+}));
+							</code>
+						</pre>
+					</li>
+					<li>
+						<h3>Las actualizaciones de estado se fusionan</h3>
+						<p>React fusiona el objeto proporcionado en el constructor con el estado actual que le pasamos a <var>setState()</var>.</p>
+						<p>Por ejemplo, si inicializamos <var>this.state</var> con las propiedades <var>posts</var> y <var>comments</var>, podremos actualizarlas con <var>setState()</var> con total independencia la una de la otra.</p>
+						<p>Si trasladamos lo anteriormente dicho a código, quedaría algo así:</p>
+						<pre>
+							<code>
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      comments: []
+    };
+  }
+							</code>
+						</pre>
+						<pre>
+							<code>
+  componentDidMount() {
+    fetchPosts().then(response =&gt; {
+      this.setState({
+        posts: response.posts
+      });
+    });
+
+    fetchComments().then(response =&gt; {
+      this.setState({
+        comments: response.comments
+      });
+    });
+  }
+							</code>
+						</pre>
+					</li>
+				</ol>
+			</section>
+			<section id="los-datos-fluyen-hacia-abajo">
+				<h2>Los datos fluyen hacia abajo</h2>
+				<p>El estado de un componente está <strong>encapsulado</strong>. Es decir, no es accesible desde otro componente excepto de aquel que lo posee y lo asigna.</p>
+				<p>Se dice que los datos fluyen hacia abajo ya que un componente puede pasar su estado a otro sin que éste sepa que lo que se le ha pasado es el estado de otro componente. Puede parecer un poco enrevesado, ¿verdad? Te aseguro que no lo es tanto.</p>
+				<pre>
+					<code>
+&lt;FormattedDate date={this.state.date} /&gt;
+					</code>
+				</pre>
+				<p>En el ejemplo de arriba, el componente <var>FormattedDate</var> recibiría <var>date</var> en sus <var>props</var> y no sabría si vino del estado o <var>props</var> de un componente o si se escribió manualmente.</p>
+				<pre>
+					<code>
+function FormattedDate(props) {
+	return &lt;h2&gt;It is {props.date.toLocaleTimeString()}.&lt;/h2&gt;;
+}
+					</code>
+				</pre>
+				<p>Como podemos ver, el estado de un componente solo puede afectar a aquellos componentes hijos del mismo, por lo que el flujo de datos es <strong>descendente</strong>.</p>
+			</section>
+		</li>
+
+
+
+
+
+
+
+		<li>
+			<h1>Manejando eventos</h1>
+			<p class="text-muted">Manejar eventos con elementos de React es prácticamente igual que manejarlos desde el DOM, exceptuando estos dos detalles:</p>
+			<ul>
+				<li>Los eventos en React son nombrados en <strong>camelCase</strong>.</li>
+				<li>Con JSX, se pasa una función como manejador del evento, en lugar de un string con la función</li>
+			</ul>
+			<p>HTML</p>
+			<pre>
+				<code>
+&lt;button onclick="activateLasers()"&gt;
+  Activate Lasers
+&lt;/button&gt;
+				</code>
+			</pre>
+			<p>React</p>
+			<pre>
+				<code>
+&lt;button onClick={activateLasers}&gt;
+  Activate Lasers
+&gt;/button&lt;
+				</code>
+			</pre>
+			<p>Otra diferencia es que no se puede devolver <var>false</var> para evitar el comportamiento por defecto de un evento en React. Para ello, se tiene que llamar al método <var>preventDefault</var> en lugar de devolver <var>false</var>.</p>
+			<p>Un ejemplo de ello en el DOM:</p>
+			<pre>
+				<code>
+&lt;form onsubmit="console.log('You clicked submit.'); return false"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+				</code>
+			</pre>
+			<p>En React:</p>
+			<pre>
+				<code>
+function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+				</code>
+			</pre>
+			<p>En el ejemplo de React, <var>e</var> es un <strong>evento sintético</strong>, lo cual significa que es un <em>wrapper</em> para distintos navegadores del evento nativo del navegador. Con ello, se asegura que un evento se controle de la misma forma con independencia del navegador.</p>
+			<p>En React no hace falta usar <var>addEventListener</var>. En su lugar, se le provee un listener concreto al elemento cuando vaya a ser renderizado.</p>
+			<p>Si se define un componente usando una clase, se suele definir una función con el código que se ejecuta cuando ocurre un evento controlado. Por ejemplo, <var>Toggle</var> renderiza un botón cuyo estado cambia de ON a OFF (y viceversa) cuando se pulsa sobre él.</p>
+			<pre>
+				<code>
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // Este enlace es necesario para hacer que `this` funcione en el callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState =&gt; ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      &lt;/button&gt;
+    );
+  }
+}
+				</code>
+			</pre>
+			<p>Hay que tener mucho cuidado con la palabra reservada <var>this</var> en los callbacks de JSX. Esto ocurre ya que, en JavaScript, se puede <strong>llamar a la función</strong> ejecutando <code>objeto.metodo();</code> o <strong>pasar la función</strong> con <code>this.metodo</code>.</p>
+			<p>Normalmente, <strong>pasamos una función</strong> cuando como callback de un evento. Por ejemplo, no podemos saber cuándo el usuario va a pulsar sobre un botón pero, cuando lo haga, queremos que se ejecute una función. En ese preciso momento, JavaScript no sabe a qué objeto pertenecía la función, por lo que necesitamos ligarla a una clase para que JavaScript pueda saber la clase a la que pertenece la función que tiene que ejecutar.</p>
+			<p>En lugar de ligar el método a la clase usando <var>bind</var>, se pueden usar dos métodos alternativos:</p>
+			<ul>
+				<li>
+					<p>Campos públicos de clases:</p>
+					<pre>
+						<code>
+class LoggingButton extends React.Component {
+  // Esta sintaxis nos asegura que `this` está ligado dentro de handleClick
+  // Peligro: esto es una sintaxis *experimental*
+  handleClick = () =&gt; {
+    console.log('this is:', this);
+  }
+
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        Click me
+      &lt;/button&gt;
+    );
+  }
+}
+						</code>
+					</pre>
+				</li>
+				<li>
+					<p>Función flecha en el callback:</p>
+					<pre>
+						<code>
+class LoggingButton extends React.Component {
+  handleClick() {
+    console.log('this is:', this);
+  }
+
+  render() {
+    // Esta sintaxis nos asegura que `this` esta ligado dentro de handleClick
+    return (
+      &lt;button onClick={() =&gt; this.handleClick()}&gt;
+        Click me
+      &lt;/button&gt;
+    );
+  }
+}
+						</code>
+					</pre>
+					<p>El problema con esta sintaxis es que, por cada vez que <var>LoggingButton</var> se renderiza, se crea un callback diferente. Normalmente, no hay problema con ello, pero si el callback es pasado como prop a componentes hijos, puede que tengan que re-renderizarse. Para evitar este tipo de problemas, es mejor ligar el método con la clase en el constructor o usar la sintaxis de campos públicos de clases.</p>
+				</li>
+			</ul>
+			<section id="pasar-argumentos-a-manejadores-de-eventos">
+				<h2>Pasar argumentos a manejadores de eventos</h2>
+				<p>Para hacerlo, podríamos hacerlo de estas <strong>dos formas</strong>:</p>
+				<pre>
+					<code>
+&lt;button onClick={(e) =&gt; this.deleteRow(id, e)}&gt;Delete Row&lt;/button&gt;
+&lt;button onClick={this.deleteRow.bind(this, id)}&gt;Delete Row&lt;/button&gt;
+					</code>
+				</pre>
+			</section>
+		</li>
+
+
+
+
+
+
+
+
+		<li>
+			<h1>Renderizado condicional</h1>
+			<p class="text-muted">Dependiendo del estado de nuestra aplicación, podemos cargar componentes condicionalmente.</p>
+			<p>Vamos a partir de estos dos componentes:</p>
+			<pre>
+				<code>
+function UserGreeting(props) {
+  return &lt;h1&gt;Welcome back!&lt;/h1&gt;;
+}
+
+function GuestGreeting(props) {
+  return &lt;h1&gt;Please sign up.&lt;/h1&gt;;
+}					
+				</code>
+			</pre>
+			<p>Vamos a crear el componente <var>Greeting</var> que, dependiendo de si el usuario está loggeado o no, cargará un componente u otro.</p>
+			<pre>
+				<code>
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return &lt;UserGreeting /&gt;;
+  }
+  return &lt;GuestGreeting /&gt;;
+}					
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(&lt;Greeting isLoggedIn={false} /&gt;);
+				</code>
+			</pre>
+			<p>Establecemos el valor de la prop <var>isLoggedIn</var> como condición.</p>
+			<section id="variables-de-elementos">
+				<h2>Variables de elementos</h2>
+				<p>Los elementos se pueden almacenar en variables, lo cual es útil a la hora de almacenar un elemento que se vaya a renderizar condicionalmente.</p>
+				<p>Vamos a partir de estos dos componentes para ejemplificar lo comentado anteriormente:</p>
+				<pre>
+					<code>
+function LoginButton(props) {
+  return (
+    &lt;button onClick={props.onClick}&gt;
+      Login
+    &lt;/button&gt;
+  );
+}
+
+function LogoutButton(props) {
+  return (
+    &lt;button onClick={props.onClick}&gt;
+      Logout
+    &lt;/button&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>El siguiente componente que creemos tendrá estado y renderizará <var>LoginButton</var> or <var>LogoutButton</var>. También usaremos el componente <var>Greeting</var> del anterior ejemplo.</p>
+				<pre>
+					<code>
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+    if (isLoggedIn) {
+      button = &lt;LogoutButton onClick={this.handleLogoutClick} /&gt;;
+    } else {
+      button = &lt;LoginButton onClick={this.handleLoginClick} /&gt;;
+    }
+
+    return (
+      &lt;div&gt;
+        &lt;Greeting isLoggedIn={isLoggedIn} /&gt;
+        {button}
+      &lt;/div&gt;
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<LoginControl />);
+					</code>
+				</pre>
+While declaring a variable and using an if statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
+				<p>Esta es una de las formas en las que podemos renderizar condicionalmente un componente, pero hay formas más cortas usando la sintaxis de JSX que veremos a continuación.</p>
+			</section>
+			<section id="if-en-una-línea-con-operador-logico%26%26">
+				<h2>If en una línea con operador lógico &&</h2>
+				<p>Las expresiones en JSX van contenidas en llaves. Esto junto al operador lógico <var>&&</var> de JavaScript, nos permite incluir condiciones como estas:</p>
+				<pre>
+					<code>
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello!&lt;/h1&gt;
+      {unreadMessages.length &gt; 0 &&
+        &lt;h2&gt;
+          You have {unreadMessages.length} unread messages.
+        &lt;/h2&gt;
+      }
+    &lt;/div&gt;
+  );
+}
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(&lt;Mailbox unreadMessages={messages} /&gt;);
+					</code>
+				</pre>
+				<p>Aunque pueda parecer un poco extraño, tiene su lógica. En JavaScript, <var>true && [expresión]</var> siempre evalúa a <var>[expresión]</var> mientras que <var>false && [expresión]</var> evalúa a <var>false</var>.</p>
+				<p>En caso de que la evaluación dé <var>false</var> como resultado, se devolverá la expresión <em>falsy</em> devuelta. En este ejemplo, se mostrará <var>0</var> tras evaluar la expresión.</p>
+				<pre>
+					<code>
+render() {
+  const count = 0;
+  return (
+    &lt;div&gt;
+      {count && &lt;h1&gt;Messages: {count}&lt;/h1&gt;}
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+			</section>
+			<section id="if-else-en-una-linea-con-operador-condicional">
+				<h2>If-Else en una línea con operador condicional</h2>
+				<p>Podemos usar el operador ternario de JavaScript para ello. En este ejemplo se usa para renderizar condicionalmente un bloque de texto:</p>
+				<pre>
+					<code>
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    &lt;div&gt;
+      The user is &lt;b&gt;{isLoggedIn ? 'currently' : 'not'}&lt;/b&gt; logged in.
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>También puede usarse para expresiones más grandes, como esta:</p>
+				<pre>
+					<code>
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    &lt;div&gt;
+      {isLoggedIn
+        ? &lt;LogoutButton onClick={this.handleLogoutClick} /&gt;
+        : &lt;LoginButton onClick={this.handleLoginClick} /&gt;
+      }
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Es importante recordar que si las condiciones se vuelven demasiado complejas, quizás sea mejor idea extraer un componente.</p>
+			</section>
+			<section id="evitar-que-un-componente-se-renderice">
+				<h2>Evitar que un componente se renderice</h2>
+				<p>Para ocultar a un componente aún habiendo sido renderizado por otro componente, es necesario que el método <var>render()</var> devuelva <var>null</var>.</p>
+				<p>En este ejemplo, <var>WarningBanner</var> se renderiza dependiendo del valor de la prop <var>warn</var>:</p>
+				<pre>
+					<code>
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+  return (
+    &lt;div className="warning"&gt;
+      Warning!
+    &lt;/div&gt;
+  );
+}
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {showWarning: true};
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+  handleToggleClick() {
+    this.setState(state =&gt; ({
+      showWarning: !state.showWarning
+    }));
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;WarningBanner warn={this.state.showWarning} /&gt;
+        &lt;button onClick={this.handleToggleClick}&gt;
+          {this.state.showWarning ? 'Hide' : 'Show'}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;Page /&gt;,
+  document.getElementById('root')
+);
+					</code>
+				</pre>
+				<p>Es importante tener en cuenta que el devolver <var>null</var> desde el método render de un componente no influye en la activación de los métodos del ciclo de vida del componente.</p>
+			</section>
+		</li>
+
+
+
+
+
+
+
+
+
+
+
+
+		<li>
+			<h1>Listas y keys</h1>
+			<p class="text-muted">Antes de ver cómo se hace en React, vamos a ver cómo se transforman las listas en JavaScript.</p>
+			<p>En este ejemplo, usamos la función <var>map()</var> para doblar los valores de un array que contiene números. Al array devuelto por <var>map()</var> se lo asignamos a la variable <var>doubled</var>.</p>
+			<pre>
+				<code>
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) =&gt; number * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+				</code>
+			</pre>
+			<p>En React, hacer lo que hemos hecho arriba es muy similar.</p>
+			<section id="renderizar-multiples-componentes">
+				<h2>Renderizar múltiples componentes</h2>
+				<p>Se pueden crear colecciones de elementos para que sean incluidos en JSX mediante el uso de llaves {}</p>
+				<p>En el ejemplo de abajo, iteramos sobre el array <var>numbers</var> con la función <var>map()</var> de JavaScript. Por cada elemento, devolvemos un elemento &lt;li&gt; y, finalmente, asignamos el array resultante a <var>listItems</var>.</p>
+				<pre>
+					<code>
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li&gt;{number}&lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>Tras ello, podemos incluir <var>listItems</var> dentro de cualquier elemento &lt;ol&gt; o &lt;ul&gt;</p>
+				<pre>
+					<code>
+&lt;ul&gt;{listItems}&lt;/ul&gt;
+					</code>
+				</pre>
+			</section>
+			<section id="componente-basico-de-lista">
+				<h2>Componente básico de lista</h2>
+				<p></p>
+				<pre>
+					<code>
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =&gt;
+	&lt;li&gt;{number}&lt;/li&gt;
+);
+return (
+	&lt;ul&gt;{listItems}&lt;/ul&gt;
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;NumberList numbers={numbers} /&gt;);
+					</code>
+				</pre>
+				<p>En vez de establecer unos valores fijos de la lista, podemos hacer que un array se inicialice a partir de los valores de las <var>props</var> pasados al componente.</p>
+				<p><a href="https://codepen.io/gaearon/pen/GjPyQr?editors=0011" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<pre>
+					<code>
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =&gt;
+	&lt;li&gt;{number}&lt;/li&gt;
+);
+return (
+	&lt;ul&gt;{listItems}&lt;/ul&gt;
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;NumberList numbers={numbers} /&gt;);
+					</code>
+				</pre>
+				<p>Si corremos el bloque de código, recibiremos un aviso que nos notifica de que una <em>key</em> debe estar asociada a cada elemento de la lista. Una <em>key</em> es un atributo especial que se necesita incluir a la hora de crear listas de elementos. Entraremos en más detalle en la próxima sección.</p>
+					to our list items inside numbers.map() and fix the missing key issue.
+				<p>Para resolver el problema con el aviso, asignamos el atributo <em>key</em> a cada elemento.</p>
+				<pre>
+					<code>
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =&gt;
+	&lt;li key={number.toString()}&gt;
+		{number}
+	&lt;/li&gt;
+);
+return (
+	&lt;ul&gt;{listItems}&lt;/ul&gt;
+);
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/jrXYRR?editors=0011" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+			</section>
+			<section id="keys">
+				<h2>Keys</h2>
+				<p>Las <em>keys</em> ayudan a React a identificar los elementos que han cambiado, han sido añadidos o han sido eliminados. Deben ser atribuidas para elementos contenidos en un array para poder identificarlos de manera fiable. Su valor debe ser <strong>único para cada elemento</strong>.</p>
+				<pre>
+					<code>
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li key={number.toString()}&gt;
+    {number}
+  &lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>El mejor criterio para establecer una <em>key</em> es usar el valor de una propiedad ID o similar.</p>
+				<pre>
+					<code>
+const todoItems = todos.map((todo) =>
+  &lt;li key={todo.id}&gt;
+    {todo.text}
+  &lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>Si no tenemos una propriedad ID o algo por el estilo, podemos usa el índice del elemento como último recurso:</p>
+				<pre>
+					<code>
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  &lt;li key={index}&gt;
+    {todo.text}
+  &lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>En <a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318" rel="noopener" target="_blank">este artículo</a> de Robin Pokorny se expone las desventajas de usar índices como <em>keys</em>.</p>
+				<p>Si no se asigna explícitamente el valor del atributo <var>key</var>, React usará por defecto el índice del elemento como valor del atributo.</p>
+				<p><a href="https://reactjs.org/docs/reconciliation.html#recursing-on-children" rel="noopener" target="_blank">Este artículo</a> habla más en profundidad sobre la necesidad de las <em>keys</em>.</p>				
+			</section>
+			<section id="extraer-componentes-con-keys">
+				<h2>Extraer componentes con keys</h2>
+				<p>Si extraemos el elemento de una lista en un componente, el atributo <var>key</var> debe aparecer dentro del bucle que se encarga de cargar elementos.</p>
+				<pre>
+					<code>
+function ListItem(props) {
+  // Correcto! No hay necesidad de especificar la key aquí:
+  return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    // Correcto! La key debería ser especificada dentro del array.
+    &lt;ListItem key={number.toString()} value={number} /&gt;
+  );
+  return (
+    &lt;ul&gt;
+      {listItems}
+    &lt;/ul&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/ZXeOGM?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+			</section>
+			<section id="las-keys-debe-ser-unicas-solo-entre-hermanos">
+				<h2>Las <em>keys</em> deben ser únicas solo entre hermanos</h2>
+Las keys usadas dentro de arrays deberían ser únicas entre sus hermanos. Sin embargo, no necesitan ser únicas globalmente. Podemos usar las mismas keys cuando creamos dos arrays diferentes:
+				<p>Las <em>keys</em> usadas dentro de arrays deberían ser únicas entre sus hermanos. No obstante, esto no implica que tengan que ser únicas en todo el DOM. Podemos usar las mismas keys cuando creamos dos arrays diferentes:</p>
+				<pre>
+					<code>
+function Blog(props) {
+  const sidebar = (
+    &lt;ul&gt;
+      {props.posts.map((post) =&gt;
+        &lt;li key={post.id}&gt;
+          {post.title}
+        &lt;/li&gt;
+      )}
+    &lt;/ul&gt;
+  );
+  const content = props.posts.map((post) =&gt;
+    &lt;div key={post.id}&gt;
+      &lt;h3&gt;{post.title}&lt;/h3&gt;
+      &lt;p&gt;{post.content}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+  return (
+    &lt;div&gt;
+      {sidebar}
+      &lt;hr /&gt;
+      {content}
+    &lt;/div&gt;
+  );
+}
+
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Blog posts={posts} /&gt;);
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/NRZYGN?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Si se necesita usar el mismo valor en de la <em>key</em> en un componente, pásaselo explícitamente como una propiedad con un nombre diferente:</p>
+				<pre>
+					<code>
+const content = posts.map((post) =&gt;
+  &lt;Post
+    key={post.id}
+    id={post.id}
+    title={post.title} /&gt;
+);
+					</code>
+				</pre>
+				<p>En el ejemplo de arriba, el componente <var>Post</var> puede leer <var>props.id</var>, pero no <var>props.key</var> ya que <var>props.key</var> <strong>NO</strong> es pasada al componente.</p>
+			</section>
+			<section id="integrar-map()-en-jsx">
+				<h2>Integrar map() en JSX</h2>
+				<p>En el ejemplo de más arriba con el componente <var>NumberList</var>, iteramos sobre la lista de la siguiente forma:</p>
+				<pre>
+					<code>
+const listItems = numbers.map((number) =&gt;
+	&lt;ListItem key={number.toString()}
+						value={number} /&gt;
+);
+					</code>
+				</pre>
+JSX allows embedding any expression in curly braces so we could inline the map() result:
+				<p>JSX permite integrar cualquier expresión JavaScript entre llaves {}, por lo que podemos realizar la iteración de arriba de este modo:</p>
+				<pre>
+					<code>
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    &lt;ul&gt;
+      {numbers.map((number) =&gt;
+        &lt;ListItem key={number.toString()}
+                  value={number} /&gt;
+      )}
+    &lt;/ul&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/BLvYrB?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Tal y como vimos en los condicionales, tienes que tener en cuenta que si hay mucho anidamiento en un componente, quizás se deba a que debes de extraerlo en un componente aparte.</p>
+			</section>
+		</li>
+
+
+
+
+
+
+
+
+
+
+		<li>
+			<h2>Formularios</h2>
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+			<p class="text-muted">Los elementos HTLM relacionados con formularios tienen un funcionamiento distinto en React ya que estos elementos mantienen siempre algún estado interno.</p>
+			<p>Por ejemplo, este formulario en HTML acepta <var>name</var> como entrada:</p>
+			<pre>
+				<code>
+&lt;form&gt;
+  &lt;label&gt;
+    Name:
+    &lt;input type="text" name="name" /&gt;
+  &lt;/label&gt;
+  &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;
+				</code>
+			</pre>
+			<p>Cuando el usuario envía este formulario, lo suele redireccionar a otra página, dependiendo del valor del atributo <var>action</var>. En React, lo adecuado es controlar ese <var>action</var> con funciones JavaScript y que, desde esas funciones, se tenga acceso a los datos que el usuario ha introducido en el formulario.</p>
+			<p>Para lograr lo expuesto, se utiliza una técnica llamada <strong>componentes controlados</strong>.</p>
+			<section id="componentes-controlados">
+				<h2>Componentes controlados</h2>
+				<p>En HTML, los elementos pertenecientes a formularios (<var>&lt;input&gt;</var>, <var>&lt;textarea&gt;</var> o <var>&lt;select&gt;</var>) mantienen su estado y lo actualizan en base a los datos que introduce el usuario. En React, el estado mutable es mantenido en la propiedad <var>state</var> de los componentes y se actualiza únicamente con <var>setState()</var>.</p>
+				<p>Podemos mezclar ambos conceptos haciendo que el estado de React sea la <em>fuente de la verdad</em>. Esto quiere decir que el componente que renderiza un formulario también se encargará de controlar los datos de entrada del usuario. Un campo de un formulario cuyos valores son controlados por React siguiendo este principio recibe el nombre de <strong>componente controlado</strong>.</p>
+				<p>Si queremos que el formulario de ejemplo anterior muestre los datos de entrada de <var>name</var> al ser enviado, podemos estructurar el formulario como un componente controlado:</p>
+				<pre>
+					<code>
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Name:
+          &lt;input type="text" value={this.state.value} onChange={this.handleChange} /&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/VmmPgp?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>En el constructor, vemos que inicializamos el valor de la propiedad <var>value</var>como un string vacío. En el método <var>render()</var>, podemos ver que el valor de la entrada será el valor de <var>this.state.value</var> que, a su vez, es modificado por el método <var>handleChange()</var> cada vez que el usuario realiza un cambio sobre el valor del campo.</p>
+				<p>Con un componente controlado, el valor de entrada es <strong>siempre</strong> controlado por el estado del componente. Esto nos permite tener mayor control a la hora de pasar el valor a otros componentes y modificarlo dependiendo del valor de otros campos.</p>
+			</section>
+			<section id="la-etiqueta-textarea">
+				<h2>La etiqueta &lt;textarea&gt;</h2>
+				<p>Esta etiqueta es particular a otras ya que su valor se encuentra en el cuerpo del elemento.</p>
+				<pre>
+					<code>
+&lt;textarea&gt;
+  Hello there, this is some text in a text area
+&lt;/textarea&gt;
+					</code>
+				</pre>
+				<p>En React, el valor de un <var>textarea</var> será tratado como el resto de elementos relativos a un formulario en HTML. Esto quiere decir que usaremos el atributo <var>value</var> para establecer su valor.</p>
+				<pre>
+					<code>
+class EssayForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Please write an essay about your favorite DOM element.'
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('An essay was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Essay:
+          &lt;textarea value={this.state.value} onChange={this.handleChange} /&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+Notice that this.state.value is initialized in the constructor, so that the text area starts off with some text in it.
+				<p>Date cuenta de que <var>this.state.value </var> ha sido inicializado en el constructor, por lo que el <var>textarea</var> tendrá texto predefinido.</p>
+			</section>
+			<section id="la-etiqueta-select">
+				<h2>La etiqueta &lt;select&gt;</h2>
+				<p>En HTML, esta etiqueta crea un <em>drop-down</em> de opciones.</p>
+				<pre>
+					<code>
+&lt;select&gt;
+  &lt;option value="grapefruit"&gt;Grapefruit&lt;/option&gt;
+  &lt;option value="lime"&gt;Lime&lt;/option&gt;
+  &lt;option selected value="coconut"&gt;Coconut&lt;/option&gt;
+  &lt;option value="mango"&gt;Mango&lt;/option&gt;
+&lt;/select&gt;
+					</code>
+				</pre>
+				<p>Si nos fijamos, la opción <var>Coconut</var> estará seleccionada por defecto gracias al atributo <var>selected</var>. En React, en vez de usar este atributo, se indica en la etiqueta <var>select</var> con el atributo <var>value</var>, el cual indicará el elemento seleccionado en base a su valor.</p>
+				<p>Aquí podemos ver un ejemplo que refleja lo explicado en el párrafo anterior:</p>
+				<pre>
+					<code>
+class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Pick your favorite flavor:
+          &lt;select value={this.state.value} onChange={this.handleChange}&gt;
+            &lt;option value="grapefruit">Grapefruit&lt;/option&gt;
+            &lt;option value="lime">Lime&lt;/option&gt;
+            &lt;option value="coconut">Coconut&lt;/option&gt;
+            &lt;option value="mango">Mango&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/JbbEzX?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Adicionalmente, podremos pasarle un array al atributo <var>value</var> para poder selccionar múltiples opciones en una etiqueta <var>&lt;select&gt;</var>:</p>
+				<pre>
+					<code>
+&lt;select multiple={true} value={['B', 'C']}&gt;
+					</code>
+				</pre>
+				<p>Estas modificaciones en las etiquetas que hemos visto hasta ahora se realizan con el fin de mantener la la misma estructura en todos los elementos relacionados con formularios.</p>
+			</section>
+			<section id="la-etiqueta-input-type-file">
+				<h2>La etiqueta &lt;input type="file" /&gt;</h2>
+				<p>En HTML, esta etiqueta, junto al atributo <var>type="file"</var>, permite al usuario elegir uno o varios archivos de su dispositivo para ser subidos al servidor o ser manipulados por JavaScript a través de <em>File API</em>.</p>
+				<p>Debido a que su valor es de solo lectura, es un componente no controlado en react. En próximos apartados, se habla sobre este componente junto a otros componentes no controlados.</p>
+			</section>
+			<section id="manejando-multiples-elementos-input">
+				<h2>Manejando múltiples elementos input</h2>
+				<p>Si necesitas controlar múltiples elementos input controlados, se puede añadir el atributo <var>name</var> a cada elemento input para dejar que las funciones que gestionan los eventos decidan qué hacer con cada input dependiendo de <var>event.target.name</var>.</p>
+				<pre>
+					<code>
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+      numberOfGuests: 2
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
+      &lt;form&gt;
+        &lt;label&gt;
+          Is going:
+          &lt;input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;label&gt;
+          Number of guests:
+          &lt;input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} /&gt;
+        &lt;/label&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					&lt;/code&gt;
+				&lt;/pre&gt;
+			&lt;/section>&gt;
+		&lt;/li>&gt;
+	&lt;/ol&gt;
+&lt;/main&gt;
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/wgedvV?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Fíjate en cómo se usa la sintaxis de <strong>propiedad <em>name</em> computada</strong> para actualizar el <var>name</var> del input.</p>
+				<p>Recordemos que la sintaxis de <strong>propiedad <em>name</em> computada</strong> consiste en escribir el nombre de una expresión entre corchetes [] para que sea evaluada y devuelva el nombre de la propiedad. Por ejemplo, imaginemos que <var>[name]</var> se evalúa como <var>nombre</var>. Esto implicaría que el valor del input <var>numberOfGuests</var> sería igual al valor de <var>value</var>.</p>
+			</section>
+			<section id="valor-nulo-en-un-input-controlado">
+				<h2>Valor nulo en un <em>input</em> controlado</h2>
+				<p>Como ya hemos visto en apartados anteriores, los componentes controlados pueden establecer un valor predefinido, pudiendo evitar que el usuario lo modifique. Si encuentras que un <em>input</em> es editable por el usuario cuando, realmente, no le estás brindando esa opción, puede que sea debido a un valor nulo del atributo <var>value</var>.</p>
+				<pre>
+					<code>
+ReactDOM.createRoot(mountNode).render(&lt;input value="hi" /&gt;);
+
+setTimeout(function() {
+  ReactDOM.createRoot(mountNode).render(&lt;input value={null} /&gt;);
+}, 1000);
+					</code>
+				</pre>
+			</section>
+			<section id="alternativas-a-componentes-controlados">
+				<h2>Alternativas a componentes controlados</h2>
+				<p>En caso de que estés porteando una aplicación existente a React, es posible que no siempre quieras usar componentes computados debido a que se necesita escribir un controlador para cada evento que queramos manejar. En ese caso, se puede hacer uso de los <strong>componentes no controlados</strong>.</p>
+			</section>
+			<section id="soluciones-completas">
+				<h2>Soluciones completas</h2>
+				<p>Si lo que estás buscando es una solución completa incluyendo validación, tener en cuenta los campos visitados y manejar el envío del formulario, <a href="https://jaredpalmer.com/formik" rel="noopener" target="_blank">Formik</a> es una de las opciones populares. Sin embargo, está construido con los mismos principios de los componentes controlados y manejo de estado, así que no los dejes de aprender.</p>
+			</section>
+		</li>
+
+
+
+
+
+
+
+
+
+
+		
+		<li>
+			<h1>Levantando el estado</h1>
+			<p class="text-muted">Hay ocasiones en las que varios componentes necesitan reflejar un mismo cambio en sus datos. Para ello, tenemos que elevar el estado compartido al componente ancestro más próximo.</p>
+			<p>Para ejemplificarlo, crearemos una calculadora de temperatura que calculará si el agua hervirá a una determinada temperatura.</p>
+			<p>Comenzaremos con un componente llamado <var>BoilingVerdict</var>. Este acepta la temperatura en <var>celsius</var> como una propiedad e imprime si es suficiente para que el agua hierva:</p>
+			<pre>
+				<code>
+function BoilingVerdict(props) {
+  if (props.celsius &gt;= 100) {
+    return &lt;p&gt;The water would boil.&lt;/p&gt;;
+  }
+  return &lt;p&gt;The water would not boil.&lt;/p&gt;;
+}
+				</code>
+			</pre>
+			<p>A continuación, creamos el componente <var>Calculator</var>, el cual renderiza un elemento <var>&lt;input&gt;</var> que inserta la temperatura y guarda su valor en <var>this.state.temperature</var>.</p>
+			<pre>
+				<code>
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+    this.setState({temperature: e.target.value});
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    return (
+      &lt;fieldset&gt;
+        &lt;legend&gt;Enter temperature in Celsius:&lt;/legend&gt;
+        &lt;inpu&gt;
+          value={temperature}
+          onChange={this.handleChange} /&gt;
+        &lt;BoilingVerdict
+          celsius={parseFloat(temperature)} /&gt;
+      &lt;/fieldset&gt;
+    );
+  }
+}
+				</code>
+			</pre>
+			<p>Como podemos ver, también se renderiza el componente <var>BoilingVeredict</var> cuando hay un cambio en el <var>&lt;input&gt;</var></p>
+			<p><a href="https://codepen.io/gaearon/pen/ZXeOBm?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+			<section id="anadiendo-una-segunda-entrada">
+				<h2>Añadiendo una segunda entrada</h2>
+				<p>Hasta aquí, no hemos tenido que levantar el estado. No obstante, si queremos añadir la temperatura en Fahrenheit, tendremos que sincronizar los valores de la temperatura Celsius y Fahrenheit para que concuerden.</p>
+				<p>Para ello, empezamos por extraer el componente <var>TemperatureInput</var> de <var>Calculator</var>. Añadiremos una nueva propiedad scale al mismo que podrá ser 'c' o 'f':</p>
+				<pre>
+					<code>
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+    this.setState({temperature: e.target.value});
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    const scale = this.props.scale;
+    return (
+      &lt;fieldset&gt;
+        &lt;legend&gt;Enter temperature in {scaleNames[scale]}:&lt;/legend&gt;
+        &lt;input value={temperature}
+               onChange={this.handleChange} /&gt;
+      &lt;/fieldset&gt;
+    );
+  }
+					</code>
+				</pre>
+				<p>Con este cambio, podemos refactorizar <var>Calculator</var> para que renderice dos entradas separadas para mostrar la temperatura.</p>
+				<pre>
+					<code>
+class Calculator extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;TemperatureInput scale="c" /&gt;
+        &lt;TemperatureInput scale="f" /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/jGBryx?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>En el estado actual del código, tenemos dos entradas pero, cuando insertamos la temperatura de una de ellas, la otra no se actualiza. Esto es algo que no queremos, ya que nuestra intención es que estén <strong>sincronizadas</strong>.</p>
+				<p>A su vez, tampoco podemos mostrar el componente <var>BoilingVeredict</var> de <var>Calculator</var> ya que éste último no conoce la temperatura actual debido a que su valor está dentro de <var>TemperatureInput</var>.</p>
+			</section>
+			<section id="escribiendo-funciones-de-conversion">
+				<h2>Escribiendo funciones de conversión</h2>
+				<p>Estas son las funciones para convertir de Celsius a Fahrenheit y viceversa:</p>
+				<pre>
+					<code>
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+					</code>
+				</pre>
+				<p>Escribiremos otra función que tomará la cadena <var>temperature</var> y una función de conversión como parámetros. Retornará una cadena con la temperatura en formato string, la cual será usada para calcular el valor de una entrada basado en la otra entrada.</p>
+				<p>Si <var>temperature</var> no es un número, la función retornará una cadena vacía. Si es un número, lo redondeará a tres decimales y lo parseará a string.</p>
+				<pre>
+					<code>
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return '';
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+					</code>
+				</pre>
+				<p>Por ejemplo, <var>tryConvert('abc', toCelsius)</var> retorna una <samp>cadena vacía</samp>. <var>tryConvert('10.22', toFahrenheit)</var> retorna <samp>'50.396'</samp>.</p>				
+			</section>
+			<section id="levantando-el-estado">
+				<h2>Levantando el estado</h2>
+				<p>Como ya hemos mencionada, ambos componentes <var>TemperatureInput</var> mantienen de manera independiente sus valores en el estado local. Sin embargo, queremos que estas dos entradas estén sincronizadas. Cuando actualicemos la entrada de Celsius, la entrada de Fahrenheit debe reflejar la conversión de temperatura, y viceversa.</p>
+				<p>En React, se comparte el estado al mover el estado hacia el ancestro más próximo de los componentes que necesitan dicho estado. Esto se llama <strong>mover el estado hacia arriba</strong>.</p>
+				<p>Vamos a eliminar el estado local de <var>TemperatureInput</var> y moverlo al estado del componente <var>Calculator</var>.</p>
+				<p>Si <var>Calculator</var> posee el <strong>estado compartido</strong>, se convertiría en la <em>fuente de la verdad</em> para la temperatura introducida para ambos <em>inputs</em>. <var>Calculator</var> puede hacer que ambos componentes sean consistentes entre sí puesto que los dos tienen el mismo padre en común y es el que tiene acceso a los datos "reales" (por eso hablamos del termino <em>fuente de la verdad</em>).</p>
+				<p>Habiendo explicado el concepto, ahora podemos refactorizar el código, cuyos pasos procedemos a explicar paso a paso.</p>
+				<p>Primero, vamos a sustituir <var>this.state.temperature</var> por <var>this.props.temperatura</var> en el componente <var>TemperatureInput</var>. Por ahora, supongamos que recibimos <var>this.props.temperature</var> enviada por el componente <var>Calculator</var>:</p>
+				<pre>
+					<code>
+  render() {
+    // Before: const temperature = this.state.temperature;
+    const temperature = this.props.temperature;
+    // ...
+					</code>
+				</pre>
+				<p>Si recordamos, vimos que las <var>props</var> son de solo lectura. Cuando <var>temperature</var> estaba en el estado local, el componente <var>TemperatureInput</var> llamaba a <var>this.setState()</var> para cambiarlo. No obstante, ahora que <var>temperature</var> es una prop del componente, <var>TemperatureInput</var> no puede modificar su valor.</p>
+				<p>En React, esto se resuelve creando un <strong>componente controlado</strong>. Así como los elementos relativos a los formularios aceptan los atributos <var>value</var> y <var>onChange</var>, <var>TemperatureInput</var> también puede aceptar las <em>props</em> <var>temperature</var> y <var>onTemperatureChange</var> del componente padre <var>Calculator</var>.</p>
+				<p>Ahora, cuando <var>TemperatureInput</var> quiera actualizar <var>temperature</var>, este llama a <var>this.props.onTemperatureChange</var>:</p>
+				<pre>
+					<code>
+  handleChange(e) {
+    // Before: this.setState({temperature: e.target.value});
+    this.props.onTemperatureChange(e.target.value);
+    // ...
+					</code>
+				</pre>
+				<blockquote>
+					No existe un significado especial para los nombres de las propiedades <var>temperature</var> o <var>onTemperatureChange</var> en los componentes. Se les puede asignar otro nombre como, por ejemplo, <var>value</var> y <var>onChange</var>.
+				</blockquote>
+				<p>Las <em>props</em> <var>onTemperatureChange</var> y <var>temperature</var> son provisionada por el componente padre <var>Calculator</var>, el cual se encargará de manejar el cambio modificando su estado lo cual, a su vez, producirá el re-renderizado de los componentes <var>TemperatureInput</var> con los nuevos valores.</p>
+				<p>Para recapitular los cambios en el estado del componente <var>TemperatureInput</var>, nuestro componente quedaría tal que así con los cambios realizados:</p>
+				<pre>
+					<code>
+class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.props.onTemperatureChange(e.target.value);
+  }
+
+  render() {
+    const temperature = this.props.temperature;
+    const scale = this.props.scale;
+    return (
+      &lt;fieldset&gt;
+        &lt;legend&gt;Enter temperature in {scaleNames[scale]}:&lt;/legend&gt;
+        &lt;input value={temperature}
+               onChange={this.handleChange} /&gt;
+      &gt;/fieldset&lt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p>Como podemos ver, los cambios han sido:</p>
+				<ol>
+					<li>Eliminar el estado local</li>
+					<li>Sustituir <var>this.state.temperature</var> por <var>this.props.temperature</var>, el cual es provisionado por el <var>Calculator</var>.</li>
+					<li>Llamamos a <var>this.props.onTemperatureChange()</var> en vez de a <var>this.setState()</var> cuando queramos hacer un cambio.</li>
+				</ol>
+				<p>Volviendo al componente <var>Calculator</var>, vamos a guardar <var>temperature</var> y <var>scale</var> en su estado local. Este es el estado que ha sido levantados de <var>TemperatureInput</var> y servirán como <em>fuente de verdad</em> para ambos.</p>
+				<p>Por ejemplo, si introducimos <samp>37</samp> en el <em>input</em> referente a Celsius, el estado del componente será el siguiente:</p>
+				<pre>
+					<code>
+{
+  temperature: '37',
+  scale: 'c'
+}
+					</code>
+				</pre>
+				<p>Si editamos el valor de Fahrenheit para que sea 212, el estado de Calculator será:</p>
+				<pre>
+					<code>
+{
+  temperature: '212',
+  scale: 'f'
+}
+					</code>
+				</pre>
+				<p>Los datos de los componentes <var>TemperatureInput</var> se mantienen sincronizadas ya que los valores son calculados a partir del mismo estado.</p>
+				<p>Así quedaría el componente <var>Calculator</var>:</p>
+				<pre>
+					<code>
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+    this.state = {temperature: '', scale: 'c'};
+  }
+
+  handleCelsiusChange(temperature) {
+    this.setState({scale: 'c', temperature});
+  }
+
+  handleFahrenheitChange(temperature) {
+    this.setState({scale: 'f', temperature});
+  }
+
+  render() {
+    const scale = this.state.scale;
+    const temperature = this.state.temperature;
+    const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+    const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+
+    return (
+      &lt;div&gt;
+        &lt;TemperatureInput
+          scale="c"
+          temperature={celsius}
+          onTemperatureChange={this.handleCelsiusChange} /&gt;
+        &lt;TemperatureInput
+          scale="f"
+          temperature={fahrenheit}
+          onTemperatureChange={this.handleFahrenheitChange} /&gt;
+        &lt;BoilingVerdict
+          celsius={parseFloat(celsius)} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/WZpxpz?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>Con los cambios realizados, no importa la entrada que editemos. Ahora en <var>Calculator</var> los valores <var>this.state.temperature</var> y <var>this.state.scale</var> se actualizan automáticamente. Una de las entradas toma el valor introducido por el usuario mientras que el valor de la otra entrada es recalculada basada en este cambio.</p>
+				<p>Ahora que tenemos los componentes <var>Calculator</var> y <var>TemperatureInput</var> completos, vamos a recapitular lo que pasa cuando se edita una entrada:</p>
+				<ol>
+					<li>React llama a la función especificada en el atributo <var>onChange</var> del <var>&lt;input&gt;</var> del DOM. En nuestro caso, <var>handleChange</var> es el método que maneja el evento dentro del componente <var>TemperatureInput</var>.</li>
+					<li>Dentro del método <var>handleChange</var> del componente <var>TemperatureInput</var> se llama <var>this.props.onTemperatureChange()</var>, el cual notifica al componente padre (<var>Calculator</var>) de que el valor del <var>&lt;input&gt;</var> ha sido modificado.</li>Cuando renderizó previamente, Calculator especificó que onTemperatureChange del componente TemperatureInput con la escala Celsius es el método handleCelsiusChange y onTemperatureChange del componente TemperatureInput con escala Fahrenheit es el método handleFahrenheitChange. Entonces, cada uno de estos métodos es llamado dependiendo del componente que se edite.
+					<li>Cuando <var>TemperatureInput</var> renderizó por primera vez, <var>Calculator</var> especificó que el evento de <var>onTemperatureChange</var> del <var>TemperatureInput</var> en Celsius llama al método <var>handleCelsiusChange</var>, mientras que en el <var>TemperatureInput</var> de Fahrenheit se llama al método <var>handleFahrenheitChange</var>.</li>
+					<li>Dentro de los métodos <var>handleCelsiusChange</var> y <var>handleFahrenheitChange</var>, el componente <var>Calculator</var> le pide a React volver a renderizarse al llamar a <var>this.setState()</var> con el nuevo valor de la entrada y escala que acabamos de introducir.</li>
+					<li>React llama al método <var>render()</var> de <var>Calculator</var> y realiza la conversión de la temperatura nueva introducida a la otra que no se haya introducido. Por ejemplo, si introducimos grados Celsius, éstos se convertirán a Fahrenheit.</li>
+					<li>Tras realizar la conversión de la temperatura pertinente, React renderiza los componentes <var>TemperatureInput</var> con sus respectivas <var>props</var> especificadas por <var>Calculator</var>.</li>
+					<li>Tras renderizar los componentes <var>TemperatureInput</var>, se renderiza el componente <var>BoilingVeredict</var>, pasando la temperatura en Celsius como prop.</li>
+					<li>React DOM comprueba el DOM y actualiza aquellos elementos que difieran entre sí. En este caso, las temperaturas serían convertidas y mostradas, al igual que también se cargaría el veredicto sobre si hierve o no.</li>
+				</ol>
+				<p>Por cada actualización de <var>Calculator</var>, se repite este proceso.</p>
+			</section>
+			<section id="lecciones-aprendidas">
+				<h2>Lecciones aprendidas</h2>
+				<ul>
+					<li>Debe de haber <strong>una única <em>fuente de verdad</em></strong> por cada dato que se cambie en una aplicación de React. Usualmente, el estado se añade primero al componente que lo necesita para ser renderizado. Tras ello, si hay otros componentes que también lo necesitan, podemos levantar el estado a un ancestro común, próximo a ellos. En vez de tratar de sincronizar el estado entre distintos componentes, deberíamos confiar en el <strong>flujo de datos descendente</strong>.</li>
+					<li>Levantar el estado implica escribir más código respecto a las situaciones en las que solo hay relación entre dos componentes. No obstante, levantar el estado nos permite evitar y resolver bugs con más facilidad. Esto se debe a que el estado solo es controlado por tan solo un componente (posee la <em>fuente de la verdad</em>), por lo que es más fácil aislar los errores.</li>
+					<li>Si algo puede ser derivado de las propiedades o el estado, probablemente no debería estar en el estado. Por ejemplo, en vez de almacenar <var>celsiusValue</var> y <var>fahrenheitValue</var>, solamente almacenamos la última edición a <var>temperature</var> y <var>scale</var>. El valor de la otra entrada siempre puede ser calculado desde el método <var>render()</var>, lo cual nos permite limpiar o aplicar un redondeo a la otra entrada sin perder la precisión en la entrada del usuario.</li>
+				</ul>
+			</section>
+			<section id="react-developer-tools">
+				<h2>React Developer Tools</h2>
+				<p>Para inspeccionar y depurar los componentes y los elementos de React, junto con sus estados y <var>props</var>, se puede instalar la extensión de navegador <a href="https://github.com/facebook/react/tree/main/packages/react-devtools" target="_blank" rel="noopener">React Tools Developer</a>.</p>
+			</section>
+		</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li>
+			<h1>Composición vs. herencia</h1>
+			<p class="text-muted">Es preferible usar composición en lugar de herencia para reutilizar código entre componentes.</p>
+			<p>En esta sección se muestran escenarios en los que se sustituye el uso de herencia por composición.</p>
+			<section id="contencion">
+				<h2>Contención</h2>
+				<p>Algunos componentes, en el momento en el que se renderizan, no conocen a sus hijos. Esto es frecuente en componentes como <var>Sidebar</var> o <var>Dialog</var>, los cuales representan plantillas sobre las que se van a cargar más componentes. Por ello, se recomienda que estos componentes usen la prop <var>children</var> para pasar elementos hijos directamente en su resultado:</p>
+				<pre>
+					<code>
+function FancyBorder(props) {
+  return (
+    &lt;div className={'FancyBorder FancyBorder-' + props.color}&gt;
+      {props.children}
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Esto permite que otros componentes les pasen hijos "anónimos".</p>
+				<pre>
+					<code>
+function WelcomeDialog() {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        Welcome
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        Thank you for visiting our spacecraft!
+      &lt;/p&gt;
+    &lt;/FancyBorder&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Como podemos ver en la definición de <var>FancyBorder</var>, el componente sabe que va a tener elementos/componentes anidados en su interior pero no sabe cuáles. Este concepto es muy similar a los <em>slots</em> de frameworks como <strong>Laravel</strong> o <strong>Vue</strong>, los cuales añaden mucha flexibilidad al código.</p>
+				<p><a href="https://codepen.io/gaearon/pen/gwoJZk?editors=1010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>A veces, necesitamos más de un elemento/componente anónimo, por lo que <var>props.children</var> no sería suficiente. Para paliar esta carencia, podemos definir nuestros propia convención en lugar de usar <var>children</var>.</p>
+				<pre>
+					<code>
+function SplitPane(props) {
+  return (
+    &lt;div className="SplitPane"&gt;
+      &lt;div className="SplitPane-left"&gt;
+        {props.left}
+      &lt;/div&gt;
+      &lt;div className="SplitPane-right"&gt;
+        {props.right}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  return (
+    &lt;SplitPane
+      left={
+        &lt;Contacts /&gt;
+      }
+      right={
+        &lt;Chat /&gt;
+      } /&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/gwZOJp?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>Los elementos como <var>Contacts</var> y <var>Chat</var> son simplemente objetos, por lo que pueden ser pasados como <var>props</var>.</p>
+			</section>
+			<section id="especialiacion">
+				<h2>Especialización</h2>
+				<p>A veces pensamos en comoponentes como <em>casos concretos</em> de otros componentes. Por ejemplo, podríamos decir que un WelcomeDialog es un caso concreto de Dialog.</p>
+				<p>En React, esto también se consigue por composición, en la que un componente más “específico” renderiza uno más “genérico” y lo configura con <var>props</var>:</p>
+				<pre>
+					<code>
+function Dialog(props) {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        {props.message}
+      &lt;/p&gt;
+    &lt;/FancyBorder&gt;
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    &lt;Dialog
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" /&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/kkEaOZ?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>La composición funciona igual de bien para componentes definidos como clases:</p>
+				<pre>
+					<code>
+function Dialog(props) {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        {props.message}
+      &lt;/p&gt;
+      {props.children}
+    &lt;/FancyBorder&gt;
+  );
+}
+
+class SignUpDialog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.state = {login: ''};
+  }
+
+  render() {
+    return (
+      &lt;Dialog title="Mars Exploration Program"
+              message="How should we refer to you?"&gt;
+        &lt;input value={this.state.login}
+               onChange={this.handleChange} /&gt;
+        &lt;button onClick={this.handleSignUp}&gt;
+          ¡Apúntame!
+        &lt;/button&gt;
+      &lt;/Dialog&gt;
+    );
+  }
+
+  handleChange(e) {
+    this.setState({login: e.target.value});
+  }
+
+  handleSignUp() {
+    alert(`Bienvenido abordo, ${this.state.login}!`);
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/gwZbYa?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>			
+			</section>
+			<section id="entonces-que-pasa-con-la-herencia">
+				<h2>¿Entonces qué pasa con la herencia?</h2>
+				<p>En Facebook se usa React en miles de componentes y, según ellos, no han hallado ningún caso de uso en el que recomendarían crear jerarquías de herencia de componentes.</p>
+				<p>Las <var>props</var> y la composición dan toda la flexibilidad que se necesita para personalizar el aspecto y el comportamiento de un componente de forma explícita y segura. Recuerda que los componentes pueden aceptar <var>props</var> arbitrarias, incluyendo valores primitivos, elementos de React y funciones.</p>
+				<p>Si quieres reutilizar código que no es de interfaz entre componentes (como métodos), se sugiere que sea extraído en un módulo de JavaScript independiente. Los componentes pueden importarlo y usar esa función, objeto, o clase, sin necesidad de extenderlo.</p>
+			</section>
+		</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li>
+			<h1>Pensando en React</h1>
+			<p>Una de las grandes ventajas de React es cómo te hace pensar acerca de la aplicación mientras la construyes. En este artículo, vamos a ver el proceso de pensamiento al construir una tabla de productos con una funcionalidad de búsqueda usando React.</p>
+			<section id="empieza-con-un-mock">
+				<h2>Empieza con un mock</h2>
+				<p>Imagina que ya tenemos un API JSON que devuelve esta información:</p>
+				<pre>
+					<code>
+[
+  {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+  {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+  {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+  {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+  {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+  {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+];
+					</code>
+				</pre>
+			</section>
+			<section id="paso-1-divide-la-interfaz-de-usuario-en-una-jerarquia-de-componentes">
+				<h2>Paso 1: Divide la interfaz de usuario en una jerarquía de componentes</h2>
+				<p>Al diseñar la interfaz, se recomienda dividir cada componente y subcomponente en una caja junto a su respectivo nombre.</p>
+				<p>Para poder saber qué debería ser un componente, tenemos que aplicar el mismo criterio con el que decidimos crear una función u objeto nuevo. Tenemos que tener en cuenta también técnicas como <strong>el principio de responsabilidad única</strong>, lo cual significa que un componente debe hacer una sola cosa. Si el componente hace más de una cosa, posiblemente esté sufriendo una <strong>sobrecarga de responsabilidades</strong> y que pueda ser subdividido en subcomponentes.</p>
+				<p>Usualmente, los datos que se cargan en los modelos provienen de un JSON de una API. Si el modelo está bien diseñado, probablemente te darás cuenta de que la interfaz de usuario y la estructura de componentes encajará muy bien con el modelo de datos. Hay que intentar, en la medida de lo posible, separar la interfaz de usuario en componentes de tal forma que cada componente se corresponda con una parte del modelo de datos.</p>
+				<img src="" alt="react mock components">
+				<p>En este boceto, podemos apreciar cinco componentes. En el texto de abajo aparece el nombre de los componentes y su funcionalidad en cursiva.</p>
+				<ol>
+					<li><strong>FilterableProductTable (naranja)</strong>: contiene la totalidad del ejemplo</li>
+					<li><strong>SearchBar (azul)</strong>: recibe lo que escriba el usuario</li>
+					<li><strong>ProductTable (verde)</strong>: muestra y filtra la colección de datos con base en lo que escriba el usuario</li>
+					<li><strong>ProductCategoryRow (turquesa)</strong>: muestra el encabezado de cada categoría</li>
+					<li><strong>ProductRow (rojo)</strong>: muestra una fila por cada producto</li>
+				</ol>
+				<p>Si nos fijamos en el componente <var>ProductTable</var> en la imagen, podemos apreciar que el encabezado de la tabla (<em>Name</em> y <em>Price</em>) no es un componente en sí. Se puede hacer de ambas formas, tanto creando un componente o dejándolo como parte de <var>ProductTable</var>.</p>
+				<p>En este ejemplo, se deja como parte del <var>ProductTable</var> porque representa las propiedades de la colección de datos, que es parte de las responsabilidades de <var>ProductTable</var>. No obstante, si el encabezado se vuelve demasiado complejo (por ejemplo, ordenar elementos por columnas), tendría sentido crear el componente <var>ProductTableHeader</var>.</p>
+				<p>Ahora que hemos identificado los componentes del boceto, vamos a ordenarlos en una jerarquía.</p>
+				<p>Los componentes que aparecen dentro de otro componente en el boceto deben aparecer como subcomponentes en la jerarquía:</p>
+				<ul>
+					<li>
+						FilterableProductTable
+						<ul>
+							<li>SearchBar</li>
+							<li>
+								ProductTable
+								<ul>
+									<li>ProductCategoryRow</li>
+									<li>ProductRow</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section id="paso-2-crea-una-version-estatica-en-react">
+				<h2>Paso 2: Crea una versión estática en React</h2>
+				<p><a href="https://codepen.io/gaearon/pen/BwWzwm" target="_blank" rel="noopener">Aquí</a> podemos ver el código referente al paso 2.</p>
+				<p>Habiendo establecido la jerarquía de componentes, podemos trasladarla ahora a la aplicación. La forma más sencilla de hacerlo es crear una versión que coja el modelo de datos y lo renderice en la interfaz del usuario, pero sin añadir interactividad. Es mejor desacoplar estos procesos ya que construir una versión estática implica escribir mucho sin pensar demasiado, mientras que añadir la interactividad requiere pensar mucho sin escribir demasiado.</p>
+				<p>Para construir la versión estática planteada anteriormente, necesitamos crear componentes que reusen otros componentes y pasar datos entre ellos con el uso de <var>props</var>. Las <var>props</var>, como ya sabemos, son una forma de pasar información de un componente padre a un componente hijo. En este caso, no usaremos el estado para crear la versión estática ya que se usa para controlar la interactividad de la aplicación con el usuario.</p>
+				<p>Se puede crear la aplicación de arriba a abajo o de abajo a arriba. Esto quiere decir que se pueden empezar a construir los componentes que se encuentran más arriba de la jerarquía (<var>FilterableProductTable</var>) o los que se encuentran más abajo (<var>ProductRow</var>). Los proyectos simples se suelen desarrollar de arriba a abajo y, en proyectos complejos, es más fácil construir de abajo a arriba y escribir tests conforme se van realizando los componentes.</p>
+				<p>Al completar este paso, tendremos una librería de componentes resusables que renderizarán nuestro modelo de datos. Los componentes solo tendrán métodos <var>render()</var> ya que, como hemos puntualizado antes, esta es una versión estática de la aplicación.</p>
+				<p>El componente más alto de la jerarquía (<var>FilterableProductTable</var>) tomará el modelo de datos como <var>prop</var>. Si realizamos un cambio en el modelo y llamamos al método <var>root.render()</var> de nuevo, observaremos que la interfaz del usuario cambia. El flujo de datos de React hace que todo sea unidireccional (de componentes a subcomponentes) y en un sentido (los datos fluyen hacia abajo).</p>
+			</section>
+			<section id="paso-3-identificar-la-version-minima-pero-completa-del-estado-de-tu-interfaz-de-usuario">
+				<h2>Paso 3: Identificar la versión mínima (pero completa) del estado de tu interfaz de usuario</h2>
+				<p>Para hacer la interfaz de usuario interactiva, se necesita realizar cambios en el modelo de datos interno. React logra esto con el <strong>estado</strong>.</p>
+				<p>Con el fin de crear la aplicación correctamente, se necesita pensar en un conjunto mínimo de estado mutable que la aplicación pueda necesitar. La clave está en seguir el principio <abbr title="Don't Repeat Yourself">DRY</abbr>. Tendremos que averiguar la representación mínima del estado que la aplicación necesita (es decir, la que se carga en el constructor) y computar el resto bajo demanda (mediante <var>this.setState()</var>).</p>
+				<p>Si tenemos en cuenta todos los fragmentos de datos de nuestra aplicación, obtendríamos lo siguiente:</p>
+				<ul>
+					<li>La lista original de productos</li>
+					<li>El texto de búsqueda que el usuario introduce</li>
+					<li>El valor del <em>checkbox</em></li>
+					<li>La lista filtrada de productos</li>
+				</ul>
+				<p>Para distinguir cuál de ellos es relativo al estado, tenemos que responder a las siguientes <strong>tres preguntas</strong> por cada elemento de arriba:</p>
+				<ol>
+					<li>¿Es pasado por el componente padre a través de las <var>props</var>? En caso afirmativo, <strong>no pertenece al estado</strong>.</li>
+					<li>¿Se mantiene invariable en el tiempo? En caso afirmativo, <strong>no pertenece al estado</strong>.</li>
+					<li>¿Podemos computarlo en base a otro estado o <var>props</var> del componente? En caso afirmativo, <strong>no pertenece al estado</strong>.</li>
+				</ol>
+				<p>Si respondemos a las preguntas formuladas anteriormente, llegaríamos a las siguientes conclusiones:</p>
+				<ul>
+					<li>La lista original de productos es pasada como <var>props</var>, por lo que no forma parte del estado.</li>
+					<li>El texto de búsqueda y el <em>checkbox</em> sí forman parte del estado ya quee cambian a lo largo del tiempo y no pueden ser computados desde ningún sitio.</li>
+					<li>La lista filtrada de productos no forma parte del estado porque puede ser computada al combinar la lista original de productos con el texto de búsqueda y el valor del checkbox.</li>
+				</ol>
+				<p>Llegado a este punto, podemos concluir que van a formar parte del estado el texto de búsqueda y el valor del <em>checkbox</em>.</p>
+			</section>
+			<section id="paso-4-identificar-donde-debe-vivir-tu-estado">
+				<h2>Paso 4: Identificar dónde debe vivir tu estado</h2>
+				<p><a href="https://codepen.io/gaearon/pen/BwWzwm" target="_blank" rel="noopener">Aquí</a> podemos ver el código referente al paso 4.</p>
+				<p>Ahora que hemos identificado el estado mínimo de nuestra aplicación, necesitamos identificar qué componentes van a contar con el estado.</p>
+				<p>Hay que recordar que React mantiene el flujo de datos unidireccional de componente padre a hijo, por lo que puede que cueste ver a qué componente debe pertecer el estado. Para ello, debemos seguir estos principios:</p>
+				<p>Por cada estado presente en la aplicación:</p>
+				<ul>
+					<li>Identifica cada componente que renderiza información basada en el estado descrito en el paso 3.</li>
+					<li>Encuentra un componente común más elevado en la jerarquía que sea común a los componentes previamente mencionados.</li>
+					<li>El componente común mencionado anteriormente debe poseer el estado.</li>
+					<li>Si no hay un componente común que tenga sentido que maneje el estado, crea un nuevo componente que solo almacene el estado. Éste tiene que estar ubicado en la jerarquía justo por encima de aquellos componentes que necesiten dicho estado.</li>
+				</ul>
+				<p>Si aplicamos esta estrategia a nuestra aplicación, obtenemos que:</p>
+				<ul>
+					<li><var>ProductTable</var> necesita filtrar la lista de productos en base al estado y <var>SearchBar</var> necesita mostrar el texto de búsqueda y el estado del checkbox.</li>
+					<li>El componente padre común a <var>ProductTable</var> y a <var>SearchBar</var> es <var>FilterableProductTable</var>.</li>
+					<li>Conceptualmente, tiene sentido que el texto de búsqueda y el valor del checkbox vivan en <var>FilterableProductTable</var> ya que .</li>
+				</ul>
+				<p>Dado los puntos anteriores, podemos concluir que el estado va a establecerse en el componente <var>FilterableProductTable</var>. Para ello, tenemos que agregar <code>this.state = {filterText: '', inStockOnly: false}</code> al constructor de <var>FilterableProductTable</var> para reflejar el estado inicial de la aplicación.</p>
+				<p>Tras ello, pasamos <var>filterText</var> y <var>inStockOnly</var> a <var>ProductTable</var> y <var>SearchBar</var> como <var>props</var>. Con estas <var>props</var> podremos filtrar las filas en <var>ProductTable</var> y establecer el valor de los campos del formulario en <var>SearchBar</var>.</p>
+				<p>Para comprobar el funcionamiento del estado, podemos cambiar <var>filterText</var> a <var>ball</var> como valor inicial y recargar la aplicación. Comprobaremos que la tabla de datos se actualizó con el valor de <samp>ball</samp>.</p>
+			</section>
+			<section id="paso-5-agregar-flujo-de-datos-inverso">
+				<h2>Paso 5: Agregar flujo de datos inverso</h2>
+				<p><a href="https://codepen.io/gaearon/pen/LzWZvb" target="_blank" rel="noopener">Aquí</a> podemos ver el código referente al paso 5.</p>
+				<p>De momento, el flujo de la aplicación fluye hacia abajo, lo cual es correcto pero necesitamos que el componente de formulario, ubicado más abajo en la jerarquía, actualice el estado en <var>FilterableProductTable</var>. Esto se consigue <strong>levantando el estado</strong>.</p>
+				<p>Si intentamos marcar el <em>checkbox</em> en el <a href="https://codepen.io/gaearon/pen/BwWzwm" target="_blank" rel="noopener">ejemplo del paso 4</a>, veremos que React ignora el evento. Esto está hecho adrede ya que hemos determinado que el atributo <var>value</var> del checkbox sea siempre igual al estado pasado por el componente padre <var>FilterableProductTable</var>.</p>
+				<p>Lo que queremos es que eso no ocurra, por lo que tenemos que actualizar el estado cuando el usuario modifique el valor de un <em>input</em>. Como los componentes deben actualizar únicamente su estado, <var>FilterableProductTable</var> pasa los callbacks al componente <var>SearchBar</var>. Éstos se ejecutarán cada vez que el estado se actualice.</p>
+				<p>Para actualizar el estado cada vez que se modifique el <em>input</em>, debemos controlar el estado cuando se produzca el evento <var>onChange</var>. Los callbacks pasados por <var>FilterableProductTable</var> llamarán a <var>setState()</var>, lo cual actualizará la página.</p>
+			</section>
+			<section id="eso-es-todo">
+				<h2>Eso es todo</h2>
+				<p>Es importante haber captado las ideas de modularidad y reutilización de componentes vistas a lo largo de este curso. También es importante tener clara la diferencia entre estado y props, la diferencia entre elemento y componente y el flujo de datos unidireccional de React. Con esto claro, podrás empezar a realizar tus primeras aplicaciones con React.</p>
+			</section>
+		</li>
+	</ol>
+</main>
+
+
+
+
+
+<body>
+
+
+	<script>hljs.initHiglightingOnLoad();</script>
+</body>

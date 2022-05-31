@@ -1,0 +1,165 @@
+  <!DOCTYPE html>
+	<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Lista asíncrona de cocktails | DWEC 06</title>
+			<meta name="author" content="José Carlos López Henestrosa">
+			<meta name="description" content="Ejemplo de AJAX con la API REST TheCocktailDB usando jQuery, XMLHTTPRequest, Fetch API y Axios.">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="icon" type="image/x-icon" href="./favicon.ico">
+			<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+		</head>
+		<body class="container mx-auto flex bg-gray-200 px-10 md:px-none">
+			<!--[if lt IE 7]>
+				<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+			<![endif]-->
+			<div class="mx-auto w-full">
+				<header class="text-center mt-10">
+					<h1 class="font-medium leading-tight text-5xl text-blue-600">TheCocktailDB</h1>
+				</header>
+				<main class="mb-8">
+					<section id="filter" class="md:grid grid-cols-2 lg:grid-cols-4 md:gap-4">
+						<div class="grid grid-rows-2 grid-flow-col gap-4 mt-6">
+							<label 
+								for="categories" 
+								class="font-medium leading-tight text-xl py-2"
+							>
+								Cocktails por categorías
+							</label>
+							<select 
+								id="categories"
+								class="form-select appearance-none
+									block
+									w-full
+									px-3
+									py-1.5
+									text-base
+									font-normal
+									text-gray-700
+									bg-white bg-clip-padding bg-no-repeat
+									border border-solid border-gray-300
+									rounded
+									transition
+									ease-in-out
+									m-0
+									focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+							>
+								<option selected>Selecciona por categorías</option>
+							</select>
+						</div>
+						<div class="grid grid-rows-2 grid-flow-col gap-4 mt-6">
+							<label 
+								for="glasses"
+								class="font-medium leading-tight text-xl py-2"
+							>
+								Cocktails por tipo de copa
+							</label>
+							<select 
+								id="glasses"
+								class="form-select appearance-none
+									block
+									w-full
+									px-3
+									py-1.5
+									text-base
+									font-normal
+									text-gray-700
+									bg-white bg-clip-padding bg-no-repeat
+									border border-solid border-gray-300
+									rounded
+									transition
+									ease-in-out
+									m-0
+									focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+							>
+								<option selected>Selecciona tipo de copa</option>
+							</select>
+						</div>
+						<div class="grid grid-rows-2 grid-flow-col gap-4 mt-6">
+							<label 
+								for="ingredients"
+								class="font-medium leading-tight text-xl py-2"
+							>
+								Cocktails por ingredientes
+							</label>
+							<select 
+								id="ingredients"
+								class="form-select appearance-none
+									block
+									w-full
+									px-3
+									py-1.5
+									text-base
+									font-normal
+									text-gray-700
+									bg-white bg-clip-padding bg-no-repeat
+									border border-solid border-gray-300
+									rounded
+									transition
+									ease-in-out
+									m-0
+									focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+							>
+								<option selected>Selecciona ingrediente</option>
+							</select>
+						</div>
+						<div class="grid grid-rows-2 grid-flow-col gap-4 mt-6">
+							<label 
+								for="alcoholics" 
+								class="font-medium leading-tight text-xl py-2"
+							>
+								Cocktails con o sin alcohol
+							</label>
+							<select 
+								id="alcoholics"
+								class="form-select appearance-none
+									block
+									w-full
+									px-3
+									py-1.5
+									text-base
+									font-normal
+									text-gray-700
+									bg-white bg-clip-padding bg-no-repeat
+									border border-solid border-gray-300
+									rounded
+									transition
+									ease-in-out
+									m-0
+									focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+							>
+								<option selected>Selecciona con o sin alcohol</option>
+							</select>
+						</div>
+					</section>
+					<section 
+						id="drinks"
+						class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12"
+					>
+					</section>
+				</main>
+
+				<footer class="text-center mb-8 bg-gray-200">
+					<span>© 2022: </span>
+					<a 
+						class="text-gray-600 font-semibold" 
+						href="https://github.com/HenestrosaConH/"
+					>
+						José Carlos López Henestrosa
+					</a>
+				</footer>
+			
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" async defer></script>
+    	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11" async defer></script>
+			<script
+				src="https://code.jquery.com/jquery-3.6.0.min.js"
+				integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+				crossorigin="anonymous"></script>
+			<script src="./script.js"></script>
+		</body>
+	</html>

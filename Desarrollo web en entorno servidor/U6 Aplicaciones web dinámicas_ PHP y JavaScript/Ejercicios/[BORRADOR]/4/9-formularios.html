@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Hola, Mundo!</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<main>
+			<h1>Formularios</h1>
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+			<p class="text-muted">Los elementos HTLM relacionados con formularios tienen un funcionamiento distinto en React ya que estos elementos mantienen siempre algún estado interno.</p>
+			<p>Por ejemplo, este formulario en HTML acepta <var>name</var> como entrada:</p>
+			<pre>
+				<code>
+&lt;form&gt;
+  &lt;label&gt;
+    Name:
+    &lt;input type="text" name="name" /&gt;
+  &lt;/label&gt;
+  &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;
+				</code>
+			</pre>
+			<p>Cuando el usuario envía este formulario, lo suele redireccionar a otra página, dependiendo del valor del atributo <var>action</var>. En React, lo adecuado es controlar ese <var>action</var> con funciones JavaScript y que, desde esas funciones, se tenga acceso a los datos que el usuario ha introducido en el formulario.</p>
+			<p>Para lograr lo expuesto, se utiliza una técnica llamada <strong>componentes controlados</strong>.</p>
+			<section id="componentes-controlados">
+				<h2>Componentes controlados</h2>
+				<p>En HTML, los elementos pertenecientes a formularios (<var>&lt;input&gt;</var>, <var>&lt;textarea&gt;</var> o <var>&lt;select&gt;</var>) mantienen su estado y lo actualizan en base a los datos que introduce el usuario. En React, el estado mutable es mantenido en la propiedad <var>state</var> de los componentes y se actualiza únicamente con <var>setState()</var>.</p>
+				<p>Podemos mezclar ambos conceptos haciendo que el estado de React sea la <em>fuente de la verdad</em>. Esto quiere decir que el componente que renderiza un formulario también se encargará de controlar los datos de entrada del usuario. Un campo de un formulario cuyos valores son controlados por React siguiendo este principio recibe el nombre de <strong>componente controlado</strong>.</p>
+				<p>Si queremos que el formulario de ejemplo anterior muestre los datos de entrada de <var>name</var> al ser enviado, podemos estructurar el formulario como un componente controlado:</p>
+				<pre>
+					<code>
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Name:
+          &lt;input type="text" value={this.state.value} onChange={this.handleChange} /&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/VmmPgp?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>En el constructor, vemos que inicializamos el valor de la propiedad <var>value</var>como un string vacío. En el método <var>render()</var>, podemos ver que el valor de la entrada será el valor de <var>this.state.value</var> que, a su vez, es modificado por el método <var>handleChange()</var> cada vez que el usuario realiza un cambio sobre el valor del campo.</p>
+				<p>Con un componente controlado, el valor de entrada es <strong>siempre</strong> controlado por el estado del componente. Esto nos permite tener mayor control a la hora de pasar el valor a otros componentes y modificarlo dependiendo del valor de otros campos.</p>
+			</section>
+			<section id="la-etiqueta-textarea">
+				<h2>La etiqueta &lt;textarea&gt;</h2>
+				<p>Esta etiqueta es particular a otras ya que su valor se encuentra en el cuerpo del elemento.</p>
+				<pre>
+					<code>
+&lt;textarea&gt;
+  Hello there, this is some text in a text area
+&lt;/textarea&gt;
+					</code>
+				</pre>
+				<p>En React, el valor de un <var>textarea</var> será tratado como el resto de elementos relativos a un formulario en HTML. Esto quiere decir que usaremos el atributo <var>value</var> para establecer su valor.</p>
+				<pre>
+					<code>
+class EssayForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Please write an essay about your favorite DOM element.'
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('An essay was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Essay:
+          &lt;textarea value={this.state.value} onChange={this.handleChange} /&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+Notice that this.state.value is initialized in the constructor, so that the text area starts off with some text in it.
+				<p>Date cuenta de que <var>this.state.value </var> ha sido inicializado en el constructor, por lo que el <var>textarea</var> tendrá texto predefinido.</p>
+			</section>
+			<section id="la-etiqueta-select">
+				<h2>La etiqueta &lt;select&gt;</h2>
+				<p>En HTML, esta etiqueta crea un <em>drop-down</em> de opciones.</p>
+				<pre>
+					<code>
+&lt;select&gt;
+  &lt;option value="grapefruit"&gt;Grapefruit&lt;/option&gt;
+  &lt;option value="lime"&gt;Lime&lt;/option&gt;
+  &lt;option selected value="coconut"&gt;Coconut&lt;/option&gt;
+  &lt;option value="mango"&gt;Mango&lt;/option&gt;
+&lt;/select&gt;
+					</code>
+				</pre>
+				<p>Si nos fijamos, la opción <var>Coconut</var> estará seleccionada por defecto gracias al atributo <var>selected</var>. En React, en vez de usar este atributo, se indica en la etiqueta <var>select</var> con el atributo <var>value</var>, el cual indicará el elemento seleccionado en base a su valor.</p>
+				<p>Aquí podemos ver un ejemplo que refleja lo explicado en el párrafo anterior:</p>
+				<pre>
+					<code>
+class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Pick your favorite flavor:
+          &lt;select value={this.state.value} onChange={this.handleChange}&gt;
+            &lt;option value="grapefruit">Grapefruit&lt;/option&gt;
+            &lt;option value="lime">Lime&lt;/option&gt;
+            &lt;option value="coconut">Coconut&lt;/option&gt;
+            &lt;option value="mango">Mango&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/JbbEzX?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Adicionalmente, podremos pasarle un array al atributo <var>value</var> para poder selccionar múltiples opciones en una etiqueta <var>&lt;select&gt;</var>:</p>
+				<pre>
+					<code>
+&lt;select multiple={true} value={['B', 'C']}&gt;
+					</code>
+				</pre>
+				<p>Estas modificaciones en las etiquetas que hemos visto hasta ahora se realizan con el fin de mantener la la misma estructura en todos los elementos relacionados con formularios.</p>
+			</section>
+			<section id="la-etiqueta-input-type-file">
+				<h2>La etiqueta &lt;input type="file" /&gt;</h2>
+				<p>En HTML, esta etiqueta, junto al atributo <var>type="file"</var>, permite al usuario elegir uno o varios archivos de su dispositivo para ser subidos al servidor o ser manipulados por JavaScript a través de <em>File API</em>.</p>
+				<p>Debido a que su valor es de solo lectura, es un componente no controlado en react. En próximos apartados, se habla sobre este componente junto a otros componentes no controlados.</p>
+			</section>
+			<section id="manejando-multiples-elementos-input">
+				<h2>Manejando múltiples elementos input</h2>
+				<p>Si necesitas controlar múltiples elementos input controlados, se puede añadir el atributo <var>name</var> a cada elemento input para dejar que las funciones que gestionan los eventos decidan qué hacer con cada input dependiendo de <var>event.target.name</var>.</p>
+				<pre>
+					<code>
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+      numberOfGuests: 2
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
+      &lt;form&gt;
+        &lt;label&gt;
+          Is going:
+          &lt;input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} /&gt;
+        &lt;/label&gt;
+        &lt;br /&gt;
+        &lt;label&gt;
+          Number of guests:
+          &lt;input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} /&gt;
+        &lt;/label&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+					&lt;/code&gt;
+				&lt;/pre&gt;
+			&lt;/section>&gt;
+		&lt;/li>&gt;
+	&lt;/ol&gt;
+&lt;/main&gt;
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/wgedvV?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Fíjate en cómo se usa la sintaxis de <strong>propiedad <em>name</em> computada</strong> para actualizar el <var>name</var> del input.</p>
+				<p>Recordemos que la sintaxis de <strong>propiedad <em>name</em> computada</strong> consiste en escribir el nombre de una expresión entre corchetes [] para que sea evaluada y devuelva el nombre de la propiedad. Por ejemplo, imaginemos que <var>[name]</var> se evalúa como <var>nombre</var>. Esto implicaría que el valor del input <var>numberOfGuests</var> sería igual al valor de <var>value</var>.</p>
+			</section>
+			<section id="valor-nulo-en-un-input-controlado">
+				<h2>Valor nulo en un <em>input</em> controlado</h2>
+				<p>Como ya hemos visto en apartados anteriores, los componentes controlados pueden establecer un valor predefinido, pudiendo evitar que el usuario lo modifique. Si encuentras que un <em>input</em> es editable por el usuario cuando, realmente, no le estás brindando esa opción, puede que sea debido a un valor nulo del atributo <var>value</var>.</p>
+				<pre>
+					<code>
+ReactDOM.createRoot(mountNode).render(&lt;input value="hi" /&gt;);
+
+setTimeout(function() {
+  ReactDOM.createRoot(mountNode).render(&lt;input value={null} /&gt;);
+}, 1000);
+					</code>
+				</pre>
+			</section>
+			<section id="alternativas-a-componentes-controlados">
+				<h2>Alternativas a componentes controlados</h2>
+				<p>En caso de que estés porteando una aplicación existente a React, es posible que no siempre quieras usar componentes computados debido a que se necesita escribir un controlador para cada evento que queramos manejar. En ese caso, se puede hacer uso de los <strong>componentes no controlados</strong>.</p>
+			</section>
+			<section id="soluciones-completas">
+				<h2>Soluciones completas</h2>
+				<p>Si lo que estás buscando es una solución completa incluyendo validación, tener en cuenta los campos visitados y manejar el envío del formulario, <a href="https://jaredpalmer.com/formik" rel="noopener" target="_blank">Formik</a> es una de las opciones populares. Sin embargo, está construido con los mismos principios de los componentes controlados y manejo de estado, así que no los dejes de aprender.</p>
+			</section>
+		</main>
+		<script>hljs.highlightAll();</script>
+	</body>
+</html>

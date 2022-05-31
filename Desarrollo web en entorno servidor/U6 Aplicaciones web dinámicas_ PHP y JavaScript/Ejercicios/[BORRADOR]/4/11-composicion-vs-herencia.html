@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Hola, Mundo!</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<main>
+			<h1>Composición vs. herencia</h1>
+			<p class="text-muted">Es preferible usar composición en lugar de herencia para reutilizar código entre componentes.</p>
+			<p>En esta sección se muestran escenarios en los que se sustituye el uso de herencia por composición.</p>
+			<section id="contencion">
+				<h2>Contención</h2>
+				<p>Algunos componentes, en el momento en el que se renderizan, no conocen a sus hijos. Esto es frecuente en componentes como <var>Sidebar</var> o <var>Dialog</var>, los cuales representan plantillas sobre las que se van a cargar más componentes. Por ello, se recomienda que estos componentes usen la prop <var>children</var> para pasar elementos hijos directamente en su resultado:</p>
+				<pre>
+					<code>
+function FancyBorder(props) {
+  return (
+    &lt;div className={'FancyBorder FancyBorder-' + props.color}&gt;
+      {props.children}
+    &lt;/div&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Esto permite que otros componentes les pasen hijos "anónimos".</p>
+				<pre>
+					<code>
+function WelcomeDialog() {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        Welcome
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        Thank you for visiting our spacecraft!
+      &lt;/p&gt;
+    &lt;/FancyBorder&gt;
+  );
+}
+					</code>
+				</pre>
+				<p>Como podemos ver en la definición de <var>FancyBorder</var>, el componente sabe que va a tener elementos/componentes anidados en su interior pero no sabe cuáles. Este concepto es muy similar a los <em>slots</em> de frameworks como <strong>Laravel</strong> o <strong>Vue</strong>, los cuales añaden mucha flexibilidad al código.</p>
+				<p><a href="https://codepen.io/gaearon/pen/gwoJZk?editors=1010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>A veces, necesitamos más de un elemento/componente anónimo, por lo que <var>props.children</var> no sería suficiente. Para paliar esta carencia, podemos definir nuestros propia convención en lugar de usar <var>children</var>.</p>
+				<pre>
+					<code>
+function SplitPane(props) {
+  return (
+    &lt;div className="SplitPane"&gt;
+      &lt;div className="SplitPane-left"&gt;
+        {props.left}
+      &lt;/div&gt;
+      &lt;div className="SplitPane-right"&gt;
+        {props.right}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  return (
+    &lt;SplitPane
+      left={
+        &lt;Contacts /&gt;
+      }
+      right={
+        &lt;Chat /&gt;
+      } /&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/gwZOJp?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>Los elementos como <var>Contacts</var> y <var>Chat</var> son simplemente objetos, por lo que pueden ser pasados como <var>props</var>.</p>
+			</section>
+			<section id="especialiacion">
+				<h2>Especialización</h2>
+				<p>A veces pensamos en comoponentes como <em>casos concretos</em> de otros componentes. Por ejemplo, podríamos decir que un WelcomeDialog es un caso concreto de Dialog.</p>
+				<p>En React, esto también se consigue por composición, en la que un componente más “específico” renderiza uno más “genérico” y lo configura con <var>props</var>:</p>
+				<pre>
+					<code>
+function Dialog(props) {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        {props.message}
+      &lt;/p&gt;
+    &lt;/FancyBorder&gt;
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    &lt;Dialog
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" /&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/kkEaOZ?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>
+				<p>La composición funciona igual de bien para componentes definidos como clases:</p>
+				<pre>
+					<code>
+function Dialog(props) {
+  return (
+    &lt;FancyBorder color="blue"&gt;
+      &lt;h1 className="Dialog-title"&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;p className="Dialog-message"&gt;
+        {props.message}
+      &lt;/p&gt;
+      {props.children}
+    &lt;/FancyBorder&gt;
+  );
+}
+
+class SignUpDialog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.state = {login: ''};
+  }
+
+  render() {
+    return (
+      &lt;Dialog title="Mars Exploration Program"
+              message="How should we refer to you?"&gt;
+        &lt;input value={this.state.login}
+               onChange={this.handleChange} /&gt;
+        &lt;button onClick={this.handleSignUp}&gt;
+          ¡Apúntame!
+        &lt;/button&gt;
+      &lt;/Dialog&gt;
+    );
+  }
+
+  handleChange(e) {
+    this.setState({login: e.target.value});
+  }
+
+  handleSignUp() {
+    alert(`Bienvenido abordo, ${this.state.login}!`);
+  }
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/gwZbYa?editors=0010" target="_blank" rel="noopener">Aquí</a> se puede ver un ejemplo en funcionamiento del bloque de código de arriba.</p>			
+			</section>
+			<section id="entonces-que-pasa-con-la-herencia">
+				<h2>¿Entonces qué pasa con la herencia?</h2>
+				<p>En Facebook se usa React en miles de componentes y, según ellos, no han hallado ningún caso de uso en el que recomendarían crear jerarquías de herencia de componentes.</p>
+				<p>Las <var>props</var> y la composición dan toda la flexibilidad que se necesita para personalizar el aspecto y el comportamiento de un componente de forma explícita y segura. Recuerda que los componentes pueden aceptar <var>props</var> arbitrarias, incluyendo valores primitivos, elementos de React y funciones.</p>
+				<p>Si quieres reutilizar código que no es de interfaz entre componentes (como métodos), se sugiere que sea extraído en un módulo de JavaScript independiente. Los componentes pueden importarlo y usar esa función, objeto, o clase, sin necesidad de extenderlo.</p>
+			</section>
+		</main>
+		<script>hljs.highlightAll();</script>
+	</body>
+</html>

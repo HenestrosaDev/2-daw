@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Hola, Mundo!</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<main>
+			<h1>Pensando en React</h1>
+			<p>Una de las grandes ventajas de React es cómo te hace pensar acerca de la aplicación mientras la construyes. En este artículo, vamos a ver el proceso de pensamiento al construir una tabla de productos con una funcionalidad de búsqueda usando React.</p>
+			<section id="empieza-con-un-mock">
+				<h2>Empieza con un mock</h2>
+				<p>Imagina que ya tenemos un API JSON que devuelve esta información:</p>
+				<pre>
+					<code>
+[
+  {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+  {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+  {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+  {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+  {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+  {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+];
+					</code>
+				</pre>
+			</section>
+			<section id="paso-1-divide-la-interfaz-de-usuario-en-una-jerarquia-de-componentes">
+				<h2>Paso 1: Divide la interfaz de usuario en una jerarquía de componentes</h2>
+				<p>Al diseñar la interfaz, se recomienda dividir cada componente y subcomponente en una caja junto a su respectivo nombre.</p>
+				<p>Para poder saber qué debería ser un componente, tenemos que aplicar el mismo criterio con el que decidimos crear una función u objeto nuevo. Tenemos que tener en cuenta también técnicas como <strong>el principio de responsabilidad única</strong>, lo cual significa que un componente debe hacer una sola cosa. Si el componente hace más de una cosa, posiblemente esté sufriendo una <strong>sobrecarga de responsabilidades</strong> y que pueda ser subdividido en subcomponentes.</p>
+				<p>Usualmente, los datos que se cargan en los modelos provienen de un JSON de una API. Si el modelo está bien diseñado, probablemente te darás cuenta de que la interfaz de usuario y la estructura de componentes encajará muy bien con el modelo de datos. Hay que intentar, en la medida de lo posible, separar la interfaz de usuario en componentes de tal forma que cada componente se corresponda con una parte del modelo de datos.</p>
+				<img src="" alt="react mock components">
+				<p>En este boceto, podemos apreciar cinco componentes. En el texto de abajo aparece el nombre de los componentes y su funcionalidad en cursiva.</p>
+				<ol>
+					<li><strong>FilterableProductTable (naranja)</strong>: contiene la totalidad del ejemplo</li>
+					<li><strong>SearchBar (azul)</strong>: recibe lo que escriba el usuario</li>
+					<li><strong>ProductTable (verde)</strong>: muestra y filtra la colección de datos con base en lo que escriba el usuario</li>
+					<li><strong>ProductCategoryRow (turquesa)</strong>: muestra el encabezado de cada categoría</li>
+					<li><strong>ProductRow (rojo)</strong>: muestra una fila por cada producto</li>
+				</ol>
+				<p>Si nos fijamos en el componente <var>ProductTable</var> en la imagen, podemos apreciar que el encabezado de la tabla (<em>Name</em> y <em>Price</em>) no es un componente en sí. Se puede hacer de ambas formas, tanto creando un componente o dejándolo como parte de <var>ProductTable</var>.</p>
+				<p>En este ejemplo, se deja como parte del <var>ProductTable</var> porque representa las propiedades de la colección de datos, que es parte de las responsabilidades de <var>ProductTable</var>. No obstante, si el encabezado se vuelve demasiado complejo (por ejemplo, ordenar elementos por columnas), tendría sentido crear el componente <var>ProductTableHeader</var>.</p>
+				<p>Ahora que hemos identificado los componentes del boceto, vamos a ordenarlos en una jerarquía.</p>
+				<p>Los componentes que aparecen dentro de otro componente en el boceto deben aparecer como subcomponentes en la jerarquía:</p>
+				<ul>
+					<li>
+						FilterableProductTable
+						<ul>
+							<li>SearchBar</li>
+							<li>
+								ProductTable
+								<ul>
+									<li>ProductCategoryRow</li>
+									<li>ProductRow</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section id="paso-2-crea-una-version-estatica-en-react">
+				<h2>Paso 2: Crea una versión estática en React</h2>
+				<p><a href="https://codepen.io/gaearon/pen/BwWzwm" target="_blank" rel="noopener">Aquí</a> podemos ver el código referente al paso 2.</p>
+				<p>Habiendo establecido la jerarquía de componentes, podemos trasladarla ahora a la aplicación. La forma más sencilla de hacerlo es crear una versión que coja el modelo de datos y lo renderice en la interfaz del usuario, pero sin añadir interactividad. Es mejor desacoplar estos procesos ya que construir una versión estática implica escribir mucho sin pensar demasiado, mientras que añadir la interactividad requiere pensar mucho sin escribir demasiado.</p>
+				<p>Para construir la versión estática planteada anteriormente, necesitamos crear componentes que reusen otros componentes y pasar datos entre ellos con el uso de <var>props</var>. Las <var>props</var>, como ya sabemos, son una forma de pasar información de un componente padre a un componente hijo. En este caso, no usaremos el estado para crear la versión estática ya que se usa para controlar la interactividad de la aplicación con el usuario.</p>
+				<p>Se puede crear la aplicación de arriba a abajo o de abajo a arriba. Esto quiere decir que se pueden empezar a construir los componentes que se encuentran más arriba de la jerarquía (<var>FilterableProductTable</var>) o los que se encuentran más abajo (<var>ProductRow</var>). Los proyectos simples se suelen desarrollar de arriba a abajo y, en proyectos complejos, es más fácil construir de abajo a arriba y escribir tests conforme se van realizando los componentes.</p>
+				<p>Al completar este paso, tendremos una librería de componentes resusables que renderizarán nuestro modelo de datos. Los componentes solo tendrán métodos <var>render()</var> ya que, como hemos puntualizado antes, esta es una versión estática de la aplicación.</p>
+				<p>El componente más alto de la jerarquía (<var>FilterableProductTable</var>) tomará el modelo de datos como <var>prop</var>. Si realizamos un cambio en el modelo y llamamos al método <var>root.render()</var> de nuevo, observaremos que la interfaz del usuario cambia. El flujo de datos de React hace que todo sea unidireccional (de componentes a subcomponentes) y en un sentido (los datos fluyen hacia abajo).</p>
+			</section>
+			<section id="paso-3-identificar-la-version-minima-pero-completa-del-estado-de-tu-interfaz-de-usuario">
+				<h2>Paso 3: Identificar la versión mínima (pero completa) del estado de tu interfaz de usuario</h2>
+				<p>Para hacer la interfaz de usuario interactiva, se necesita realizar cambios en el modelo de datos interno. React logra esto con el <strong>estado</strong>.</p>
+				<p>Con el fin de crear la aplicación correctamente, se necesita pensar en un conjunto mínimo de estado mutable que la aplicación pueda necesitar. La clave está en seguir el principio <abbr title="Don't Repeat Yourself">DRY</abbr>. Tendremos que averiguar la representación mínima del estado que la aplicación necesita (es decir, la que se carga en el constructor) y computar el resto bajo demanda (mediante <var>this.setState()</var>).</p>
+				<p>Si tenemos en cuenta todos los fragmentos de datos de nuestra aplicación, obtendríamos lo siguiente:</p>
+				<ul>
+					<li>La lista original de productos</li>
+					<li>El texto de búsqueda que el usuario introduce</li>
+					<li>El valor del <em>checkbox</em></li>
+					<li>La lista filtrada de productos</li>
+				</ul>
+				<p>Para distinguir cuál de ellos es relativo al estado, tenemos que responder a las siguientes <strong>tres preguntas</strong> por cada elemento de arriba:</p>
+				<ol>
+					<li>¿Es pasado por el componente padre a través de las <var>props</var>? En caso afirmativo, <strong>no pertenece al estado</strong>.</li>
+					<li>¿Se mantiene invariable en el tiempo? En caso afirmativo, <strong>no pertenece al estado</strong>.</li>
+					<li>¿Podemos computarlo en base a otro estado o <var>props</var> del componente? En caso afirmativo, <strong>no pertenece al estado</strong>.</li>
+				</ol>
+				<p>Si respondemos a las preguntas formuladas anteriormente, llegaríamos a las siguientes conclusiones:</p>
+				<ul>
+					<li>La lista original de productos es pasada como <var>props</var>, por lo que no forma parte del estado.</li>
+					<li>El texto de búsqueda y el <em>checkbox</em> sí forman parte del estado ya quee cambian a lo largo del tiempo y no pueden ser computados desde ningún sitio.</li>
+					<li>La lista filtrada de productos no forma parte del estado porque puede ser computada al combinar la lista original de productos con el texto de búsqueda y el valor del checkbox.</li>
+				</ol>
+				<p>Llegado a este punto, podemos concluir que van a formar parte del estado el texto de búsqueda y el valor del <em>checkbox</em>.</p>
+			</section>
+			<section id="paso-4-identificar-donde-debe-vivir-tu-estado">
+				<h2>Paso 4: Identificar dónde debe vivir tu estado</h2>
+				<p><a href="https://codepen.io/gaearon/pen/BwWzwm" target="_blank" rel="noopener">Aquí</a> podemos ver el código referente al paso 4.</p>
+				<p>Ahora que hemos identificado el estado mínimo de nuestra aplicación, necesitamos identificar qué componentes van a contar con el estado.</p>
+				<p>Hay que recordar que React mantiene el flujo de datos unidireccional de componente padre a hijo, por lo que puede que cueste ver a qué componente debe pertecer el estado. Para ello, debemos seguir estos principios:</p>
+				<p>Por cada estado presente en la aplicación:</p>
+				<ul>
+					<li>Identifica cada componente que renderiza información basada en el estado descrito en el paso 3.</li>
+					<li>Encuentra un componente común más elevado en la jerarquía que sea común a los componentes previamente mencionados.</li>
+					<li>El componente común mencionado anteriormente debe poseer el estado.</li>
+					<li>Si no hay un componente común que tenga sentido que maneje el estado, crea un nuevo componente que solo almacene el estado. Éste tiene que estar ubicado en la jerarquía justo por encima de aquellos componentes que necesiten dicho estado.</li>
+				</ul>
+				<p>Si aplicamos esta estrategia a nuestra aplicación, obtenemos que:</p>
+				<ul>
+					<li><var>ProductTable</var> necesita filtrar la lista de productos en base al estado y <var>SearchBar</var> necesita mostrar el texto de búsqueda y el estado del checkbox.</li>
+					<li>El componente padre común a <var>ProductTable</var> y a <var>SearchBar</var> es <var>FilterableProductTable</var>.</li>
+					<li>Conceptualmente, tiene sentido que el texto de búsqueda y el valor del checkbox vivan en <var>FilterableProductTable</var> ya que .</li>
+				</ul>
+				<p>Dado los puntos anteriores, podemos concluir que el estado va a establecerse en el componente <var>FilterableProductTable</var>. Para ello, tenemos que agregar <code>this.state = {filterText: '', inStockOnly: false}</code> al constructor de <var>FilterableProductTable</var> para reflejar el estado inicial de la aplicación.</p>
+				<p>Tras ello, pasamos <var>filterText</var> y <var>inStockOnly</var> a <var>ProductTable</var> y <var>SearchBar</var> como <var>props</var>. Con estas <var>props</var> podremos filtrar las filas en <var>ProductTable</var> y establecer el valor de los campos del formulario en <var>SearchBar</var>.</p>
+				<p>Para comprobar el funcionamiento del estado, podemos cambiar <var>filterText</var> a <var>ball</var> como valor inicial y recargar la aplicación. Comprobaremos que la tabla de datos se actualizó con el valor de <samp>ball</samp>.</p>
+			</section>
+			<section id="paso-5-agregar-flujo-de-datos-inverso">
+				<h2>Paso 5: Agregar flujo de datos inverso</h2>
+				<p><a href="https://codepen.io/gaearon/pen/LzWZvb" target="_blank" rel="noopener">Aquí</a> podemos ver el código referente al paso 5.</p>
+				<p>De momento, el flujo de la aplicación fluye hacia abajo, lo cual es correcto pero necesitamos que el componente de formulario, ubicado más abajo en la jerarquía, actualice el estado en <var>FilterableProductTable</var>. Esto se consigue <strong>levantando el estado</strong>.</p>
+				<p>Si intentamos marcar el <em>checkbox</em> en el <a href="https://codepen.io/gaearon/pen/BwWzwm" target="_blank" rel="noopener">ejemplo del paso 4</a>, veremos que React ignora el evento. Esto está hecho adrede ya que hemos determinado que el atributo <var>value</var> del checkbox sea siempre igual al estado pasado por el componente padre <var>FilterableProductTable</var>.</p>
+				<p>Lo que queremos es que eso no ocurra, por lo que tenemos que actualizar el estado cuando el usuario modifique el valor de un <em>input</em>. Como los componentes deben actualizar únicamente su estado, <var>FilterableProductTable</var> pasa los callbacks al componente <var>SearchBar</var>. Éstos se ejecutarán cada vez que el estado se actualice.</p>
+				<p>Para actualizar el estado cada vez que se modifique el <em>input</em>, debemos controlar el estado cuando se produzca el evento <var>onChange</var>. Los callbacks pasados por <var>FilterableProductTable</var> llamarán a <var>setState()</var>, lo cual actualizará la página.</p>
+			</section>
+			<section id="eso-es-todo">
+				<h2>Eso es todo</h2>
+				<p>Es importante haber captado las ideas de modularidad y reutilización de componentes vistas a lo largo de este curso. También es importante tener clara la diferencia entre estado y props, la diferencia entre elemento y componente y el flujo de datos unidireccional de React. Con esto claro, podrás empezar a realizar tus primeras aplicaciones con React.</p>
+			</section>
+		</main>
+		<script>hljs.highlightAll();</script>
+	</body>
+</html>

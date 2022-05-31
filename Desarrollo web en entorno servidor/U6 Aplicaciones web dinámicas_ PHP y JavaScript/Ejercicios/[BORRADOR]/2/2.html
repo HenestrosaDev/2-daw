@@ -1,0 +1,56 @@
+<header>
+	<h1>Node.js, Npm y Laravel Breeze</h1>
+</header>
+<main>
+	<ol type="a">
+		<li>
+			<h2>Lee, investiga y explica con tus propias palabras lo que es <strong><a href="https://en.wikipedia.org/wiki/Node.js" target="_blank" rel="">Node.js</a></strong>.</h2>
+			<p><strong>Node.js</strong> es un entorno de ejecución back-end basado en JavaScript con el que se permite generar páginas web dinámicas en el lado del servidor. La intención de este entorno de ejecución es unificar el lenguaje usado en el cliente y en el servidor.</p>
+			<p>Se usa, principalmente, para correr servidores que atiendan a eventos no bloqueantes, gestionados en un solo hilo.</p>
+		</li>
+		<li>
+			<h2>Lee, investiga y explica con tus propias palabras lo que es <a href="https://en.wikipedia.org/wiki/Npm_(software)" target="_blank" rel="noopener">npm</a> y mira <a href="https://www.youtube.com/watch?v=xJzzu7MVZXw" target="_blank" rel="noopener">este vídeo</a>.</h2>
+			<p><abbr title="Node Package Manager">npm</abbr> es un gestor de paquetes usado en JavaScript y, además, es el gestor de paquetes predeterminado de Node.js. Los paquetes, tanto los gratuitos como los de pago, se encuentran en una base de datos llamada <em>npm registry</em>.</p>
+			<p>Es importante mencionar que, como alternativa a <em>npm</em>, existe el gestor de paquetes <strong>yarn</strong>. La principal diferencia entre ambos es que <em>npm</em> instala los paquetes <strong>secuencialmente</strong> mientras que <em>yarn</em> lo hace en paralelo.</p>
+		</li>
+		<li>
+			<h2>Descarga e instala la versión estable LTS de <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>.</h2>
+			<ol>
+				<li>
+					<p>Vamos a la <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">página de descargas de Node.js</a> y seleccionamos el sistema operativo. En mi caso, elijo Mac.</p>
+				</li>
+				<li>
+					<p>Ejecutamos el <var>.pkg</var> recién instalado y seguimos estos pasos:
+					<code>Introduction > Continue License > Select Continue > Agree Installation Type > Install > Authenticate with your Mac to allow the Installation > Install Software Summary > Close</code></p>
+				</li>
+			</ol>
+		</li>
+		<li>
+			<h2>Comprueba que funciona Node.js y Npm en tu terminal ejecutando <code>node -v</code> y <code>npm -v</code>.</h2>
+			<p>Si hemos seguido los pasos correctamente, al ejecutar ambos comandos por consola, deberíamos de ver la versión actual instalada de Node.js.</p>
+		</li>
+		<li>
+			<h2>Explica qué es <strong><a href="https://laravel.com/docs/starter-kits#laravel-breeze" target="_blank" rel="noopener">Laravel Breeze</a></strong> e instala y ejecuta una aplicación web Laravel Breeze de ejemplo.</h2>
+			<p>Es una implementación de todas las funciones de autentificación de Laravel, la cual engloba inicio de sesión, registro de usuario, reestablecimiento de contraseña, verificación de correo y confirmación de contraseña. Está hecho con <em>Tailwind CSS</em>.</p>
+			<p>Para instalar una aplicación web con Laravel Breeze, es necesario seguir los siguientes pasos:</p>
+			<ol>
+				<li>Ejecutamos el comando <code>laravel new laravel-breeze</code> en el directorio en el que deseemos almacenar el proyecto. El nombre puede ser el que queramos.</li>
+				<li>Instalamos Laravel Breeze en el proyecto con <code>composer require laravel/breeze --dev</code>.</li>
+				<li>Añadimos los archivos necesarios en el proyecto para soportar el paquete de Breeze instalado con <code>php artisan breeze:install</code>.</li>
+				<li>Compilamos los assets del front-end de Breeze con <code>npm install && npm run dev</code>.</li>
+				<li>Creamos una base de datos para almacenar los usuarios de la aplicación.</li>
+				<li>Tras ello, modificamos el archivo <var>.env</var> con las credenciales de la base de datos.</li>
+				<li>Como ya tenemos los archivos de Breeze necesarios en nuestro proyecto, desinstalamos Breeze con el comando <code>composer remove laravel/breeze</code>. Esto <strong>NO</strong> borrará los archivos relacionados con Breeze en nuestro proyecto, sino que eliminará el instalador de Breeze.</li>
+				<li>Por último, ejecutamos <code>composer dump-autoload</code> para refrescar el archivo <var>autoload.php</var> y eliminar las dependencias del instalador de Breeze.</li>
+			</ol>
+			<p>Si todo ha ido bien, deberíamos de ver una pantalla como esta al abrir el proyecto en el navegador:</p>
+			<p><img src="./img/" alt="Pantalla de autentificación en Breeze" width="500" height="600"></p>
+		</li>
+		<li>
+			<h2>Haz una demo con el ejemplo anterior de Laravel Breeze registrando un usuario e iniciando sesión.</h2>
+
+
+
+		</li>
+	</ol>
+</main>

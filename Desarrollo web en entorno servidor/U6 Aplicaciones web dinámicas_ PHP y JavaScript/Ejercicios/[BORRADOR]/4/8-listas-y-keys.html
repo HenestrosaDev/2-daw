@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Hola, Mundo!</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<main>
+			<h1>Listas y keys</h1>
+			<p class="text-muted">Antes de ver cómo se hace en React, vamos a ver cómo se transforman las listas en JavaScript.</p>
+			<p>En este ejemplo, usamos la función <var>map()</var> para doblar los valores de un array que contiene números. Al array devuelto por <var>map()</var> se lo asignamos a la variable <var>doubled</var>.</p>
+			<pre>
+				<code>
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) =&gt; number * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+				</code>
+			</pre>
+			<p>En React, hacer lo que hemos hecho arriba es muy similar.</p>
+			<section id="renderizar-multiples-componentes">
+				<h2>Renderizar múltiples componentes</h2>
+				<p>Se pueden crear colecciones de elementos para que sean incluidos en JSX mediante el uso de llaves {}</p>
+				<p>En el ejemplo de abajo, iteramos sobre el array <var>numbers</var> con la función <var>map()</var> de JavaScript. Por cada elemento, devolvemos un elemento &lt;li&gt; y, finalmente, asignamos el array resultante a <var>listItems</var>.</p>
+				<pre>
+					<code>
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li&gt;{number}&lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>Tras ello, podemos incluir <var>listItems</var> dentro de cualquier elemento &lt;ol&gt; o &lt;ul&gt;</p>
+				<pre>
+					<code>
+&lt;ul&gt;{listItems}&lt;/ul&gt;
+					</code>
+				</pre>
+			</section>
+			<section id="componente-basico-de-lista">
+				<h2>Componente básico de lista</h2>
+				<p></p>
+				<pre>
+					<code>
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =&gt;
+	&lt;li&gt;{number}&lt;/li&gt;
+);
+return (
+	&lt;ul&gt;{listItems}&lt;/ul&gt;
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;NumberList numbers={numbers} /&gt;);
+					</code>
+				</pre>
+				<p>En vez de establecer unos valores fijos de la lista, podemos hacer que un array se inicialice a partir de los valores de las <var>props</var> pasados al componente.</p>
+				<p><a href="https://codepen.io/gaearon/pen/GjPyQr?editors=0011" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<pre>
+					<code>
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =&gt;
+	&lt;li&gt;{number}&lt;/li&gt;
+);
+return (
+	&lt;ul&gt;{listItems}&lt;/ul&gt;
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;NumberList numbers={numbers} /&gt;);
+					</code>
+				</pre>
+				<p>Si corremos el bloque de código, recibiremos un aviso que nos notifica de que una <em>key</em> debe estar asociada a cada elemento de la lista. Una <em>key</em> es un atributo especial que se necesita incluir a la hora de crear listas de elementos. Entraremos en más detalle en la próxima sección.</p>
+					to our list items inside numbers.map() and fix the missing key issue.
+				<p>Para resolver el problema con el aviso, asignamos el atributo <em>key</em> a cada elemento.</p>
+				<pre>
+					<code>
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =&gt;
+	&lt;li key={number.toString()}&gt;
+		{number}
+	&lt;/li&gt;
+);
+return (
+	&lt;ul&gt;{listItems}&lt;/ul&gt;
+);
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/jrXYRR?editors=0011" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+			</section>
+			<section id="keys">
+				<h2>Keys</h2>
+				<p>Las <em>keys</em> ayudan a React a identificar los elementos que han cambiado, han sido añadidos o han sido eliminados. Deben ser atribuidas para elementos contenidos en un array para poder identificarlos de manera fiable. Su valor debe ser <strong>único para cada elemento</strong>.</p>
+				<pre>
+					<code>
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li key={number.toString()}&gt;
+    {number}
+  &lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>El mejor criterio para establecer una <em>key</em> es usar el valor de una propiedad ID o similar.</p>
+				<pre>
+					<code>
+const todoItems = todos.map((todo) =>
+  &lt;li key={todo.id}&gt;
+    {todo.text}
+  &lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>Si no tenemos una propriedad ID o algo por el estilo, podemos usa el índice del elemento como último recurso:</p>
+				<pre>
+					<code>
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  &lt;li key={index}&gt;
+    {todo.text}
+  &lt;/li&gt;
+);
+					</code>
+				</pre>
+				<p>En <a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318" rel="noopener" target="_blank">este artículo</a> de Robin Pokorny se expone las desventajas de usar índices como <em>keys</em>.</p>
+				<p>Si no se asigna explícitamente el valor del atributo <var>key</var>, React usará por defecto el índice del elemento como valor del atributo.</p>
+				<p><a href="https://reactjs.org/docs/reconciliation.html#recursing-on-children" rel="noopener" target="_blank">Este artículo</a> habla más en profundidad sobre la necesidad de las <em>keys</em>.</p>				
+			</section>
+			<section id="extraer-componentes-con-keys">
+				<h2>Extraer componentes con keys</h2>
+				<p>Si extraemos el elemento de una lista en un componente, el atributo <var>key</var> debe aparecer dentro del bucle que se encarga de cargar elementos.</p>
+				<pre>
+					<code>
+function ListItem(props) {
+  // Correcto! No hay necesidad de especificar la key aquí:
+  return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    // Correcto! La key debería ser especificada dentro del array.
+    &lt;ListItem key={number.toString()} value={number} /&gt;
+  );
+  return (
+    &lt;ul&gt;
+      {listItems}
+    &lt;/ul&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/ZXeOGM?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+			</section>
+			<section id="las-keys-debe-ser-unicas-solo-entre-hermanos">
+				<h2>Las <em>keys</em> deben ser únicas solo entre hermanos</h2>
+Las keys usadas dentro de arrays deberían ser únicas entre sus hermanos. Sin embargo, no necesitan ser únicas globalmente. Podemos usar las mismas keys cuando creamos dos arrays diferentes:
+				<p>Las <em>keys</em> usadas dentro de arrays deberían ser únicas entre sus hermanos. No obstante, esto no implica que tengan que ser únicas en todo el DOM. Podemos usar las mismas keys cuando creamos dos arrays diferentes:</p>
+				<pre>
+					<code>
+function Blog(props) {
+  const sidebar = (
+    &lt;ul&gt;
+      {props.posts.map((post) =&gt;
+        &lt;li key={post.id}&gt;
+          {post.title}
+        &lt;/li&gt;
+      )}
+    &lt;/ul&gt;
+  );
+  const content = props.posts.map((post) =&gt;
+    &lt;div key={post.id}&gt;
+      &lt;h3&gt;{post.title}&lt;/h3&gt;
+      &lt;p&gt;{post.content}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+  return (
+    &lt;div&gt;
+      {sidebar}
+      &lt;hr /&gt;
+      {content}
+    &lt;/div&gt;
+  );
+}
+
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(&lt;Blog posts={posts} /&gt;);
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/NRZYGN?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Si se necesita usar el mismo valor en de la <em>key</em> en un componente, pásaselo explícitamente como una propiedad con un nombre diferente:</p>
+				<pre>
+					<code>
+const content = posts.map((post) =&gt;
+  &lt;Post
+    key={post.id}
+    id={post.id}
+    title={post.title} /&gt;
+);
+					</code>
+				</pre>
+				<p>En el ejemplo de arriba, el componente <var>Post</var> puede leer <var>props.id</var>, pero no <var>props.key</var> ya que <var>props.key</var> <strong>NO</strong> es pasada al componente.</p>
+			</section>
+			<section id="integrar-map()-en-jsx">
+				<h2>Integrar map() en JSX</h2>
+				<p>En el ejemplo de más arriba con el componente <var>NumberList</var>, iteramos sobre la lista de la siguiente forma:</p>
+				<pre>
+					<code>
+const listItems = numbers.map((number) =&gt;
+	&lt;ListItem key={number.toString()}
+						value={number} /&gt;
+);
+					</code>
+				</pre>
+JSX allows embedding any expression in curly braces so we could inline the map() result:
+				<p>JSX permite integrar cualquier expresión JavaScript entre llaves {}, por lo que podemos realizar la iteración de arriba de este modo:</p>
+				<pre>
+					<code>
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    &lt;ul&gt;
+      {numbers.map((number) =&gt;
+        &lt;ListItem key={number.toString()}
+                  value={number} /&gt;
+      )}
+    &lt;/ul&gt;
+  );
+}
+					</code>
+				</pre>
+				<p><a href="https://codepen.io/gaearon/pen/BLvYrB?editors=0010" target="_blank" rel="noopener">Ejemplo en CodePen</a></p>
+				<p>Tal y como vimos en los condicionales, tienes que tener en cuenta que si hay mucho anidamiento en un componente, quizás se deba a que debes de extraerlo en un componente aparte.</p>
+			</section>
+		</main>
+		<script>hljs.highlightAll();</script>
+	</body>
+</html>

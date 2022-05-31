@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Presentando JSX</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<main>
+			<h1><a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">Presentando JSX</a> <a href="https://es.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">(español)</a></h1>
+			<section id="que-es-jsx">
+				<h2>¿Qué es JSX? ¿Por qué se usa?</h2>
+				<p><abbr title="JavaScript Syntax eXtension">JSX</abbr> se usa en React para definir la estructura de la interfaz gráfica ya que permite renderizar la vista junto con los datos que va a mostrar. El conjunto de ambos conceptos forman un <strong>componente</strong>.</p>
+				<p>Esto es un ejemplo simple de sintaxis JSX:</p>
+				<pre><code>const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</code></pre>
+			</section>
+			<section id="embebiendo-expresiones-en-jsx">
+				<h2>Embebiendo expresiones en JSX</h2>
+				<p>Para cargar datos en un elemento, se introduce una expresión JavaScript entre <code>{}</code>:</p>
+				<pre>
+					<code>
+	const name = 'Josh Perez';
+	const element = &lt;h1&gt;Hello, {name}&lt;/h1&gt;;
+					</code>
+				</pre>
+			</section>
+			<section id="jsx-es-interpretado-como-javascript">
+				<h2>JSX es interpretado como JavaScript</h2>
+				<p>Hay que tener en cuenta que las expresiones JSX, tras ser compiladas por herramientas como <em>Babel</em>, se convierten en funciones JavaScript que se evalúan a objetos JavaScript (la información que le pasamos al elemento entre <code>{}</code>). Es por ello por lo que podemos usar las expresiones JSX como valores de retorno de una función o dentro de estructuras condicionales, como esta:</p>
+				<pre>
+					<code>
+	function getGreeting(user) {
+		if (user) {
+			return &lt;h1&gt;Hello, {formatName(user)}!&lt;/h1&gt;;
+		}
+		return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;
+	}
+					</code>
+				</pre>
+			</section>
+			<section id="especificando-atributos-con-jsx">
+				<h2>Especificando atributos con JSX</h2>
+				<p>De la misma forma que incluimos datos dentro del elemento, podemos embeber expresiones JavaScript en atributos con JSX, como en el siguiente ejemplo:</p>
+				<pre>
+					<code>
+const element = &lt;img src={user.avatarUrl}&gt;;
+					</code>
+				</pre>
+				<p>Como podemos ver, no ponemos comillas entre el valor del atributo cuando embebemos una expresión JavaScript. Si queremos usar un valor de tipo string en lugar de una expresión JavaScript, lo podemos hacer de la misma forma en la que se realiza con HTML:</p>
+				<pre>
+					<code>
+const element = &lt;a href="https://www.reactjs.org"&gt; link &lt;/a&gt;;
+					</code>
+				</pre>
+			</section>
+			<section id="creando-elementos-hijos-en-jsx">
+				<h2>Creando elementos hijos en JSX</h2>
+				<p>Las etiquetas JSX pueden contener hijos tal y como vemos en documentos XML o HTML:</p>
+				<pre>
+					<code>
+const element = (
+  &lt;div&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+    &lt;h2&gt;Good to see you here.&lt;/h2&gt;
+  &lt;/div&gt;
+);
+					</code>
+					<p>Es importante tener en cuenta que los elementos están comprendidos por paréntesis para evitar inserciones automáticas de <code>;</code> indeseadas.</p>
+				</pre>
+			</section>
+			<section id="evitar-ataques-de-inyeccion">
+				<h2>Evitar ataques de inyección</h2>
+				<p>Para embeber información introducida por un usuario, se hace de la siguiente forma:</p>
+				<pre>
+					<code>
+const title = response.potentiallyMaliciousInput;
+// This is safe:
+const element = &lt;h1&gt;{title}&lt;/h1&gt;;
+					</code>
+				</pre>
+				<p>React DOM escapa cualquier expresión embebida en JSX antes de renderizar el elemento. Esto implica que los valores son convertidos a string antes de ser renderizados y, por tanto, evita los ataques <abbr title="Cross-Site Scripting">XSS</abbr>.</p>
+			</section>
+			<section id="jsx-representa-objetos">
+				<h2>JSX representa objetos</h2>
+				<p>Babel compila el código JSX en llamadas al método <var>createElement()</var> de la clase <var>React</var>. Los dos bloques de código mostrados debajo son interpretados por Babel <strong>de la misma forma</strong>.</p>
+				<pre>
+					<code>
+const element = (
+  &lt;h1 className="greeting"&gt;
+    Hello, world!
+  &lt;/h1&gt;
+);
+					</code>
+				</pre>
+				<pre>
+					<code>
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+					</code>
+				</pre>
+				<p>A su vez, la llamada de <code>React.createElement()</code> genera un objeto como este:</p>
+				<pre>
+					<code>
+// Note: this structure is simplified
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world!'
+  }
+};						
+					</code>
+				</pre>
+				<p>Podríamos interpretar las propiedades del objeto <var>element</var> como descriptores de lo que queremos ver en la pantalla al renderizar al elemento.</p>
+			</section>
+		</main>
+		<script>hljs.highlightAll();</script>
+	</body>
+</html>
