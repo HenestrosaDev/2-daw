@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DIW - DAW - JUNIO CURSO 21_22</title>
+    <meta name="author" content="José Carlos López Henestrosa" />
+    <meta name="description" content="Examen final de Diseño de Interfaces Web" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/estilos_examen_junio.css" />
+  </head>
+  <body class="grid--container mx--auto">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <nav class="grid--header w--100 text--center">
+      <section class="inline align-items--center">
+        <img
+          src="./img/logotipo.png"
+          class="me--3"
+          height="75"
+          alt="Foto de José Carlos López Henestrosa"
+        />
+        <h1 class="text--bold">José Carlos López Henestrosa</h1>
+      </section>
+    </nav>
+
+		<main class="grid--container justify-content--center">
+      <article id="container-image" class="grid--image px--3">
+        <header class="text--center">
+					<h2 class="mb--4 text--bold">Zona de imagen</h2>
+				</header>
+				
+				<section>
+					<img id="image" class="img--fluid" src="./img/img_resultado.jpg">
+				</section>
+      </article>
+
+      <article id="container-video" class="grid--video px--3">
+				<header class="text--center">
+					<h2 class="mb--4 text--bold">Zona de vídeo</h2>
+				</header>
+				
+				<section class="text--center">
+					<video
+						id="video"
+						controls
+						preload="metadata"
+						class="img--fluid"
+					>
+						<!-- MP4 es el formato más extendido y soportado por todos los navegadores -->
+						<source src="./videos/video_animacion.mp4" type="video/mp4" />
+					</video>
+					<canvas
+						id="video-play"
+						class="bg--green bordered--red pointer mt--3"
+						width="40"
+						height="40"
+					>
+						Tu navegador no soporta el elemento <strong>canvas</strong>
+					</canvas>
+				</section>			
+      </article>
+
+			<article id="animation" class="grid--animation px--3">
+        <header class="text--center">
+					<h2 class="mb--4 text--bold">Zona de animación</h2>
+				</header>
+				
+				<section class="animation-container mx--auto bordered relative">
+					<div id="objeto_animado" class="absolute"></div>
+				</section>
+      </article>
+
+			<article id="jquery" class="grid--jquery px--3">
+        <header class="text--center">
+					<h2 class="mb--4 text--bold">Zona de jQuery</h2>
+				</header>
+				
+				<section>
+					<article id="image-filter" class="flex space-around mt--3 bordered p--3">
+						<div>
+							<h3 class="fs--md">Opciones para aplicar a la imagen situada en ZONA DE IMAGEN</h3>
+							<ul class="mt--3">
+								<li id="option-1"><strong>Opción 1:</strong> Poner borde azul con un grosor de 10px</li>
+								<li id="option-2"><strong>Opción 2:</strong> Aplicar a la imagen un filtro gris con valor 100%</li>
+								<li id="option-3"><strong>Opción 3:</strong> Cambiar las dimensiones de la imagen dejándola con 150px de ancho por 100px de alto</li>
+							</select>
+						</div>
+					</article>
+
+					<article class="bordered rounded p--3 mt--3">
+						<header class="text--center">
+							<h3 class="fs--md">Historial de efectos</h3>
+						</header>
+
+						<div id="image-filter-history" class="mt--2">
+						</div>
+					</article>
+				</section>
+      </article>
+		</main>
+
+		<footer class="grid--footer">
+			<p class="text--center">
+				<strong id="footer-text">Málaga</strong>
+			</p>
+		</footer>
+
+		<script src="./js/jquery-3.5.0.js"></script>
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>

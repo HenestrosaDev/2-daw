@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Junio curso 21/22: Nombre del Alumn@</title>
+    <link rel="stylesheet" href="estilos_examen_junio.css" media="screen">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    <!-- Cabecera-->
+    <header>
+        <h1>CABECERA (Foto y Nombre del Alumn@ centrados vertical y horizontalmente)</h1>
+    </header>
+	
+    <!-- Zona reservada para insertar la imagen tratada-->
+    <div class="zona z_imagen">
+        <h2>ZONA DE IMAGEN</h2>
+		<img class="imagen_ejercicio" src="img_02_trimestre.jpg" alt="Imagen segundo trimestre">
+    </div>
+
+	<!-- Zona reservada para insertar el video suministrado y el objeto canvas -->
+    <div class="zona z_video">
+        <h2>ZONA DE VIDEO</h2>
+       <!-- Insertar etiquetas necesarias para que el video se visualice correctamente -->
+       <!-- Insertar etiquetas necesarias para que el objeto canvas se visualice correctamente -->
+    </div>
+
+	<!-- Zona reservada para crear la animación -->
+    <div class="zona z_animacion">
+        <h2>ZONA DE ANIMACIÓN</h2>
+        <div id="objeto_animado"></div>
+    </div>
+
+	<!-- Zona reservada para crear el ejercicio de jquery -->
+    <div class="zona z_jquery">
+        <h2>ZONA DE JQUERY</h2>
+        <div class="elementos_jquery">
+			<div>
+                
+                <h3>Opciones para aplicar a la imagen situada en ZONA DE IMAGEN</h3>
+				<!-- Opciones que tendrán que ejecutar código jQuery cuando se haga click sobre ellas-->
+                <ul>
+					<li id="opcion1">Opción 1: Poner borde azul con un grosor de 10px.</li>
+					<li id="opcion2">Opción 2: Aplicar a la imagen un filtro gris con valor 100%.</li>
+					<li id="opcion3">Opción 3: Cambiar las dimensiones de la imagen dejándola con 150px de ancho por 100px de alto.</li>
+					<li id="opcion4">Opción 4: Hacer desaparecer con un efecto fadeOut la imagen y que aparezca con un filtro invertido al 100% y efecto fadeIn.</li>
+				</ul>
+			</div>
+			<div>
+				<!-- Zona de histórico -->
+                <h3>Histórico</h3>
+				<p id="cambios_aplicados"></p>
+            </div>
+		</div>    
+	</div>    
+
+    <!-- Pie de página -->
+    <footer>
+        <h2>Pie de página (transición). Indica localidad del examen</h2>
+    </footer>
+</body>
+</html>

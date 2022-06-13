@@ -1,0 +1,115 @@
+
+
+* { box-sizing: border-box;}
+
+body{
+     /* Definimos el contenedor principal como un grid */ 
+     display: grid;
+     /* Definimos la separación entre cada una de las zonas */
+     grid-gap: 5px;
+
+     /* Definimos el número de filas y columnas que conforman nuestra maqueta*/
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 70px 300px 350px 55px;
+	      
+     /* Definimos mediante areas nuestra maqueta*/
+     grid-template-areas:
+         "header header"
+         "imagen video"
+         "animacion jquery"
+		 "footer footer";
+
+         /* Ajustamos los elementos al máximo posible*/
+        justify-items:stretch;
+    }
+
+/* Asignamos a todos los div , cabecera y pie un borde para diferenciarlos */   
+
+header,footer,.zona {
+	border:2px solid black;
+    margin:2px;
+	}
+
+/* Asignamos cada una de las areas definidas en el grid a un elemento del HTML */   
+header{grid-area:header;}
+.z_imagen{grid-area:imagen;}
+.z_video{grid-area:video;}
+.z_animacion{grid-area:animacion;}
+.z_jquery{grid-area:jquery;}
+footer{grid-area:footer;}
+
+/*Centramos el horizontalmente el texto de las zonas*/
+.zona{text-align: center;}
+
+/* Definimos estilos para los títulos de cada apartado */
+h1, h2{
+    text-align: center;
+    color:red;
+    margin:0px;
+    margin-bottom:5px;
+    margin-top: 5px;
+}
+
+/* Definimos tamaño de la imagen que habrá que cambiar y que sirve de muestra*/
+.imagen_ejercicio{
+    width:300px;
+    height:200px;
+}
+
+/* Definimos caracteríticas del objeto que tendrás que animar*/
+#objeto_animado{
+    width:40px;
+    height:40px;
+    left:380px;
+    top: 30px;
+    background-color: gold;
+    border: 2px solid black;
+    position:relative;
+}
+
+
+/* Definimos las zonas y los estilos de la parte relacionada con jQuery */
+.z_jquery{
+    display:flex;
+    flex-direction: column;
+
+}
+.elementos_jquery {
+    display:flex;
+    flex-direction: rows;
+    justify-content: space-between;
+}   
+.elementos_jquery>div{
+    width:49%;
+	border:solid 2px blue;
+	margin:2px;
+}
+.elementos_jquery >div:nth-child(1){
+    width:70%;
+}
+
+/* Relacionado con el histórico que habrá que ir completando*/
+.elementos_jquery >div:nth-child(2){
+    width:29%;
+}
+
+/* Estilo de las listas*/
+ul{text-align: left;}
+
+li:hover{
+    color:red;
+}
+
+/* -------------------------------------------------------------------*/
+/* -------------------------------------------------------------------*/
+/* -------------------------------------------------------------------*/
+
+/* Desarrollo realizado por el alumnado */
+
+
+
+
+ 
+
+
+

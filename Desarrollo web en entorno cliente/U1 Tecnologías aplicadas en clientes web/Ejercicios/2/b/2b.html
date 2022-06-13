@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' lang='es'>
-
-<head>
-    <title>Unidad 1 | Ejercicio 1: 2b</title>
-    <meta charset='utf-8' />
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <title>Ejercicio 2b | DWEC 1</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Apuntes" content="Unidad 1 | Ejercicios">
-    <link rel="icon" type="image/icon" href="../../img/favicon/favicon.ico">
-    <link rel="stylesheet" href="../../css/main.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script src="../../js/main.min.js"></script>
-    <script src="./2b.js"></script>
-</head>
+		<meta name="author" content="José Carlos López Henestrosa">
+    <base href="https://lhjc-dwec-tarea1.netlify.app/" target="_self">
+    <link rel="icon" type="image/icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    >
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+  </head>
 
-<body>
+  <body>
     <aside id="sidenav"></aside>
 
     <div id="main" class="main">
-        <div class="header">
-            <h1>Evaluar nota</h1>
-        </div>
+      <div class="header">
+        <h1>Evaluar nota</h1>
+      </div>
 
-        <form id="form" action="#" method="post" class="form__columns">
-            <label for="grade" class="form__radio-label">Introduce una nota entre 1 y 10: </label>
-            <input type="number" id="grade" min="1" max="10" step="0.01"
-                onkeyup="validateNumber(this)" required>
-            <button class="form__btn form__btn--submit" type="reset" onclick="evaluateGrade()">Calcular</button>
-        </form>
+      <form id="form" action="#" method="post" class="form__columns">
+        <label for="grade" class="form__radio-label"
+          >Introduce una nota entre 1 y 10:
+        </label>
+        <input
+					id="grade"
+          type="number"
+          min="1"
+          max="10"
+          step="0.01"
+          required
+        />
+        <button
+					id="submit"
+          class="form__btn form__btn--submit"
+          type="button"
+        >
+          Calcular
+        </button>
+      </form>
     </div>
 
     <div id="footer"></div>
     <div id="floating-buttons"></div>
-</body>
 
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="2/b/2b.js"></script>
+  </body>
 </html>

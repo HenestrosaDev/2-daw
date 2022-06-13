@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Ejercicio 1 examen junio DWEC | José Carlos López Henestrosa</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="José Carlos López Henestrosa" />
+		<meta name="description" content="Examen de junio de DWEC" />
+		<link rel="icon" type="image/icon" href="./img/favicon/favicon.ico" />
+		<link rel="stylesheet" href="./css/bootstrap-5.1.3.min.css" />
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+
+	<body class="bg-light">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="./index.html">Examen junio</a>
+			</div>
+		</nav>
+
+		<main class="container py-3" style="max-width: 960px">
+			<header>
+				<div class="p-3 pb-md-4 mx-auto text-center">
+					<h1 class="display-4 fw-normal">Ejercicio 1</h1>
+				</div>
+			</header>
+
+			<form id="survey__form">
+				<div class="mb-3 form-floating">
+					<input
+						type="text"
+						class="form-control"
+						id="survey__nickname"
+					/>
+					<label for="survey__nickname">NickName</label>
+				</div>
+
+				<div>
+					<canvas
+						id="square"
+						class="bg--default"
+						width="50"
+						height="50"
+					>
+					</canvas>
+
+					<div class="mt-3">
+						<label>Color: </label>
+						<select id="color" class="form-select">
+							<option value="green">green</option>
+							<option value="black">black</option>
+							<option value="blue">blue</option>
+							<option value="red">red</option>
+							<option value="yellow">yellow</option>
+							<option value="white">white</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="edad" id="menorEdad" value="menor de edad" checked>
+						<label class="form-check-label" for="menorEdad">Menor edad</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="edad" id="mayorEdad" value="mayor de edad">
+						<label class="form-check-label" for="mayorEdad">Mayor edad</label>
+					</div>
+				</div>
+
+				<div class="mt-4 text-center">
+					<button
+						id="survey__reset"
+						class="btn btn-secondary"
+						type="reset"
+					>
+						Restablecer
+					</button>
+					<button
+						id="survey__submit"
+						class="btn btn-primary"
+						type="submit"
+					>
+						Enviar
+					</button>
+				</div>
+			</form>
+
+			<div id="resultado" class="mt-4"></div>
+		</main>
+
+		<script src="./js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+{
+   "restaurante":"Gula entre amigos",
+   "total_recetas":"3",
+   "recetas":[
+      {
+         "nombre":"Mousse de Cilantro",
+         "ingredientes":[
+            "cilantro",
+            "cebolla picada",
+            "crema de queso",
+            "gretenina",
+            "agua"
+         ]
+      },
+      {
+         "nombre":"gazpacho oriental",
+         "ingredientes":[
+            "tomate pera",
+            "pimiento verde italiano",
+            "vinagre",
+            "pepino",
+            "agua",
+            "aceite",
+            "cilantro",
+            "dientes de ajo"
+         ]
+      },
+      {
+         "nombre":"churros",
+         "ingredientes":[
+            "Harina",
+            "Agua",
+            "Sal"
+         ]
+      }
+   ]
+}

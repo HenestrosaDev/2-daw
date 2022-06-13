@@ -56,7 +56,7 @@ const startGame = (startButton) => {
       {
         id: `ball-${i}`,
         src: "./img/bowling-ball.png",
-        className: `md:row-start-${i + 1} ${otherPlayer === i ? "hidden" : ""}`,
+        className: `md:row-start-${i + 1} ${otherPlayer === i ? "hidden" : ""} cursor-pointer`,
         height: 42,
         width: 42,
       },
