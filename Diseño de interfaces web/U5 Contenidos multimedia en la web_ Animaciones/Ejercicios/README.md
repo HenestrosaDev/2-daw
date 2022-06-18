@@ -67,3 +67,15 @@
 		</div>
 	</li>
 </ol>
+
+---
+
+## Resultado
+
+**Calificación**: 9,00 / 10,00
+
+Calificado el lunes, 16 de junio de 2022, 13:13 por	Cejudo Morillo, Rafael Roberto
+
+**Comentario mío**:
+
+No entiendo por qué no es un 10 ya que no hay justificación sobre los errores cometidos.

@@ -1,28 +1,28 @@
 "use strict";
 
 window.addEventListener("load", () => {
-	setUpListeners();
+  setUpListeners();
 });
 
-// Escucha al evento submit del formulario 
+// Escucha al evento submit del formulario
 const setUpListeners = () => {
-    document
-        .getElementById("survey__form")
-        .addEventListener("submit", function (e) {
-            e.preventDefault();    
+  document
+    .getElementById("survey__form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
 
-            // Si el nick name no es válido, modificamos el input
-            if (!isNickNameValid()) {
-                setNickNameIncorrect();
-            } else {
-                // Si es válido, mostramos el resultado y eliminamos el borde rojo
-                appendResult();
-                document.getElementById("survey__nickname").removeAttribute("style")
-            }
+      // Si el nick name no es válido, modificamos el input
+      if (!isNickNameValid()) {
+        setNickNameIncorrect();
+      } else {
+        // Si es válido, mostramos el resultado y eliminamos el borde rojo
+        appendResult();
+        document.getElementById("survey__nickname").removeAttribute("style");
+      }
 
-            changeSquareColor();
-        });
-}
+      changeSquareColor();
+    });
+};
 
 /*
  ********************************** NICKNAME *********************************
@@ -73,68 +73,80 @@ const setUpListeners = () => {
  Regex final: /^([^ -AEIOU[-ÿ])([a-zñ0-9@]){7,19}$/
  */
 const isNickNameValid = () => {
-    const nickName = document.getElementById("survey__nickname").value
-    
-    const matchesRegex = checkMatch(nickName)(/^([^ -AEIOU[-ÿ])([a-zñ0-9@]){7,19}$/);
-    
-    if (matchesRegex) {
-        const isPenultimateCharValid = nickName.charAt(nickName.length - 3) === '@';
-        const splitNickName = nickName.split("@");
+  const nickName = document.getElementById("survey__nickname").value;
 
-        let areNumbersOdd = false;
+  const matchesRegex = checkMatch(nickName)(
+    /^([^ -AEIOU[-ÿ])([a-zñ0-9@]){7,19}$/
+  );
 
-        // Comprobamos si está el carácter "@" presente en el valor del input y que solo hay dos números tras el "@"
-        if (splitNickName && splitNickName[1].length == 2) {
-            // Iteramos por cada elemento 
-            for (let i=0; i < splitNickName[1].length; i++) {
-                const currentChar = splitNickName[1].charAt(i);
+  if (matchesRegex) {
+    const isPenultimateCharValid = nickName.charAt(nickName.length - 3) === "@";
+    const splitNickName = nickName.split("@");
 
-                // Comprobamos si el carácter es un número y que sea impar
-                if (typeof parseInt(currentChar) == 'number' && parseInt(currentChar) % 2 !== 0) {
-                    areNumbersOdd = true;
-                } else {
-                    areNumbersOdd = false;
-                }
-            }
+    let areNumbersOdd = false;
+
+    // Comprobamos si está el carácter "@" presente en el valor del input y que solo hay dos números tras el "@"
+    if (splitNickName && splitNickName[1].length == 2) {
+      // Iteramos por cada elemento
+      for (let i = 0; i < splitNickName[1].length; i++) {
+        const currentChar = splitNickName[1].charAt(i);
+
+        // Comprobamos si el carácter es un número y que sea impar
+        if (
+          typeof parseInt(currentChar) == "number" &&
+          parseInt(currentChar) % 2 !== 0
+        ) {
+          areNumbersOdd = true;
+        } else {
+          areNumbersOdd = false;
         }
-
-        return matchesRegex && isPenultimateCharValid && areNumbersOdd;
-    } else {
-        return matchesRegex;
+      }
     }
-}
+
+    return matchesRegex && isPenultimateCharValid && areNumbersOdd;
+  } else {
+    return matchesRegex;
+  }
+};
 
 // Pone el fondo rojo del input del nick name en caso de que no sea correcto
 const setNickNameIncorrect = () => {
-    document.getElementById("survey__nickname").setAttribute('style', 'border:1px solid red !important');
-}
+  document
+    .getElementById("survey__nickname")
+    .setAttribute("style", "border:1px solid red !important");
+};
 
 // Valora si el valor de un input coincide con el de una Regex
 const checkMatch = (value) => {
-	return (regex) => regex.test(value);
+  return (regex) => regex.test(value);
 };
 
 // Cambia el color del cuadrado dependiendo de la opción seleccionada por el usuario
 const changeSquareColor = () => {
-    const elementColor = document.getElementById("color");
-    const selectedColor = elementColor.options[elementColor.selectedIndex].text;
-    document.getElementById("square").style.backgroundColor = selectedColor;
-}
+  const elementColor = document.getElementById("color");
+  const selectedColor = elementColor.options[elementColor.selectedIndex].text;
+  document.getElementById("square").style.backgroundColor = selectedColor;
+};
 
 // Mostramos al usuario los datos de entrada que ha proporcionado
 const appendResult = () => {
-    const resultElement = document.getElementById("resultado");
-    resultElement.innerHTML = "";
-    
-    const userNode = 
-        document.createTextNode(`El usuario es ${document.getElementById("survey__nickname").value} `);
-    resultElement.appendChild(userNode);
+  const resultElement = document.getElementById("resultado");
+  resultElement.innerHTML = "";
 
-    const elementColor = document.getElementById("color");
-    const selectedColor = elementColor.options[elementColor.selectedIndex].text;
-    const colorNode = document.createTextNode(`su color favorito es ${selectedColor} `);
-    resultElement.appendChild(colorNode);
+  const userNode = document.createTextNode(
+    `El usuario es ${document.getElementById("survey__nickname").value} `
+  );
+  resultElement.appendChild(userNode);
 
-    const ageNode = document.createTextNode(`y es ${document.querySelector('input[name="edad"]:checked').value}`);
-    resultElement.appendChild(ageNode);
-}
+  const elementColor = document.getElementById("color");
+  const selectedColor = elementColor.options[elementColor.selectedIndex].text;
+  const colorNode = document.createTextNode(
+    `su color favorito es ${selectedColor} `
+  );
+  resultElement.appendChild(colorNode);
+
+  const ageNode = document.createTextNode(
+    `y es ${document.querySelector('input[name="edad"]:checked').value}`
+  );
+  resultElement.appendChild(ageNode);
+};
