@@ -1,4 +1,7 @@
+# Proyectos
 - [Tarea 1](https://lhjc-dwec-tarea1.netlify.app/)
-- [Tarea 2](lhjc-tarea2.herokuapp.com)
-- [Tarea 3](lhjc-tarea3.herokuapp.com)
-- [Tarea 4](lhjc-tarea4.herokuapp.com)
+- [Tarea 2](https://lhjc-dwec-tarea2.netlify.app/)
+- [Tarea 3](https://lhjc-dwec-tarea3.netlify.app/)
+- [Tarea 4](https://lhjc-dwec-tarea4.netlify.app/)
+- [Tarea 5](https://lhjc-dwec-tarea5.netlify.app/)
+- [Tarea 6](https://lhjc-dwec-tarea6.netlify.app/)
