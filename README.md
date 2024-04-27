@@ -29,7 +29,7 @@
     </a>
     <a href="https://github.com/HenestrosaDev/2-daw/blob/main/LICENSE">
       <img 
-        src="https://img.shields.io/badge/license-BSD--4--Clause-lightgray" 
+        src="https://img.shields.io/github/license/HenestrosaDev/2-daw" 
         alt="GitHub pull requests" 
       />
     </a>
