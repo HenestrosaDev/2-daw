@@ -22,30 +22,84 @@ include "./php/get_user_bookings.php";
 	<?php include "{$relative}/common/modal-logout.php" ?>
 
 	<!-- Modal booking -->
-	<div class="modal fade" id="booking__modal" tabindex="-1" aria-labelledby="booking__title" aria-hidden="true">
+	<div 
+		id="booking__modal" 
+		class="modal fade" 
+		tabindex="-1" 
+		aria-labelledby="booking__title" 
+		aria-hidden="true"
+	>
 		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="booking__title">Indica periodo de reserva</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<h5 
+						id="booking__title"
+						class="modal-title" 
+					>
+						Indica periodo de reserva
+					</h5>
+					<button 
+						type="button" 
+						class="btn-close" 
+						data-bs-dismiss="modal" 
+						aria-label="Close"
+					></button>
 				</div>
-				<form id="booking__form" action="./php/insert_booking.php" method="post">
+
+				<form 
+					id="booking__form" 
+					action="./php/insert_booking.php" 
+					method="post"
+				>
 					<div class="modal-body">
 						<div class="form-floating">
-							<input type="text" name="booking_from" class="form-control" id="booking__from" readonly required>
+							<input 
+								id="booking__from" 
+								name="booking_from" 
+								type="text" 
+								class="form-control" 
+								readonly 
+								required
+							>
 							<label for="booking__from">Desde</label>
 						</div>
+
 						<div class="form-floating">
-							<input type="text" name="booking_to" class="form-control" id="booking__to" readonly required>
+							<input 
+								id="booking__to" 
+								name="booking_to" 
+								type="text" 
+								class="form-control" 
+								readonly 
+								required
+							>
 							<label for="booking__to">Hasta</label>
 						</div>
+
 						<div id="form__hidden_input">
-							<input type="hidden" id="booking__car_id" name="booking_car_id">
+							<input 
+								id="booking__car_id" 
+								name="booking_car_id"
+								type="hidden" 
+							>
 						</div>
 					</div>
+
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-						<button type="button" id="booking__submit" class="btn btn-primary">Confirmar</button>
+						<button 
+							type="button" 
+							class="btn btn-secondary" 
+							data-bs-dismiss="modal"
+						>
+							Cancelar
+						</button>
+						<button 
+							type="button" 
+							id="booking__submit" 
+							class="btn btn-primary"
+						>
+							Confirmar
+						</button>
 					</div>
 				</form>
 			</div>
@@ -67,16 +121,31 @@ include "./php/get_user_bookings.php";
 				<?php foreach ($cars as $car) { ?>
 					<div class="col">
 						<div class="card h-100">
-							<img src="<?= $car["image_name"] ?>" class="card-img-top car__img" alt="<?= $car["model"] ?>">
+							<img 
+								src="<?= $car["image_name"] ?>" 
+								class="card-img-top car__img" 
+								alt="<?= $car["model"] ?>"
+							/>
+
 							<div class="card-body">
 								<div>
 									<div class="float-start">
-										<span id="<?= $car["id"] ?>__model" class="float-start"><?= $car["model"] ?></span>
+										<span 
+											id="<?= $car["id"] ?>__model" 
+											class="float-start"
+										>
+											<?= $car["model"] ?>
+										</span>
 									</div>
+
 									<div class="float-end">
-										<span id="<?= $car["id"] ?>__price"><?= $car["price"] ?></span><span>€/día</span>
+										<span id="<?= $car["id"] ?>__price">
+											<?= $car["price"] ?>
+										</span>
+										<span>€/día</span>
 									</div>
 								</div>
+
 								<div class="text-center mt-5">
 									<?php
 									foreach ($user_bookings as $user_booking) {
@@ -84,6 +153,7 @@ include "./php/get_user_bookings.php";
 											$from_date = new DateTime($user_booking["booked_from"]);
 											$to_date = new DateTime($user_booking["booked_to"]);
 											$append_text = "desde el {$from_date->format('d-m-Y')} hasta el {$to_date->format('d-m-Y')}";
+
 											if (!empty($title)) {
 												$title .= ", {$append_text}";
 											} else {
@@ -94,12 +164,29 @@ include "./php/get_user_bookings.php";
 
 									if (!empty($title)) {
 									?>
-										<a title="<?= $title ?>" id="<?= $car["id"] ?>__button" href="#" class="btn btn-success btn__order text-uppercase w-100" data-bs-toggle="modal" data-bs-target="#booking__modal">Volver a reservar</a>
+										<a 
+											id="<?= $car["id"] ?>__button" 
+											href="#" 
+											title="<?= $title ?>" 
+											class="btn btn-success btn__order text-uppercase w-100" 
+											data-bs-toggle="modal" 
+											data-bs-target="#booking__modal"
+										>
+											Volver a reservar
+										</a>
 									<?php 
 										unset($title);
 									} else { 
 									?>
-										<a id="<?= $car["id"] ?>__button" href="#" class="btn btn-primary btn__order text-uppercase w-100" data-bs-toggle="modal" data-bs-target="#booking__modal">Reservar</a>
+										<a 
+											id="<?= $car["id"] ?>__button" 
+											href="#" 
+											class="btn btn-primary btn__order text-uppercase w-100" 
+											data-bs-toggle="modal" 
+											data-bs-target="#booking__modal"
+										>
+											Reservar
+										</a>
 									<?php } ?>
 								</div>
 							</div>

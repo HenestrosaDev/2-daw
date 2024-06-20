@@ -18,6 +18,7 @@ if (!empty($_POST["car_id_to_check"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 	print_r($unavailable_periods);
+	
 	foreach ($unavailable_periods as $period) {
 		foreach ($period as $date) {
 			$unavailable_dates[] = $date->format("Y-m-d");

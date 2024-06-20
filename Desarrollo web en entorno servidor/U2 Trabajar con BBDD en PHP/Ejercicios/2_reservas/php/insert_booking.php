@@ -1,8 +1,10 @@
 <?php
-if (
-	(!empty($_POST["booking_from"]) && !empty($_POST["booking_to"]) && !empty($_POST["booking_car_id"]))
-	&& $_SERVER["REQUEST_METHOD"] == "POST"
-	) {
+$is_booking_data_valid =
+	!empty($_POST["booking_from"]) &&
+	!empty($_POST["booking_to"]) &&
+	!empty($_POST["booking_car_id"]);
+
+if ($is_booking_data_valid && $_SERVER["REQUEST_METHOD"] == "POST") {
 	$relative = "../..";
 	session_status() === PHP_SESSION_ACTIVE ?: session_start();
 	require_once("{$relative}/php/connect_db.php");

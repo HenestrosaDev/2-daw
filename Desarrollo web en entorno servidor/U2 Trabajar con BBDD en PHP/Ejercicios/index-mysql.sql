@@ -48,10 +48,10 @@ CREATE TABLE app_user (
 );
 
 -- LAS CONTRASEÑAS SON: '1234'
-INSERT INTO app_user (username, user_password, is_active, user_role)
+INSERT INTO app_user (username, user_password, user_role)
 VALUES 
-	('admin', '$argon2id$v=19$m=65536,t=4,p=1$NjhOUUVzMjdPSjZ5b3dMcQ$CaTBaRw1dLUEhgvf7P4AE59cFRsx4/yG1yfzsgrrMeM', '1', 'A'),
-	('user', '$argon2id$v=19$m=65536,t=4,p=1$NjhOUUVzMjdPSjZ5b3dMcQ$CaTBaRw1dLUEhgvf7P4AE59cFRsx4/yG1yfzsgrrMeM', '1', 'U');
+	('admin', '$argon2id$v=19$m=65536,t=4,p=1$NjhOUUVzMjdPSjZ5b3dMcQ$CaTBaRw1dLUEhgvf7P4AE59cFRsx4/yG1yfzsgrrMeM', 'A'),
+	('user', '$argon2id$v=19$m=65536,t=4,p=1$NjhOUUVzMjdPSjZ5b3dMcQ$CaTBaRw1dLUEhgvf7P4AE59cFRsx4/yG1yfzsgrrMeM', 'U');
 
 
 /* ---------------- 1_test ---------------- */

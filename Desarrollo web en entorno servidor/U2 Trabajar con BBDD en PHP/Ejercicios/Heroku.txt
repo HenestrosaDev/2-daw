@@ -1,2 +1,4 @@
+NOTA: Ya no están disponibles en Heroku porque quitaron el free tier.
+
 lhjc-tarea1.herokuapp.com
 lhjc-tarea2.herokuapp.com

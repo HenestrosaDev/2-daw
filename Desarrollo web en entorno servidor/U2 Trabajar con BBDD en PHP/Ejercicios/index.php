@@ -120,26 +120,72 @@ if (!empty($_POST["sign_up_submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php include "{$relative}/common/modal-logout.php" ?>
 
 	<!-- Modal login -->
-	<div class="modal fade" id="login__modal" tabindex="-1" aria-labelledby="login__title" aria-hidden="true">
+	<div 
+		id="login__modal" 
+		class="modal fade" 
+		tabindex="-1" 
+		aria-labelledby="login__title" 
+		aria-hidden="true"
+	>
 		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="login__title">Inicio de sesión</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<h5 
+						id="login__title"
+						class="modal-title" 
+					>
+						Inicio de sesión
+					</h5>
+					<button 
+						type="button" 
+						class="btn-close" 
+						data-bs-dismiss="modal" 
+						aria-label="Close"
+					></button>
 				</div>
+
 				<form method="post">
 					<div class="modal-body">
-						<div class="form-floating" id="login__username">
-							<input type="text" name="login_username" class="form-control" id="login__username__input" placeholder="Juan" maxlength="20" required>
-							<label for="login__username__input">Nombre de usuario</label>
+						<div 
+							id="login__username"
+							class="form-floating" 
+						>
+							<input 
+								id="login__username__input" 
+								type="text" 
+								name="login_username" 
+								class="form-control" 
+								placeholder="Juan" 
+								maxlength="20" 
+								required
+							>
+							<label for="login__username__input">
+								Nombre de usuario
+							</label>
 						</div>
-						<div class="form-floating" id="login__password">
-							<input type="password" name="login_password" class="form-control" id="login__password__input" placeholder="Password" required>
-							<label for="login__password__input">Contraseña</label>
+
+						<div 
+							id="login__password"
+							class="form-floating" 
+						>
+							<input 
+								id="login__password__input" 
+								name="login_password" 
+								type="password" 
+								class="form-control" 
+								placeholder="Password" 
+								required
+							>
+							<label for="login__password__input">
+								Contraseña
+							</label>
 						</div>
 
 						<?php if (!empty($e_login_empty_field) || !empty($e_username_not_match) || !empty($e_password_not_match) || !empty($e_inactive_user)) { ?>
-							<div class="alert alert-danger text-center" role="alert">
+							<div 
+								class="alert alert-danger text-center" 
+								role="alert"
+							>
 								<?php if (!empty($e_login_empty_field)) { ?>
 									No pueden haber campos vacíos
 								<?php } else if (!empty($e_username_not_match)) { ?>
@@ -152,9 +198,23 @@ if (!empty($_POST["sign_up_submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 							</div>
 						<?php } ?>
 					</div>
+
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-						<button type="submit" name="login_submit" value="login_submit" class="btn btn-primary">Iniciar</button>
+						<button 
+							type="button" 
+							class="btn btn-secondary" 
+							data-bs-dismiss="modal"
+						>
+							Cerrar
+						</button>
+						<button 
+							name="login_submit" 
+							value="login_submit" 
+							type="submit" 
+							class="btn btn-primary"
+						>
+							Iniciar
+						</button>
 					</div>
 				</form>
 			</div>
@@ -162,24 +222,71 @@ if (!empty($_POST["sign_up_submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	</div>
 
 	<!-- Modal sign up -->
-	<div class="modal fade" id="sign_up__modal" tabindex="-1" aria-labelledby="sign_up__title" aria-hidden="true">
+	<div 
+		id="sign_up__modal" 
+		class="modal fade" 
+		tabindex="-1" 
+		aria-labelledby="sign_up__title" 
+		aria-hidden="true"
+	>
 		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="sign_up__title">Registro</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<h5 
+						id="sign_up__title"
+						class="modal-title" 
+					>
+						Registro
+					</h5>
+					<button 
+						type="button" 
+						class="btn-close" 
+						data-bs-dismiss="modal" 
+						aria-label="Close"
+					></button>
 				</div>
+
 				<form method="post">
 					<div class="modal-body">
-						<div class="form-floating" id="sign_up__username">
-							<input type="text" name="sign_up_username" class="form-control" id="sign_up__username__input" placeholder="Juan" maxlength="20" required>
-							<label for="username__input">Nombre de usuario</label>
+						<div 
+							id="sign_up__username"
+							class="form-floating" 
+						>
+							<input 
+								id="sign_up__username__input" 
+								name="sign_up_username" 
+								type="text" 
+								class="form-control" 
+								placeholder="Juan" 
+								maxlength="20" 
+								required
+							>
+							<label for="username__input">
+								Nombre de usuario
+							</label>
 						</div>
-						<div class="form-floating" id="sign_up__password">
-							<input type="password" name="sign_up_password" class="form-control" id="sign_up__password__input" placeholder="Password" required>
-							<label for="password__input">Contraseña</label>
+
+						<div 
+							class="form-floating" 
+							id="sign_up__password"
+						>
+							<input 
+								id="sign_up__password__input" 
+								name="sign_up_password" 
+								type="password" 
+								class="form-control" 
+								placeholder="Password" 
+								required
+							>
+							<label for="password__input">
+								Contraseña
+							</label>
 						</div>
-						<div class="<?= (!empty($e_invalid_username) || !empty($e_user_exists) || !empty($e_sign_up_empty_field) ? "alert alert-danger text-center" : "d-none") ?>" role="alert">
+
+						<div 
+							class="<?= (!empty($e_invalid_username) || !empty($e_user_exists) || !empty($e_sign_up_empty_field) ? "alert alert-danger text-center" : "d-none") ?>" 
+							role="alert"
+						>
 							<?php if (!empty($e_invalid_username)) { ?>
 								El usuario solo puede contener letras, números, "_" y/o "-", con un máximo de 20 caracteres.
 							<?php } else if (!empty($e_user_exists)) { ?>
@@ -189,9 +296,24 @@ if (!empty($_POST["sign_up_submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 							<?php } ?>
 						</div>
 					</div>
+
 					<div class="modal-footer">
-						<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-						<button type="submit" name="sign_up_submit" value="sign_up_submit" class="btn btn-primary">Registrarse</button>
+						<button 
+							type="reset" 
+							class="btn btn-secondary" 
+							data-bs-dismiss="modal"
+						>
+							Cerrar
+						</button>
+
+						<button 
+							type="submit" 
+							name="sign_up_submit" 
+							value="sign_up_submit" 
+							class="btn btn-primary"
+						>
+							Registrarse
+						</button>
 					</div>
 				</form>
 			</div>
@@ -200,18 +322,31 @@ if (!empty($_POST["sign_up_submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 	<?php include "{$relative}/common/nav.php" ?>
 
-	<div class="container pt-3" style="max-width: 960px;">
+	<div 
+		class="container pt-3" 
+		style="max-width: 960px;"
+	>
 		<header>
 			<div class="p-3 pb-md-4 mx-auto text-center">
-				<h1 class="display-4 fw-normal">Bienvenido</h1>
+				<h1 class="display-4 fw-normal">
+					Bienvenido
+				</h1>
 			</div>
 		</header>
 
 		<main>
 			<div class="text-center">
-				<p>Necesitas iniciar sesión para poder acceder a las funcionalidades de la página.</p>
+				<p>
+					Necesitas iniciar sesión para poder acceder a las funcionalidades de la página.
+				</p>
+				
 				<p>De la parte de la pizzería solo he realizado el front-end.</p>
-				<p>Credenciales: <strong>admin</strong>: 1234 / <strong>user</strong>: 1234</p>
+				<p>
+					Credenciales: 
+					<strong>admin</strong>: 1234 
+					/ 
+					<strong>user</strong>: 1234
+				</p>
 			</div>
 		</main>
 	</div>

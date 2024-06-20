@@ -1,4 +1,21 @@
+<p align="center">
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U2%20Trabajar%20con%20BBDD%20en%20PHP/Ejercicios/docs/screenshot-test.png" 
+		alt="Test page"
+		title="Test page"
+	>
+	&nbsp;
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U2%20Trabajar%20con%20BBDD%20en%20PHP/Ejercicios/docs/screenshot-car-renting.png"
+		alt="Car renting page"
+		title="Car renting page"
+	>
+</p> 
+
 # UNIDAD 2: Trabajar con BBDD en PHP
+
 ## ¿Qué te pedimos que hagas? 
 
 Crea una, dos o tres aplicaciones web en XHTML, CSS (o Bootstrap), PHP y MariaDB (o PosgreSQL) que mediante conexiones a una base de datos MariaDB (o PosgreSQL) proporcione un servicio tanto para el usuario como para el administrador y que genere un informe.

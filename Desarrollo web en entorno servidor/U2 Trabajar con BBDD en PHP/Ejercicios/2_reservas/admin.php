@@ -76,6 +76,7 @@ include "./php/get_user_statistics.php";
 								$sth_periods->execute(array($user_for_statistic["app_user_id"]));
 								$periods = $sth_periods->fetchAll(PDO::FETCH_ASSOC);
 								$days = 0;
+								
 								foreach ($periods as $period) {
 									$from = new DateTime($period["booked_from"]);
 									$to = new DateTime($period["booked_to"]);
