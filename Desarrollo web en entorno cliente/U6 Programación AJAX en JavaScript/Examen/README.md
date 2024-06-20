@@ -1,2 +1,2 @@
-[Unidad 6 examen](https://www.daypo.com/dwec07.html#test)
-[Segundo cuatrimestre examen])(https://www.daypo.com/dwec-2a-evaluacion.html)
+- [Examen de la unidad](https://www.daypo.com/dwec07.html#test)
+- [Examen del segundo cuatrimestre](https://www.daypo.com/dwec-2a-evaluacion.html)
