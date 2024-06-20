@@ -1,34 +1,35 @@
-"use strict"
+"use strict";
 
 import { printMessage, Arbitro, Equipo } from "./index.js";
 
 export class Campeonato {
-	_checkNombre = nombre => {
+	_checkNombre = (nombre) => {
 		if (!nombre || typeof nombre !== "string") {
-			const message = "El nombre del campeonato tiene que ser de tipo 'string'. No puede estar vacío";
+			const message =
+				"El nombre del campeonato tiene que ser de tipo 'string'. No puede estar vacío";
 			printMessage(message);
 			throw TypeError(message);
 		}
-	}
+	};
 
-	_filterCiudad = ciudad => {
+	_filterCiudad = (ciudad) => {
 		if (!ciudad || typeof ciudad !== "string") {
 			return "Córdoba";
-		} 
+		}
 		return ciudad;
-	}
+	};
 
-	_checkDescripcion = descripcion => {
+	_checkDescripcion = (descripcion) => {
 		if (descripcion.length > 100) {
 			const message = "La descripción no puede superar los 100 caracteres.";
 			printMessage(message);
 			throw RangeError(message);
 		}
-	}
+	};
 
 	_printParticipantsTable = () => {
 		const refereeRows = [];
-		this._participantes[0].forEach(referee => {
+		this._participantes[0].forEach((referee) => {
 			refereeRows.push(`
 				<tr>
 					<td>${referee.nombre}</td>
@@ -38,7 +39,7 @@ export class Campeonato {
 			`);
 		});
 		const teamRows = [];
-		this._participantes[1].forEach(team => {
+		this._participantes[1].forEach((team) => {
 			teamRows.push(`
 				<tr>
 					<td>${team.nombreEquipo}</td>
@@ -57,7 +58,7 @@ export class Campeonato {
 						<th>Año de federación</th>
 					</tr>
 				</thead>
-				<tbody>${refereeRows.join('')}</tbody>
+				<tbody>${refereeRows.join("")}</tbody>
 			</table>
 
 			<table class="w--100 mb--3">
@@ -69,10 +70,10 @@ export class Campeonato {
 						<th>Escudo</th>
 					</tr>
 				</thead>
-				<tbody>${teamRows.join('')}</tbody>
+				<tbody>${teamRows.join("")}</tbody>
 			</table>
 		`;
-	}
+	};
 
 	constructor(nombre, ciudad, descripcion) {
 		this._checkNombre(nombre);
@@ -110,7 +111,7 @@ export class Campeonato {
 
 	anadirParticipantes(participante) {
 		let index = -1;
-		
+
 		if (participante instanceof Arbitro) {
 			index = 0;
 		} else if (participante instanceof Equipo) {
@@ -128,8 +129,8 @@ export class Campeonato {
 			`<p><strong>Ciudad en la que se celebra</strong>: ${this._ciudad}</p>`,
 			`<p><strong>Descripción</strong>: ${this._descripcion}</p>`,
 			`<p><strong>Participantes</strong>:</p> ${this._printParticipantsTable()}`,
-			`<hr>`
-		].join('');
+			`<hr>`,
+		].join("");
 		printMessage(stringsToShow, false);
 	}
 }

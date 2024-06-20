@@ -18,11 +18,13 @@ export class Equipo {
 		const aJugadoresFiltered = _aJugadores.filter(
 			(obj) => obj instanceof Jugador
 		);
+
 		if (!aJugadoresFiltered) {
 			const message = "Solo se pueden introducir jugadores en el array.";
 			printMessage(message);
 			throw TypeError(message);
 		}
+
 		return aJugadoresFiltered;
 	};
 
@@ -32,9 +34,11 @@ export class Equipo {
 			printMessage(message);
 			throw TypeError(message);
 		}
+
 		if (!(escudo.endsWith("jpg") || escudo.endsWith("png"))) {
 			escudo = "default.png";
 		}
+
 		return escudo;
 	};
 
@@ -149,6 +153,7 @@ export class Equipo {
 			);
 			return true;
 		}
+
 		return false;
 	}
 
@@ -165,6 +170,7 @@ export class Equipo {
 			`<p><strong>Jugadores</strong>:</p> ${this._printPlayersTable()}`,
 			`<hr>`,
 		];
+		
 		printMessage(stringsToShow.join(""), false);
 	}
 }

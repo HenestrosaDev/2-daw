@@ -41,14 +41,17 @@ export class Jugador extends Participante {
 			printMessage(message);
 			throw TypeError(message);
 		}
+
 		if (dorsal > 25 || dorsal < 1) {
 			dorsal = 25;
 		}
+		
 		return dorsal;
 	};
 
 	_checkPosicion = (posicion) => {
 		const possiblePositions = ["a", "p", "b", "e", "ap"];
+
 		if (typeof posicion !== "string") {
 			const message = `La posición tiene que ser de tipo 'string' y ser uno de estos valores: ${possiblePositions.join(
 				", "
@@ -105,6 +108,7 @@ export class Jugador extends Participante {
 			`<p><strong>Posición</strong>: ${this._posicion}</p>`,
 			`<hr>`,
 		].join("");
+
 		printMessage(stringsToShow, false);
 	}
 }

@@ -13,6 +13,7 @@ export class Participante {
 			printMessage(message);
 			throw RangeError(message);
 		}
+
 		return nombre.toLocaleUpperCase();
 	};
 
@@ -28,6 +29,7 @@ export class Participante {
 		} else if (provincia.length < 5) {
 			provincia += "…";
 		}
+
 		return provincia.toLocaleUpperCase();
 	};
 
@@ -57,6 +59,7 @@ export class Participante {
 			`<p><strong>Provincia</strong>: ${this._provincia}</p>`,
 			`<hr>`,
 		].join("");
+		
 		printMessage(stringsToShow, false);
 	}
 }
