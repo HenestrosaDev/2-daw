@@ -1,7 +1,7 @@
 /*
 
 José Carlos López Henestrosa
-https://henestrosaconh.com
+https://henestrosa.dev
 
 */
 
@@ -9,6 +9,7 @@ https://henestrosaconh.com
 /* ---------------------------------------------
 Contents table
 ------------------------------------------------
+01. database
 02. user
 -- 1_test
 03. quiz
@@ -22,6 +23,14 @@ Contents table
 10. booking
 -- 3_pizzeria
 --------------------------------------------- */
+
+/* 
+---------------------------------------------
+01. Database
+--------------------------------------------- 
+*/
+/*DROP DATABASE IF EXISTS dwes_tarea_02;
+CREATE DATABASE dwes_tarea_02;*/
 
 /* 
 ---------------------------------------------
