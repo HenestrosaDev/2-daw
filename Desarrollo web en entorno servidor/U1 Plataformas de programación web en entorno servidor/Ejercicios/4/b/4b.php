@@ -13,15 +13,45 @@
 <body>
 	<?php include $relative . "/common/sidenav.php"; ?>
 
-	<div id="main" class="main">
+	<main 
+		id="main" 
+		class="main"
+	>
 		<div class="header">
 			<h1>Área y longitud de una circunferencia</h1>
 		</div>
 
-		<form id="form" action="#" method="post" class="form__columns">
-			<label for="radius" class="form__radio-label">Introduce el radio en cm: </label>
-			<input type="number" placeholder="0.00" name="radius" id="radius" min="0" step="0.01" onkeyup="validateNumber(this)" required>
-			<button class="form__btn form__btn--submit" name="submit" value="submit" type="submit">Calcular</button>
+		<form 
+			id="form" 
+			action="#" 
+			method="post" 
+			class="form__columns"
+		>
+			<label 
+				for="radius" 
+				class="form__radio-label"
+			>
+				Introduce el radio en cm: 
+			</label>
+			<input 
+				id="radius" 
+				name="radius" 
+				type="number" 
+				placeholder="0.00" 
+				min="0" 
+				step="0.01" 
+				required
+				onkeyup="validateNumber(this)" 
+			>
+
+			<button 
+				class="form__btn form__btn--submit" 
+				name="submit" 
+				value="submit" 
+				type="submit"
+			>
+				Calcular
+			</button>
 		</form>
 
 		<?php
@@ -46,11 +76,11 @@
 					} else {
 						echo $radiusErr;
 					}
-					?></p>
+					?>
+				</p>
 			</div>
 		<?php } ?>
-
-	</div>
+	</main>
 
 	<?php include $relative . "/common/footer.html"; ?>
 	<?php include $relative . "/common/floating-buttons.html"; ?>

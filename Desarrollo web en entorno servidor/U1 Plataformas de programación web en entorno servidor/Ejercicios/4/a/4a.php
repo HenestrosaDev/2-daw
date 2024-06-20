@@ -13,15 +13,27 @@
 <body>
 	<?php include $relative . "/common/sidenav.php"; ?>
 
-	<div id="main" class="main">
-		<div class="header">
+	<main 
+		id="main" 
+		class="main"
+	>
+		<header class="header">
 			<h1>Piedra, papel, tijeras, lagarto o Spock</h1>
 			<h3>Reglas</h3>
-		</div>
+		</header>
 
-		<img src="../img/4a-reglas.png" alt="Snippet 1" onclick="window.open(this.src)">
+		<img 
+			src="../img/4a-reglas.png" 
+			alt="Snippet 1" 
+			onclick="window.open(this.src)"
+		>
 
-		<form id="form" action="#" method="post" style="display: flex; justify-content: space-around;">
+		<form 
+			id="form" 
+			action="#" 
+			method="post" 
+			style="display: flex; justify-content: space-around;"
+		>
 			<div class="form__item">
 				<label for="option">Elige una opción:</label>
 				<select name="options" id="option">
@@ -32,7 +44,15 @@
 					<option value="spock">Spock</option>
 				</select>
 			</div>
-			<button class="form__btn form__btn--submit" name="submit" value="submit" type="submit">¡Jugar!</button>
+
+			<button 
+				name="submit" 
+				class="form__btn form__btn--submit" 
+				value="submit" 
+				type="submit"
+			>
+				¡Jugar!
+			</button>
 		</form>
 
 		<?php
@@ -43,6 +63,7 @@
 			$cpuOption = $options[$randomKey];
 			$hasWon = false;
 			$result = "Has elegido <strong>$userOption</strong>. La máquina ha elegido <strong>$cpuOption</strong>.";
+			
 			if ($cpuOption != $userOption) {
 				switch ($userOption) {
 					case "piedra":
@@ -91,7 +112,7 @@
 				<p class="form__results <?= $class ?>"><?= $result; ?></p>
 			</div>
 		<?php } ?>
-	</div>
+	</main>
 
 	<?php include $relative . "/common/footer.html"; ?>
 	<?php include $relative . "/common/floating-buttons.html"; ?>

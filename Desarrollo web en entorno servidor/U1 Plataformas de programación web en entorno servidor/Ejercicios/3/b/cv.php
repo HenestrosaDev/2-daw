@@ -13,11 +13,14 @@
 <body>
 	<?php include $relative . "/common/sidenav.php"; ?>
 
-	<div id="main" class="main">
-		<div class="header">
+	<main 
+		id="main" 
+		class="main"
+	>
+		<header class="header">
 			<h1>Tu CV</h1>
 			<h3>Has introducido lo siguiente:</h3>
-		</div>
+		</header>
 
 		<?php
 		require_once $relative . "/php/filter.php";
@@ -54,39 +57,43 @@
 				$experience = filter($_POST["experience"]);
 			}
 		?>
-			<div class="form__results">
-				<p>
-					<?php
-					if (isset($errors)) {
-						foreach ($errors as $error) {
-							echo "$error <br>";
-						}
-					} else {
-					?>
-						Tu nombre y apellidos son <?= $fullName ?>, eres de <?= $city ?><?= ((isset($phone)) ? "," :  " y ") ?>
-						tu email es <?= $email ?> <?= ((isset($phone)) ? "y tu teléfono es $phone." :  "") ?></p>
-				<p>Has dicho de ti lo siguiente: "<?= $about ?>".</p>
-				<p class="not-margin-bottom">Hablas
-					<?php
-						$languagesAmount = $_POST["languagesAmount"];
-						for ($i = 1; $i <= $languagesAmount; $i++) {
-							echo filter($_POST["language$i"]) . (($i + 1 == $languagesAmount) ? " y " : (($i == $languagesAmount) ? "; " : ", "));
-						}
-					?>
-					tienes conocimientos en
-					<?php
-						$educationAmount = $_POST["educationAmount"];
-						for ($i = 1; $i <= $educationAmount; $i++) {
-							echo filter($_POST["education$i"]) . (($i + 1 == $educationAmount) ? " y " : (($i == $educationAmount) ? "" : ", "));
-						}
-					?>
-					y has puesto lo siguiente sobre tu experiencia: "<?= $experience ?>".</p>
-			</div>
+
+		<div class="form__results">
+			<p>
+				<?php
+				if (isset($errors)) {
+					foreach ($errors as $error) {
+						echo "$error <br>";
+					}
+				} else {
+				?>
+					Tu nombre y apellidos son <?= $fullName ?>, eres de <?= $city ?><?= ((isset($phone)) ? "," :  " y ") ?>
+					tu email es <?= $email ?> <?= ((isset($phone)) ? "y tu teléfono es $phone." :  "") ?></p>
+			<p>Has dicho de ti lo siguiente: "<?= $about ?>".</p>
+			<p class="not-margin-bottom">
+				Hablas
+				<?php
+					$languagesAmount = $_POST["languagesAmount"];
+					for ($i = 1; $i <= $languagesAmount; $i++) {
+						echo filter($_POST["language$i"]) . (($i + 1 == $languagesAmount) ? " y " : (($i == $languagesAmount) ? "; " : ", "));
+					}
+				?>
+				tienes conocimientos en
+				<?php
+					$educationAmount = $_POST["educationAmount"];
+					for ($i = 1; $i <= $educationAmount; $i++) {
+						echo filter($_POST["education$i"]) . (($i + 1 == $educationAmount) ? " y " : (($i == $educationAmount) ? "" : ", "));
+					}
+				?>
+				y has puesto lo siguiente sobre tu experiencia: 
+				"<?= $experience ?>".
+			</p>
+		</div>
 	<?php
 					}
 				}
 	?>
-	</div>
+	</main>
 
 	<?php include $relative . "/common/footer.html"; ?>
 	<?php include $relative . "/common/floating-buttons.html"; ?>

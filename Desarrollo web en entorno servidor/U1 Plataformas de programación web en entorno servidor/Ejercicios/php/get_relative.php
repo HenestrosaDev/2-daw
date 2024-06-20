@@ -11,4 +11,3 @@ function get_relative($path) {
 		return "..";
 	}
 }
-?>

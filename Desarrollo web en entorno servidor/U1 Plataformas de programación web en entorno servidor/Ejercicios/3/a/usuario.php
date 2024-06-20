@@ -13,10 +13,13 @@
 <body>
 	<?php include $relative . "/common/sidenav.php"; ?>
 
-	<div id="main" class="main">
-		<div class="header">
+	<main 
+		id="main" 
+		class="main"
+	>
+		<header class="header">
 			<h1>Validación de usuario</h1>
-		</div>
+		</header>
 
 		<?php
 		require_once $relative . "/php/filter.php";
@@ -64,10 +67,10 @@
 				} else {
 					?>
 					Error
-				<?php } ?>
-				</p>
-			</div>
-	</div>
+			<?php } ?>
+			</p>
+		</div>
+	</main>
 
 	<?php include $relative . "/common/footer.html"; ?>
 	<?php include $relative . "/common/floating-buttons.html"; ?>

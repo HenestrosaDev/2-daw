@@ -1,4 +1,7 @@
+![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U1%20Plataformas%20de%20programaci%C3%B3n%20web%20en%20entorno%20servidor/Ejercicios/docs/screenshot.png)
+
 # UNIDAD 1: Plataformas de programación web en entorno servidor
+
 ## ¿Qué te pedimos que hagas? 
 
 1. Realiza los siguientes ejercicios en un documento XHTML y CSS (o Bootstrap): 
