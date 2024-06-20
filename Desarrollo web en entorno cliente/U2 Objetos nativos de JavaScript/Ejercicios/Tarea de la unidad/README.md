@@ -51,7 +51,6 @@ Crear un script en un fichero externo que permita de la siguiente frase: "**Java
 
 ## Resultado
 
-**Nota**: Resultado con más detalle [aquí](https://drive.google.com/file/d/1282tDrRUSABU0KPDXtjRhmRI5OISruj5/view?usp=sharing)
 
 **Calificación**: 9,00 / 10,00
 
