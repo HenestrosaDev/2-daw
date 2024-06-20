@@ -1,7 +1,7 @@
 <div id="top"></div>
 
 <h1 align="center">2º Desarrollo de Aplicaciones Web (21/22)</h1>
-  <p align="center">Repositorio con todos los ejercicios, apuntes y materiales que voy recopilando y haciendo durante el curso 2021/22.</p>
+  <p align="center">Repositorio con todos los ejercicios, apuntes y materiales que voy recopilando y haciendo durante el curso 2021/22 en la modalidad a distancia en Andalucía.</p>
   <p align="center">
     <a href="https://github.com/HenestrosaDev/2-daw/stargazers">
       <img 
@@ -146,7 +146,7 @@
   </tr>
 </table>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">volver al principio</a>)</p>
 
 ---
 
@@ -164,4 +164,4 @@ Distribuido bajo la licencia MIT. Véase `LICENSE` para más información.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U7U5J6COZ)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">volver al principio</a>)</p>
