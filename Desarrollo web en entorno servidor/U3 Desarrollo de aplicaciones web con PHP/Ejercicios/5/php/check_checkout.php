@@ -12,7 +12,6 @@ function array_contains($array, $key, $valueToFind) {
 }
 
 if (!empty($_POST["checkout"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
-
 	$checkout = $_POST["checkout"];
 
 	// HTTP code response 200 => OK
@@ -29,6 +28,7 @@ if (!empty($_POST["checkout"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		 * Si no encontramos masa familiar ni mediana, significa
 		 * que el array ha sido manipulado, por lo que enviamos
 		 * una respuesta negativa.
+		 * 
 		 * Este es el código que devolvemos a la petición POST.
 		 * Generamos un código criptográfico aleatorio para que 
 		 * el usuario no pueda adivinar cuál es la respuesta negativa

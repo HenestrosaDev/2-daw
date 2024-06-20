@@ -25,8 +25,7 @@ Tabla de contenidos
 --------------------------------------------- 
 */
 .card {
-	box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12),
-		0 2px 2px 0 rgba(0, 0, 0, .24);
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
 }
 
 .card:hover {
@@ -88,7 +87,7 @@ ul.dropdown-cart li .cart__item--right button {
 
 @media screen and (max-width: 768px) {
 	.nav-item {
-		margin-bottom: .5rem !important;
+		margin-bottom: 0.5rem !important;
 	}
 }
 

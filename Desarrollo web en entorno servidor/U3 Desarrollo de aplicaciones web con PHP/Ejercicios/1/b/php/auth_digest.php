@@ -132,6 +132,7 @@ function request_credentials($error_message) {
 	header("HTTP/1.1 401 Unauthorized");
 	header('WWW-Authenticate: Digest realm="' . $realm .
 		'",qop="auth",nonce="' . $nonce . '",opaque="' . $opaque . '"');
+		
 	// Si el usuario cancela el proceso de autentificación:
 	echo "<script>console.log($error_message)</script>";
 	die($error_message);

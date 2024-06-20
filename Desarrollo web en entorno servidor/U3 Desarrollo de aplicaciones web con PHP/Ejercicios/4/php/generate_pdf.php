@@ -3,31 +3,35 @@ if (isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 	require_once "../../vendor/autoload.php";
 
 	$args = array(
-		'income_date'   			=> array(
-			'filter'  => FILTER_SANITIZE_STRING,
-			'flags'   => FILTER_REQUIRE_ARRAY,
+		'income_date' => array(
+			'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'flags' => FILTER_REQUIRE_ARRAY,
 		),
-		'income_description' 	=> array(
-			'filter'  => FILTER_SANITIZE_STRING,
-			'flags'   => FILTER_REQUIRE_ARRAY,
+		'income_description' => array(
+			'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'flags' => FILTER_REQUIRE_ARRAY,
 		),
-		'income_amount'      	=> array(
-			// FILTER_VALIDATE_INT ignora los números que empiezan por 0, por lo que evitamos que sean ignorados
-			'filter'  => filter_var(ltrim($val, '0'), FILTER_VALIDATE_INT) || filter_var($val, FILTER_VALIDATE_INT) === 0,
-			'flags'   => FILTER_REQUIRE_ARRAY,
+		'income_amount' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'flags' => FILTER_REQUIRE_ARRAY,
+			'options' => array(
+				'min_range' => 0
+			),
 		),
-		'expense_date'			 	=> array(
-			'filter'  => FILTER_SANITIZE_STRING,
-			'flags'   => FILTER_REQUIRE_ARRAY,
+		'expense_date' => array(
+			'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'flags' => FILTER_REQUIRE_ARRAY,
 		),
-		'expense_description'	=> array(
-			'filter' => FILTER_SANITIZE_STRING,
-			'flags'  => FILTER_REQUIRE_ARRAY,
+		'expense_description' => array(
+			'filter' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'flags' => FILTER_REQUIRE_ARRAY,
 		),
-		'expense_amount'    	=> array(
-			// FILTER_VALIDATE_INT ignora los números que empiezan por 0, por lo que evitamos que sean ignorados 
-			'filter'  => filter_var(ltrim($val, '0'), FILTER_VALIDATE_INT) || filter_var($val, FILTER_VALIDATE_INT) === 0,
-			'flags'   => FILTER_REQUIRE_ARRAY,
+		'expense_amount' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'flags' => FILTER_REQUIRE_ARRAY,
+			'options' => array(
+				'min_range' => 0
+			),
 		),
 	);
 

@@ -12,20 +12,20 @@ th {
 }
 
 tbody tr:nth-child(even) {
-	background-color: #EEF7E3;
+	background-color: #eef7e3;
 }
 
 .header {
-	background-color: #38761D;
+	background-color: #38761d;
 	color: white;
 }
 
 .subheader {
-	background-color: #6AA84F;
+	background-color: #6aa84f;
 }
 
 .field {
-	background-color: #8BC34A;
+	background-color: #8bc34a;
 }
 
 .text-center {

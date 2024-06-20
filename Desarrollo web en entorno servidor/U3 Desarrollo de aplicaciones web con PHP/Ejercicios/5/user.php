@@ -48,48 +48,96 @@ include "./php/get_pizza_types.php";
 
 	<div class="container pt-3">
 		<header>
-			<div class="p-3 pb-md-4 mx-auto text-center">
-				<h1 class="display-4 fw-normal">Realiza tu pedido</h1>
-				<p class="fs-5 text-muted">Puedes elegir entre una de nuestras especialidades o elegir la pizza al gusto con nuestros ingredientes.</p>
-			</div>
-		</header>
+		<div class="p-3 pb-md-4 mx-auto text-center">
+			<h1 class="display-4 fw-normal">Realiza tu pedido</h1>
+			<p class="fs-5 text-muted">
+				Puedes elegir entre una de nuestras especialidades o elegir la pizza al
+				gusto con nuestros ingredientes.
+			</p>
+		</div>
+	</header>
 
-		<main>
-			<section id="your-choice" class="mb-5">
-				<h1 class="text-muted">A tu gusto</h1>
-				<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-					<div class="col">
-						<div class="card">
-							<img src="./img/specialities/your-choice.jpg" class="card-img-top" alt="A tu gusto">
-							<div class="card-body">
-								<h5 class="card-title">A tu gusto</h5>
-								<p class="card-text text-muted">Combina los ingredientes a tu gusto con la masa que te apetezca.</p>
-								<a href="./your-choice.php" class="btn btn-danger btn__order float-end text-uppercase">Preparar</a>
-							</div>
+	<main>
+		<section
+			id="your-choice"
+			class="mb-5"
+		>
+			<h1 class="text-muted">A tu gusto</h1>
+
+			<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+				<div class="col">
+					<div class="card">
+						<img
+							src="./img/specialities/your-choice.jpg"
+							class="card-img-top"
+							alt="A tu gusto"
+						/>
+
+						<div class="card-body">
+							<h5 class="card-title">A tu gusto</h5>
+							<p class="card-text text-muted">
+								Combina los ingredientes a tu gusto con la masa que te apetezca.
+							</p>
+							<a
+								href="./your-choice.php"
+								class="btn btn-danger btn__order float-end text-uppercase"
+							>
+								Preparar
+							</a>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<section id="specialities" class="pt-3">
+		<section
+			id="specialities"
+			class="pt-3"
+		>
 				<h1 class="text-muted">Especialidades</h1>
+				
 				<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-
 					<?php foreach ($pizza_types as $pizza_type) { ?>
 						<div class="col">
 							<div class="card">
-								<img src="<?= $pizza_type["image_path"] ?>" class="card-img-top" alt="<?= $pizza_type["name_for_client"] ?>">
+								<img 
+									src="<?= $pizza_type["image_path"] ?>" 
+									class="card-img-top" 
+									alt="<?= $pizza_type["name_for_client"] ?>"
+								>
+
 								<div class="card-body">
-									<h5 id="<?= $pizza_type["id"] ?>__name" class="card-title"><?= $pizza_type["name_for_client"] ?></h5>
-									<p class="card-text text-muted"><?= $pizza_type["ingredients"] ?></p>
-									<!--<a href="" class="card-text text-muted" data-bs-toggle="modal" data-bs-target="#pizza__modal">Ver ingredientes</a>-->
-									<input type="hidden" id="<?= $pizza_type["id"] ?>__price" class="d-none" value="<?= $pizza_type["price"] ?>">
-									<a id="<?= $pizza_type["id"] ?>__order" type="button" data-bs-toggle="modal" data-bs-target="#dought__modal" class="btn btn-danger btn__order float-end text-uppercase">Pedir</a>
+									<h5 
+										id="<?= $pizza_type["id"] ?>__name" 
+										class="card-title"
+									>
+										<?= $pizza_type["name_for_client"] ?>
+									</h5>
+									
+									<p class="card-text text-muted">
+										<?= $pizza_type["ingredients"] ?>
+									</p>
+
+									<input 
+										id="<?= $pizza_type["id"] ?>__price" 
+										value="<?= $pizza_type["price"] ?>"
+										type="hidden" 
+										class="d-none" 
+									>
+									
+									<a 
+										id="<?= $pizza_type["id"] ?>__order" 
+										type="button" 
+										data-bs-toggle="modal" 
+										data-bs-target="#dought__modal" 
+										class="btn btn-danger btn__order float-end text-uppercase"
+									>
+										Pedir
+									</a>
 								</div>
 							</div>
 						</div>
 					<?php } ?>
-
 				</div>
 			</section>
 		</main>

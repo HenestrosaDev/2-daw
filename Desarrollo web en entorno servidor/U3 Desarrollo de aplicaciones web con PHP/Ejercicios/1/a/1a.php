@@ -65,19 +65,31 @@ function request_credentials()
 					<h3>Seguridad cuestionable</h3>
 				</header>
 				<div>
-					<p>La autentificación básica no es segura puesto que las credenciales del usuario se envían sin encriptar, en codificación <strong>base64</strong>. Cualquiera que intercepte la request puede averiguar el usuario y la contraseña.</p>
+					<p>
+						La autentificación básica no es segura puesto que las credenciales del
+						usuario se envían sin encriptar, en codificación <strong>base64</strong>.
+						Cualquiera que intercepte la request puede averiguar el usuario y la
+						contraseña.
+					</p>
 				</div>
 			</section>
+
 
 			<section>
 				<header>
 					<h3>¿Cómo podría mejorarse?</h3>
 				</header>
+
 				<div>
-					<p>Aún no siendo recomendable, solo debería de usarse bajo el protocolo HTTPS puesto que toda la transferencia de datos realizada bajo este protocolo es encriptada.</p>
+					<p>
+						Aún no siendo recomendable, solo debería de usarse bajo el protocolo HTTPS
+						puesto que toda la transferencia de datos realizada bajo este protocolo es
+						encriptada.
+					</p>
 				</div>
 			</section>
 		</main>
+		
 		<?php include "{$relative}/common/footer.html" ?>
 	</div>
 

@@ -4,6 +4,7 @@ function getPrice($dbh, $table, $args) {
 	$sth_get_price = $dbh->prepare($sql_get_price);
 	$sth_get_price->execute($args);
 	$price = $sth_get_price->fetch();	
+	
 	return $price[0];
 }
 
