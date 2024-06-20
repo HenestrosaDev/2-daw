@@ -1,4 +1,4 @@
-![](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U4%20Gesti%C3%B3n%20de%20eventos%20y%20formularios%20en%20JavaScript/Ejercicios/Tarea%20de%20la%20unidad/docs/screenshot.png)
+[![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U4%20Gesti%C3%B3n%20de%20eventos%20y%20formularios%20en%20JavaScript/Ejercicios/Tarea%20de%20la%20unidad/docs/screenshot.png)](https://lhjc-dwec-tarea4.netlify.app/)
 
 # UNIDAD 4: Gestión de eventos y formularios en JavaScript
 ## <p align="center">¿Qué te pedimos que hagas?</p>

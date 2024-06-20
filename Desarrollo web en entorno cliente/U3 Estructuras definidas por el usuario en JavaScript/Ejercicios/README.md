@@ -1,4 +1,4 @@
-![](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U3%20Estructuras%20definidas%20por%20el%20usuario%20en%20JavaScript/Ejercicios/docs/screenshot.png)
+[![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U3%20Estructuras%20definidas%20por%20el%20usuario%20en%20JavaScript/Ejercicios/docs/screenshot.png)](https://lhjc-dwec-tarea3.netlify.app/)            
 
 # UNIDAD 3: Estructuras definidas por el usuario en JavaScript
 ## <p align="center">¿Qué te pedimos que hagas?</p>

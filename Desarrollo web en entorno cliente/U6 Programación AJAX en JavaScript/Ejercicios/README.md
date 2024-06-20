@@ -1,4 +1,4 @@
-![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U6%20Programaci%C3%B3n%20AJAX%20en%20JavaScript/docs/screenshot.png)
+[![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U6%20Programaci%C3%B3n%20AJAX%20en%20JavaScript/Ejercicios/docs/screenshot.png)](https://lhjc-dwec-tarea6.netlify.app/)
 
 # UNIDAD 6: Programación AJAX en JavaScript
 ## <p align="center">¿Qué te pedimos que hagas?</p>

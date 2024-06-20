@@ -1,4 +1,4 @@
-![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U1%20Tecnolog%C3%ADas%20aplicadas%20en%20clientes%20web/Ejercicios/docs/screenshot.png)
+[![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U1%20Tecnolog%C3%ADas%20aplicadas%20en%20clientes%20web/Ejercicios/docs/screenshot.png)](https://lhjc-dwec-tarea1.netlify.app/)
 
 # UNIDAD 1: Arquitecturas y lenguajes de programación en clientes web
 ## ¿Qué te pedimos que hagas? 

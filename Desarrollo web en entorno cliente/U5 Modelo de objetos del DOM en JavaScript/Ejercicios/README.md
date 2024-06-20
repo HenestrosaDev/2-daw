@@ -1,4 +1,4 @@
-![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U5%20Modelo%20de%20objetos%20del%20DOM%20en%20JavaScript/docs/screenshot.png)
+[![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U5%20Modelo%20de%20objetos%20del%20DOM%20en%20JavaScript/Ejercicios/docs/screenshot.png)](https://lhjc-dwec-tarea5.netlify.app/)
 
 # UNIDAD 5: Modelo de objetos del documento en JavaScript
 ## <p align="center">¿Qué te pedimos que hagas?</p>

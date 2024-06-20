@@ -1,4 +1,4 @@
-![screenshot.png](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U2%20Objetos%20nativos%20de%20JavaScript/Ejercicios/Tarea%20de%20la%20unidad/docs/screenshot.png)
+[![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20cliente/U2%20Objetos%20nativos%20de%20JavaScript/Ejercicios/Tarea%20de%20la%20unidad/docs/screenshot.png)](https://lhjc-dwec-tarea2.netlify.app/)
 
 # UNIDAD 2: Objetos nativos de JavaScript
 ## ¿Qué te pedimos que hagas?
