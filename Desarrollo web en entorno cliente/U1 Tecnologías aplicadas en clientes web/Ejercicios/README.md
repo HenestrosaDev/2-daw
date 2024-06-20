@@ -1,3 +1,5 @@
+![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U1%20Tecnolog%C3%ADas%20aplicadas%20en%20clientes%20web/Ejercicios/docs/screenshot.png)
+
 # UNIDAD 1: Arquitecturas y lenguajes de programación en clientes web
 ## ¿Qué te pedimos que hagas? 
 
@@ -47,8 +49,6 @@ Cada ejercicio tendrá un archivo HTML y un fichero externo donde se encontrará
 ---
 
 ## Resultado
-
-**Nota**: Resultado con más detalle [aquí](https://drive.google.com/file/d/1tcZMZMdkGsW_e1oxG1JQJQzsZ7waJNE2/view?usp=sharing)
 
 **Calificación**: 6,50 / 10,00
 
