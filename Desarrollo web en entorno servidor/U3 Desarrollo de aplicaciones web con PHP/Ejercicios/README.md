@@ -1,14 +1,14 @@
 <p align="center">
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejericio-1a.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-1a.png" 
 		alt="Ejercicio 1a"
 		title="Ejercicio 1a"
 	>
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejericio-1b.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-1b.png" 
 		alt="Ejercicio 1b"
 		title="Ejercicio 1b"
 	>
