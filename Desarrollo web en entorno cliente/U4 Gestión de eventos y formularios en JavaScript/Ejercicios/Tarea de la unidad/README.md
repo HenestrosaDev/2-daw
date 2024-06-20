@@ -1,3 +1,5 @@
+![](https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20cliente/U4%20Gesti%C3%B3n%20de%20eventos%20y%20formularios%20en%20JavaScript/Ejercicios/Tarea%20de%20la%20unidad/docs/screenshot.png)
+
 # UNIDAD 4: Gestión de eventos y formularios en JavaScript
 ## <p align="center">¿Qué te pedimos que hagas?</p>
 
@@ -83,8 +85,6 @@ La validación de formularios se hará según las especificaciones de HTML5. Se 
 ```
 
 ## Resultado
-
-**Nota**: Resultado con más detalle [aquí](https://drive.google.com/file/d/1hoPBTd27oS0VEX-_ytKgL0o1HiSIvG5z/view?usp=sharing)
 
 **Calificación**: 9,50 / 10,00
 

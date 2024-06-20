@@ -1,4 +1,4 @@
-// * Creamos un objeto 'inputs' con todos los inputs de nuestro HTML.
+// Creamos un objeto 'inputs' con todos los inputs de nuestro HTML.
 const inputs = {
 	fullName: document.getElementById("participant__full_name"),
 	birthYear: document.getElementById("participant__birth_year"),
@@ -15,10 +15,7 @@ window.addEventListener("load", () => {
 const initializeRequired = (inputs) => {
 	// Iteramos por cada propiedad del objeto
 	for (const [key, input] of Object.entries(inputs)) {
-		/*
-		 * Definimos, con la propiedad required,
-		 * que los campos son obligatorios
-		 */
+		// Definimos con la propiedad required que los campos son obligatorios
 		input.required = true;
 	}
 };
@@ -41,6 +38,7 @@ const addEvents = (i) => {
 	i.repPassword.addEventListener("input", function () {
 		checkPasswordsValidity(i.password, this);
 	});
+
 	document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
 		checkbox.addEventListener("click", function () {
 			checkCheckboxes();
@@ -53,6 +51,7 @@ const addEvents = (i) => {
 			modal.style.display = "none";
 			document.getElementById("modal__body").innerHTML = "";
 		});
+
 	document
 		.getElementById("modal__confirm")
 		.addEventListener("click", function () {
@@ -171,18 +170,18 @@ const checkUsernameValidity = (username) => {
 const checkUsernameMatches = (value) => {
 	const checkMatchOfValue = checkMatch(value);
 
-	checkMatchOfValue(/^([^ -AEIOU[-ÿ])/) ?
-		handleCondition("username__start", true) :
-		handleCondition("username__start", false);
+	checkMatchOfValue(/^([^ -AEIOU[-ÿ])/)
+		? handleCondition("username__start", true)
+		: handleCondition("username__start", false);
 
-	checkMatchOfValue(/([a-z0-9_à-úÑñ])/) ?
-		handleCondition("username__lowercase", true) :
-		handleCondition("username__lowercase", false)
+	checkMatchOfValue(/([a-z0-9_à-úÑñ])/)
+		? handleCondition("username__lowercase", true)
+		: handleCondition("username__lowercase", false);
 
-	checkMatchOfValue(/^[ -~]{5,15}$/) ?
-		handleCondition("username__length", true) :
-		handleCondition("username__length", false)
-}
+	checkMatchOfValue(/^[ -~]{5,15}$/)
+		? handleCondition("username__length", true)
+		: handleCondition("username__length", false);
+};
 
 /*
  ******************************** CONTRASEÑA ********************************
@@ -249,23 +248,22 @@ const checkPasswordsValidity = (password, repPassword) => {
 const checkPasswordMatches = (value) => {
 	const checkMatchOfValue = checkMatch(value);
 
-	checkMatchOfValue(/(?=.*[02468])/) ?
-		handleCondition("password__even_number", true) :
-		handleCondition("password__even_number", false)
+	checkMatchOfValue(/(?=.*[02468])/)
+		? handleCondition("password__even_number", true)
+		: handleCondition("password__even_number", false);
 
-	checkMatchOfValue(/(?=.*[$&@#])/) ?
-		handleCondition("password__special_char", true) :
-		handleCondition("password__special_char", false)
+	checkMatchOfValue(/(?=.*[$&@#])/)
+		? handleCondition("password__special_char", true)
+		: handleCondition("password__special_char", false);
 
-	checkMatchOfValue(/(?=.*[A-ZÑ])/) ?
-		handleCondition("password__uppercase", true) :
-		handleCondition("password__uppercase", false)
+	checkMatchOfValue(/(?=.*[A-ZÑ])/)
+		? handleCondition("password__uppercase", true)
+		: handleCondition("password__uppercase", false);
 
-	checkMatchOfValue(/^[ -~]{8,20}$/) ?
-		handleCondition("password__length", true) :
-		handleCondition("password__length", false)
-}
-
+	checkMatchOfValue(/^[ -~]{8,20}$/)
+		? handleCondition("password__length", true)
+		: handleCondition("password__length", false);
+};
 
 /*
  ******************************** CHECKBOXES *********************************
@@ -293,20 +291,20 @@ const checkCheckboxes = () => {
  * en las especificaciones del ejercicio.
  *****************************************************************************
  * El aviso de datos incorrectos se realizarán en el span correspondiente al
- * dato y se cambiará el fondo de la caja de texto al color amarillo. 
+ * dato y se cambiará el fondo de la caja de texto al color amarillo.
  *****************************************************************************
  * Si todos los datos son correctos, mostrarlos en una ventana modal y pedir
- * confirmación de envío. 
+ * confirmación de envío.
  */
 const handleSubmit = (inputs, modal) => {
-	console.log(Object.values(inputs).every((i) => i !== null && i !== ""));
-	if (
+	const allInputsValid =
 		document.getElementsByClassName("is-invalid").length === 0 &&
-		// Comprobación de que ningún elemento es nulo o vacío
-		Object.values(inputs).every((i) => i.value !== null && i.value !== "")
-	) {
+		Object.values(inputs).every((i) => i.value !== null && i.value !== "");
+
+	if (allInputsValid) {
 		modal.style.display = "block"; // Despliega el modal
 		handleCondition("form__feedback", true, "d-none");
+
 		// Rellenar cuerpo del modal
 		for (const [key, element] of Object.entries(inputs)) {
 			const node = document.createElement("p");

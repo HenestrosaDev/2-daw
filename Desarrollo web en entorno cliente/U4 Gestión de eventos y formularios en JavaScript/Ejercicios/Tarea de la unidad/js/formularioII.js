@@ -1,12 +1,14 @@
 window.addEventListener("load", () => {
 	// Cuando la página cargue, el título tendrá el foco
 	document.getElementById("lecture__title").focus();
+
 	// Cuando se envíe, comprobamos la validez de los valores
 	document.getElementById("lecture__submit").addEventListener("click", (e) => {
 		e.preventDefault();
 		if (areInputsValid()) {
 			// Limpiamos los valores anteriores
 			document.getElementById("form__feedback").innerHTML = "";
+
 			// Añadimos los elementos al padre con los valores actuales
 			showResult();
 		}
@@ -14,7 +16,8 @@ window.addEventListener("load", () => {
 });
 
 /**
- * Comprobación de los valores de los inputs
+ * Comprobación de los valores de los inputs.
+ * 
  * @returns true si está todo en orden, false si hay algún campo no válido.
  */
 const areInputsValid = () => {
@@ -26,14 +29,17 @@ const areInputsValid = () => {
 		category.classList.remove("is-invalid");
 	}
 
-	for (const el of document
+	const requiredElements = document
 		.getElementById("lecture__form")
-		.querySelectorAll("[required]")) {
+		.querySelectorAll("[required]");
+
+	for (const el of requiredElements) {
 		if (!el.checkValidity()) {
 			el.reportValidity();
 			return false;
 		}
 	}
+
 	return true;
 };
 
@@ -44,7 +50,7 @@ const appendElement = (key, value) => {
 };
 
 /**
- * Muestra el resultado en el div con id "form__feedback" de los inputs
+ * Muestra el resultado en el div con id `form__feedback` de los inputs
  * rellenados del formulario.
  */
 const showResult = () => {
@@ -54,20 +60,22 @@ const showResult = () => {
 		.querySelectorAll("input")) {
 		appendElement(el.labels[0].innerText, el.value);
 	}
-	// Como <textarea> no es un elemento <input>, tenemos que mostrarlo fuera del
-	// bucle
+
+	// Como `textarea` no es un elemento `input`, tenemos que mostrarlo fuera del
+	// bucle.
 	appendElement(
 		document.getElementById("lecture__description").labels[0].innerText,
 		document.getElementById("lecture__description").value
 	);
-	// Como <select> no es un elemento <input>, tenemos que mostrarlo fuera del
+
+	// Como `select` no es un elemento `input`, tenemos que mostrarlo fuera del
 	// bucle
 	appendElement(
 		document.getElementById("lecture__category").getAttribute("aria-label"),
 		document.getElementById("lecture__category").value
 	);
 
-	// Quitamos el display:none del CSS y mostramos el div con los elementos p
-	// añadidos
+	// Quitamos `display:none` del CSS y mostramos el `div` con los elementos
+	// `p` añadidos
 	document.getElementById("form__feedback").classList.remove("d-none");
 };
