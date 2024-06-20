@@ -44,13 +44,13 @@
 			<div id="c">
 				<h2 class="header--margin">c) Hazte una cuenta, si no la tienes, en <strong>GitHub</strong> con un
 					nombre de usuario serio y profesional.</h2>
-				<p><a href="https://github.com/josecarlosLH">Mi cuenta de GitHub</a>.</p>
+				<p><a href="https://github.com/HenestrosaDev">Mi cuenta de GitHub</a>.</p>
 			</div>
 
 			<div id="d">
 				<h2 class="header--margin">d) Crea un proyecto en GitHub de una aplicación web tuya y usa Git para subir
 					el código.</h2>
-				<p>En mi página de GitHub tengo subida <a href="https://github.com/josecarlosLH/PersonalWebsite">mi
+				<p>En mi página de GitHub tengo subida <a href="https://github.com/HenestrosaDev/PersonalWebsite">mi
 						sitio web personal</a>.</p>
 			</div>
 		</div>
