@@ -5,50 +5,118 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
 		<title>Juego de bolos | DWEC 06</title>
-		<meta name="author" content="José Carlos López Henestrosa">
-		<meta name="description" content="Juego de bolos de la tarea 6 de Desarrollo Web en Entorno Cliente">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+		<meta
+			name="author"
+			content="José Carlos López Henestrosa"
+		/>
+		<meta
+			name="description"
+			content="Juego de bolos de la tarea 6 de Desarrollo Web en Entorno Cliente"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="./favicon.ico"
+		/>
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body class="container mx-auto flex h-screen bg-gray-200 px-10 md:px-none">
 		<!--[if lt IE 7]>
-			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+			<p class="browsehappy">
+				You are using an <strong>outdated</strong> browser. Please
+				<a href="#">upgrade your browser</a> to improve your experience.
+			</p>
 		<![endif]-->
 		<div class="m-auto w-full px-8 bg-white rounded-lg">
 			<header class="text-center mt-6">
-				<h1 class="font-medium leading-tight text-5xl text-blue-600">Juego de bolos</h1>
+				<h1 class="font-medium leading-tight text-5xl text-blue-600">
+					Juego de bolos
+				</h1>
 			</header>
+
 			<main>
 				<div class="md:grid md:grid-cols-5 md:gap-4">
 					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
 						<p class="font-medium leading-tight text-xl py-2">Jugadores</p>
-						<p id="player-1" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">Antonio</p>
-						<p id="player-2" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">Marta</p>
-					</div>
-					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
-						<p class="font-medium leading-tight text-xl py-2">Puntuación</p>
-						<p id="score-1" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">0</p>
-						<p id="score-2" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">0</p>
-					</div>
-					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
-						<p class="font-medium leading-tight text-xl py-2">Turnos</p>
-						<p id="turns-1" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">10</p>
-						<p id="turns-2" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">10</p>
-					</div>
-					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
-						<p class="font-medium leading-tight text-xl py-2">Lanzamientos</p>
-						<p id="throws-1" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">2</p>
-						<p id="throws-2" class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500">2</p>
-					</div>
-					<div id="balls" class="place-items-center grid md:grid-rows-3 md:grid-flow-col md:gap-4 text-center mt-6">
+						<p
+							id="player-1"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							Antonio
+						</p>
+						<p
+							id="player-2"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							Marta
+						</p>
 					</div>
 
+					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
+						<p class="font-medium leading-tight text-xl py-2">Puntuación</p>
+						<p
+							id="score-1"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							0
+						</p>
+						<p
+							id="score-2"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							0
+						</p>
+					</div>
+
+					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
+						<p class="font-medium leading-tight text-xl py-2">Turnos</p>
+						<p
+							id="turns-1"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							10
+						</p>
+						<p
+							id="turns-2"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							10
+						</p>
+					</div>
+
+					<div class="grid grid-rows-3 grid-flow-col gap-4 mt-6">
+						<p class="font-medium leading-tight text-xl py-2">Lanzamientos</p>
+						<p
+							id="throws-1"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							2
+						</p>
+						<p
+							id="throws-2"
+							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500"
+						>
+							2
+						</p>
+					</div>
+
+					<div
+						id="balls"
+						class="place-items-center grid md:grid-rows-3 md:grid-flow-col md:gap-4 text-center mt-6"
+					></div>
+
 					<div class="col-span-5 text-center pt-4">
-						<button 
+						<button
 							id="start"
 							class="border rounded-md px-4 py-2 font-semibold text-md border-gray-500 bg-yellow-500 disabled:font-extralight disabled:text-white-200 disabled:bg-yellow-700"
 							type="button"
@@ -56,12 +124,24 @@
 							Comenzar
 						</button>
 					</div>
-					<div id="pins" class="md:col-span-5 md:grid-flow-col grid-flow-row-dense text-center md:gap-4 grid grid-cols-5 md:grid-cols-10 mb-12">
-					</div>
+
+					<div
+						id="pins"
+						class="md:col-span-5 md:grid-flow-col grid-flow-row-dense text-center md:gap-4 grid grid-cols-5 md:grid-cols-10 mb-12"
+					></div>
 				</div>
 			</main>
 		</div>
-		<script src="./script.js" async defer></script>
-		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11" async defer></script>
+		
+		<script
+			src="./script.js"
+			async
+			defer
+		></script>
+		<script
+			src="//cdn.jsdelivr.net/npm/sweetalert2@11"
+			async
+			defer
+		></script>
 	</body>
 </html>
