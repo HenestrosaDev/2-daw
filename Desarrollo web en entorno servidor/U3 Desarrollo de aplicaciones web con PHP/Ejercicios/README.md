@@ -1,14 +1,14 @@
 <p align="center">
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejericio-1a.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejericio-1a.png" 
 		alt="Ejercicio 1a"
 		title="Ejercicio 1a"
 	>
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejericio-1b.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejericio-1b.png" 
 		alt="Ejercicio 1b"
 		title="Ejercicio 1b"
 	>
@@ -17,14 +17,14 @@
 <p align="center">
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-2.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-2.png" 
 		alt="Ejercicio 2"
 		title="Ejercicio 2"
 	>
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-3.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-3.png" 
 		alt="Ejercicio 3"
 		title="Ejercicio 3"
 	>
@@ -33,14 +33,14 @@
 <p align="center">
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-4-formulario.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-4-formulario.png" 
 		alt="Ejercicio 4 (formulario)"
 		title="Ejercicio 4 (formulario)"
 	>
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-4-pdf.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-4-pdf.png" 
 		alt="Ejercicio 4 (PDF)"
 		title="Ejercicio 4 (PDF)"
 	>
@@ -49,14 +49,14 @@
 <p align="center">
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-5-pizzeria.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-5-pizzeria.png" 
 		alt="Ejercicio 5 (pizzeria)"
 		title="Ejercicio 5 (pizzeria)"
 	>
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-5-ingredientes.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U3%20Desarrollo%20de%20aplicaciones%20web%20con%20PHP/Ejercicios/docs/ejercicio-5-ingredientes.png" 
 		alt="Ejercicio 5 (ingredientes)"
 		title="Ejercicio 5 (ingredientes)"
 	>
