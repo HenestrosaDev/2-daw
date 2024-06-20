@@ -4,7 +4,7 @@
 /**
  * Comprueba si el usuario actual es administrador o no
  *
- * @author José Carlos López Henestrosa <henestrosaconh@gmail.com>
+ * @author José Carlos López Henestrosa <henestrosadev@gmail.com>
  *
  * @version 1.0
  *
@@ -30,7 +30,7 @@ function check_admin($key, $page){
 /**
  * Establece una conexión con una base de datos (BBDD) MySQL
  *
- * @author José Carlos López Henestrosa <henestrosaconh@gmail.com>
+ * @author José Carlos López Henestrosa <henestrosadev@gmail.com>
  *
  * @version 1.1
  *

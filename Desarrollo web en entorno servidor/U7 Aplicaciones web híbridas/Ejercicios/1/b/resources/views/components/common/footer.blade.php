@@ -6,7 +6,7 @@
 				class="underline" 
 				rel="noopener" 
 				target="_blank" 
-				href="https://github.com/HenestrosaConH"
+				href="https://github.com/HenestrosaDev"
 			>
 				GitHub
 			</a>

@@ -61,8 +61,6 @@ Con la siguientes clases se pretende que seamos capaces de organizar un campeona
 
 ## Resultado
 
-**Nota**: Resultado con más detalle [aquí](https://drive.google.com/file/d/1QH3pAQpne9W7KlLTHw5BIYs65KEvxcaG/view?usp=sharing)
-
 **Calificación**: 9,60 / 10,00
 
 Calificado el jueves, 20 de enero de 2022, 23:46 por Sánchez Rubio, Mª Luz
