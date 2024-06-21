@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'film_id',
-        'amount'
-    ];
+	protected $fillable = [
+		'user_id',
+		'film_id',
+		'amount'
+	];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+	public function user()
+	{
+		return $this->belongsTo(User::class);
+	}
 
-    public function film()
-    {
-        return $this->belongsTo(Film::class);
-    }
+	public function film()
+	{
+		return $this->belongsTo(Film::class);
+	}
 }

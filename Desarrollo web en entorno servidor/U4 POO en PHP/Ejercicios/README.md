@@ -1,12 +1,49 @@
+<p align="center">
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U4%20POO%20en%20PHP/Ejercicios/ampliacion/docs/index.png" 
+		alt="Index"
+		title="Index"
+	>
+	&nbsp;
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U4%20POO%20en%20PHP/Ejercicios/ampliacion/docs/form.png" 
+		alt="Admin form"
+		title="Admin form"
+	>
+</p> 
+
+<p align="center">
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U4%20POO%20en%20PHP/Ejercicios/ampliacion/docs/panel-admin.png" 
+		alt="Panel admin"
+		title="Panel admin"
+	>
+	&nbsp;
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U4%20POO%20en%20PHP/Ejercicios/ampliacion/docs/detalle.png" 
+		alt="Detalle película"
+		title="Detalle película"
+	>
+</p> 
+
 # UNIDAD 4: Programación Orientada a Objetos en PHP
+
 ## ¿Qué te pedimos que hagas? 
+
 ### Actividades de OOP, MVC y otros
+
 Realizadas en el archivo `poo_mvc_otros.pdf`.
 
 ### Actividades de Laravel
+
 Realizadas en el directorio `laravel`.
 
 ### Actividad de ampliación
+
 >Realizada la **número 1**.
 
 Crea una aplicación web en Laravel. Elige uno de los siguientes temas:
@@ -60,3 +97,7 @@ Guía para (desplegar proyecto Laravel en Heroku)[]
 ---
 
 ## Resultado
+
+**Calificación**: 10,00 / 10,00
+
+Calificado el jueves, 16 de mayo de 2022, 19:01 por López Quintero, Manuel Ignacio

@@ -15,28 +15,15 @@ use App\Http\Controllers\TicketController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(['middleware' => 'admin'], function () {
 	Route::resource('/ticket', TicketController::class);
-	Route::resource('/film', FilmController::class)->except([
-		'index',
-		'show',
-	]);
+	Route::resource('/film', FilmController::class)->except(['index', 'show']);
 });
 
-// INDEX
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-// FILM
 Route::get('/film', [FilmController::class, 'index'])->name('film.index');
 Route::get('/film/{film}', [FilmController::class, 'show'])->name('film.show');
-
-/* 
-|--------------------------------------------------------------------------
-| Auth Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('/dashboard', function () {
-	return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

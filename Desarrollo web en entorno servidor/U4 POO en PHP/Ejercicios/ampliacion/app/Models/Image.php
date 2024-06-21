@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $fillable = [
-        'path'
-    ];
+	protected $fillable = [
+		'path'
+	];
 
-    public function user()
-    {
-        return $this->hasOne(User::class);
-    }
+	public function user()
+	{
+		return $this->hasOne(User::class);
+	}
 
-    public function film()
-    {
-        return $this->hasOne(Film::class);
-    }
+	public function film()
+	{
+		return $this->hasOne(Film::class);
+	}
 }

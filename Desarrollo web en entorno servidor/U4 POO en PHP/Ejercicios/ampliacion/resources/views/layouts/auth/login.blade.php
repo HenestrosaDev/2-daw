@@ -1,11 +1,16 @@
 <x-common.app page-title="Iniciar sesión">
 	<x-auth.auth-card title="Iniciar sesión">
-
 		<!-- Session Status -->
-		<x-auth.auth-session-status class="mb-4" :status="session('status')" />
+		<x-auth.auth-session-status 
+			class="mb-4" 
+			:status="session('status')" 
+		/>
 
 		<!-- Validation Errors -->
-		<x-auth.auth-validation-errors class="mb-4" :errors="$errors" />
+		<x-auth.auth-validation-errors 
+			class="mb-4" 
+			:errors="$errors" 
+		/>
 
 		<!-- Credentials -->
 		<x-common.alert class="alert-secondary">
@@ -14,7 +19,10 @@
 			<p class="mb-0">user@user.com / 123456789</p>
 		</x-common.alert>
 
-		<form method="POST" action="{{ route('login') }}">
+		<form 
+			method="POST" 
+			action="{{ route('login') }}"
+		>
 			@csrf
 
 			<!-- Email Address -->
@@ -26,7 +34,8 @@
 					placeholder="Email"
 					name="email" 
 					:value="old('email')" 
-					required />
+					required 
+				/>
 			</div>
 
 
@@ -39,7 +48,8 @@
 					placeholder="Contraseña"
 					name="password"
 					required 
-					autocomplete="current-password" />
+					autocomplete="current-password" 
+				/>
 			</div>
 
 			<!-- Remember Me -->
@@ -48,17 +58,22 @@
 					id="remember_me" 
 					type="checkbox" 
 					class="form-check-input me-2"
-					name="remember">
+					name="remember"
+				>
 				<label 
 					class="form-check-label" 
-					for="remember_me">
+					for="remember_me"
+				>
 					Recuérdame
 				</label>
 			</div>
 
 			<div class="d-flex justify-content-around mt-3">
 				@if (Route::has('password.request'))
-					<a class="text-decoration-underline my-auto text-info" href="{{ route('password.request') }}">
+					<a 
+						class="text-decoration-underline my-auto text-info" 
+						href="{{ route('password.request') }}"
+					>
 						¿Olvidaste tu contraseña?
 					</a>
 				@endif

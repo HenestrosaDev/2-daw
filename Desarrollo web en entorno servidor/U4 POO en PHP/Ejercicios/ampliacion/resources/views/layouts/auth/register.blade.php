@@ -1,8 +1,10 @@
 <x-common.app page-title="Registro">
 	<x-auth.auth-card title="Registro">
-
 		<!-- Validation Errors -->
-		<x-auth.auth-validation-errors class="mb-4" :errors="$errors" />
+		<x-auth.auth-validation-errors 
+			class="mb-4" 
+			:errors="$errors" 
+		/>
 
 		<!-- Credentials -->
 		<x-common.alert class="alert-secondary">
@@ -11,7 +13,10 @@
 			<p class="mb-0">user@user.com / 123456789</p>
 		</x-common.alert>
 
-		<form method="POST" action="{{ route('register') }}">
+		<form 
+			method="POST" 
+			action="{{ route('register') }}"
+		>
 			@csrf
 
 			<!-- Name -->
@@ -24,7 +29,8 @@
 					placeholder="Nombre de usuario" 
 					:value="old('name')" 
 					required 
-					autofocus />
+					autofocus 
+				/>
 			</div>
 
 			<!-- Email Address -->
@@ -36,7 +42,8 @@
 					placeholder="Email"
 					name="email" 
 					:value="old('email')" 
-					required />
+					required 
+				/>
 			</div>
 
 			<!-- Password -->
@@ -48,7 +55,8 @@
 					placeholder="Contraseña"
 					name="password"
 					required 
-					autocomplete="new-password" />
+					autocomplete="new-password" 
+				/>
 			</div>
 
 			<!-- Confirm Password -->
@@ -59,7 +67,8 @@
 					type="password"
 					placeholder="Confirmar contraseña"
 					name="password_confirmation" 
-					required />
+					required 
+				/>
 			</div>
 
 			<!-- Button -->
@@ -69,6 +78,7 @@
 				</x-auth.button>
 			</div>
 		</form>
+
 		<div class="text-center">
 			<p class="divider-text">
 				<span class="bg-primary">O</span>

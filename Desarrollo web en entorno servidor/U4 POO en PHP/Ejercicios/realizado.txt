@@ -1,3 +1,3 @@
-Actividades de OOP, MVC y otros: Todo
-Actividades de Laravel: Todo, incluyendo las opcionales
-Actividad de ampliación: 1. Compra online de entradas de cine
+- Actividades de OOP, MVC y otros: Todo
+- Actividades de Laravel: Todo, incluyendo las opcionales
+- Actividad de ampliación: 1. Compra online de entradas de cine

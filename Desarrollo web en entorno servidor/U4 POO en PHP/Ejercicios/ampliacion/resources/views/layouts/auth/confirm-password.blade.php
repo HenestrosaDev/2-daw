@@ -1,6 +1,5 @@
 <x-common.app page-title="Confirmar contraseña">
 	<x-auth.auth-card title="Confirmar contraseña">
-
 		<div class="mb-4 text-sm text-gray-600">
 			{{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
 		</div>
@@ -13,14 +12,18 @@
 
 			<!-- Password -->
 			<div>
-				<x-auth.icon for="password" :value="__('Password')" />
+				<x-auth.icon 
+					for="password" 
+					:value="__('Password')" 
+				/>
 				<x-auth.input 
 					id="password" 
 					class="block mt-1 w-full"
 					type="password"
 					name="password"
 					required 
-					autocomplete="current-password" />
+					autocomplete="current-password" 
+				/>
 			</div>
 
 			<div class="flex justify-end mt-4">

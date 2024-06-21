@@ -10,41 +10,41 @@ use Illuminate\Database\Eloquent\Model;
 
 class Film extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $fillable = [
-        'image_id',
-        'name',
-        'director',
-        'description',
-        'runtime',
-        'release_year'
-    ];
+	protected $fillable = [
+		'image_id',
+		'name',
+		'director',
+		'description',
+		'runtime',
+		'release_year'
+	];
 
-    /**
-     * Create the slug when titling a film.
-     *
-     * @param  string  $value
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function name(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $value,
-            set: fn ($value) => [
-                'name' => $value,
-                'slug' => Str::slug($value)
-            ]
-        );
-    }
+	/**
+	 * Create the slug when titling a film.
+	 *
+	 * @param  string  $value
+	 * @return \Illuminate\Database\Eloquent\Casts\Attribute
+	 */
+	protected function name(): Attribute
+	{
+		return Attribute::make(
+			get: fn ($value) => $value,
+			set: fn ($value) => [
+				'name' => $value,
+				'slug' => Str::slug($value)
+			]
+		);
+	}
 
-    public function image()
-    {
-        return $this->belongsTo(Image::class);
-    }
-    
-    public function tickets()
-    {
-        return $this->hasMany(Ticket::class);
-    }
+	public function image()
+	{
+		return $this->belongsTo(Image::class);
+	}
+
+	public function tickets()
+	{
+		return $this->hasMany(Ticket::class);
+	}
 }

@@ -6,30 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('tickets', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('film_id')->constrained();
-            $table->unsignedTinyInteger('amount');
-            //$table->unsignedTinyInteger('price');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('tickets', function (Blueprint $table) {
+			$table->id();
+			$table->foreignId('user_id')->constrained();
+			$table->foreignId('film_id')->constrained();
+			$table->unsignedTinyInteger('amount');
+			//$table->unsignedTinyInteger('price');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('tickets');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('tickets');
+	}
 };

@@ -1,1 +1,3 @@
+NOTA: Ya no está disponible en Heroku porque quitaron el free tier.
+
 https://lhjc-tarea4.herokuapp.com/

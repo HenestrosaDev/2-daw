@@ -12,18 +12,31 @@
 
 		<div class="row">
 			<div class="col-12 col-md-3 text-center mb-4 mb-md-0">
-				<img src="{{ asset($film->image->path) }}" class="" alt="{{ $film->name }} poster">
+				<img 
+					src="{{ asset($film->image->path) }}" 
+					class="" 
+					alt="{{ $film->name }} poster"
+				>
 			</div>
+
 			<div class="col-12 col-md-9">
-				<section id="film-header" class="mb-3">
+				<section 
+					id="film-header" 
+					class="mb-3"
+				>
 					<h1>{{ $film->name }}</h1>
 					<p>
 						<u class="me-2">{{ $film->release_year }}</u> Dirigida por <u>{{ $film->director }}</u>
 					</p>
 				</section>
-				<section id="film-description" class="mb-3">
+
+				<section 
+					id="film-description" 
+					class="mb-3"
+				>
 					{{ $film->description }}
 				</section>
+
 				<section id="film-buy-ticket">
 					<button 
 						type="button" 
@@ -31,7 +44,8 @@
 						tabindex="0" 
 						data-bs-toggle="modal" 
 						data-bs-target="#ticket-modal" 
-						role="button">
+						role="button"
+					>
 						Comprar entrada
 					</button>
 
@@ -40,13 +54,15 @@
 							<form 
 								action="{{ route('film.destroy', $film->id) }}"
 								method="post" 
-								class="d-inline">
+								class="d-inline"
+							>
 								@csrf
 								@method('DELETE')
 								<button 
 									type="submit" 
 									class="btn btn-danger ms-3" 
-									role="button">
+									role="button"
+								>
 									Eliminar película
 								</button>
 							</form>
