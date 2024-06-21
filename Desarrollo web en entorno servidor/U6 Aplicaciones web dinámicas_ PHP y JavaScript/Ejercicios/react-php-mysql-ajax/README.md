@@ -1,2 +1,2 @@
-Source: https://www.ribosomatic.com/articulos/ajax-con-react-js-php-mysql/
-GitHub repo: https://github.com/RibosoMaticCode/react-php-mysql
+- Source: https://www.ribosomatic.com/articulos/ajax-con-react-js-php-mysql/
+- GitHub repo: https://github.com/RibosoMaticCode/react-php-mysql
