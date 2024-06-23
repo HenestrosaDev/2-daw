@@ -4,6 +4,4 @@
 
 1. Realiza tres sitios web:
 
-<ol type="a">
-  <li>Uno que salude con ¡Hola, mundo!</li>
-</ol>
+	a. Uno que salude con ¡Hola, mundo!
