@@ -82,25 +82,24 @@
 5. Realiza la <a href="https://milq.github.io/cursos/dwes/ud/2/">aplicación web</a> (sistema de test online, reservas online de coches o pizzería online) que no realizaste en la tarea anterior pero esta vez usando (además de bases de datos y sesiones) cookies para guardar la solicitud o pedido y funciones hash para almacenar las contraseñas de los usuarios. Si te ves capaz, genera el informe además en PDF usando MPDF mediante Composer.
 
 ## Material complementario 
+
 El material complementario se puede encontrar en la [Unidad 2](https://milq.github.io/cursos/dwes/ud/2/) de DWES de la web de Manuel Ignacio López Quintero. 
 
 ## Formato de entrega
 
 - La estructura de archivos y carpetas debe quedar [así](https://milq.github.io/cursos/dwes/ud/3/estructura.txt). 
-- La página <code>index.html</code> permitirá acceder a todas las actividades.
+- La página `index.html` permitirá acceder a todas las actividades.
 - El script [inicio.sql](https://milq.github.io/cursos/dwes/ud/3/inicio.sql) creará las dos bases de datos con sus tablas, inserciones y
 restricciones necesarias.
-- El profesor descomprimirá el ZIP en htdocs, iniciará XAMPP, entrará en
-PhpMyAdmin, ejecutará/importará el script inicio.sql y abrirá index.html desde localhost
+- El profesor descomprimirá el ZIP en htdocs, iniciará XAMPP, entrará en PhpMyAdmin, ejecutará/importará el script inicio.sql y abrirá index.html desde localhost
 
 El no cumplimiento del formato de entrega conllevará una calificación de cero en la presente tarea.
 
 ## Actividad extra propuesta por el profesorado (10 %)
-- Subir esta tarea a Heroku con la siguiente URL:
-apellidos_tarea3_dwes_2021.herokuapp.com.
-- Esta URL se indicará en el archivo de texto <code>heroku.txt</code>.
-- Si se sube esta tarea a Heroku, el profesor evaluará todo los ítems desde
-dicha URL excepto el código que lo evaluará en el zip entregado.
+
+- Subir esta tarea a Heroku con la siguiente URL: `apellidos_tarea3_dwes_2021.herokuapp.com`.
+- Esta URL se indicará en el archivo de texto `heroku.txt`.
+- Si se sube esta tarea a Heroku, el profesor evaluará todo los ítems desde dicha URL excepto el código que lo evaluará en el zip entregado.
 
 ---
 

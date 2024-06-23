@@ -49,6 +49,7 @@ El usuario (cliente) iniciará sesión y realizará una reserva online de un coc
 El usuario (cliente) iniciará sesión y realizará un pedido online de una o varias pizzas y podrá elegir hasta 10 ingredientes o hasta 5 especialidades diferentes. El usuario podrá añadir/eliminar ingredientes/pizzas y vaciar la cesta de la compra para empezar de nuevo. El administrador (empresario) iniciará sesión y podrá comprobar todos los pedidos de sus clientes y podrá generar un informe. Dicho informe mostrará los pedidos de cada cliente y estadísticas como precio medio del pedido, el ingrediente más y menos solicitado, la especialidad más y menos solicitada, etc.
 
 ## Material complementario 
+
 El material complementario se puede encontrar en la [Unidad 2](https://milq.github.io/cursos/dwes/ud/2/) de DWES de la web de Manuel Ignacio López Quintero. 
 
 ## Formato de entrega

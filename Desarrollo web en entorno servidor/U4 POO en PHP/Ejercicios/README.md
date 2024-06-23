@@ -81,18 +81,15 @@ El no cumplimiento del formato de entrega conllevará una calificación de cero 
 ---
 
 ## Notas
+
 Los proyectos ubicados en [
   `laravel/1. Framework web e instalación/d) Proyecto vacío`,
   `laravel/7. Aplicación web completa con Laravel`,
   `ampliacion`
 ]
-NO tienen la carpeta vendor, por lo que es necesario ejecutar
-el comando 'composer install' para la instalaci�n de las 
-dependencias declaradas en el archivo composer.lock
+NO tienen la carpeta `vendor`, por lo que es necesario ejecutar el comando `composer install` para la instalación de las dependencias declaradas en el archivo `composer.lock`
 
-Es MUY recomendable revisar la tarea desde [este repositorio](https://github.com/HenestrosaDev/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U4%20POO%20en%20PHP/Ejercicios) ya que para la parte de *laravel* he usado Markdown, el cual no se puede apreciar correctamente abriendo un archivo .txt
-
-Guía para (desplegar proyecto Laravel en Heroku)[]
+Es MUY recomendable revisar la tarea desde [este repositorio](https://github.com/HenestrosaDev/2DAW/tree/main/Desarrollo%20web%20en%20entorno%20servidor/U4%20POO%20en%20PHP/Ejercicios) ya que para la parte de *laravel* he usado Markdown, el cual no se puede apreciar correctamente abriendo un archivo `.txt`.
 
 ---
 
