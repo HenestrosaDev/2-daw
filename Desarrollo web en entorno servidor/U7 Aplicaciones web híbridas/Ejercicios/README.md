@@ -1,7 +1,11 @@
 # UNIDAD 7: Aplicaciones web híbridas
+
 ## ¿Qué te pedimos que hagas? 
+
 ### Actividades de iniciación
+
 1. Realiza tres sitios web:
+
 - Uno que salude con ¡Hola, mundo!
 - Otro profesional con cuatro pestañas: Inicio, Portfolio, CV y Sobre mí.
 - Uno que use [Leaflet](https://github.com/Leaflet/Leaflet) con Open Street Maps y/o Google Maps y crear así una aplicación web híbrida de tipo (mashup)[https://en.wikipedia.org/wiki/Mashup_(web_application_hybrid)]; para ello, ayúdate de este [tutorial](https://www.latirus.com/blog/2021/06/11/instalar-google-maps-y-leaflet-js-en-laravel/) ([vídeo](https://www.youtube.com/watch?v=_ieQavKU4AY)).
@@ -34,7 +38,7 @@ El material complementario se puede encontrar en la [Unidad 7](https://milq.gith
 
 ## Formato de entrega
 
-1. La estructura de archivos y carpetas debe quedar así.
+1. La estructura de archivos y carpetas debe quedar [así](https://milq.github.io/cursos/dwes/ud/7/estructura.txt).
 2. La base de datos se identificarán como *to7_1*, *to7_2*, *to7_3*, etc.
 3. Antes de comprimir borra las carpetas vendor y node_modules. Si aún no cumples el máximo permitido, borra imágenes que ocupen mucho.
 4. El profesor ejecutará: composer install && php artisan migrate:fresh && php artisan serve.
@@ -51,4 +55,8 @@ Realiza más opciones de la actividad 9 o profundiza con [Leaflet](https://githu
 
 Calificado el lunes, 6 de junio de 2022, 20:01 por López Quintero, Manuel Ignacio
 
-**Comentarios realizados por mí**: Solo tuve tiempo de realizar el ejercicio 1.
+**Comentario del profesor al comunicarle que no tuve tiempo de realizar esta tarea por motivos personales**: No te preocupes, has hecho muy buen módulo. Es normal que haya épocas más difíciles. Estoy seguro que podrás seguir formándote y aumentando tus conocimientos en Laravel, React, etc.
+
+Saludos.
+
+**Comentarios realizados por mí**: Solo tuve tiempo de realizar el ejercicio 1. No obstante, he añadido las 9 actividades restantes. Las capturas de cada ejercicio están en su correspondiente directorio.
