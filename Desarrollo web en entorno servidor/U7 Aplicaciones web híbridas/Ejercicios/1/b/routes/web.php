@@ -13,18 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.index');
-})->name('index');
-
-Route::get('/', function () {
-    return view('layouts.cv');
-})->name('cv');
-
-Route::get('/', function () {
-    return view('layouts.portfolio');
-})->name('portfolio');
-
-Route::get('/', function () {
-    return view('layouts.sobre-mi');
-})->name('sobre-mi');
+Route::get('/', fn () => view('layouts.index'))->name('index');
+Route::get('/cv', fn () => view('layouts.cv'))->name('cv');
+Route::get('/portfolio', fn () => view('layouts.portfolio'))->name('portfolio');
+Route::get('/sobre-mi', fn () => view('layouts.sobre-mi'))->name('sobre-mi');

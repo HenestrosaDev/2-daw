@@ -7,10 +7,10 @@
 	</head>
 
 	<body class="">
-		<x-common.navbar/>
+		<x-common.navbar />
 		<div class="container mx-auto pt-3">
 			{{ $slot }}
 		</div>
-		<x-common.footer/>
+		<x-common.footer />
 	</body>
 </html>

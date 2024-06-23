@@ -1,4 +1,4 @@
-<footer {{ $attributes->merge(['class' => 'mt-6 p-4 bg-gray-100 rounded-lg text-center shadow dark:bg-gray-800']) }}>
+<footer {{ $attributes->merge(['class' => 'mt-6 p-4 bg-gray-100 rounded-lg text-center shadow']) }}>
 	<p class="mb-3">&copy; José Carlos López Henestrosa</p>
 	<ul class="inline pl-0">
 		<li class="inline-block">
