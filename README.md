@@ -249,28 +249,28 @@
 			</a>
 		</td>
 		<td>
-			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U1%20Introduccion%20a%20la%20anal%C3%ADtica%20web">
+			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/Posicionamiento%20Web/U1%20Introduccion%20a%20la%20anal%C3%ADtica%20web">
 				1. Introducción a la analítica web
 			</a>
 		</td>	
 	</tr>
 	<tr>
 		<td>
-			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U2%20Monetizaci%C3%B3n">
+			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/Posicionamiento%20Web/U2%20Monetizaci%C3%B3n">
 				2. Monetización
 			</a>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U3%20SMO.%20Introduccion%20a%20la%20gesti%C3%B3n%20empresarial%20de%20RRSS">
+			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/Posicionamiento%20Web/U3%20SMO.%20Introduccion%20a%20la%20gesti%C3%B3n%20empresarial%20de%20RRSS">
 				3. SMO. Introducción a la gestión empresarial de RRSS
 			</a>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/%5BHoras%20de%20libre%20configuraci%C3%B3n%5D%20Posicionamiento%20Web/U4%20Introducci%C3%B3n%20al%20SEO%20org%C3%A1nico">
+			<a href="https://github.com/HenestrosaDev/2-daw/tree/main/Posicionamiento%20Web/U4%20Introducci%C3%B3n%20al%20SEO%20org%C3%A1nico">
 				4. Introducción al SEO orgánico
 			</a>
 		</td>
