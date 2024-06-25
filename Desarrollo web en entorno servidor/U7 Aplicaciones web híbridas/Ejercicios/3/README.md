@@ -4,7 +4,7 @@
 
 ![Crear libro](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/3/docs/crear-libro.png)
 
-![Editar libro](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/2/docs/editar-libro.png)
+![Editar libro](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/3/docs/editar-libro.png)
 
 # Enunciado
 
