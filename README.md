@@ -286,8 +286,6 @@
 
 <p align="right">(<a href="#top">volver al principio</a>)</p>
 
----
-
 ## Licencia
 
 Distribuido bajo la licencia MIT. Véase `LICENSE` para más información.
