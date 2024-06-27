@@ -1,21 +1,5 @@
 
-![https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/index.png](Index)
-
-<p align="center">
-	<img 
-		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/hilos-invitado.png"
-		alt="Hilos (invitado)"
-		title="Hilos (invitado)"
-	>
-	&nbsp;
-	<img 
-		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/hilo-invitado.png" 
-		alt="Detalle hilo (invitado)"
-		title="Detalle hilo (invitado)"
-	>
-</p>
+![Index](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/index.png)
 
 <p align="center">
 	<img 
@@ -27,9 +11,25 @@
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/registro.png"
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/registrarse.png"
 		alt="Registro"
 		title="Registro"
+	>
+</p>
+
+<p align="center">
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/hilos-invitado.png"
+		alt="Hilos (invitado)"
+		title="Hilos (invitado)"
+	>
+	&nbsp;
+	<img 
+		width="49%" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/hilo-sin-respuestas.png"
+		alt="Hilo sin respuestas (usuario)"
+		title="Hilo sin respuestas (usuario)"
 	>
 </p>
 
@@ -59,16 +59,16 @@
 	&nbsp;
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/hilo-sin-respuestas.png"
-		alt="Hilo con respuestas (usuario)"
-		title="Hilo con respuestas (usuario)"
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/hilo-invitado.png" 
+		alt="Detalle hilo (invitado)"
+		title="Detalle hilo (invitado)"
 	>
 </p>
 
 <p align="center">
 	<img 
 		width="49%" 
-		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/panel-de-control.png" 
+		src="https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/9/docs/panel-de-control-admin.png" 
 		alt="Panel de control (admin)"
 		title="Panel de control (admin)"
 	>
