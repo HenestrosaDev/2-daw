@@ -1,0 +1,17 @@
+{
+	"indentSize": 1,
+	"wrapAttributes": "force-expand-multiline",
+	"wrapLineLength": 100,
+	"wrapAttributesMinAttrs": 2,
+	"indentInnerHtml": false,
+	"endWithNewLine": true,
+	"endOfLine": "LF",
+	"useTabs": true,
+	"sortTailwindcssClasses": true,
+	"sortHtmlAttributes": "vuejs",
+	"noMultipleEmptyLines": true,
+	"noPhpSyntaxCheck": false,
+	"noSingleQuote": false,
+	"noTrailingCommaPhp": false,
+	"extraLiners": []
+}
