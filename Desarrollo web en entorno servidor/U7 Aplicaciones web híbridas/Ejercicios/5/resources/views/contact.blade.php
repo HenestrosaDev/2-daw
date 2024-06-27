@@ -1,21 +1,21 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
 @section('content')
-	<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-2xl mx-auto">
-		<h2 class="text-3xl font-bold mb-4 text-center">Contacto</h2>
+	<div class="mx-auto mb-4 max-w-2xl rounded bg-white px-8 pb-8 pt-6 shadow-md">
+		<h2 class="mb-4 text-center text-3xl font-bold">Contacto</h2>
 
 		<div class="mb-4">
-			<p class="text-lg text-gray-800 font-semibold">Dirección</p>
+			<p class="text-lg font-semibold text-gray-800">Dirección</p>
 			<p class="text-gray-700">123 Store Street, City, Country</p>
 		</div>
 
 		<div class="mb-4">
-			<p class="text-lg text-gray-800 font-semibold">Teléfono</p>
+			<p class="text-lg font-semibold text-gray-800">Teléfono</p>
 			<p class="text-gray-700">+1234567890</p>
 		</div>
 
 		<div class="mb-4">
-			<p class="text-lg text-gray-800 font-semibold">Email</p>
+			<p class="text-lg font-semibold text-gray-800">Email</p>
 			<p class="text-gray-700">info@videogamestore.com</p>
 		</div>
 

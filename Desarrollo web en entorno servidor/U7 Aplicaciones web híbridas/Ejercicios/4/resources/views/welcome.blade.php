@@ -1,13 +1,19 @@
 <x-app-layout>
-	<div class="flex justify-center items-center h-full px-4">
-		<div class="text-center mt-8">
-			<h1 class="text-4xl font-bold mb-4">Bienvenido al Informe personal de salud</h1>
+	<div class="flex h-full items-center justify-center px-4">
+		<div class="mt-8 text-center">
+			<h1 class="mb-4 text-4xl font-bold">Bienvenido al Informe personal de salud</h1>
 			<p class="mb-6">Controla tu salud con facilidad. Calcula tu IMC y tu tasa metabólica basal.</p>
 			<div>
-				<a href="{{ route('login') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+				<a
+					href="{{ route('login') }}"
+					class="mr-2 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+				>
 					Iniciar sesión
 				</a>
-				<a href="{{ route('register') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+				<a
+					href="{{ route('register') }}"
+					class="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700"
+				>
 					Registrarse
 				</a>
 			</div>

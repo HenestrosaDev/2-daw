@@ -1,15 +1,15 @@
 <x-app-layout>
-	<div class="max-w-lg mx-auto py-8 px-4 sm:px-0">
-		<h1 class="text-3xl font-bold mb-4 text-center">Datos Personales</h1>
+	<div class="mx-auto max-w-lg px-4 py-8 sm:px-0">
+		<h1 class="mb-4 text-center text-3xl font-bold">Datos Personales</h1>
 
 		<form
 			method="POST"
 			action="{{ route('health-report.calculate') }}"
-			class="p-6 bg-white rounded shadow-md"
+			class="rounded bg-white p-6 shadow-md"
 		>
 			@csrf
 
-			<div class="sm:space-y-0 space-y-3 sm:gap-4 sm:grid sm:grid-cols-2">
+			<div class="space-y-3 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
 				<div>
 					<label
 						for="gender"
@@ -20,7 +20,7 @@
 					<select
 						id="gender"
 						name="gender"
-						class="block mt-1 w-full rounded border border-gray-400"
+						class="mt-1 block w-full rounded border border-gray-400"
 					>
 						<option value="male">Hombre</option>
 						<option value="female">Mujer</option>
@@ -38,7 +38,7 @@
 						id="age"
 						name="age"
 						type="number"
-						class="block mt-1 w-full rounded border border-gray-400"
+						class="mt-1 block w-full rounded border border-gray-400"
 						required
 					/>
 				</div>
@@ -54,7 +54,7 @@
 						id="height"
 						name="height"
 						type="number"
-						class="block mt-1 w-full rounded border border-gray-400"
+						class="mt-1 block w-full rounded border border-gray-400"
 						required
 					/>
 				</div>
@@ -70,7 +70,7 @@
 						id="weight"
 						name="weight"
 						type="number"
-						class="block mt-1 w-full rounded border border-gray-400"
+						class="mt-1 block w-full rounded border border-gray-400"
 						required
 					/>
 				</div>
@@ -78,7 +78,7 @@
 
 			<button
 				type="submit"
-				class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-7"
+				class="mt-7 w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
 			>
 				Calcular
 			</button>
@@ -86,14 +86,14 @@
 
 		@if (session('report'))
 			<div class="mt-10">
-				<h2 class="text-3xl font-bold mb-4 text-center">Informe de Salud Personal</h2>
+				<h2 class="mb-4 text-center text-3xl font-bold">Informe de Salud Personal</h2>
 
-				<div class="p-6 rounded shadow-md bg-white">
+				<div class="rounded bg-white p-6 shadow-md">
 					<p>
 						<strong>IMC:</strong> {{ session('report')['bmi'] }}
 					</p>
 					<p>
-						<strong>Tasa metabólica basal:</strong> 
+						<strong>Tasa metabólica basal:</strong>
 						{{ session('report')['bmr'] }} kcal/day
 					</p>
 				</div>

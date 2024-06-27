@@ -7,40 +7,40 @@
 </head>
 
 <body class="bg-gray-100 p-8">
-	<div class="max-w-lg mx-auto">
-		<h1 class="text-3xl font-bold mb-6">Crear Libro</h1>
-		
+	<div class="mx-auto max-w-lg">
+		<h1 class="mb-6 text-3xl font-bold">Crear Libro</h1>
+
 		@if ($errors->any())
-			<div class="bg-red-500 text-white p-4 mb-6 rounded">
+			<div class="mb-6 rounded bg-red-500 p-4 text-white">
 				<ul>
 					@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
+						<li>{{ $error }}</li>
 					@endforeach
 				</ul>
 			</div>
 		@endif
 
-		<form 
-			action="{{ route('books.store') }}" 
+		<form
+			action="{{ route('books.store') }}"
 			method="POST"
-			class="bg-white p-6 rounded shadow-md"
+			class="rounded bg-white p-6 shadow-md"
 		>
 			@csrf
 
-			<div class="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-4 sm:gap-y-6">
+			<div class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-x-4 sm:gap-y-6 sm:space-y-0">
 				<div>
-					<label 
-						for="ISBN" 
+					<label
+						for="ISBN"
 						class="block text-gray-700"
 					>
 						ISBN
 					</label>
-					<input 
-						id="ISBN" 
-						name="ISBN" 
+					<input
+						id="ISBN"
+						name="ISBN"
 						value="{{ old('ISBN') }}"
-						type="text" 
-						class="w-full px-4 py-2 border rounded" 
+						type="text"
+						class="w-full rounded border px-4 py-2"
 					>
 				</div>
 
@@ -52,10 +52,10 @@
 						Título
 					</label>
 					<input
+						id="title"
 						type="text"
 						name="title"
-						id="title"
-						class="w-full px-4 py-2 border rounded"
+						class="w-full rounded border px-4 py-2"
 						value="{{ old('title') }}"
 					/>
 				</div>
@@ -72,7 +72,7 @@
 						name="author"
 						value="{{ old('author') }}"
 						type="text"
-						class="w-full px-4 py-2 border rounded"
+						class="w-full rounded border px-4 py-2"
 					/>
 				</div>
 
@@ -88,7 +88,7 @@
 						name="publisher"
 						value="{{ old('publisher') }}"
 						type="text"
-						class="w-full px-4 py-2 border rounded"
+						class="w-full rounded border px-4 py-2"
 					/>
 				</div>
 
@@ -100,10 +100,10 @@
 						Edición
 					</label>
 					<input
+						id="edition"
 						type="text"
 						name="edition"
-						id="edition"
-						class="w-full px-4 py-2 border rounded"
+						class="w-full rounded border px-4 py-2"
 						value="{{ old('edition') }}"
 					/>
 				</div>
@@ -120,14 +120,14 @@
 						name="year"
 						value="{{ old('year') }}"
 						type="text"
-						class="w-full px-4 py-2 border rounded"
+						class="w-full rounded border px-4 py-2"
 					/>
 				</div>
 			</div>
 
 			<button
 				type="submit"
-				class="bg-blue-500 text-white px-4 py-2 rounded sm:col-span-2 w-full mt-8"
+				class="mt-8 w-full rounded bg-blue-500 px-4 py-2 text-white sm:col-span-2"
 			>
 				Enviar
 			</button>

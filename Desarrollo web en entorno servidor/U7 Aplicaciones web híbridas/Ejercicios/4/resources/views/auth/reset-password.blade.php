@@ -18,10 +18,10 @@
 				for="email"
 				:value="__('Email')"
 			/>
-			
+
 			<x-text-input
 				id="email"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="email"
 				name="email"
 				:value="old('email', $request->email)"
@@ -29,7 +29,7 @@
 				autofocus
 				autocomplete="username"
 			/>
-			
+
 			<x-input-error
 				:messages="$errors->get('email')"
 				class="mt-2"
@@ -45,7 +45,7 @@
 
 			<x-text-input
 				id="password"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="password"
 				name="password"
 				required
@@ -67,7 +67,7 @@
 
 			<x-text-input
 				id="password_confirmation"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="password"
 				name="password_confirmation"
 				required
@@ -80,7 +80,7 @@
 			/>
 		</div>
 
-		<div class="flex items-center justify-end mt-4">
+		<div class="mt-4 flex items-center justify-end">
 			<x-primary-button>{{ __('Reset Password') }}</x-primary-button>
 		</div>
 	</form>

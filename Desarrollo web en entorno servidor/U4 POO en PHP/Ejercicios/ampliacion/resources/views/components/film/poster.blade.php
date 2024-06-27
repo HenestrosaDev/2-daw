@@ -1,16 +1,16 @@
 <div class="col">
-	<div {{ $attributes->merge(['class' => 'card mb-3 text-center' ]) }}>
+	<div {{ $attributes->merge(['class' => 'card mb-3 text-center']) }}>
 		<div class="card-img-top">
-			<img 
-				src="{{ asset($film->image->path) }}" 
-				class="w-auto" 
+			<img
+				src="{{ asset($film->image->path) }}"
+				class="w-auto"
 				alt="{{ $film->name }} poster"
 			/>
 		</div>
 
 		<div class="card-body">
-			<a 
-				href="{{ route('film.show', [$film->slug]) }}" 
+			<a
+				href="{{ route('film.show', [$film->slug]) }}"
 				class="card-title stretched-link fs-5"
 			>
 				{{ $film->name }}

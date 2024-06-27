@@ -4,7 +4,7 @@
 	</x-common.header>
 
 	<main>
-		<table class="table table-hover">
+		<table class="table-hover table">
 			<thead>
 				<tr>
 					<th scope="col">Id usuario</th>

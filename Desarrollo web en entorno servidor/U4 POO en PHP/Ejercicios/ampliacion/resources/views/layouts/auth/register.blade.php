@@ -1,9 +1,9 @@
 <x-common.app page-title="Registro">
 	<x-auth.auth-card title="Registro">
 		<!-- Validation Errors -->
-		<x-auth.auth-validation-errors 
-			class="mb-4" 
-			:errors="$errors" 
+		<x-auth.auth-validation-errors
+			class="mb-4"
+			:errors="$errors"
 		/>
 
 		<!-- Credentials -->
@@ -13,66 +13,66 @@
 			<p class="mb-0">user@user.com / 123456789</p>
 		</x-common.alert>
 
-		<form 
-			method="POST" 
+		<form
+			method="POST"
 			action="{{ route('register') }}"
 		>
 			@csrf
 
 			<!-- Name -->
-			<div class="my-3 input-group">
+			<div class="input-group my-3">
 				<x-auth.icon class="bi-person-fill" />
-				<x-auth.input 
-					id="name" 
-					type="text" 
+				<x-auth.input
+					id="name"
+					type="text"
 					name="name"
-					placeholder="Nombre de usuario" 
-					:value="old('name')" 
-					required 
-					autofocus 
+					placeholder="Nombre de usuario"
+					:value="old('name')"
+					required
+					autofocus
 				/>
 			</div>
 
 			<!-- Email Address -->
-			<div class="mb-3 input-group">
+			<div class="input-group mb-3">
 				<x-auth.icon class="bi-envelope-fill" />
-				<x-auth.input 
-					id="email" 
-					type="email" 
+				<x-auth.input
+					id="email"
+					type="email"
 					placeholder="Email"
-					name="email" 
-					:value="old('email')" 
-					required 
+					name="email"
+					:value="old('email')"
+					required
 				/>
 			</div>
 
 			<!-- Password -->
-			<div class="mb-3 input-group">
+			<div class="input-group mb-3">
 				<x-auth.icon class="bi-lock-fill" />
-				<x-auth.input 
-					id="password" 
+				<x-auth.input
+					id="password"
 					type="password"
 					placeholder="Contraseña"
 					name="password"
-					required 
-					autocomplete="new-password" 
+					required
+					autocomplete="new-password"
 				/>
 			</div>
 
 			<!-- Confirm Password -->
-			<div class="mb-3 input-group">
+			<div class="input-group mb-3">
 				<x-auth.icon class="bi-lock-fill" />
-				<x-auth.input 
-					id="password_confirmation" 
+				<x-auth.input
+					id="password_confirmation"
 					type="password"
 					placeholder="Confirmar contraseña"
-					name="password_confirmation" 
-					required 
+					name="password_confirmation"
+					required
 				/>
 			</div>
 
 			<!-- Button -->
-			<div class="mt-4 mb-3 text-center">
+			<div class="mb-3 mt-4 text-center">
 				<x-auth.button class="col-12">
 					Registrarse
 				</x-auth.button>

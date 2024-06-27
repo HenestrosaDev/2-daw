@@ -3,79 +3,82 @@
 
 <head>
 	<title>Libros</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0"
+	>
 	@vite('resources/css/app.css')
 </head>
 
 <body class="bg-gray-100 p-8">
 	<div class="container mx-auto">
-		<h1 class="text-3xl font-bold mb-6">Libros</h1>
-		
+		<h1 class="mb-6 text-3xl font-bold">Libros</h1>
+
 		@if ($message = Session::get('success'))
-			<div class="bg-green-500 text-white p-4 mt-4 rounded">
+			<div class="mt-4 rounded bg-green-500 p-4 text-white">
 				{{ $message }}
 			</div>
 		@endif
-		<table class="min-w-full bg-white shadow-md rounded my-6">
+		<table class="my-6 min-w-full rounded bg-white shadow-md">
 			<thead>
 				<tr>
-					<th class="py-2 px-4 border-b">ID</th>
-					<th class="py-2 px-4 border-b">ISBN</th>
-					<th class="py-2 px-4 border-b">Título</th>
-					<th class="py-2 px-4 border-b">Autor</th>
-					<th class="py-2 px-4 border-b">Editorial</th>
-					<th class="py-2 px-4 border-b">Edición</th>
-					<th class="py-2 px-4 border-b">Año</th>
-					<th class="py-2 px-4 border-b">Acción</th>
+					<th class="border-b px-4 py-2">ID</th>
+					<th class="border-b px-4 py-2">ISBN</th>
+					<th class="border-b px-4 py-2">Título</th>
+					<th class="border-b px-4 py-2">Autor</th>
+					<th class="border-b px-4 py-2">Editorial</th>
+					<th class="border-b px-4 py-2">Edición</th>
+					<th class="border-b px-4 py-2">Año</th>
+					<th class="border-b px-4 py-2">Acción</th>
 				</tr>
 			</thead>
 			<tbody class="text-center">
 				@foreach ($books as $book)
-				<tr>
-					<td class="py-2 px-4 border-b">{{ $book->id }}</td>
-					<td class="py-2 px-4 border-b">{{ $book->ISBN }}</td>
-					<td class="py-2 px-4 border-b">{{ $book->title }}</td>
-					<td class="py-2 px-4 border-b">{{ $book->author }}</td>
-					<td class="py-2 px-4 border-b">{{ $book->publisher }}</td>
-					<td class="py-2 px-4 border-b">{{ $book->edition }}</td>
-					<td class="py-2 px-4 border-b">{{ $book->year }}</td>
-					<td class="py-2 px-4 border-b space-x-2">
-						<a 
-							href="{{ route('books.show', $book->id) }}" 
-							class="bg-green-500 text-white px-2 py-1 rounded"
-						>
-							Ver
-						</a>
-						<a 
-							href="{{ route('books.edit', $book->id) }}" 
-							class="bg-yellow-500 text-white px-2 py-1 rounded"
-						>
-							Editar
-						</a>
-						<form 
-							action="{{ route('books.destroy', $book->id) }}" 
-							method="POST" 
-							class="inline-block"
-						>
-							@csrf
-							@method('DELETE')
-							
-							<button 
-								type="submit" 
-								class="bg-red-500 text-white px-2 py-1 rounded"
+					<tr>
+						<td class="border-b px-4 py-2">{{ $book->id }}</td>
+						<td class="border-b px-4 py-2">{{ $book->ISBN }}</td>
+						<td class="border-b px-4 py-2">{{ $book->title }}</td>
+						<td class="border-b px-4 py-2">{{ $book->author }}</td>
+						<td class="border-b px-4 py-2">{{ $book->publisher }}</td>
+						<td class="border-b px-4 py-2">{{ $book->edition }}</td>
+						<td class="border-b px-4 py-2">{{ $book->year }}</td>
+						<td class="space-x-2 border-b px-4 py-2">
+							<a
+								href="{{ route('books.show', $book->id) }}"
+								class="rounded bg-green-500 px-2 py-1 text-white"
 							>
-								Eliminar
-							</button>
-						</form>
-					</td>
-				</tr>
+								Ver
+							</a>
+							<a
+								href="{{ route('books.edit', $book->id) }}"
+								class="rounded bg-yellow-500 px-2 py-1 text-white"
+							>
+								Editar
+							</a>
+							<form
+								action="{{ route('books.destroy', $book->id) }}"
+								method="POST"
+								class="inline-block"
+							>
+								@csrf
+								@method('DELETE')
+
+								<button
+									type="submit"
+									class="rounded bg-red-500 px-2 py-1 text-white"
+								>
+									Eliminar
+								</button>
+							</form>
+						</td>
+					</tr>
 				@endforeach
 			</tbody>
 		</table>
 
-		<a 
-			href="{{ route('books.create') }}" 
-			class="bg-blue-500 text-white px-4 py-2 rounded"
+		<a
+			href="{{ route('books.create') }}"
+			class="rounded bg-blue-500 px-4 py-2 text-white"
 		>
 			Crear Nuevo Libro
 		</a>

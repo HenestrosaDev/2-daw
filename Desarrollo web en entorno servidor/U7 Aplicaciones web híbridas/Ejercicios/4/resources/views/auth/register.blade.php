@@ -11,10 +11,10 @@
 				for="name"
 				:value="__('Name')"
 			/>
-			
+
 			<x-text-input
 				id="name"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="text"
 				name="name"
 				:value="old('name')"
@@ -38,7 +38,7 @@
 
 			<x-text-input
 				id="email"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="email"
 				name="email"
 				:value="old('email')"
@@ -61,7 +61,7 @@
 
 			<x-text-input
 				id="password"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="password"
 				name="password"
 				required
@@ -83,7 +83,7 @@
 
 			<x-text-input
 				id="password_confirmation"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="password"
 				name="password_confirmation"
 				required
@@ -96,9 +96,9 @@
 			/>
 		</div>
 
-		<div class="flex items-center justify-end mt-4">
+		<div class="mt-4 flex items-center justify-end">
 			<a
-				class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+				class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 				href="{{ route('login') }}"
 			>
 				{{ __('Already registered?') }}

@@ -1,10 +1,10 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
 @section('content')
-	<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-		<h2 class="text-3xl font-bold mb-4">Tienda de Videojuegos</h2>
+	<div class="mb-4 rounded bg-white px-8 pb-8 pt-6 shadow-md">
+		<h2 class="mb-4 text-3xl font-bold">Tienda de Videojuegos</h2>
 
-		<p class="text-lg mb-4">
+		<p class="mb-4 text-lg">
 			Explora una amplia gama de videojuegos de diversos géneros y desarrolladores.
 		</p>
 
@@ -14,9 +14,9 @@
 			orci a lorem convallis sollicitudin.
 		</p>
 
-		<a 
+		<a
 			href="{{ route('games.index') }}"
-			class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+			class="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
 		>
 			Explorar juegos
 		</a>

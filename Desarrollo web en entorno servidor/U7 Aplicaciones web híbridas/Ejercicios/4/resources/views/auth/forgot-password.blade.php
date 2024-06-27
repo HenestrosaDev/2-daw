@@ -21,10 +21,10 @@
 				for="email"
 				:value="__('Email')"
 			/>
-			
+
 			<x-text-input
 				id="email"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="email"
 				name="email"
 				:value="old('email')"
@@ -38,7 +38,7 @@
 			/>
 		</div>
 
-		<div class="flex items-center justify-end mt-4">
+		<div class="mt-4 flex items-center justify-end">
 			<x-primary-button>
 				{{ __('Email Password Reset Link') }}
 			</x-primary-button>

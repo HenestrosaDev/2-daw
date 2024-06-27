@@ -17,10 +17,10 @@
 				for="email"
 				:value="__('Email')"
 			/>
-			
+
 			<x-text-input
 				id="email"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="email"
 				name="email"
 				:value="old('email')"
@@ -44,7 +44,7 @@
 
 			<x-text-input
 				id="password"
-				class="block mt-1 w-full"
+				class="mt-1 block w-full"
 				type="password"
 				name="password"
 				required
@@ -58,7 +58,7 @@
 		</div>
 
 		<!-- Remember Me -->
-		<div class="block mt-4">
+		<div class="mt-4 block">
 			<label
 				for="remember_me"
 				class="inline-flex items-center"
@@ -73,10 +73,10 @@
 			</label>
 		</div>
 
-		<div class="flex items-center justify-end mt-4">
+		<div class="mt-4 flex items-center justify-end">
 			@if (Route::has('password.request'))
 				<a
-					class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+					class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 					href="{{ route('password.request') }}"
 				>
 					{{ __('Forgot your password?') }}
