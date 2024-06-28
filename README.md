@@ -51,8 +51,8 @@
 
 <table>
 	<tr>
-		<th>MÓDULOS</th>
-		<th>TEMA</th>
+		<th>MÓDULO</th>
+		<th>UNIDAD</th>
 	</tr>
 	<tr>
 		<td rowspan="6">
