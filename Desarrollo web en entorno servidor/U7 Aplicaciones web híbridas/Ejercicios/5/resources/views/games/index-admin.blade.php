@@ -4,7 +4,7 @@
 	<div class="mb-4 px-8 pb-8 pt-6">
 		<h2 class="mb-6 text-center text-3xl font-bold">Admin</h2>
 
-		<div class="my-6 rounded bg-white shadow-md">
+		<div class="my-6 overflow-auto rounded bg-white shadow-md">
 			<table class="w-full min-w-max table-auto">
 				<thead>
 					<tr class="bg-gray-200 text-sm uppercase leading-normal text-gray-600">

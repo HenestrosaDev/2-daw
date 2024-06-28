@@ -14,7 +14,7 @@
 		@if ($asignatura->alumnos->isEmpty())
 			<p>No hay alumnos inscritos en esta asignatura.</p>
 		@else
-			<div class="rounded-lg bg-white p-6 shadow-md">
+			<div class="overflow-auto rounded-lg bg-white p-6 shadow-md">
 				<table class="min-w-full bg-white">
 					<thead>
 						<tr>

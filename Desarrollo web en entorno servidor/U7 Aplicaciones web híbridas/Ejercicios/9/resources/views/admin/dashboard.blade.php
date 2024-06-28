@@ -5,16 +5,16 @@
 		<div class="my-6">
 			<h1 class="text-3xl font-bold">Panel de Control</h1>
 
-			<div class="mt-4">
-				<table class="min-w-full rounded-lg bg-white table-auto">
+			<div class="mt-4 overflow-auto">
+				<table class="min-w-full table-auto rounded-lg bg-white">
 					<thead class="text-left">
 						<tr class="bg-gray-200">
-							<th class="px-4 py-2 rounded-tl-lg">Usuario</th>
+							<th class="rounded-tl-lg px-4 py-2">Usuario</th>
 							<th class="px-4 py-2">Hilos</th>
 							<th class="px-4 py-2">Respuestas</th>
 							<th class="px-4 py-2"><em>Me gusta</em> recibidos en hilos</th>
 							<th class="px-4 py-2"><em>Me gusta</em> recibidos en respuestas</th>
-							<th class="px-4 py-2 rounded-tr-lg"><em>Me gusta</em> recibidos en total</th>
+							<th class="rounded-tr-lg px-4 py-2"><em>Me gusta</em> recibidos en total</th>
 						</tr>
 					</thead>
 					<tbody class="divide-y">
