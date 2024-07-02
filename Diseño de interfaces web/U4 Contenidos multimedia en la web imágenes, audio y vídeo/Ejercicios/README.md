@@ -1,3 +1,5 @@
+![Índice](./docs/index.png)
+
 # UNIDAD 4: Contenidos multimedia en la web: imágenes, audio y vídeo
 
 ## Ejercicio 1: Imagen composición.
