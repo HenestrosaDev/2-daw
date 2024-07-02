@@ -1,6 +1,6 @@
 <h1 align="center">Desarrollo Web en Entorno Cliente</h1>
 
-Al pulsar sobre una fila de TAREAS, serás dirigido al código fuente de la tarea seleccionada. Si haces click en una imagen, serás llevado a una página web con el ejercicio desplegado.
+Al pulsar sobre una fila de la columna TAREA, serás dirigido al código fuente de la tarea seleccionada. Si haces click en una imagen, serás llevado a una página web con el ejercicio desplegado.
 
 | TAREA                                                                                               | CAPTURA                                                                                                                                                                                                                                        |
 |:-----------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
