@@ -1,3 +1,5 @@
+![Index](./docs/index.png)
+
 # UNIDAD 5: Contenidos multimedia en la Web: Animaciones
 
 ## Ejercicio 1: Maqueta realizada con tecnología grid. (0,75 puntos)
@@ -14,7 +16,7 @@ Para mostrar imágenes de nuestros platos, vamos a realizar una composición con
 2. Al hacer click en una foto, se debe realizar una transición de tal forma que la foto haga un movimiento lateral, por ejemplo, de izquierda a derecha y se sitúe en el centro de la pantalla (aproximadamente). En esta transición se tiene que realizar un escalado para que la foto aparezca recta en pantalla. También se debe aplicar un filtro (brillo, negativo, etc).
 
 	<div align="center">
-		<img src="./adjuntos/readme/ejercicio2.png" height="300">
+		<img src="./docs/ejercicio2.png" height="300">
 	</div>
 
 ## Ejercicio 3: Animaciones HTML5 y CSS3 (`@keyframe`) (2 puntos)
@@ -45,7 +47,7 @@ Toda la animación debe estar realizada con canvas.
 A continuación, se muestra una imagen para dar una idea de lo pedido, pero no tienes que realizarlo igual.
 
 <div align="center">
-	<img src="./adjuntos/readme/ejercicio4.png" height="300">
+	<img src="./adjuntos/docs/ejercicio4.png" height="300">
 </div>
 
 ## Ejercicio 6: Animaciones con SVG. (2,5 puntos)
@@ -62,7 +64,7 @@ Vamos a realizar una animación con SVG. Para ello, vamos a simular un pequeño 
 **Nota**: Como sabes, una imagen SVG no deja de ser un fichero en XML. Puedes utilizar un programa, como Inkscape, para simular los edificios y analizar dicho código para utilizarlo en tu desarrollo.
 
 <div align="center">
-	<img src="./adjuntos/readme/ejercicio6.png" height="600">
+	<img src="./adjuntos/docs/ejercicio6.png" height="600">
 </div>
 
 ---
