@@ -55,8 +55,6 @@ El menú debe adaptarse para dispositivos de menos de 768px. Para esta adaptaci�
 
 Se debe implementar un mecanismo que informe al usuario el lugar en que se encuentra en cada momento dentro de nuestra web (migas de pan).
 
----
-
 ## Ejercicio 2: Desarrollo (usable y accesible)
 
 En este ejercicio vamos a desarrollar una página web donde se valorará el diseño, la usabilidad y la accesibilidad de la misma.
@@ -116,8 +114,6 @@ Como siempre el desarrollo debe estar comentado y los recursos utilizados deben 
 
 En el documento de la tarea (`Tarea_02.pdf`) puedes incluir todos los comentarios y aclaraciones que consideres oportunos, recuerda que el desarrollo debe ser lo más usable posible.
 
----
-
 ## Ejercicio 3: Análisis de la accesibilidad
 
 En el documento pdf  `Tarea_02.pdf` debes dar respuesta las siguientes cuestiones:
@@ -143,8 +139,6 @@ En caso de que no hubiera que realizar ninguna mejora en la página `menusNavida
 **Si no se adjuntan las capturas de pantalla y/o no se razonan los cambios realizados, no se dará por válido este apartado.**
 
 Existen otros tipos de validadores que realizan el análisis indicando la URL de nuestra web, pero para ello la página debe estar alojada en un hosting. Uno de estos validadores es **TAW**, por si quieres puedes utilizarlo en lugar de eXaminator.
-
----
 
 ## Ejercicio 4: Análisis de usabilidad
 
