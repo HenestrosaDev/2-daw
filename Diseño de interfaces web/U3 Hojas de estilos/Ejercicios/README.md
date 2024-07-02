@@ -1,3 +1,19 @@
+<p align="center">
+	<img 
+		width="49%" 
+		src="./docs/index.png"
+		alt="Índice"
+		title="Índice"
+	>
+	&nbsp;
+	<img 
+		width="49%" 
+		src="./docs/promociones.png"
+		alt="Promociones"
+		title="Promociones"
+	>
+</p>
+
 # UNIDAD 3: Hojas de estilos
 
 ## ¿Qué te pedimos que hagas?
@@ -37,7 +53,7 @@ Como punto de partida para cualquier desarrollo, es conveniente realizar una peq
 
 Se describen las características de nuestra web:
 
-- **Cabecera**.
+- **Cabecera**
 	- Logotipo de nuestra empresa.
 	- Nombre de nuestra empresa (no debe ser una imagen que forme parte del logotipo).
 	- Icono con un texto al lado que ponga **Identifícate**. Al pasar por encima del icono o el texto, este debe cambiar de color (icono y texto).
@@ -46,7 +62,7 @@ Se describen las características de nuestra web:
 	- Platos.
 	- **Promociones**: Al hacer click en esta opción, iremos a la página `promociones.html`.
 	- Reservas.
-- **Zona de contenido**.
+- **Zona de contenido**
 	- **Zona de promoción**. Debe ser llamativa y debe contener los siguientes elementos:
 		- Nombre de la promoción.
 		- Una imagen de la promoción. Debe tener un borde con forma elíptica.
@@ -61,7 +77,7 @@ Se describen las características de nuestra web:
 		- Título.
 		- Imagen.
 		- Texto: Tendremos que utilizar una tipografía importada desde algún sitio web (por ejemplo, Google Fonts).
-- **Pie de página**.
+- **Pie de página**
 	- Incluir iconos de al menos tres redes sociales.
 
 El diseño de la página principal en dispositivos con menos de 768px deben tenerse en cuenta las siguientes indicaciones:
@@ -81,7 +97,7 @@ Al acceder a la opción del menú **Promociones** o cuando hagamos click en la o
 
 - **Encabezado, zona de navegación y pie de página**: Estos elementos deben tener las mismas características que los descritos en la página principal.
 - **Zona de contenido**: Se dividirá en dos bloques y la visualización de los mismos dependerá de la resolución del dispositivo.
-	- **Zona de contenido BLOQUE 1**.
+	- **Zona de contenido BLOQUE 1**
 		- **Nombre de la promoción**: La separación entre las letras del nombre de la promoción debe ser de 8px.
 		- **Imagen de la promoción**: Se debe aplicar un filtro que produzca un efecto vistoso al pasar por encima de la imagen.
 		- **Condiciones de la promoción**.
@@ -92,25 +108,27 @@ Al acceder a la opción del menú **Promociones** o cuando hagamos click en la o
 			- Precio normal.
 			- Ingredientes principales.
 			- Debe mostrarse una fila de totales, donde se vea: el precio total de todos los platos en condiciones normales y el precio total de la promoción.
-	- **Zona de contenido BLOQUE 2**: Debe contener los siguientes elementos y solo se visualizará en dispositivos con una resolución **igual o mayor a 768px**.
+	- **Zona de contenido BLOQUE 2**. Debe contener los siguientes elementos y solo se visualizará en dispositivos con una resolución **igual o mayor a 768px**:
 		- El título **Más información** al que se le debe aplicar una sombra atractiva al texto.
 		- Reseña descriptiva de la promoción. La fuente utilizada para este campo debe haberse obtenido de algún lugar de internet y descargada a nuestro sitio web. Para utilizarla hay que hacer referencia a los ficheros descargados de forma local.
 		- **Fotografías de los platos**: Deberá tener como mínimo 3 imágenes.
 
 Para el diseño de la página principal en dispositivos con **menos de 768px** deben tenerse en cuenta las siguientes indicaciones:
 
-- **BLOQUE 1**:
+- **BLOQUE 1**
 	- Deben aparecer todos los elementos citados con la estructura que se quiera.
 	- **Tabla**: Solo deben mostrarse las dos primeras columnas de información (nombre del plato y botón para ir a la descripción).
-- **BLOQUE 2**: No debe visualizarse.
+- **BLOQUE 2**
+	- No debe visualizarse.
 
 Para el diseño de la página principal en dispositivos una resolución igual o mayor a 768px deben tenerse en cuenta las siguientes indicaciones:
 
 - Mostrar la información en dos bloques paralelos (es decir, uno al lado del otro; BLOQUE 1 a la izquierda y BLOQUE 2 a la derecha).
-- **BLOQUE 1**:
+- **BLOQUE 1**
 	- Deben aparecer todos los elementos citados con la estructura que se quiera.
 	- Tabla: Deben mostrarse todas las columnas citadas.
-- **BLOQUE 2**: Debe visualizarse según las indicaciones dadas.
+- **BLOQUE 2**
+	- Debe visualizarse según las indicaciones dadas.
 
 ### Apartado 4. Test
 
@@ -144,7 +162,7 @@ Habrá que entregar los ficheros (de forma organizada) con el desarrollo realiza
 - Se tendrá que comentar el código desarrollado.
 - Justifica en el documento cualquier cuestión o decisión que consideres interesante.
 
-**No olvides leer las pautas a tener en cuenta en el punto 2.- Información de interés.**
+**No olvides leer las pautas a tener en cuenta en el punto 2. Información de interés.**
 
 ---
 
