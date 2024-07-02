@@ -1,4 +1,21 @@
+<p align="center">
+	<img 
+		width="49%" 
+		src="./docs/index.png"
+		alt="Índice"
+		title="Índice"
+	>
+	&nbsp;
+	<img 
+		width="49%" 
+		src="./docs/menus-navidad.png"
+		alt="Menús Navidad"
+		title="Menús Navidad"
+	>
+</p>
+
 # UNIDAD 2: Accesibilidad y usabilidad en la web
+
 ## ¿Qué te pedimos que hagas? 
 
 En esta tarea vamos a utilizar dos páginas web. La página principal de nuestro desarrollo (`index.html`) y una nueva página que describiremos en apartados posteriores: `menusNavidad.html`.
@@ -58,13 +75,13 @@ La página contendrá una zona de identificación, una zona de navegación, un p
 
 Descripción de los campos y restricciones que tendrá nuestro formulario:
 
-- **Datos personales del solicitante**.
+- **Datos personales del solicitante**
 	- **Nombre**: Máximo 15 caracteres – Obligatorio.
 	- **Apellidos**: Máximo 30 caracteres – Obligatorio.
 	- **Correo electrónico**: Máximo 20 caracteres - Obligatorio.
 	- **Teléfono de contacto**: 9 caracteres – Numérico – Obligatorio – Debe empezar por 6,8,7 o 9.
 	- **Desea recibir información si hay nuevos menús**: Valores Si o No. Valor por defecto: No - Obligatorio.
-- **Menús** (campos opcionales):
+- **Menús** (campos opcionales)
 	- **Seleccione el menú o menús que le interesan**: Añade un campo por cada menú incluido en la tabla anterior.
 	- **Indique el tipo de comida**: Se debe seleccionar un valor y los posibles valores deben estar agrupados en tres tipos: familiar, amigos y trabajo. A continuación se describen los posibles valores:
 		- **Familiar**:

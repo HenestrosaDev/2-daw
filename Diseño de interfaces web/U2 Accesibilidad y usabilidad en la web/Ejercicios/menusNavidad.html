@@ -1,309 +1,664 @@
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' lang='es'>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	lang="es"
+>
+	<head>
+		<title>DIW Unidad 2: Tarea</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<meta
+			name="description"
+			content="Tarea de la unidad 02"
+		/>
+		<meta
+			name="author"
+			content="José Carlos López Henestrosa"
+		/>
+		<link
+			rel="stylesheet"
+			href="./css/styles.min.css"
+		/>
+		<link
+			rel="icon"
+			type="image/icon"
+			href="./img/favicon/favicon.ico"
+		/>
+		<!-- Icon pack -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+		<!-- Google Fonts -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Pacifico"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Roboto"
+		/>
+		<!-- jQuery -->
+		<script src="./js/jquery-3.6.0.min.js"></script>
+	</head>
 
-<head>
-	<title>DIW Unidad 2: Tarea</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tarea de la unidad 02">
-	<meta name="author" content="José Carlos López Henestrosa">
-	<link rel="stylesheet" href="./css/styles.min.css" />
-	<link rel="icon" type="image/icon" href="./img/favicon/favicon.ico">
-	<!-- Icon pack -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<!-- Google Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<!-- jQuery -->
-	<script src="./js/jquery-3.6.0.min.js"></script>
-</head>
+	<body>
+		<nav class="navbar bg--red">
+			<div class="navbar__container container">
+				<div class="navbar__container">
+					<h1 class="navbar__brand d--flex text--white align-items--center">
+						<img
+							src="./img/common/brand.png"
+							height="46"
+							class="me--3"
+							alt="logo"
+						/>
+						<a
+							href="index.html"
+							class="text--unstyled"
+						>
+							El Tini
+						</a>
+					</h1>
+				</div>
 
-<body>
-	<nav class="navbar bg--red">
-		<div class="navbar__container container">
-			<div class="navbar__container">
-				<h1 class="navbar__brand d--flex text--white align-items--center">
-					<img src="./img/common/brand.png" height="46" class="me--3" alt="logo">
-					<a href="index.html" class="text--unstyled">El Tini</a>
-				</h1>
+				<div class="navbar__content container">
+					<ul class="navbar__items">
+						<li
+							class="navbar__item"
+							id="navbar__item--nosotros"
+						>
+							<a
+								class="text--unstyled"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es"
+							>
+								<span class="bi-person me--2"></span>
+								<span class="partially-visible">Nosotros</span>
+							</a>
+						</li>
+
+						<li
+							class="navbar__item"
+							id="navbar__item--platos"
+						>
+							<a
+								class="text--unstyled"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es"
+							>
+								<span class="bi-book me--2"></span>
+								<span class="partially-visible">Platos</span>
+							</a>
+						</li>
+
+						<li
+							class="navbar__item"
+							id="navbar__item--promociones"
+						>
+							<a
+								class="text--unstyled"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es"
+							>
+								<span class="bi-percent me--2"></span>
+								<span class="partially-visible">Promociones</span>
+							</a>
+						</li>
+
+						<li
+							class="navbar__item dropdown active"
+							id="navbar__item--especial"
+						>
+							<a class="text--unstyled">
+								<span class="bi-snow me--2 text--red"></span>
+								<span class="partially-visible">Especial Navidad</span>
+							</a>
+							<div class="dropdown__content">
+								<a
+									class="dropdown__item active"
+									id="dropdown__item--menus"
+									href="menusNavidad.html"
+								>
+									Menús
+								</a>
+								<a
+									class="dropdown__item"
+									id="dropdown__item--horarios"
+									target="_blank"
+									rel="noopener noreferrer"
+									href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es"
+								>
+									Horarios
+								</a>
+							</div>
+						</li>
+
+						<li
+							class="navbar__item"
+							id="navbar__item--reservas"
+						>
+							<a
+								class="text--unstyled"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es"
+							>
+								<span class="bi-telephone me--2"></span>
+								<span class="partially-visible">Reservas</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="navbar__content container">
-				<ul class="navbar__items">
-					<li class="navbar__item" id="navbar__item--nosotros">
-						<a class="text--unstyled" target="_blank" rel="noopener noreferrer"
-							href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
-							<span class="bi-person me--2"></span>
-							<span class="partially-visible">Nosotros</span>
-						</a>
-					</li>
-					<li class="navbar__item" id="navbar__item--platos">
-						<a class="text--unstyled" target="_blank" rel="noopener noreferrer"
-							href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
-							<span class="bi-book me--2"></span>
-							<span class="partially-visible">Platos</span>
-						</a>
-					</li>
-					<li class="navbar__item" id="navbar__item--promociones">
-						<a class="text--unstyled" target="_blank" rel="noopener noreferrer"
-							href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
-							<span class="bi-percent me--2"></span>
-							<span class="partially-visible">Promociones</span>
-						</a>
-					</li>
-					<li class="navbar__item dropdown active" id="navbar__item--especial">
-						<a class="text--unstyled">
-							<span class="bi-snow me--2 text--red"></span>
-							<span class="partially-visible">Especial Navidad</span>
-						</a>
-						<div class="dropdown__content">
-							<a class="dropdown__item active" id="dropdown__item--menus" href="menusNavidad.html">Menús</a>
-							<a class="dropdown__item" id="dropdown__item--horarios" target="_blank" rel="noopener noreferrer"
-								href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">Horarios</a>
+		</nav>
+
+		<div class="container">
+			<main>
+				<section
+					id="intro"
+					class="hero"
+				>
+					<div class="hero__text">
+						<h1>¡Celebra la Navidad con nuestros menús especiales!</h1>
+					</div>
+				</section>
+
+				<section id="promotion">
+					<div
+						class="row row-cols--1 row-cols--md-3 gutter mt--5 promotion__shadow"
+					>
+						<div class="col promotion__card mb--4">
+							<header>
+								<h2 class="text--center mb--4 text--uppercase">
+									Menú de la casa
+								</h2>
+							</header>
+
+							<div class="px--2">
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Primer plato</strong>
+									<p>Ensalada césar</p>
+								</div>
+
+								<hr />
+
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Segundo plato</strong>
+									<p>Flamenquín casero</p>
+								</div>
+
+								<hr />
+
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Postre</strong>
+									<p>Natillas caseras</p>
+								</div>
+
+								<hr />
+							</div>
+
+							<div class="promotion__dish text--center fs--lg">
+								<p>
+									<span class="text--red">9.99€</span>
+									<span class="fs--sm">por comensal</span>
+								</p>
+								<p class="fs--sm">Número de comensales mínimo: 2</p>
+							</div>
 						</div>
-					</li>
-					<li class="navbar__item" id="navbar__item--reservas">
-						<a class="text--unstyled" target="_blank" rel="noopener noreferrer"
-							href="https://www.w3.org/WAI/fundamentals/accessibility-intro/es">
-							<span class="bi-telephone me--2"></span>
-							<span class="partially-visible">Reservas</span>
-						</a>
-					</li>
+
+						<div class="col promotion__card mb--4">
+							<header>
+								<h2 class="text--center mb--4 text--uppercase">
+									Menú revuelto
+								</h2>
+							</header>
+
+							<div class="px--2">
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Primer plato</strong>
+									<p>Ensalada mixta</p>
+								</div>
+
+								<hr />
+
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Segundo plato</strong>
+									<p>Paella mixta</p>
+								</div>
+
+								<hr />
+
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Postre</strong>
+									<p>Surtido de postres</p>
+								</div>
+
+								<hr />
+							</div>
+
+							<div class="promotion__dish text--center fs--lg">
+								<p>
+									<span class="text--red">10.99€</span>
+									<span class="fs--sm">por comensal</span>
+								</p>
+
+								<p class="fs--sm">Número de comensales mínimo: 3</p>
+							</div>
+						</div>
+
+						<div class="col promotion__card mb--4">
+							<header>
+								<h2 class="text--center mb--4 text--uppercase">
+									Menú familiar
+								</h2>
+							</header>
+
+							<div class="px--2">
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Primer plato</strong>
+									<p>Sopa de picadillo</p>
+								</div>
+
+								<hr />
+
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Segundo plato</strong>
+									<p>Rosada a la plancha</p>
+								</div>
+
+								<hr />
+
+								<div class="promotion__dish">
+									<strong class="text--uppercase">Postre</strong>
+									<p>Tarta de queso</p>
+								</div>
+
+								<hr />
+							</div>
+
+							<div class="promotion__dish text--center fs--lg">
+								<p>
+									<span class="text--red">8.99€</span>
+									<span class="fs--sm">por comensal</span>
+								</p>
+
+								<p class="fs--sm">Número de comensales mínimo: 4</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="form">
+					<header>
+						<h2 class="mt--5 mb--4 text--uppercase text--center text--muted">
+							¡Haz tu reserva ya!
+						</h2>
+					</header>
+
+					<form class="mt--5 mb--5 form__section">
+						<div
+							id="form__personal-data"
+							class="form--was-validated"
+						>
+							<h3 class="between-lines">
+								<span class="between-lines__text text--uppercase">
+									Datos personales
+								</span>
+							</h3>
+
+							<div class="row px--3">
+								<div
+									id="form__item--first-name"
+									class="form__check col--md-2 mb--3"
+								>
+									<label
+										for="form__input--first-name"
+										class="form__label"
+									>
+										Nombre
+									</label>
+									<input
+										id="form__input--first-name"
+										name="first_name"
+										type="text"
+										class="form__control is-invalid"
+										maxlength="15"
+										required
+									/>
+									
+									<div class="invalid-feedback">
+										Por favor, rellena el campo con 15 caracteres o menos.
+									</div>
+								</div>
+
+								<div
+									id="form__item--last-name"
+									class="form__check col--md-2 mb--3"
+								>
+									<label
+										for="form__input--last-name"
+										class="form__label"
+									>
+										Apellidos
+									</label>
+									<input
+										id="form__input--last-name"
+										name="last_name"
+										type="text"
+										class="form__control is-invalid"
+										maxlength="30"
+										required
+									/>
+
+									<div class="invalid-feedback">
+										Por favor, rellena el campo con 30 caracteres o menos.
+									</div>
+								</div>
+
+								<div
+									id="form__item--email"
+									class="form__check col--md-2 mb--3"
+								>
+									<label
+										for="form__input--email"
+										class="form__label"
+									>
+										Email
+									</label>
+									<input
+										id="form__input--email"
+										name="email"
+										type="email"
+										class="form__control is-invalid"
+										maxlength="20"
+										required
+									/>
+
+									<div class="invalid-feedback">
+										Por favor, rellena el campo con 20 caracteres o menos con un
+										email válido.
+									</div>
+								</div>
+
+								<div
+									id="form__item--phone"
+									class="form__check col--md-2 mb--3"
+								>
+									<label
+										for="form__input--phone"
+										class="form__label"
+									>
+										Teléfono
+									</label>
+									<input
+										id="form__input--phone"
+										name="phone"
+										type="tel"
+										class="form__control is-invalid"
+										pattern="[6789]{1}[0-9]{8}"
+										required
+									/>
+
+									<div class="invalid-feedback">
+										Por favor, rellena el campo con 9 dígitos. El número tiene
+										que empezar por 6, 7, 8 ó 9.
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div
+							id="form__item--information"
+							class="form__check text--center mb--3"
+						>
+							<input
+								id="form__input--information"
+								name="send_new_menus"
+								type="checkbox"
+								class="form__check__input"
+							/>
+							<label
+								for="form__input--information"
+								class="form__check__label"
+							>
+								Deseo recibir información de nuevos menús
+							</label>
+						</div>
+
+						<div
+							id="form__menus"
+							class="mt--5"
+						>
+							<h3 class="between-lines">
+								<span class="between-lines__text text--uppercase">Menús</span>
+							</h3>
+
+							<div class="row px--3">
+								<div
+									id="form__item--menu"
+									class="form__check mb--3"
+								>
+									<label
+										for="form__select--menu"
+										class="form__label"
+									>
+										¿Qué menú vais a tomar?
+									</label>
+									
+									<select
+										id="form__select--menu"
+										name="menu"
+										class="form__select"
+									>
+										<option value=""></option>
+										<option value="casa">Menú de la casa</option>
+										<option value="revuelto">Menú revuelto</option>
+										<option value="familiar">Menú familiar</option>
+									</select>
+								</div>
+
+								<div
+									id="form__item--quantity"
+									class="form__check mb--3"
+								>
+									<label
+										for="form__select--quantity"
+										class="form__label"
+									>
+										Tipo de comida (acorde a los comensales)
+									</label>
+
+									<select
+										id="form__select--quantity"
+										name="quantity"
+										class="form__select"
+									>
+										<option></option>
+
+										<optgroup label="Familiar">
+											<option value="intimate">Íntima (2-4 personas)</option>
+											<option value="reduced">Reducida (5-11 personas)</option>
+											<option value="large">Amplia (más de 12 personas)</option>
+										</optgroup>
+
+										<optgroup label="Amigos">
+											<option value="close">Cercanos (2-8 personas)</option>
+											<option value="average">Media (9-19 personas)</option>
+											<option value="crowded">
+												Multitudinaria (más de 20 personas)
+											</option>
+										</optgroup>
+
+										<optgroup label="Trabajo">
+											<option value="small">Autónomo (2-4 personas)</option>
+											<option value="medium">PYME (5-11 personas)</option>
+											<option value="big">
+												Gran empresa (más de 12 personas)
+											</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div
+							id="form__rating"
+							class="text--center"
+						>
+							<h3 class="between-lines mb--5">
+								<span class="between-lines__text text--uppercase">
+									¡Valóranos!
+								</span>
+							</h3>
+
+							<label
+								for="rating--none"
+								class="form__label"
+							>
+								¿Cómo fue tu última experiencia?
+							</label>
+
+							<br />
+
+							<div
+								id="form__item--rating"
+								class="rating-group"
+							>
+								<input
+									disabled
+									checked
+									class="rating__input rating__input--none"
+									name="rating"
+									id="rating--none"
+									value="0"
+									type="radio"
+								/>
+
+								<label
+									aria-label="1 estrella"
+									class="rating__label"
+									for="rating--1"
+								>
+									<i class="rating__icon rating__icon--star fa fa-star"></i>
+								</label>
+								<input
+									class="rating__input"
+									name="rating"
+									id="rating--1"
+									value="1"
+									type="radio"
+								/>
+
+								<label
+									aria-label="2 estrellas"
+									class="rating__label"
+									for="rating--2"
+								>
+									<i class="rating__icon rating__icon--star fa fa-star"></i>
+								</label>
+								<input
+									class="rating__input"
+									name="rating"
+									id="rating--2"
+									value="2"
+									type="radio"
+								/>
+
+								<label
+									aria-label="3 estrellas"
+									class="rating__label"
+									for="rating--3"
+								>
+									<i class="rating__icon rating__icon--star fa fa-star"></i>
+								</label>
+								<input
+									class="rating__input"
+									name="rating"
+									id="rating--3"
+									value="3"
+									type="radio"
+								/>
+
+								<label
+									aria-label="4 estrellas"
+									class="rating__label"
+									for="rating--4"
+								>
+									<i class="rating__icon rating__icon--star fa fa-star"></i>
+								</label>
+								<input
+									class="rating__input"
+									name="rating"
+									id="rating--4"
+									value="4"
+									type="radio"
+								/>
+
+								<label
+									aria-label="5 estrellas"
+									class="rating__label"
+									for="rating--5"
+								>
+									<i class="rating__icon rating__icon--star fa fa-star"></i>
+								</label>
+								<input
+									class="rating__input"
+									name="rating"
+									id="rating--5"
+									value="5"
+									type="radio"
+								/>
+							</div>
+
+							<hr class="mb--4 mt--4 w--100" />
+						</div>
+
+						<div
+							id="form__buttons"
+							class="mt--4 pb--3 text--center"
+						>
+							<button
+								class="btn btn--cancel"
+								type="reset"
+							>
+								Cancelar
+							</button>
+							<button
+								class="btn btn--send"
+								value="submit"
+								type="submit"
+							>
+								Enviar
+							</button>
+						</div>
+					</form>
+				</section>
+			</main>
+
+			<footer class="mb--4 text--muted text--center">
+				<hr />
+
+				<p class="mb--3 mt--3">&copy; José Carlos López Henestrosa</p>
+
+				<ul class="list--inline">
+					<li class="list--inline__item"><i class="bi bi-facebook"></i></li>
+					<li class="list--inline__item"><i class="bi bi-twitter"></i></li>
+					<li class="list--inline__item"><i class="bi bi-instagram"></i></li>
 				</ul>
-			</div>
+			</footer>
 		</div>
-	</nav>
 
-	<div class="container">
-		<main>
-			<section id="intro" class="hero">
-				<div class="hero__text">
-					<h1>¡Celebra la Navidad con nuestros menús especiales!</h1>
-				</div>
-			</section>
-
-			<section id="promotion">
-				<div class="row row-cols--1 row-cols--md-3 gutter mt--5 promotion__shadow">
-					<div class="col promotion__card mb--4">
-						<header>
-							<h2 class="text--center mb--4 text--uppercase">Menú de la casa</h2>
-						</header>
-						<div class="px--2">
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Primer plato</strong>
-								<p>Ensalada césar</p>
-							</div>
-							<hr>
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Segundo plato</strong>
-								<p>Flamenquín casero</p>
-							</div>
-							<hr>
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Postre</strong>
-								<p>Natillas caseras</p>
-							</div>
-							<hr>
-						</div>
-						<div class="promotion__dish text--center fs--lg">
-							<p><span class="text--red">9.99€</span> <span class="fs--sm">por comensal</span></p>
-							<p class="fs--sm">Número de comensales mínimo: 2</p>
-						</div>
-					</div>
-
-					<div class="col promotion__card mb--4">
-						<header>
-							<h2 class="text--center mb--4 text--uppercase">Menú revuelto</h2>
-						</header>
-						<div class="px--2">
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Primer plato</strong>
-								<p>Ensalada mixta</p>
-							</div>
-							<hr>
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Segundo plato</strong>
-								<p>Paella mixta</p>
-							</div>
-							<hr>
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Postre</strong>
-								<p>Surtido de postres</p>
-							</div>
-							<hr>
-						</div>
-						<div class="promotion__dish text--center fs--lg">
-							<p><span class="text--red">10.99€</span> <span class="fs--sm">por comensal</span></p>
-							<p class="fs--sm">Número de comensales mínimo: 3</p>
-						</div>
-					</div>
-
-					<div class="col promotion__card mb--4">
-						<header>
-							<h2 class="text--center mb--4 text--uppercase">Menú familiar</h2>
-						</header>
-						<div class="px--2">
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Primer plato</strong>
-								<p>Sopa de picadillo</p>
-							</div>
-							<hr>
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Segundo plato</strong>
-								<p>Rosada a la plancha</p>
-							</div>
-							<hr>
-							<div class="promotion__dish">
-								<strong class="text--uppercase">Postre</strong>
-								<p>Tarta de queso</p>
-							</div>
-							<hr>
-						</div>
-						<div class="promotion__dish text--center fs--lg">
-							<p><span class="text--red">8.99€</span> <span class="fs--sm">por comensal</span></p>
-							<p class="fs--sm">Número de comensales mínimo: 4</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="form">
-				<header>
-					<h2 class="mt--5 mb--4 text--uppercase text--center text--muted">¡Haz tu reserva ya!</h2>
-				</header>
-				<form class="mt--5 mb--5 form__section">
-					<div id="form__personal-data" class="form--was-validated">
-						<h3 class="between-lines">
-							<span class="between-lines__text text--uppercase">Datos personales</span>
-						</h3>
-						<div class="row px--3">
-							<div id="form__item--first-name" class="form__check col--md-2 mb--3">
-								<label for="form__input--first-name" class="form__label">Nombre</label>
-								<input id="form__input--first-name" name="first_name" type="text" class="form__control is-invalid" maxlength="15" required>
-								<div class="invalid-feedback">
-									Por favor, rellena el campo con 15 caracteres o menos.
-								</div>
-							</div>
-						
-							<div id="form__item--last-name" class="form__check col--md-2 mb--3">
-								<label for="form__input--last-name" class="form__label">Apellidos</label>
-								<input id="form__input--last-name" name="last_name" type="text" class="form__control is-invalid" maxlength="30" required>
-								<div class="invalid-feedback">
-									Por favor, rellena el campo con 30 caracteres o menos.
-								</div>
-							</div>
-							
-							<div id="form__item--email" class="form__check col--md-2 mb--3">
-								<label for="form__input--email" class="form__label">Email</label>
-								<input id="form__input--email" name="email" type="email" class="form__control is-invalid" maxlength="20" required>
-								<div class="invalid-feedback">
-									Por favor, rellena el campo con 20 caracteres o menos con un email válido.
-								</div>
-							</div>
-
-							<div id="form__item--phone" class="form__check col--md-2 mb--3">
-								<label for="form__input--phone" class="form__label">Teléfono</label>
-								<input id="form__input--phone" name="phone" type="tel" class="form__control is-invalid" pattern="[6789]{1}[0-9]{8}" required>
-								<div class="invalid-feedback">
-									Por favor, rellena el campo con 9 dígitos. El número tiene que empezar por 6, 7, 8 ó 9.
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div id="form__item--information" class="form__check text--center mb--3">
-						<input id="form__input--information" name="send_new_menus" type="checkbox" class="form__check__input">
-						<label for="form__input--information" class="form__check__label">Deseo recibir información de nuevos menús</label>
-					</div>
-
-					<div id="form__menus" class="mt--5">
-						<h3 class="between-lines">
-							<span class="between-lines__text text--uppercase">Menús</span>
-						</h3>
-
-						<div class="row px--3">
-							<div id="form__item--menu" class="form__check mb--3">
-								<label for="form__select--menu" class="form__label">¿Qué menú vais a tomar?</label>
-								<select id="form__select--menu" name="menu" class="form__select">
-									<option value=""></option>
-									<option value="casa">Menú de la casa</option>
-									<option value="revuelto">Menú revuelto</option>
-									<option value="familiar">Menú familiar</option>
-								</select>
-							</div>
-
-							<div id="form__item--quantity" class="form__check mb--3">
-								<label for="form__select--quantity" class="form__label">Tipo de comida (acorde a los comensales)</label>
-								<select id="form__select--quantity" name="quantity" class="form__select">
-									<option></option>
-									<optgroup label="Familiar">
-										<option value="intimate">Íntima (2-4 personas)</option>
-										<option value="reduced">Reducida (5-11 personas)</option>
-										<option value="large">Amplia (más de 12 personas)</option>
-									</optgroup>
-									<optgroup label="Amigos">
-										<option value="close">Cercanos (2-8 personas)</option>
-										<option value="average">Media (9-19 personas)</option>
-										<option value="crowded">Multitudinaria (más de 20 personas)</option>
-									</optgroup>
-									<optgroup label="Trabajo">
-										<option value="small">Autónomo (2-4 personas)</option>
-										<option value="medium">PYME (5-11 personas)</option>
-										<option value="big">Gran empresa (más de 12 personas)</option>
-									</optgroup>
-								</select>
-							</div>
-						</div>
-					</div>
-					
-					<div id="form__rating" class="text--center">
-						<h3 class="between-lines mb--5">
-							<span class="between-lines__text text--uppercase">¡Valóranos!</span>
-						</h3>
-						<label for="rating--none" class="form__label">¿Cómo fue tu última experiencia?</label>
-						<br>
-						<div id="form__item--rating" class="rating-group">
-							<input disabled checked class="rating__input rating__input--none" name="rating" id="rating--none" value="0"
-								type="radio">
-							<label aria-label="1 estrella" class="rating__label" for="rating--1"><i
-									class="rating__icon rating__icon--star fa fa-star"></i></label>
-							<input class="rating__input" name="rating" id="rating--1" value="1" type="radio">
-							<label aria-label="2 estrellas" class="rating__label" for="rating--2"><i
-									class="rating__icon rating__icon--star fa fa-star"></i></label>
-							<input class="rating__input" name="rating" id="rating--2" value="2" type="radio">
-							<label aria-label="3 estrellas" class="rating__label" for="rating--3"><i
-									class="rating__icon rating__icon--star fa fa-star"></i></label>
-							<input class="rating__input" name="rating" id="rating--3" value="3" type="radio">
-							<label aria-label="4 estrellas" class="rating__label" for="rating--4"><i
-									class="rating__icon rating__icon--star fa fa-star"></i></label>
-							<input class="rating__input" name="rating" id="rating--4" value="4" type="radio">
-							<label aria-label="5 estrellas" class="rating__label" for="rating--5"><i
-									class="rating__icon rating__icon--star fa fa-star"></i></label>
-							<input class="rating__input" name="rating" id="rating--5" value="5" type="radio">
-						</div>
-						<hr class="mb--4 mt--4 w--100">
-					</div>
-					
-					<div id="form__buttons" class="mt--4 pb--3 text--center">
-						<button class="btn btn--cancel" type="reset">Cancelar</button>
-						<button class="btn btn--send" value="submit" type="submit">Enviar</button>
-					</div>
-				</form>
-			</section>
-		</main>
-
-		<footer class="mb--4 text--muted text--center">
-			<hr>
-			<p class="mb--3 mt--3">&copy; José Carlos López Henestrosa</p>
-			<ul class="list--inline">
-				<li class="list--inline__item"><i class="bi bi-facebook"></i></li>
-				<li class="list--inline__item"><i class="bi bi-twitter"></i></li>
-				<li class="list--inline__item"><i class="bi bi-instagram"></i></li>
-			</ul>
-		</footer>
-	</div>
-
-	<script src="./js/script.min.js"></script>
-</body>
-
+		<script src="./js/script.min.js"></script>
+	</body>
 </html>
