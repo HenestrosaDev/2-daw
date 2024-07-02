@@ -4,97 +4,156 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>José Carlos López Henestrosa | DIW 6</title>
-    <meta name="author" content="José Carlos López Henestrosa" />
-    <meta name="description" content="Tarea 6 de Diseño de Interfaces Web" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./css/styles.css" />
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<title>José Carlos López Henestrosa | DIW 6</title>
+		<meta
+			name="author"
+			content="José Carlos López Henestrosa"
+		/>
+		<meta
+			name="description"
+			content="Tarea 6 de Diseño de Interfaces Web"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="./favicon.ico"
+		/>
+		<link
+			rel="stylesheet"
+			href="./css/styles.css"
+		/>
 		<script
 			src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
-			defer></script>
-    <script src="./js/tarea_06.js" type="module" defer></script>
-  </head>
-  <body class="grid--container mx--auto">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
-    <nav class="grid--header w--100 text--center pb--0">
-      <section class="inline align-items--center">
-        <img
-          src="./res/img/1.jpeg"
-          class="me--3"
-          height="75"
-          alt="Foto de José Carlos López Henestrosa"
-        />
-        <h1 class="text--bold">José Carlos López Henestrosa</h1>
-      </section>
-      <section class="bg--navbar mt--3 p--1">
-        <div class="inline gap--3 align-items--baseline">
-          <h3 id="navbar-image" class="pointer">Imagen</h3>
-          <h3 id="navbar-video" class="pointer">Vídeo</h3>
-          <h3 id="navbar-animation" class="pointer">Animación</h3>
-        </div>
-      </section>
-    </nav>
+			defer
+		></script>
+		<script
+			src="./js/tarea_06.js"
+			type="module"
+			defer
+		></script>
+	</head>
+
+	<body class="grid--container mx--auto">
+		<!--[if lt IE 7]>
+			<p class="browsehappy">
+				You are using an <strong>outdated</strong> browser. Please
+				<a href="#">upgrade your browser</a> to improve your experience.
+			</p>
+		<![endif]-->
+		<nav class="grid--header w--100 text--center pb--0">
+			<section class="inline align-items--center">
+				<img
+					src="./res/img/1.jpeg"
+					class="me--3"
+					height="75"
+					alt="Foto de José Carlos López Henestrosa"
+				/>
+				<h1 class="text--bold">José Carlos López Henestrosa</h1>
+			</section>
+
+			<section class="bg--navbar mt--3 p--1">
+				<div class="inline gap--3 align-items--baseline">
+					<h3
+						id="navbar-image"
+						class="pointer"
+					>
+						Imagen
+					</h3>
+
+					<h3
+						id="navbar-video"
+						class="pointer"
+					>
+						Vídeo
+					</h3>
+					
+					<h3
+						id="navbar-animation"
+						class="pointer"
+					>
+						Animación
+					</h3>
+				</div>
+			</section>
+		</nav>
 
 		<main class="grid--container--main justify-content--center">
-      <article id="interaction" class="grid--interaction px--3">
-        <header id="interaction-header-to-hide" class="text--center">
+			<article
+				id="interaction"
+				class="grid--interaction px--3"
+			>
+				<header
+					id="interaction-header-to-hide"
+					class="text--center"
+				>
 					<h2 class="mb--4 text--bold">Zona de interacción</h2>
 				</header>
-				
+
 				<section id="interaction-to-hide">
 					<p>Aquí se muestra contenido con el que interactuar</p>
 				</section>
-				
+
 				<div id="interaction-content">
-					<section id="interaction-image" class="hidden">
+					<section
+						id="interaction-image"
+						class="hidden"
+					>
 						<section class="bordered rounded p--3">
 							<header class="text--center">
 								<h3 class="fs--md">Configuración</h3>
 							</header>
 
-							<article id="distribution-select" class="flex space-around mt--2">
+							<article
+								id="distribution-select"
+								class="flex space-around mt--2"
+							>
 								<div>
-									<input 
-										id="distribution-input-1"	
-										type="radio" 
+									<input
+										id="distribution-input-1"
+										type="radio"
 										name="distribution"
-										value="1" 
-										checked>
-									<label for="distribution-input-1">
-										Distribución 1
-									</label>
+										value="1"
+										checked
+									/>
+									<label for="distribution-input-1"> Distribución 1 </label>
 								</div>
-	
+
 								<div>
-									<input 
-										id="distribution-input-2"	
-										type="radio" 
+									<input
+										id="distribution-input-2"
+										type="radio"
 										name="distribution"
-										value="2">
-									<label for="distribution-input-2">
-										Distribución 2
-									</label>
+										value="2"
+									/>
+									<label for="distribution-input-2"> Distribución 2 </label>
 								</div>
 							</article>
-							
-							<article id="image-filter" class="flex space-around mt--3">
+
+							<article
+								id="image-filter"
+								class="flex space-around mt--3"
+							>
 								<div>
-									<label for="image-filter-name">
-										Filtro:
-									</label>
+									<label for="image-filter-name"> Filtro: </label>
 									<select id="image-filter-name">
-										<option value="default" selected>Elige un filtro</option>
+										<option
+											value="default"
+											selected
+										>
+											Elige un filtro
+										</option>
 										<option value="grayscale">Gris</option>
 										<option value="invert">Invertido</option>
 										<option value="sepia">Sepia</option>
@@ -103,32 +162,27 @@
 										<option value="brightness">Brillo</option>
 									</select>
 								</div>
-	
+
 								<div>
-									<label for="image-filter-value">
-										Porcentaje:
-									</label>
+									<label for="image-filter-value"> Porcentaje: </label>
 									<input
 										id="image-filter-value"
 										type="number"
 										value="50"
 										min="0"
 										step="1"
-									>
+									/>
 								</div>
 							</article>
-	
-							<article id="image-filter-button" class="text--center mt--3">
-								<button 
-									id="image-filter-apply" 
+
+							<article
+								id="image-filter-button"
+								class="text--center mt--3"
+							>
+								<button
+									id="image-filter-apply"
 									type="button"
-									class="
-										text--white 
-										px--3 py--1
-										bg--primary
-										rounded
-										pointer
-									"
+									class="text--white px--3 py--1 bg--primary rounded pointer"
 								>
 									Aplicar
 								</button>
@@ -140,38 +194,47 @@
 								<h3 class="fs--md">Historial de efectos</h3>
 							</header>
 
-							<article id="image-filter-history" class="mt--2">
-							</article>
+							<article
+								id="image-filter-history"
+								class="mt--2"
+							></article>
 						</section>
 					</section>
 
-					<section id="interaction-video" class="hidden">
+					<section
+						id="interaction-video"
+						class="hidden"
+					>
 						<section class="bordered rounded p--3">
-							<article id="video-select" class="flex space-around mt--2">
+							<article
+								id="video-select"
+								class="flex space-around mt--2"
+							>
 								<div>
-									<input 
-										id="video-input-1"	
-										type="radio" 
+									<input
+										id="video-input-1"
+										type="radio"
 										name="video"
-										value="1">
-									<label for="video-input-1">
-										Vídeo 1
-									</label>
+										value="1"
+									/>
+									<label for="video-input-1"> Vídeo 1 </label>
 								</div>
-	
+
 								<div>
-									<input 
-										id="video-input-2"	
-										type="radio" 
+									<input
+										id="video-input-2"
+										type="radio"
 										name="video"
-										value="2">
-									<label for="video-input-2">
-										Vídeo 2
-									</label>
+										value="2"
+									/>
+									<label for="video-input-2"> Vídeo 2 </label>
 								</div>
 							</article>
-							
-							<article id="image-filter" class="flex space-around mt--4">
+
+							<article
+								id="image-filter"
+								class="flex space-around mt--4"
+							>
 								<canvas
 									id="video-load"
 									class="bg--tan pointer rounded"
@@ -199,8 +262,11 @@
 							</article>
 						</section>
 					</section>
-					
-					<section id="interaction-animation" class="hidden">
+
+					<section
+						id="interaction-animation"
+						class="hidden"
+					>
 						<section class="bordered rounded p--3">
 							<header class="text--center">
 								<h3 class="fs--md">Configuración</h3>
@@ -208,9 +274,7 @@
 
 							<div class="block mt--3">
 								<div class="flex align-items--center flex--column">
-									<label for="video-input-2">
-										Duración de la animación
-									</label>
+									<label for="video-input-2"> Duración de la animación </label>
 									<input
 										id="animation-length"
 										class="w--40"
@@ -220,13 +284,11 @@
 										step="1"
 										value="0"
 										placeholder="De 0 a 15 segundos"
-									>
+									/>
 								</div>
-							
+
 								<div class="mt--3 align-items--center flex flex--column">
-									<label for="video-input-2">
-										Curvatura del borde
-									</label>
+									<label for="video-input-2"> Curvatura del borde </label>
 									<input
 										id="animation-radius"
 										class="w--40"
@@ -236,69 +298,142 @@
 										step="1"
 										value="0"
 										placeholder="De 0 a 90 píxeles"
-									>
+									/>
 								</div>
 							</div>
 						</section>
 					</section>
 				</div>
-      </article>
+			</article>
 
-      <article id="multimedia" class="grid--multimedia px--3">
-				<header id="multimedia-header-to-hide" class="text--center">
+			<article
+				id="multimedia"
+				class="grid--multimedia px--3"
+			>
+				<header
+					id="multimedia-header-to-hide"
+					class="text--center"
+				>
 					<h2 class="mb--4 text--bold">Elementos multimedia y animaciones</h2>
 				</header>
-				
+
 				<section id="multimedia-to-hide">
 					<p>Aquí se muestra contenido multimedia y animaciones</p>
 				</section>
-				
+
 				<div id="multimedia-content">
-					<section id="multimedia-image" class="distribution__container hidden">
-						<div id="distribution-1" class="distribution--1">
-							<img id="dist-1-img-1" class="distribution__img--1 distribution__img pointer" src="./res/img/img1.png">
-							<img id="dist-1-img-2" class="distribution__img--2 distribution__img pointer" src="./res/img/img2.jpg">
-							<img id="dist-1-img-3" class="distribution__img--3 distribution__img pointer" src="./res/img/img3.jpeg">
-							<img id="dist-1-img-4" class="distribution__img--4 distribution__img pointer" src="./res/img/img4.jpeg">
-							<img id="dist-1-img-5" class="distribution__img--5 distribution__img pointer" src="./res/img/img5.jpeg">
-							<img id="dist-1-img-6" class="distribution__img--6 distribution__img pointer" src="./res/img/img6.png">
+					<section
+						id="multimedia-image"
+						class="distribution__container hidden"
+					>
+						<div
+							id="distribution-1"
+							class="distribution--1"
+						>
+							<img
+								id="dist-1-img-1"
+								class="distribution__img--1 distribution__img pointer"
+								src="./res/img/img1.png"
+							/>
+							<img
+								id="dist-1-img-2"
+								class="distribution__img--2 distribution__img pointer"
+								src="./res/img/img2.jpg"
+							/>
+							<img
+								id="dist-1-img-3"
+								class="distribution__img--3 distribution__img pointer"
+								src="./res/img/img3.jpeg"
+							/>
+							<img
+								id="dist-1-img-4"
+								class="distribution__img--4 distribution__img pointer"
+								src="./res/img/img4.jpeg"
+							/>
+							<img
+								id="dist-1-img-5"
+								class="distribution__img--5 distribution__img pointer"
+								src="./res/img/img5.jpeg"
+							/>
+							<img
+								id="dist-1-img-6"
+								class="distribution__img--6 distribution__img pointer"
+								src="./res/img/img6.png"
+							/>
 						</div>
 
 						<!-- distribution-2 tiene definido parte de su estilo en el atributo
 						'style' para que la función 'slideToggle' de jQuery pueda ejecutarse
 						correctamente -->
-						<div id="distribution-2" class="distribution--2" style="display: none;">
-							<img id="dist-2-img-1" class="distribution__img--1 distribution__img pointer" src="./res/img/img1.png">
-							<img id="dist-2-img-2" class="distribution__img--2 distribution__img pointer" src="./res/img/img2.jpg">
-							<img id="dist-2-img-3" class="distribution__img--3 distribution__img pointer" src="./res/img/img3.jpeg">
-							<img id="dist-2-img-4" class="distribution__img--4 distribution__img pointer" src="./res/img/img4.jpeg">
-							<img id="dist-2-img-5" class="distribution__img--5 distribution__img pointer" src="./res/img/img5.jpeg">
-							<img id="dist-2-img-6" class="distribution__img--6 distribution__img pointer" src="./res/img/img6.png">
+						<div
+							id="distribution-2"
+							class="distribution--2"
+							style="display: none"
+						>
+							<img
+								id="dist-2-img-1"
+								class="distribution__img--1 distribution__img pointer"
+								src="./res/img/img1.png"
+							/>
+							<img
+								id="dist-2-img-2"
+								class="distribution__img--2 distribution__img pointer"
+								src="./res/img/img2.jpg"
+							/>
+							<img
+								id="dist-2-img-3"
+								class="distribution__img--3 distribution__img pointer"
+								src="./res/img/img3.jpeg"
+							/>
+							<img
+								id="dist-2-img-4"
+								class="distribution__img--4 distribution__img pointer"
+								src="./res/img/img4.jpeg"
+							/>
+							<img
+								id="dist-2-img-5"
+								class="distribution__img--5 distribution__img pointer"
+								src="./res/img/img5.jpeg"
+							/>
+							<img
+								id="dist-2-img-6"
+								class="distribution__img--6 distribution__img pointer"
+								src="./res/img/img6.png"
+							/>
 						</div>
 					</section>
 
-					<section id="multimedia-video" class="flex justify-content--center hidden">
+					<section
+						id="multimedia-video"
+						class="flex justify-content--center hidden"
+					>
 						<video
 							id="video-1"
 							controls
 							preload="metadata"
 							class="hidden min-w-full"
 						>
-							<source src="./res/video/video-1.mp4" type="video/mp4" />
+							<source
+								src="./res/video/video-1.mp4"
+								type="video/mp4"
+							/>
 						</video>
-						
+
 						<video
 							id="video-2"
 							controls
 							preload="metadata"
 							class="hidden min-w-full"
 						>
-							<source src="./res/video/video-2.mp4" type="video/mp4" />
+							<source
+								src="./res/video/video-2.mp4"
+								type="video/mp4"
+							/>
 						</video>
 					</section>
-					
-					<section 
-						id="multimedia-animation" 
+
+					<section
+						id="multimedia-animation"
 						class="animation-container mx--auto bordered hidden relative"
 					>
 						<canvas
@@ -306,10 +441,10 @@
 							class="bg--tan absolute"
 							width="50"
 							height="50"
-						>
+						/>
 					</section>
 				</div>
-      </article>
+			</article>
 		</main>
 
 		<footer class="grid--footer">
@@ -317,5 +452,5 @@
 				<strong id="footer-text">I.E.S. Trassierra</strong>
 			</p>
 		</footer>
-  </body>
+	</body>
 </html>
