@@ -2,7 +2,7 @@
 
 <h1 align="center">2º Desarrollo de Aplicaciones Web (21/22)</h1>
 	<p align="center">
-		Repositorio con todos los ejercicios, apuntes y materiales realizados durante el curso 2021/22 en la modalidad a distancia en Andalucía.
+		Repositorio con todos los materiales, apuntes y ejercicios realizados durante el curso 2021/22 en la modalidad a distancia en Andalucía.
 	</p>
 	<p align="center">
 		<a href="https://github.com/HenestrosaDev/2-daw/stargazers">
