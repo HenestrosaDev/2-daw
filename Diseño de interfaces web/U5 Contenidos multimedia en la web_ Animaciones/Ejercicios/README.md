@@ -47,7 +47,7 @@ Toda la animación debe estar realizada con canvas.
 A continuación, se muestra una imagen para dar una idea de lo pedido, pero no tienes que realizarlo igual.
 
 <div align="center">
-	<img src="./adjuntos/docs/ejercicio4.png" height="300">
+	<img src="./docs/ejercicio4.png" height="300">
 </div>
 
 ## Ejercicio 6: Animaciones con SVG. (2,5 puntos)
@@ -64,7 +64,7 @@ Vamos a realizar una animación con SVG. Para ello, vamos a simular un pequeño 
 **Nota**: Como sabes, una imagen SVG no deja de ser un fichero en XML. Puedes utilizar un programa, como Inkscape, para simular los edificios y analizar dicho código para utilizarlo en tu desarrollo.
 
 <div align="center">
-	<img src="./adjuntos/docs/ejercicio6.png" height="600">
+	<img src="./docs/ejercicio6.png" height="600">
 </div>
 
 ---
