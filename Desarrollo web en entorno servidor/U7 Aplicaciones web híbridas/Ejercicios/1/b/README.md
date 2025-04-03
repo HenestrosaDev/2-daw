@@ -1,7 +1,0 @@
-![Captura de pantalla](https://github.com/HenestrosaDev/2-daw/blob/main/Desarrollo%20web%20en%20entorno%20servidor/U7%20Aplicaciones%20web%20h%C3%ADbridas/Ejercicios/1/b/docs/screenshot.png)
-
-# Enunciado
-
-1. Realiza tres sitios web:
-
-	b. Otro profesional con cuatro pestañas: Inicio, Portfolio, CV y Sobre mí.

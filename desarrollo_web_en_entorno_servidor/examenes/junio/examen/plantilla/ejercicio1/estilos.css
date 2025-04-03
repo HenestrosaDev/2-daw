@@ -1,0 +1,16 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-oct-2021, 18:31:52
+    Author     : Usuario
+*/
+
+/*.celda {border: #0000ff 2px solid;}*/
+table {border-collapse: collapse; display:inline;}
+.libros {text-align:center; }
+td {border: black 2px solid; }
+
+
